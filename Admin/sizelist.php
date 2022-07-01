@@ -6,7 +6,7 @@
 ?>
 
 <?php
-    $attr = new attribu();
+    $attr = new attribute();
     $product = new product();
 
     if(isset($_GET['size_del_id']))
