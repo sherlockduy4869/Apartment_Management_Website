@@ -137,7 +137,6 @@ aside{
 }
 
 aside .top{
-    background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -161,7 +160,6 @@ aside .close{
 /*------------------------SIDEBAR AREA------------------------*/
 
 aside .sidebar{
-    background: white;
     display: flex;
     flex-direction: column;
     height: 86vh;
@@ -459,6 +457,11 @@ main table tbody tr:last-child td{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.right .sales-analytics .add-product:hover{
+    background: var(--color-primary);
+    color: white;
 }
 
 .right .sales-analytics .add-product div{
