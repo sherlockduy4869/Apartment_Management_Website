@@ -5,7 +5,12 @@
 <section id="interface">
     
         <div class="navigation">
-            <div class="n1"><span class="title-page">APARTMENT CART</span></div>
+            <div class="n1">
+                <div>
+                    <i id="menu-btn" class="fas fa-bars"></i>
+                </div>
+                <span>APARTMENT CART</span>
+            </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
                 <img src="./Resource/img/profile-1.jpg">

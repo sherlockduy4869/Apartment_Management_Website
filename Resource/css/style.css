@@ -369,3 +369,39 @@ input[type="submit"]:hover{
     border-color: #2691d9;
     transition: 0.5s ease;
 }
+
+/*-----------------------CART ADD AREA-----------------------*/
+
+.admin-content-right-product_add input{
+    height: 30px;
+    width: 200px;
+    display: block;
+    margin: 6px 0 12px;
+    padding-left: 12px;
+}
+
+#select_category{
+    height: 30px;
+    width: 200px;
+    display: block;
+    margin: 6px 0 12px;
+    padding-left: 12px;
+}
+
+.admin-content-right-product_add button{
+    display: block;
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    background-color: brown;
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.admin-content-right-product_add button:hover{
+    background-color: transparent;
+    border: 1px solid brown;
+    color: brown;
+}
