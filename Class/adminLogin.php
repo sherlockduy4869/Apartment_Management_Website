@@ -43,7 +43,7 @@
                     Session::set('adminID',$value['ACCOUNT_ID']);
                     Session::set('adminUser',$value['USERNAME']);
                     Session::set('adminName',$value['NAME']);
-                    header('Location:cart.php');
+                    header('Location:index.php');
                 } 
                 else
                 {

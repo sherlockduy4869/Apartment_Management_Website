@@ -1,5 +1,7 @@
 <?php
     ob_start();
+    include $_SERVER['DOCUMENT_ROOT'].'/Lib/session.php';
+    Session::checkSession();
 ?>
 
 <html lang="en">

@@ -1,49 +1,49 @@
 <?php
-    ob_start();
-    include $_SERVER['DOCUMENT_ROOT'].'/Class/adminLogin.php';
+    include_once "Include/header.php";
+    include_once "Include/slider.php";
 ?>
 
-<?php
-    $adminLogin = new adminLogin();
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $adminUser = $_POST['adminUser'];
-        $adminPassword = md5($_POST['adminPassword']);
-
-        $loginCheck = $adminLogin -> login_check($adminUser,$adminPassword);
-    }
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="./Resource/css/style.css">
-</head>
-<body>
-
-    <!--NAVIGATION AREA-->
-    <section class="login-area">
-        <div class="login-box">
-            <h1>Login</h1> 
-            <span><?php if(isset($loginCheck)){echo $loginCheck;} ?></span>
-            <form action="login.php" method="POST">
-                <div class="text-field">
-                    <input required type="text" name="adminUser"> 
-                    <span></span>
-                    <label for="">User Name</label>
-                </div>
-                <div class="text-field">
-                    <input required type="password" name="adminPassword"> 
-                    <span></span>
-                    <label for="">Password</label>
-                </div>
-                <input type="submit" value="Login">
-            </form>
+<div class="board">
+            <table id="tbl_cart" width="100%">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Apartment Infor</th>
+                        <th>House Owner</th>
+                        <th>Bedroom</th>
+                        <th>SQM</th>
+                        <th>Customization</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="people-des">
+                            <h5>Apartment_Code</h5>
+                            <p>Agent_Name - Area</p>
+                        </td>
+                        <td class="people">
+                            <img src="./Resource/img/profile-1.jpg">
+                            <div class="people-de">
+                                <h5>House Owner</h5>
+                                <p>Phone of ower</p>
+                            </div>
+                        </td>
+                        <td class="active">
+                            <p>Bedroom</p>
+                        </td>
+                        <td class="role">
+                            <p>SQM</p>
+                        </td>
+                        <td class="edit">
+                            <a href="#">Add</a>|<a href="#">Edit</a>|<a href="#">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
-</body>
-</html>
+<?php 
+    include_once "Include/footer.php";
+?>
