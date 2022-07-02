@@ -1,0 +1,57 @@
+<?php
+     include $_SERVER['DOCUMENT_ROOT'].'/Lib/session.php';
+     Session::checkLogin();
+     include $_SERVER['DOCUMENT_ROOT'].'/Lib/database.php';
+     include $_SERVER['DOCUMENT_ROOT'].'/Helpers/format.php';
+?>
+
+<?php
+
+    class adminLogin
+    {
+        private $db ;
+        private $fm ;
+
+        public function __construct()
+        {
+            $this->db = new Database();
+            $this->fm = new Format();
+        }
+
+        //Check login
+        public function login_check($adminUser, $adminPassword){
+            $adminUser = $this->fm->validation($adminUser);
+            $adminPassword = $this->fm->validation($adminPassword);
+
+            $adminUser = mysqli_real_escape_string($this->db->link, $adminUser);
+            $adminPassword = mysqli_real_escape_string($this->db->link, $adminPassword);
+
+            if(empty($adminUser) || empty($adminPassword))
+            {
+                $alert = "User and password can not be empty";
+                return $alert;
+            }
+            else 
+            {
+                $query = "SELECT * FROM tbl_account WHERE USERNAME = '$adminUser' AND PASSWORD = '$adminPassword' LIMIT 1";
+                $result = $this->db->select($query);
+
+                if($result != false)
+                {
+                    $value = $result->fetch_assoc();
+                    Session::set('adminLogin',true);
+                    Session::set('adminID',$value['ACCOUNT_ID']);
+                    Session::set('adminUser',$value['USERNAME']);
+                    Session::set('adminName',$value['NAME']);
+                    header('Location:cart.php');
+                } 
+                else
+                {
+                    $alert = "Wrong User_Name or Password";
+                    return $alert;
+                }
+            }
+        }
+    }
+
+?>

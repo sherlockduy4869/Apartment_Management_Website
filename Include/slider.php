@@ -6,7 +6,7 @@
             <span>BETTER HOMES</span>
         </div>
         <div class="items">
-            <li><i class="fas fa-cart-plus"></i><a href="index.php">Apartment Cart</a></li>
+            <li><i class="fas fa-cart-plus"></i><a href="cart.php">Apartment Cart</a></li>
             <li><i class="fas fa-house"></i><a href="#">Apartment Rented</a></li>
             <li><i class="fas fa-sack-dollar"></i><a href="#">Apartment Tax</a></li>
             <li><i class="fas fa-dollar-sign"></i><a href="#">Apartment Finance</a></li>
