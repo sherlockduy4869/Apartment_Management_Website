@@ -98,29 +98,15 @@ body{
     width: calc(100% - 250px);
 }
 
-#interface .navigation .search{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px 14px;
-    border: 1px solid #d7dbe6;
-    border-radius: 4px;
-}
-
-#interface .navigation .search i{
-    margin-right: 14px;
-}
-
-#interface .navigation .search input{
-    border: none;
-    outline: none;
-    font-size: 14px;
-}
 
 #interface .navigation .profile{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+#interface .navigation .n1 span{
+    font-size: 23px;
 }
 
 #interface .navigation .profile i{
