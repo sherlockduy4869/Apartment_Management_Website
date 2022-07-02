@@ -50,6 +50,7 @@
         width: 100%;
         border-collapse: collapse;
     }
+
 }
 
 @media(max-width: 477px){
@@ -73,5 +74,23 @@
 
     .board{
         margin: 30px 15px 30px 15px;
+    }
+
+    .container{
+        max-width: 100%;
+    }
+
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+        width: 0;
     }
 }

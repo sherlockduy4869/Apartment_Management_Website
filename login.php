@@ -40,7 +40,7 @@
                     <span></span>
                     <label for="">Password</label>
                 </div>
-                <input type="submit" value="Login">
+                <input class="login-btn" type="submit" value="Login">
             </form>
         </div>
     </section>
