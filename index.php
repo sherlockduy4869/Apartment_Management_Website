@@ -2,6 +2,47 @@
     include_once "Include/header.php";
     include_once "Include/slider.php";
 ?>
+<section id="interface">
+    
+        <div class="navigation">
+            <div class="n1"><span class="title-page">APARTMENT CART</span></div>
+            <div class="profile">
+                <i class="fas fa-chart-bar"></i>
+                <img src="./Resource/img/profile-1.jpg">
+            </div>
+        </div>
+
+        <h3 class="i-name">Dashboard</h3>
+        <div class="values">
+            <div class="val-box">
+                <i class="fas fa-chart-bar"></i>
+                <div>
+                    <h3>8,567</h3>
+                    <span>New Users</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fas fa-chart-bar"></i>
+                <div>
+                    <h3>8,567</h3>
+                    <span>New Users</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fas fa-chart-bar"></i>
+                <div>
+                    <h3>8,567</h3>
+                    <span>New Users</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fas fa-chart-bar"></i>
+                <div>
+                    <h3>8,567</h3>
+                    <span>New Users</span>
+                </div>
+            </div>
+        </div>
 
 <div class="board">
             <table id="tbl_cart" width="100%">
@@ -42,7 +83,7 @@
                 </tbody>
             </table>
         </div>
-    </section>
+</section>
 
 <?php 
     include_once "Include/footer.php";
