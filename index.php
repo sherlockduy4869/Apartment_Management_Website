@@ -1,6 +1,11 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartCartClass.php';
+?>
+<?php
+    $apartCart = new apartcart();
+
 ?>
 <section id="interface">
     
@@ -62,29 +67,44 @@
                     </tr>
                 </thead>
                 <tbody>
+                        <?php
+                            $apartCartList = $apartCart->show_apart_cart_list();
+                            
+                            if($apartCartList)
+                            {   
+                                $ID = 0;
+                                while($result = $apartCartList->fetch_assoc())
+                                {
+                                    $ID++;
+                                    
+                        ?>
                     <tr>
-                        <td>1</td>
+                        <td><?php echo $ID ?></td>
                         <td class="people-des">
-                            <h5>Apartment_Code</h5>
-                            <p>Agent_Name - Area</p>
+                            <h5><?php echo $result['APARTMENT_CODE'];?></h5>
+                            <p><?php echo $result['AGENT_NAME'];?> - <?php echo $result['AREA'];?></p>
                         </td>
                         <td class="people">
-                            <img src="./Resource/img/profile-1.jpg">
+                            <img src="Uploads/<?php echo $result['IMG_OWNER'];?>">
                             <div class="people-de">
-                                <h5>House Owner</h5>
-                                <p>Phone of ower</p>
+                                <h5><?php echo $result['HOUSE_OWNER'];?></h5>
+                                <p><?php echo $result['PHONE'];?></p>
                             </div>
                         </td>
                         <td class="active">
-                            <p>Bedroom</p>
+                            <p><?php echo $result['BEDROOM'];?></p>
                         </td>
                         <td class="role">
-                            <p>SQM</p>
+                            <p><?php echo $result['SQM'];?></p>
                         </td>
                         <td class="edit">
                             <a href="#">Details</a>|<a href="#">Edit</a>|<a href="#">Delete</a>
                         </td>
                     </tr>
+                        <?php
+                                }
+                            }
+                        ?>
                 </tbody>
             </table>
         </div>

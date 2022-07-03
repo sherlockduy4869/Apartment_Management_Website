@@ -55,13 +55,20 @@
             $result = $this->db->insert($query);
 
             if($result){
-                $alert = "<span class = 'addError'>Add apartment cart succesfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Add apartment cart succesfully</span> <br>";
                 return $alert;
             }
             else{
                 $alert = "<span class = 'addError'>Add apartment cart failed</span> <br>";
                 return $alert;
             }
+        }
+
+        //Show apartment cart list
+        public function show_apart_cart_list(){
+            $query = "SELECT * FROM tbl_apartment_cart";
+            $result = $this->db->insert($query);
+            return $result;
         }
     }
 ?>
