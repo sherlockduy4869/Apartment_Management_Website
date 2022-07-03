@@ -43,7 +43,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <select name="area" id="select_area">
+                            <select name="area">
                                 <option value="">--Area--</option>
                                 <option value="Vinhomes Golden River">Vinhomes Golden River</option>
                                 <option value="Vinhomes Central Park">Vinhomes Central Park</option>
@@ -54,7 +54,16 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <input type="text" name="bedroom" placeholder="Enter bedroom" required>
+                            <select name="bedroom">
+                                <option value="">--Bedroom--</option>
+                                <option value="1 Bed">1 Bed</option>
+                                <option value="2 Bed">2 Bed</option>
+                                <option value="2 Bed + 1">2 Bed + 1</option>
+                                <option value="3 Bed">3 Bed</option>
+                                <option value="3 Bed + 1">3 Bed + 1</option>
+                                <option value="4 Bed">4 Bed</option>
+                                <option value="4 Bed + 1">4 Bed + 1</option>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
@@ -73,6 +82,12 @@
                             <input type="file" name="image_owner" required>
                         </div>        
                     </div>
+                    <?php 
+                    if(isset($cartAdd))
+                    {
+                        echo $cartAdd;
+                    }
+                    ?>
                     <div class="button">
                         <input class="btn btn-primary" name="submit" type="submit" value="ADDING">
                     </div>

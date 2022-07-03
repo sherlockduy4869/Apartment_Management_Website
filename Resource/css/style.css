@@ -16,6 +16,9 @@ body{
     display: flex;
 }
 
+.clickable{
+    cursor: pointer;
+}
 /*-----------------------MENU AREA-----------------------*/
 #menu{
     background: #111827;
@@ -459,3 +462,4 @@ form .user-details .input-box{
     color: red;
     position: absolute;
 }
+

@@ -16,7 +16,7 @@
             $this->fm = new Format();
         }
 
-        //Insert product
+        //Insert apartment cart
         public function insert_apart_cart($data, $files){
 
             $apartment_code = mysqli_real_escape_string($this->db->link, $data['apartment_code']);
@@ -37,6 +37,7 @@
             $file_ext = strtolower(end($div));
 
             $upload_image ="Uploads/".$file_name;
+            //$upload_image = $_SERVER['DOCUMENT_ROOT']."/Uploads/".$file_name;
 
             if($file_size > 1000000){
                 $alert = "<span class = 'addError'>Image size should be less than 1MB</span> <br>";
@@ -49,8 +50,8 @@
             
             move_uploaded_file($file_temp,$upload_image);
 
-            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENT_NAME,AREA,HOUSE_OWNER,PHONE,BEDROOM,SQM) 
-                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$bedroom','$sqm')";
+            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENT_NAME,AREA,HOUSE_OWNER,PHONE,BEDROOM,SQM,IMG_OWNER) 
+                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$bedroom','$sqm','$file_name')";
             $result = $this->db->insert($query);
 
             if($result){
