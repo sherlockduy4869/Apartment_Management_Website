@@ -446,3 +446,16 @@ form .user-details .input-box{
     font-weight: 500;
     letter-spacing: 1px;
 }
+
+/*-----------------------ALERT AREA-----------------------*/
+
+.addSuccess{
+    color: rgb(2, 230, 2);
+    margin-bottom: 10px;
+    position: absolute;
+}
+.addError{
+    margin-bottom: 10px;
+    color: red;
+    position: absolute;
+}

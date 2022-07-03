@@ -1,8 +1,16 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartCartClass.php';
 ?>
+<?php
+    $apartCart = new apartcart();
 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+
+        $cartAdd = $apartCart->insert_apart_cart($_POST, $_FILES);
+    }
+?>
 <section id="interface">
     <div class="navigation">
             <div class="n1">
@@ -37,11 +45,11 @@
                             <span class="details">Area</span>
                             <select name="area" id="select_area">
                                 <option value="">--Area--</option>
-                                <option value="VGR">Vinhomes Golden River</option>
-                                <option value="VCP">Vinhomes Central Park</option>
-                                <option value="EH">Estella Height</option>
-                                <option value="E">Estella</option>
-                                <option value="C">Celesta</option>
+                                <option value="Vinhomes Golden River">Vinhomes Golden River</option>
+                                <option value="Vinhomes Central Park">Vinhomes Central Park</option>
+                                <option value="Estella Height">Estella Height</option>
+                                <option value="Estella">Estella</option>
+                                <option value="Celesta">Celesta</option>
                             </select>
                         </div>
                         <div class="input-box">
