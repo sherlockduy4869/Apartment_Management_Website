@@ -12,4 +12,9 @@ $(document).ready(function () {
 
     //Data table for tbl_cart
     $('#tbl_cart').DataTable();
+    
+    //Div clickable
+    $('.clickable').click(function(){
+        window.location = $(this).find("a").attr("href");
+    });
 });

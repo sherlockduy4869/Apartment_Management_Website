@@ -67,8 +67,8 @@ body{
     margin: 0 10px 0 25px;
 }
 
-#menu .items li.activing i,
-#menu .items li.activing a{
+#menu .items li:hover i,
+#menu .items li:hover a{
     color: #f3f4f6;
 }
 
@@ -196,6 +196,10 @@ body{
 .values .val-box span{
     font-size: 15px;
     color: #828997;
+}
+
+.values .val-box a{
+    text-decoration: none;
 }
 
 /*-----------------------BOARD AREA-----------------------*/
