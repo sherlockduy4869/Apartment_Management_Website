@@ -23,14 +23,28 @@
                 <i class="fas fa-chart-bar"></i>
                 <div>
                     <h3>8,567</h3>
-                    <span>New Users</span>
+                    <span>Cart Aparts</span>
                 </div>
             </div>
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
                     <h3>8,567</h3>
-                    <span>New Users</span>
+                    <span>Different Areas</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fas fa-chart-bar"></i>
+                <div>
+                    <h3>12</h3>
+                    <span>Different Agents</span>
+                </div>
+            </div>
+            <div class="val-box">
+                <i class="fas fa-chart-bar"></i>
+                <div>
+                    <h3>8,567</h3>
+                    <span>Bedroom Styles</span>
                 </div>
             </div>
         </div>
@@ -68,7 +82,7 @@
                             <p>SQM</p>
                         </td>
                         <td class="edit">
-                            <a href="#">Edit</a>|<a href="#">Delete</a>
+                            <a href="#">Details</a>|<a href="#">Edit</a>|<a href="#">Delete</a>
                         </td>
                     </tr>
                 </tbody>
