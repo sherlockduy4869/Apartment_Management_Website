@@ -33,20 +33,6 @@
                     <span>New Users</span>
                 </div>
             </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
-                </div>
-            </div>
         </div>
 
 <div class="board">
@@ -82,7 +68,7 @@
                             <p>SQM</p>
                         </td>
                         <td class="edit">
-                            <a href="#">Add</a>|<a href="#">Edit</a>|<a href="#">Delete</a>
+                            <a href="#">Edit</a>|<a href="#">Delete</a>
                         </td>
                     </tr>
                 </tbody>
