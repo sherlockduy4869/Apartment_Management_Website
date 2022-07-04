@@ -6,7 +6,7 @@
             <span>BETTER HOMES</span>
         </div>
         <div class="items">
-            <li class="clickable"><i class="fa-solid fa-plus"></i><a href="addapart.php">Add Apart</a></li>
+            <li class="clickable"><i class="fa-solid fa-plus"></i><a href="addApart.php">Add Apart</a></li>
             <li class="clickable"><i class="fas fa-cart-plus"></i><a href="index.php">Apart Cart</a></li>
             <li class="clickable"><i class="fas fa-house"></i><a href="#">Apart Rented</a></li>
             <li class="clickable"><i class="fas fa-sack-dollar"></i><a href="#">Apart Tax</a></li>

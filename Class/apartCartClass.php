@@ -78,5 +78,12 @@
 
             header('Location:index.php');
         }
+
+        //Get apartment cart information 
+        public function get_apart_cart_by_id($cart_id){
+            $query = "SELECT * FROM tbl_apartment_cart WHERE APARTMENT_CODE = '$cart_id'";
+            $result = $this->db->select($query)->fetch_assoc();
+            return $result;
+        }
     }
 ?>

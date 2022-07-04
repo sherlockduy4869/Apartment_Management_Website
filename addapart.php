@@ -22,7 +22,7 @@
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
                 <div>
-                    <a href="cartadd.php">Add Apart Cart</a>
+                    <a href="cartAdd.php">Add Apart Cart</a>
                 </div>
             </div>
             <div class="val-box clickable">
