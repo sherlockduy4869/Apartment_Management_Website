@@ -11,6 +11,8 @@
         $delID = $_GET['delID'];
         $delApartCart = $apartCart->delete_apart_cart($delID);
     }  
+
+    $show_statistic_apart_cart = $apartCart->show_apart_cart_statistic();
 ?>
 <section id="interface">
     
@@ -32,28 +34,28 @@
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3>8,567</h3>
+                    <h3 class="num"><?php echo $show_statistic_apart_cart['NUM_APART'];?></h3>
                     <span>Cart Aparts</span>
                 </div>
             </div>
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3>8,567</h3>
+                    <h3 class="num"><?php echo $show_statistic_apart_cart['NUM_AREA'];?></h3>
                     <span>Different Areas</span>
                 </div>
             </div>
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3>12</h3>
+                    <h3 class="num"><?php echo $show_statistic_apart_cart['NUM_AGENT'];?></h3>
                     <span>Different Agents</span>
                 </div>
             </div>
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3>8,567</h3>
+                    <h3 class="num"><?php echo $show_statistic_apart_cart['NUM_BEDROOM'];?></h3>
                     <span>Bedroom Styles</span>
                 </div>
             </div>
@@ -102,7 +104,7 @@
                             <p><?php echo $result['SQM'];?>m<sup>2</sup></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Details</a>|<a href="cartEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
+                            <a href="cartEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
                         <?php
