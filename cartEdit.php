@@ -37,9 +37,9 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add apartment cart</div>
+                <div class="title">Edit Apartment Cart</div>
 
-                <form action="cartEdit.php" method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
-                            <input type="text" value="<?php echo $cart_by_id['SQM'] ?>" name="sqm" placeholder="Enter aparment area" required>
+                            <input type="number" value="<?php echo $cart_by_id['SQM'] ?>" name="sqm" placeholder="Enter aparment area" required>
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
@@ -85,9 +85,9 @@
                         </div>     
                     </div>
                     <?php 
-                    if(isset($cartAdd))
+                    if(isset($apart_cart_edit))
                     {
-                        echo $cartAdd;
+                        echo $apart_cart_edit;
                     }
                     ?>
                     <div class="button">

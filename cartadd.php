@@ -29,7 +29,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add apartment cart</div>
+                <div class="title">Add Apartment Cart</div>
 
                 <form action="cartAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
