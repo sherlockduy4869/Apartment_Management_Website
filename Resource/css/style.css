@@ -235,10 +235,8 @@ body{
 }
 
 .board .people{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
+
+    text-align: start;
 }
 
 table{

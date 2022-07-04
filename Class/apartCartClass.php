@@ -17,7 +17,7 @@
         }
 
         //Insert apartment cart
-        public function insert_apart_cart($data, $files){
+        public function insert_apart_cart($data){
 
             $apartment_code = mysqli_real_escape_string($this->db->link, $data['apartment_code']);
             $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
@@ -27,31 +27,8 @@
             $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
 
-
-            $permited = array('jpg','jpeg','png','jfif');
-            $file_name = $_FILES['image_owner']['name'];
-            $file_size = $_FILES['image_owner']['size'];
-            $file_temp = $_FILES['image_owner']['tmp_name'];
-            
-            $div = explode('.',$file_name);
-            $file_ext = strtolower(end($div));
-
-            $upload_image ="Uploads/".$file_name;
-            //$upload_image = $_SERVER['DOCUMENT_ROOT']."/Uploads/".$file_name;
-
-            if($file_size > 1000000){
-                $alert = "<span class = 'addError'>Image size should be less than 1MB</span> <br>";
-                return $alert;
-            }
-            elseif (in_array($file_ext,$permited) === false){
-                $alert = "<span class = 'addError'>You can up load only:-".implode(',',$permited)."</span> <br>" ;
-                return $alert;
-            }
-            
-            move_uploaded_file($file_temp,$upload_image);
-
-            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENT_NAME,AREA,HOUSE_OWNER,PHONE,BEDROOM,SQM,IMG_OWNER) 
-                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$bedroom','$sqm','$file_name')";
+            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENT_NAME,AREA,HOUSE_OWNER,PHONE,BEDROOM,SQM) 
+                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$bedroom','$sqm')";
             $result = $this->db->insert($query);
 
             if($result){
@@ -84,6 +61,36 @@
             $query = "SELECT * FROM tbl_apartment_cart WHERE APARTMENT_CODE = '$cart_id'";
             $result = $this->db->select($query)->fetch_assoc();
             return $result;
+        }
+
+        public function edit_apart_cart($data,$cart_id){
+
+            $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
+            $area = mysqli_real_escape_string($this->db->link, $data['area']);
+            $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
+            $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
+            $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
+            $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
+
+
+            $query = "UPDATE tbl_apartment_cart SET
+                    AGENT_NAME = '$agent_name'
+                    ,AREA = '$area'
+                    ,HOUSE_OWNER = '$house_owner'
+                    ,PHONE = '$phone_owner'
+                    ,BEDROOM = '$bedroom'
+                    ,SQM = '$sqm'
+                    WHERE APARTMENT_CODE ='$cart_id'";
+
+            $result = $this->db->update($query);
+
+            if($result){
+                $alert = "<span class = 'addSuccess'>Edit apartment cart successfully</span><br>";
+                return $alert;
+            }
+
+            $alert = "<span class = 'addError'>Can not edit apartment cart</span> <br>";
+            return $alert;
         }
     }
 ?>

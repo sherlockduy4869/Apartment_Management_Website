@@ -8,7 +8,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-        $cartAdd = $apartCart->insert_apart_cart($_POST, $_FILES);
+        $cartAdd = $apartCart->insert_apart_cart($_POST);
     }
 ?>
 <section id="interface">
@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="title">Add apartment cart</div>
 
-                <form action="cartadd.php" method="POST" enctype="multipart/form-data">
+                <form action="cartAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
@@ -44,7 +44,6 @@
                         <div class="input-box">
                             <span class="details">Area</span>
                             <select name="area">
-                                <option value="">--Area--</option>
                                 <option value="Vinhomes Golden River">Vinhomes Golden River</option>
                                 <option value="Vinhomes Central Park">Vinhomes Central Park</option>
                                 <option value="Estella Height">Estella Height</option>
@@ -55,7 +54,6 @@
                         <div class="input-box">
                             <span class="details">Bedroom</span>
                             <select name="bedroom">
-                                <option value="">--Bedroom--</option>
                                 <option value="1 Bed">1 Bed</option>
                                 <option value="2 Bed">2 Bed</option>
                                 <option value="2 Bed + 1">2 Bed + 1</option>
@@ -67,7 +65,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
-                            <input type="text" name="sqm" placeholder="Enter aparment area" required>
+                            <input type="number" name="sqm" placeholder="Enter aparment area" required>
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
@@ -76,11 +74,7 @@
                         <div class="input-box">
                             <span class="details">Phone</span>
                             <input type="text" name="phone_owner" placeholder="Enter phone number" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">House Owner Image</span>
-                            <input type="file" name="image_owner" required>
-                        </div>        
+                        </div>     
                     </div>
                     <?php 
                     if(isset($cartAdd))

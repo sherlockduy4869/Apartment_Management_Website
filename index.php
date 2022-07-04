@@ -90,7 +90,6 @@
                             <p><?php echo $result['AGENT_NAME'];?> - <?php echo $result['AREA'];?></p>
                         </td>
                         <td class="people">
-                            <img src="Uploads/<?php echo $result['IMG_OWNER'];?>">
                             <div class="people-de">
                                 <h5><?php echo $result['HOUSE_OWNER'];?></h5>
                                 <p><?php echo $result['PHONE'];?></p>

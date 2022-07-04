@@ -11,7 +11,13 @@
         $cart_id = $_GET['editID'];
         $cart_by_id = $apartCart->get_apart_cart_by_id($cart_id);
     }
-    
+?>
+<?php
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {             
+        $apart_cart_edit = $apartCart->edit_apart_cart($_POST,$cart_id);
+    }
+
 ?>
 <section id="interface">
     <div class="navigation">
@@ -33,11 +39,11 @@
             <div class="container">
                 <div class="title">Add apartment cart</div>
 
-                <form action="cartadd.php" method="POST" enctype="multipart/form-data">
+                <form action="cartEdit.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input type="text" value="<?php echo $cart_by_id['APARTMENT_CODE'] ?>" name="apartment_code" placeholder="Enter apartment code" required>
+                            <input disabled type="text" value="<?php echo $cart_by_id['APARTMENT_CODE'] ?>" name="apartment_code" placeholder="Enter apartment code">
                         </div>
                         <div class="input-box">
                             <span class="details">Agent name</span>
@@ -46,7 +52,6 @@
                         <div class="input-box">
                             <span class="details">Area</span>
                             <select name="area">
-                                <option value="">--Area--</option>
                                 <option <?php if($cart_by_id['AREA'] == "Vinhomes Golden River") {echo "SELECTED";} ?> value="Vinhomes Golden River">Vinhomes Golden River</option>
                                 <option <?php if($cart_by_id['AREA'] == "Vinhomes Central Park") {echo "SELECTED";} ?> value="Vinhomes Central Park">Vinhomes Central Park</option>
                                 <option <?php if($cart_by_id['AREA'] == "Estella Height") {echo "SELECTED";} ?> value="Estella Height">Estella Height</option>
@@ -57,7 +62,6 @@
                         <div class="input-box">
                             <span class="details">Bedroom</span>
                             <select name="bedroom">
-                                <option <?php if($cart_by_id['BEDROOM'] == "Vinhomes Golden River") {echo "SELECTED";} ?> value="">--Bedroom--</option>
                                 <option <?php if($cart_by_id['BEDROOM'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
                                 <option <?php if($cart_by_id['BEDROOM'] == "2 Bed") {echo "SELECTED";} ?> value="2 Bed">2 Bed</option>
                                 <option <?php if($cart_by_id['BEDROOM'] == "2 Bed + 1") {echo "SELECTED";} ?> value="2 Bed + 1">2 Bed + 1</option>
@@ -78,12 +82,7 @@
                         <div class="input-box">
                             <span class="details">Phone</span>
                             <input type="text" value="<?php echo $cart_by_id['PHONE'] ?>" name="phone_owner" placeholder="Enter phone number" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">House Owner Image</span>
-                            <input type="file" name="image_owner" required>
-                            <img src="Uploads/<?php echo $cart_by_id['IMG_OWNER']; ?>" width="45px">
-                        </div>        
+                        </div>     
                     </div>
                     <?php 
                     if(isset($cartAdd))
@@ -92,7 +91,7 @@
                     }
                     ?>
                     <div class="button">
-                        <input class="btn btn-primary" name="submit" type="submit" value="ADDING">
+                        <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
                     </div>
                 </form>
 
