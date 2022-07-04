@@ -70,5 +70,13 @@
             $result = $this->db->insert($query);
             return $result;
         }
+
+        //Delete apartment cart 
+        public function delete_apart_cart($delID){
+            $query = "DELETE FROM tbl_apartment_cart WHERE APARTMENT_CODE = '$delID'";
+            $result = $this->db->delete($query);
+
+            header('Location:index.php');
+        }
     }
 ?>

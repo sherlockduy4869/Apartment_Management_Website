@@ -6,6 +6,11 @@
 <?php
     $apartCart = new apartcart();
 
+    if(isset($_GET['delID']))
+    {
+        $delID = $_GET['delID'];
+        $delApartCart = $apartCart->delete_apart_cart($delID);
+    }  
 ?>
 <section id="interface">
     
@@ -95,10 +100,10 @@
                             <p><?php echo $result['BEDROOM'];?></p>
                         </td>
                         <td class="role">
-                            <p><?php echo $result['SQM'];?></p>
+                            <p><?php echo $result['SQM'];?>m<sup>2</sup></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Details</a>|<a href="#">Edit</a>|<a href="#">Delete</a>
+                            <a href="#">Details</a>|<a href="#">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
                         <?php
