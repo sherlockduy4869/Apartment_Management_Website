@@ -8,7 +8,7 @@
         <div class="items">
             <li class="clickable"><i class="fa-solid fa-plus"></i><a href="addApart.php">Add Apart</a></li>
             <li class="clickable"><i class="fas fa-cart-plus"></i><a href="index.php">Apart Cart</a></li>
-            <li class="clickable"><i class="fas fa-house"></i><a href="#">Apart Rented</a></li>
+            <li class="clickable"><i class="fas fa-house"></i><a href="apartRented.php">Apart Rented</a></li>
             <li class="clickable"><i class="fas fa-sack-dollar"></i><a href="#">Apart Tax</a></li>
             <li class="clickable"><i class="fas fa-dollar-sign"></i><a href="#">Apart Finance</a></li>
             <li class="clickable"><i class="fas fa-comments"></i><a href="#">Apart Contract</a></li>

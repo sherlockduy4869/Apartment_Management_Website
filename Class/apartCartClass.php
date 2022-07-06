@@ -43,7 +43,7 @@
 
         //Show apartment cart list
         public function show_apart_cart_list(){
-            $query = "SELECT * FROM tbl_apartment_cart";
+            $query = "SELECT * FROM tbl_apartment_cart WHERE STATUS = 'AVAILABLE'";
             $result = $this->db->select($query);
             return $result;
         }
@@ -54,7 +54,8 @@
                              COUNT(AGENT_NAME) as NUM_AGENT,
                              COUNT(AREA) as NUM_AREA,  
                              COUNT(BEDROOM) as NUM_BEDROOM
-                             FROM tbl_apartment_cart";
+                             FROM tbl_apartment_cart
+                             WHERE STATUS = 'AVAILABLE'";
             $result = $this->db->select($query)->fetch_assoc();
             return $result;
         }
