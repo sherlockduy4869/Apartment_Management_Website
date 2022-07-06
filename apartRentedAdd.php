@@ -1,23 +1,15 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartCartClass.php';
 ?>
-<?php
-    $apartCart = new apartcart();
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-
-        $cartAdd = $apartCart->insert_apart_cart($_POST);
-    }
-?>
 <section id="interface">
     <div class="navigation">
             <div class="n1">
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT CART</span>
+                <span>APARTMENT RENTED</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -29,7 +21,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add Apartment Cart</div>
+                <div class="title">Add Apartment Rented</div>
 
                 <form action="cartAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
@@ -52,40 +44,18 @@
                             </select>
                         </div>
                         <div class="input-box">
-                            <span class="details">Bedroom</span>
-                            <select name="bedroom">
-                                <option value="1 Bed">1 Bed</option>
-                                <option value="2 Bed">2 Bed</option>
-                                <option value="2 Bed + 1">2 Bed + 1</option>
-                                <option value="3 Bed">3 Bed</option>
-                                <option value="3 Bed + 1">3 Bed + 1</option>
-                                <option value="4 Bed">4 Bed</option>
-                                <option value="4 Bed + 1">4 Bed + 1</option>
-                            </select>
+                            <span class="details">Tax Code</span>
+                            <input type="text" name="sqm" placeholder="Enter aparment area" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">SQM</span>
-                            <input type="number" name="sqm" placeholder="Enter aparment area" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">House owner</span>
+                            <span class="details">Tax Declaration Form</span>
                             <input type="text" name="house_owner" placeholder="Enter house owner name" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">Phone</span>
+                            <span class="details">Tax Department</span>
                             <input type="text" name="phone_owner" placeholder="Enter phone number" required>
-                        </div>   
-                        <div class="input-box">
-                            <span class="details">Email</span>
-                            <input type="email" name="email_owner" placeholder="Enter email" required>
-                        </div>  
+                        </div>     
                     </div>
-                    <?php 
-                    if(isset($cartAdd))
-                    {
-                        echo $cartAdd;
-                    }
-                    ?>
                     <div class="button">
                         <input class="btn btn-primary" name="submit" type="submit" value="ADDING">
                     </div>

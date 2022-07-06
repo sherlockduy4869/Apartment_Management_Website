@@ -57,11 +57,6 @@
                         <th>House Owner</th>
                         <th>Tax Info</th>
                         <th>Duration</th>
-                        <th>Tax Amount</th>
-                        <th>Tax Declare Fee</th>
-                        <th>Management Fee</th>
-                        <th>Refund Tenant</th>
-                        <th>Cleaning Fee</th>
                         <th>Total</th>
                         <th>Customization</th>
                     </tr>
@@ -85,21 +80,6 @@
                         </td>
                         <td class="active">
                             <p>03/04/2022 - 09/09/2022</p>
-                        </td>
-                        <td class="active">
-                            <p>200.000</p>
-                        </td>
-                        <td class="active">
-                            <p>200.000</p>
-                        </td>
-                        <td class="active">
-                            <p>200.000</p>
-                        </td>
-                        <td class="active">
-                            <p>200.000</p>
-                        </td>
-                        <td class="active">
-                            <p>200.000</p>
                         </td>
                         <td class="active">
                             <p>1.000.000</p>

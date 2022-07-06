@@ -94,7 +94,7 @@
                         <td class="people">
                             <div class="people-de">
                                 <h5><?php echo $result['HOUSE_OWNER'];?></h5>
-                                <p><?php echo $result['PHONE'];?></p>
+                                <p><?php echo $result['PHONE'];?>-<?php echo $result['EMAIL'];?></p>
                             </div>
                         </td>
                         <td class="active">

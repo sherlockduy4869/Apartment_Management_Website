@@ -26,9 +26,10 @@
             $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
             $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
+            $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
 
-            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENT_NAME,AREA,HOUSE_OWNER,PHONE,BEDROOM,SQM) 
-                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$bedroom','$sqm')";
+            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENT_NAME,AREA,HOUSE_OWNER,PHONE,EMAIL,BEDROOM,SQM) 
+                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm')";
             $result = $this->db->insert($query);
 
             if($result){
@@ -83,13 +84,14 @@
             $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
             $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
-
+            $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
 
             $query = "UPDATE tbl_apartment_cart SET
                     AGENT_NAME = '$agent_name'
                     ,AREA = '$area'
                     ,HOUSE_OWNER = '$house_owner'
                     ,PHONE = '$phone_owner'
+                    ,EMAIL = '$email_owner'
                     ,BEDROOM = '$bedroom'
                     ,SQM = '$sqm'
                     WHERE APARTMENT_CODE ='$cart_id'";

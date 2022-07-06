@@ -28,7 +28,7 @@
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
                 <div>
-                    <a href="#">Add Apart Rented</a>
+                    <a href="apartRentedAdd.php">Add Apart Rented</a>
                 </div>
             </div>
             <div class="val-box clickable">

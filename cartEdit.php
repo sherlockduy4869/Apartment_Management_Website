@@ -83,6 +83,10 @@
                             <span class="details">Phone</span>
                             <input type="text" value="<?php echo $cart_by_id['PHONE'] ?>" name="phone_owner" placeholder="Enter phone number" required>
                         </div>     
+                        <div class="input-box">
+                            <span class="details">Phone</span>
+                            <input type="email" value="<?php echo $cart_by_id['EMAIL'] ?>" name="email_owner" placeholder="Enter email" required>
+                        </div>     
                     </div>
                     <?php 
                     if(isset($apart_cart_edit))
