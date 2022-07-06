@@ -27,7 +27,7 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input type="text" name="apartment_code" placeholder="Enter apartment code" required>
+                            <input  type="text" name="apartment_code" placeholder="Enter apartment code" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Agent name</span>
@@ -45,16 +45,60 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Code</span>
-                            <input type="text" name="sqm" placeholder="Enter aparment area" required>
+                            <input type="text" name="tax_code" placeholder="Enter tax code" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Declaration Form</span>
-                            <input type="text" name="house_owner" placeholder="Enter house owner name" required>
+                            <input type="text" name="tax_declare_form" placeholder="Enter tax declaration form" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Department</span>
-                            <input type="text" name="phone_owner" placeholder="Enter phone number" required>
+                            <input type="text" name="tax_department" placeholder="Enter tax department" required>
                         </div>     
+                        <div class="input-box">
+                            <span class="details">Payment Term</span>
+                            <input type="number" value="0" min="0" name="payment_term" required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Renting Fee/Month</span>
+                            <input type="number" value="0" min="0" name="renting_fee_per_month" required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Tax Fee</span>
+                            <input class="formatNum" type="number" value="0" min="0" name="tax_fee" required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Tax Declare Fee</span>
+                            <input class="formatNum" value="0" min="0" type="number" name="tax_declare_fee" required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Management Fee</span>
+                            <input class="formatNum" value="0" min="0" type="number" name="management_fee" required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Cleaning Fee</span>
+                            <input class="formatNum" type="number" value="0" min="0" name="cleaning_fee" required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Refund For Tenant</span>
+                            <input class="formatNum" type="number" value="0" min="0" name="refund_for_tenant" required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Total Amount</span>
+                            <input class="totalAmount" disabled type="number" name="total_amount">
+                        </div>                  
+                        <div class="input-box">
+                            <span class="details">From</span>
+                            <input type="date" name="from"required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">To</span>
+                            <input type="date" name="to" required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Day Remind Negotiate</span>
+                            <input type="number" value="0" min="0" name="day_remind_negotiate" required>
+                        </div> 
                     </div>
                     <div class="button">
                         <input class="btn btn-primary" name="submit" type="submit" value="ADDING">

@@ -1,5 +1,22 @@
 $(document).ready(function () {
 
+
+    //Set
+    $(".formatNum").change(function(){
+        var totalAmount = 0;
+        $(".formatNum").each(function(){
+            if($(this).val() == ""){
+                $(this).val(0);
+            }
+        })
+        $(".formatNum").each(function(){
+            totalAmount = totalAmount + parseFloat($(this).val()) ;
+        })
+        $(".totalAmount").val(totalAmount);
+    });
+
+
+
     //Tracking menu siderbar
     $('.items li').click(function () { 
         $(this).addClass("activing").siblings().removeClass("activing");
@@ -20,4 +37,6 @@ $(document).ready(function () {
 
     //Jquery animate counting
     $(".num").counterUp();
+
+    
 });
