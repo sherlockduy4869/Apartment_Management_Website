@@ -1,44 +1,5 @@
 $(document).ready(function () {
 
-    //Format input form adding apartment rented
-    new Cleave('.renting_fee_per_month', {
-        numeral: true,
-        numeralThousandGroupStyle: 'thousand'
-    });
-
-    new Cleave('.tax_fee', {
-        numeral: true,
-        numeralThousandGroupStyle: 'thousand'
-    });
-
-    new Cleave('.tax_declare_fee', {
-        numeral: true,
-        numeralThousandGroupStyle: 'thousand'
-    });
-    new Cleave('.management_fee', {
-        numeral: true,
-        numeralThousandGroupStyle: 'thousand'
-    });
-    new Cleave('.cleaning_fee', {
-        numeral: true,
-        numeralThousandGroupStyle: 'thousand'
-    });
-    new Cleave('.refund_for_tenant', {
-        numeral: true,
-        numeralThousandGroupStyle: 'thousand'
-    });
-
-    new Cleave('.from', {
-        date: true,
-        delimiter: '-',
-        datePattern: ['d', 'm', 'Y']
-    });
-
-    new Cleave('.to', {
-        date: true,
-        delimiter: '-',
-        datePattern: ['d', 'm', 'Y']
-    });
 
     // //Set
     // $(".formatNum").change(function(){
@@ -77,5 +38,44 @@ $(document).ready(function () {
     //Jquery animate counting
     $(".num").counterUp();
 
+        //Format input form adding apartment rented
+        new Cleave('.renting_fee_per_month', {
+            numeral: true,
+            numeralThousandGroupStyle: 'thousand'
+        });
     
+        new Cleave('.tax_fee', {
+            numeral: true,
+            numeralThousandGroupStyle: 'thousand'
+        });
+    
+        new Cleave('.tax_declare_fee', {
+            numeral: true,
+            numeralThousandGroupStyle: 'thousand'
+        });
+        new Cleave('.management_fee', {
+            numeral: true,
+            numeralThousandGroupStyle: 'thousand'
+        });
+        new Cleave('.cleaning_fee', {
+            numeral: true,
+            numeralThousandGroupStyle: 'thousand'
+        });
+        new Cleave('.refund_for_tenant', {
+            numeral: true,
+            numeralThousandGroupStyle: 'thousand'
+        });
+    
+        new Cleave('.from', {
+            date: true,
+            delimiter: '-',
+            datePattern: ['d', 'm', 'Y']
+        });
+    
+        new Cleave('.to', {
+            date: true,
+            delimiter: '-',
+            datePattern: ['d', 'm', 'Y']
+        });
+     
 });

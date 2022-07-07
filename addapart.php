@@ -21,27 +21,19 @@
         <div class="values">
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <div>
-                    <a href="cartAdd.php">Add Apart Cart</a>
-                </div>
+                <a href="cartAdd.php">Add Apart Cart</a>
             </div>
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <div>
-                    <a href="apartRentedAdd.php">Add Apart Rented</a>
-                </div>
+                <a href="apartRentedAdd.php">Add Apart Rented</a>
             </div>
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <div>
-                    <a href="#">Add Apart Selling</a>
-                </div>
+                <a href="#">Add Apart Selling</a>
             </div>
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <div>
-                    <a href="#">Add Apart Not Rented</a>
-                </div>
+                <a href="#">Add Apart Not Rented</a>
             </div>
         </div>
 </section>
