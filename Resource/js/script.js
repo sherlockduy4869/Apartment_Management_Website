@@ -1,21 +1,59 @@
 $(document).ready(function () {
 
-
-    //Set
-    $(".formatNum").change(function(){
-        var totalAmount = 0;
-        $(".formatNum").each(function(){
-            if($(this).val() == ""){
-                $(this).val(0);
-            }
-        })
-        $(".formatNum").each(function(){
-            totalAmount = totalAmount + parseFloat($(this).val()) ;
-        })
-        $(".totalAmount").val(totalAmount);
+    new Cleave('.renting_fee_per_month', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
     });
 
+    new Cleave('.tax_fee', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
 
+    new Cleave('.tax_declare_fee', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+    new Cleave('.management_fee', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+    new Cleave('.cleaning_fee', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+    new Cleave('.refund_for_tenant', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+
+    new Cleave('.from', {
+        date: true,
+        delimiter: '-',
+        datePattern: ['d', 'm', 'Y']
+    });
+
+    new Cleave('.to', {
+        date: true,
+        delimiter: '-',
+        datePattern: ['d', 'm', 'Y']
+    });
+
+    // //Set
+    // $(".formatNum").change(function(){
+    //     var totalAmount = 0;
+    //     $(".formatNum").each(function(){
+    //         if($(this).val() == ""){
+    //             $(this).val(0);
+    //         }
+    //     })
+    //     $(".formatNum").each(function(){
+    //         totalAmount = totalAmount + parseInt(($(this).val()));
+    //     })
+        
+    //     $(".totalAmount").val(new Intl.NumberFormat('en-IN').format(totalAmount));
+    // });
+    
 
     //Tracking menu siderbar
     $('.items li').click(function () { 

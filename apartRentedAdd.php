@@ -1,8 +1,16 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartRentedClass.php';
 ?>
+<?php
+    $apartrented = new apartrented();
 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+
+        $apartRentedAdd = $apartrented->insert_apart_rented($_POST);
+    }
+?>
 <section id="interface">
     <div class="navigation">
             <div class="n1">
@@ -23,7 +31,7 @@
             <div class="container">
                 <div class="title">Add Apartment Rented</div>
 
-                <form action="cartAdd.php" method="POST" enctype="multipart/form-data">
+                <form action="apartRentedAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
@@ -61,45 +69,47 @@
                         </div> 
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
-                            <input type="number" value="0" min="0" name="renting_fee_per_month" required>
+                            <input class="renting_fee_per_month" type="text" min="0" name="renting_fee_per_month" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Tax Fee</span>
-                            <input class="formatNum" type="number" value="0" min="0" name="tax_fee" required>
+                            <input class="tax_fee" min="0" type="text" name="tax_fee" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Tax Declare Fee</span>
-                            <input class="formatNum" value="0" min="0" type="number" name="tax_declare_fee" required>
+                            <input class="tax_declare_fee" min="0" type="text" name="tax_declare_fee" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Management Fee</span>
-                            <input class="formatNum" value="0" min="0" type="number" name="management_fee" required>
+                            <input class="management_fee" min="0" type="text" name="management_fee" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Cleaning Fee</span>
-                            <input class="formatNum" type="number" value="0" min="0" name="cleaning_fee" required>
+                            <input class="cleaning_fee" type="text" min="0" name="cleaning_fee" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Refund For Tenant</span>
-                            <input class="formatNum" type="number" value="0" min="0" name="refund_for_tenant" required>
-                        </div> 
+                            <input class="refund_for_tenant" type="text" min="0" name="refund_for_tenant" required>
+                        </div>            
                         <div class="input-box">
-                            <span class="details">Total Amount</span>
-                            <input class="totalAmount" disabled type="number" name="total_amount">
-                        </div>                  
+                            <span class="details">Day Remind Negotiate</span>
+                            <input type="number" min="0" name="day_remind_negotiate" required>
+                        </div>      
                         <div class="input-box">
                             <span class="details">From</span>
-                            <input type="date" name="from"required>
+                            <input class="from" type="text" name="from"  required>
                         </div> 
                         <div class="input-box">
                             <span class="details">To</span>
-                            <input type="date" name="to" required>
-                        </div> 
-                        <div class="input-box">
-                            <span class="details">Day Remind Negotiate</span>
-                            <input type="number" value="0" min="0" name="day_remind_negotiate" required>
-                        </div> 
+                            <input class="to" type="text" name="to" required>
+                        </div>  
                     </div>
+                    <?php 
+                    if(isset($apartRentedAdd))
+                    {
+                        echo $apartRentedAdd;
+                    }
+                    ?>
                     <div class="button">
                         <input class="btn btn-primary" name="submit" type="submit" value="ADDING">
                     </div>
