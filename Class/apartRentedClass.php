@@ -64,5 +64,12 @@
             }
         }
 
+        //Show aparment rented list
+        public function show_apart_rented_list(){
+            $query = "SELECT * FROM tbl_apartment_rented";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
     }
 ?>

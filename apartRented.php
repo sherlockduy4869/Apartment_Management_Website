@@ -1,8 +1,19 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartRentedClass.php';
 ?>
+<?php
+    $apartRented = new apartrented();
 
+    // if(isset($_GET['delID']))
+    // {
+    //     $delID = $_GET['delID'];
+    //     $delApartCart = $apartCart->delete_apart_cart($delID);
+    // }  
+
+    //$show_statistic_apart_rented = $apartRented->show_apart_cart_statistic();
+?>
 <section id="interface">
         <div class="navigation">
             <div class="n1">
@@ -62,32 +73,50 @@
                     </tr>
                 </thead>
                 <tbody>
+                        <?php
+                            $apartRentedList = $apartRented->show_apart_rented_list();
+                            
+                            if($apartRentedList)
+                            {   
+                                $ID = 0;
+                                $totalAmount = 0;
+                                while($result = $apartRentedList->fetch_assoc())
+                                {
+                                    $ID++;
+                                    $totalAmount = $result['TAX_FEE'] + $result['TAX_DECLARE'] + $result['TAX_MANAGEMENT'] 
+                                                + $result['REFUND_FOR_TENANT'] + $result['CLEANING_FEE'];
+                                    
+                        ?>
                     <tr>
-                        <td>1</td>
+                        <td><?php echo $ID ?></td>
                         <td class="people">
                             <div class="people-de">
-                                <h5>AC.56.DA</h5>
-                                <p>Agent Duy - Vinhomes Golden River</p>
+                                <h5><?php echo $result['APARTMENT_CODE'];?></h5>
+                                <p><?php echo $result['AGENCY_NAME'];?> - <?php echo $result['AREA_APART'];?></p>
                             </div>
                         </td>
                         <td class="people-des">
-                            <h5>Tran Dong Giang</h5>
-                            <p>0977647866 - giang@gmail.com</p>
+                            <h5><?php echo $result['HOUSE_OWNER'];?></h5>
+                            <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
                         </td>
                         <td class="people-des">
-                            <h5>TC0978677</h5>
-                            <p>Online - CA Quan 3</p>
+                            <h5><?php echo $result['TAX_CODE'];?></h5>
+                            <p><?php echo $result['TAX_DECLARATION_FORM'];?>-<?php echo $result['TAX_APARTMENT'];?></p>
                         </td>
                         <td class="active">
-                            <p>03/04/2022 - 09/09/2022</p>
+                            <p><?php echo $result['START_DAY'];?>-<?php echo $result['END_DAY'];?></p>
                         </td>
                         <td class="active">
-                            <p>1.000.000</p>
+                            <p><?php echo $totalAmount; ?></p>
                         </td>
                         <td class="edit">
                             <a href="#">Details</a>|<a href="#">Edit</a>|<a href="#">Delete</a>
                         </td>
                     </tr>
+                    <?php
+                                }
+                            }
+                        ?>
                 </tbody>
             </table>
         </div>
