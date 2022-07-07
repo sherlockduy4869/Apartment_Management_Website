@@ -70,4 +70,15 @@ public function insert($query){
     }
    }
  
+   // Execute data
+ public function execute($query){
+  $execute_row = $this->link->query($query) or 
+    die($this->link->error.__LINE__);
+  if($execute_row){
+    return $execute_row;
+  } else {
+    return false;
+   }
+  }
+
 }

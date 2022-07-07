@@ -89,12 +89,12 @@
                         <td><?php echo $ID ?></td>
                         <td class="people-des">
                             <h5><?php echo $result['APARTMENT_CODE'];?></h5>
-                            <p><?php echo $result['AGENT_NAME'];?> - <?php echo $result['AREA'];?></p>
+                            <p><?php echo $result['DAILY_NAME'];?> - <?php echo $result['AREA_APART'];?></p>
                         </td>
                         <td class="people">
                             <div class="people-de">
                                 <h5><?php echo $result['HOUSE_OWNER'];?></h5>
-                                <p><?php echo $result['PHONE'];?>-<?php echo $result['EMAIL'];?></p>
+                                <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
                             </div>
                         </td>
                         <td class="active">

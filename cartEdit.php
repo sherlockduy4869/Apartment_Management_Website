@@ -47,16 +47,16 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Agent name</span>
-                            <input type="text" value="<?php echo $cart_by_id['AGENT_NAME'] ?>" name="agent_name" placeholder="Enter agent name" required>
+                            <input type="text" value="<?php echo $cart_by_id['DAILY_NAME'] ?>" name="agent_name" placeholder="Enter agent name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
                             <select name="area">
-                                <option <?php if($cart_by_id['AREA'] == "Vinhomes Golden River") {echo "SELECTED";} ?> value="Vinhomes Golden River">Vinhomes Golden River</option>
-                                <option <?php if($cart_by_id['AREA'] == "Vinhomes Central Park") {echo "SELECTED";} ?> value="Vinhomes Central Park">Vinhomes Central Park</option>
-                                <option <?php if($cart_by_id['AREA'] == "Estella Height") {echo "SELECTED";} ?> value="Estella Height">Estella Height</option>
-                                <option <?php if($cart_by_id['AREA'] == "Estella") {echo "SELECTED";} ?> value="Estella">Estella</option>
-                                <option <?php if($cart_by_id['AREA'] == "Celesta") {echo "SELECTED";} ?> value="Celesta">Celesta</option>
+                                <option <?php if($cart_by_id['AREA_APART'] == "Vinhomes Golden River") {echo "SELECTED";} ?> value="Vinhomes Golden River">Vinhomes Golden River</option>
+                                <option <?php if($cart_by_id['AREA_APART'] == "Vinhomes Central Park") {echo "SELECTED";} ?> value="Vinhomes Central Park">Vinhomes Central Park</option>
+                                <option <?php if($cart_by_id['AREA_APART'] == "Estella Height") {echo "SELECTED";} ?> value="Estella Height">Estella Height</option>
+                                <option <?php if($cart_by_id['AREA_APART'] == "Estella") {echo "SELECTED";} ?> value="Estella">Estella</option>
+                                <option <?php if($cart_by_id['AREA_APART'] == "Celesta") {echo "SELECTED";} ?> value="Celesta">Celesta</option>
                             </select>
                         </div>
                         <div class="input-box">
@@ -81,11 +81,11 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input type="text" value="<?php echo $cart_by_id['PHONE'] ?>" name="phone_owner" placeholder="Enter phone number" required>
+                            <input type="text" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>" name="phone_owner" placeholder="Enter phone number" required>
                         </div>     
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input type="email" value="<?php echo $cart_by_id['EMAIL'] ?>" name="email_owner" placeholder="Enter email" required>
+                            <input type="email" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>" name="email_owner" placeholder="Enter email" required>
                         </div>     
                     </div>
                     <?php 

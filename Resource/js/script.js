@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    //Format input form adding apartment rented
     new Cleave('.renting_fee_per_month', {
         numeral: true,
         numeralThousandGroupStyle: 'thousand'

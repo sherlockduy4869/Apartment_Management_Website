@@ -28,7 +28,7 @@
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
             $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
 
-            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENT_NAME,AREA,HOUSE_OWNER,PHONE,EMAIL,BEDROOM,SQM) 
+            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,DAILY_NAME,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM) 
                   VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm')";
             $result = $this->db->insert($query);
 
@@ -44,7 +44,7 @@
 
         //Show apartment cart list
         public function show_apart_cart_list(){
-            $query = "SELECT * FROM tbl_apartment_cart WHERE STATUS = 'AVAILABLE'";
+            $query = "SELECT * FROM tbl_apartment_cart WHERE STATUS_APART = 'AVAILABLE'";
             $result = $this->db->select($query);
             return $result;
         }
@@ -52,11 +52,11 @@
         //Show apartment cart list
         public function show_apart_cart_statistic(){
             $query = "SELECT COUNT(APARTMENT_CODE) as NUM_APART,
-                             COUNT(AGENT_NAME) as NUM_AGENT,
-                             COUNT(AREA) as NUM_AREA,  
+                             COUNT(DAILY_NAME) as NUM_AGENT,
+                             COUNT(AREA_APART) as NUM_AREA,  
                              COUNT(BEDROOM) as NUM_BEDROOM
                              FROM tbl_apartment_cart
-                             WHERE STATUS = 'AVAILABLE'";
+                             WHERE STATUS_APART = 'AVAILABLE'";
             $result = $this->db->select($query)->fetch_assoc();
             return $result;
         }
@@ -87,11 +87,11 @@
             $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
 
             $query = "UPDATE tbl_apartment_cart SET
-                    AGENT_NAME = '$agent_name'
-                    ,AREA = '$area'
+                    DAILY_NAME = '$agent_name'
+                    ,AREA_APART = '$area'
                     ,HOUSE_OWNER = '$house_owner'
-                    ,PHONE = '$phone_owner'
-                    ,EMAIL = '$email_owner'
+                    ,PHONE_OWNER = '$phone_owner'
+                    ,EMAIL_OWNER = '$email_owner'
                     ,BEDROOM = '$bedroom'
                     ,SQM = '$sqm'
                     WHERE APARTMENT_CODE ='$cart_id'";

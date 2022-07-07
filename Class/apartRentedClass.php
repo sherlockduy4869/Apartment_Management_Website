@@ -19,8 +19,8 @@
         //Insert apartment rented
         public function insert_apart_rented($data){
             $apartment_code = mysqli_real_escape_string($this->db->link, $data['apartment_code']);
-            $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
-            $area = mysqli_real_escape_string($this->db->link, $data['area']);
+            // $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
+            // $area = mysqli_real_escape_string($this->db->link, $data['area']);
             $tax_code = mysqli_real_escape_string($this->db->link, $data['tax_code']);
             $tax_declare_form = mysqli_real_escape_string($this->db->link, $data['tax_declare_form']);
             $tax_department = mysqli_real_escape_string($this->db->link, $data['tax_department']);
@@ -42,11 +42,17 @@
             $fee_cleaning = str_replace(",","",$cleaning_fee);
             $tenant_refund = str_replace(",","",$refund_for_tenant);
 
+            $start_date = date("Y-m-d", strtotime($from));  
+            $end_date = date("Y-m-d", strtotime($to)); 
 
             $query = "INSERT INTO tbl_apartment_rented
-            (APARTMENT_CODE,AGENT_NAME,AREA,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,START_DAY,END_DAY,DAY_REMIND,PERIOD) 
-                  VALUES('$apartment_code','$agent_name','$area','$tax_code','$tax_declare_form','$tax_department','$rent_fee_per_month','$fee_tax','$declare_fee_tax','$fee_management','$tenant_refund','$fee_cleaning','$from','$to','$day_remind_negotiate','$payment_term')";
+            (APARTMENT_CODE,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,START_DAY,END_DAY,DAY_REMIND,PERIOD) 
+                  VALUES('$apartment_code','$tax_code','$tax_declare_form','$tax_department','$rent_fee_per_month','$fee_tax','$declare_fee_tax','$fee_management','$tenant_refund','$fee_cleaning','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
+            
+            $query_house_owner = "CALL ADDING_HOUSE_OWNER_INFO('$apartment_code')";
+
             $result = $this->db->insert($query);
+            $result_house_owner = $this->db->execute($query_house_owner);
 
             if($result){
                 $alert = "<span class = 'addSuccess'>Add apartment rented succesfully</span> <br>";

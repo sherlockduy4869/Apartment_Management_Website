@@ -38,20 +38,6 @@
                             <input  type="text" name="apartment_code" placeholder="Enter apartment code" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">Agent name</span>
-                            <input type="text" name="agent_name" placeholder="Enter agent name" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Area</span>
-                            <select name="area">
-                                <option value="Vinhomes Golden River">Vinhomes Golden River</option>
-                                <option value="Vinhomes Central Park">Vinhomes Central Park</option>
-                                <option value="Estella Height">Estella Height</option>
-                                <option value="Estella">Estella</option>
-                                <option value="Celesta">Celesta</option>
-                            </select>
-                        </div>
-                        <div class="input-box">
                             <span class="details">Tax Code</span>
                             <input type="text" name="tax_code" placeholder="Enter tax code" required>
                         </div>
