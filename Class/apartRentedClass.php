@@ -71,5 +71,13 @@
             return $result;
         }
 
+        //Delete apartment cart 
+        public function delete_apart_rented($delID){
+            $query = "DELETE FROM tbl_apartment_rented WHERE APARTMENT_CODE = '$delID'";
+            $result = $this->db->delete($query);
+
+            header('Location:apartRented.php');
+        }
+
     }
 ?>

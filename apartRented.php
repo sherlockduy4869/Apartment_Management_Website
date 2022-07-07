@@ -6,13 +6,12 @@
 <?php
     $apartRented = new apartrented();
 
-    // if(isset($_GET['delID']))
-    // {
-    //     $delID = $_GET['delID'];
-    //     $delApartCart = $apartCart->delete_apart_cart($delID);
-    // }  
+    if(isset($_GET['delID']))
+    {
+        $delID = $_GET['delID'];
+        $delApartRented = $apartRented->delete_apart_rented($delID);
+    }  
 
-    //$show_statistic_apart_rented = $apartRented->show_apart_cart_statistic();
 ?>
 <section id="interface">
         <div class="navigation">
@@ -110,7 +109,7 @@
                             <p><?php echo $totalAmount; ?></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Details</a>|<a href="#">Edit</a>|<a href="#">Delete</a>
+                            <a href="#">Details</a>|<a href="#">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
                     <?php

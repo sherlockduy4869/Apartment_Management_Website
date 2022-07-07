@@ -38,8 +38,8 @@
                             <input type="text" name="apartment_code" placeholder="Enter apartment code" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">Agent name</span>
-                            <input type="text" name="agent_name" placeholder="Enter agent name" required>
+                            <span class="details">Agency name</span>
+                            <input type="text" name="agent_name" placeholder="Enter agency name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>

@@ -51,7 +51,7 @@
                         </div>     
                         <div class="input-box">
                             <span class="details">Payment Term</span>
-                            <input type="number" value="0" min="0" name="payment_term" required>
+                            <input type="number" value="1" min="1" name="payment_term" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>

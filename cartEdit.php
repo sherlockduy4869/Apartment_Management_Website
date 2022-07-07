@@ -46,8 +46,8 @@
                             <input disabled type="text" value="<?php echo $cart_by_id['APARTMENT_CODE'] ?>" name="apartment_code" placeholder="Enter apartment code">
                         </div>
                         <div class="input-box">
-                            <span class="details">Agent name</span>
-                            <input type="text" value="<?php echo $cart_by_id['AGENCY_NAME'] ?>" name="agent_name" placeholder="Enter agent name" required>
+                            <span class="details">Agency name</span>
+                            <input type="text" value="<?php echo $cart_by_id['AGENCY_NAME'] ?>" name="agent_name" placeholder="Enter agency name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
