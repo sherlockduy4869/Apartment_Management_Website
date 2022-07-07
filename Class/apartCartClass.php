@@ -28,7 +28,7 @@
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
             $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
 
-            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,DAILY_NAME,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM) 
+            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENCY_NAME,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM) 
                   VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm')";
             $result = $this->db->insert($query);
 
@@ -52,7 +52,7 @@
         //Show apartment cart list
         public function show_apart_cart_statistic(){
             $query = "SELECT COUNT(APARTMENT_CODE) as NUM_APART,
-                             COUNT(DAILY_NAME) as NUM_AGENT,
+                             COUNT(AGENCY_NAME) as NUM_AGENT,
                              COUNT(AREA_APART) as NUM_AREA,  
                              COUNT(BEDROOM) as NUM_BEDROOM
                              FROM tbl_apartment_cart
@@ -87,7 +87,7 @@
             $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
 
             $query = "UPDATE tbl_apartment_cart SET
-                    DAILY_NAME = '$agent_name'
+                    AGENCY_NAME = '$agent_name'
                     ,AREA_APART = '$area'
                     ,HOUSE_OWNER = '$house_owner'
                     ,PHONE_OWNER = '$phone_owner'

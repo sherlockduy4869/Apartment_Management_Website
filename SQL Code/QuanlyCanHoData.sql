@@ -34,7 +34,7 @@ GO
 --TABLE INCLUDES APARTMENT INFORMATION
 CREATE TABLE tbl_apartment_rented
 (
-	APARTMENT_CODE VARCHAR(255),
+	APARTMENT_CODE VARCHAR(255) PRIMARY KEY,
 	HOUSE_OWNER VARCHAR(255),
 	PHONE_OWNER VARCHAR(255),
 	EMAIL_OWNER VARCHAR(255),
@@ -52,7 +52,7 @@ CREATE TABLE tbl_apartment_rented
 	START_DAY DATE,
 	END_DAY DATE,
 	DAY_REMIND INT,
-	PERIOD INT,
+	PAYMENT_TERM INT,
 	FOREIGN KEY(APARTMENT_CODE) REFERENCES tbl_apartment_cart(APARTMENT_CODE)
 )
 GO
@@ -385,21 +385,21 @@ GO
 CREATE PROCEDURE ADDING_HOUSE_OWNER_INFO(IN apartment_code VARCHAR(255))
 BEGIN
 	DECLARE area VARCHAR(255);
-	DECLARE agency_name VARCHAR(255);
-	DECLARE house_ower VARCHAR(255);
+	DECLARE agency VARCHAR(255);
+	DECLARE house_ower_name VARCHAR(255);
     DECLARE email VARCHAR(255);
     DECLARE phone VARCHAR(255);
 
 	SELECT AREA_APART INTO area FROM tbl_apartment_cart WHERE APARTMENT_CODE = apartment_code;
-	SELECT DAILY_NAME INTO agency_name FROM tbl_apartment_cart WHERE APARTMENT_CODE = apartment_code;
-	SELECT HOUSE_OWNER INTO house_ower FROM tbl_apartment_cart WHERE APARTMENT_CODE = apartment_code;
+	SELECT AGENCY_NAME INTO agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = apartment_code;
+	SELECT HOUSE_OWNER INTO house_ower_name FROM tbl_apartment_cart WHERE APARTMENT_CODE = apartment_code;
     SELECT EMAIL_OWNER INTO email FROM tbl_apartment_cart WHERE APARTMENT_CODE = apartment_code;
     SELECT PHONE_OWNER INTO phone FROM tbl_apartment_cart WHERE APARTMENT_CODE = apartment_code;
 
 	UPDATE tbl_apartment_rented
-	SET AREA_APART = area,
-		DAILY_NAME = agency_name,
-		HOUSE_OWNER = house_ower,
+	SET AREA_APART = area, 
+		AGENCY_NAME = agency,
+		HOUSE_OWNER = house_ower_name,
     	EMAIL_OWNER = email,
         PHONE_OWNER = phone
 	WHERE APARTMENT_CODE = apartment_code;

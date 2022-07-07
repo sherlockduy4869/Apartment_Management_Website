@@ -89,7 +89,7 @@
                         <td><?php echo $ID ?></td>
                         <td class="people-des">
                             <h5><?php echo $result['APARTMENT_CODE'];?></h5>
-                            <p><?php echo $result['DAILY_NAME'];?> - <?php echo $result['AREA_APART'];?></p>
+                            <p><?php echo $result['AGENCY_NAME'];?> - <?php echo $result['AREA_APART'];?></p>
                         </td>
                         <td class="people">
                             <div class="people-de">

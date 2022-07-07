@@ -46,7 +46,7 @@
             $end_date = date("Y-m-d", strtotime($to)); 
 
             $query = "INSERT INTO tbl_apartment_rented
-            (APARTMENT_CODE,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,START_DAY,END_DAY,DAY_REMIND,PERIOD) 
+            (APARTMENT_CODE,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM) 
                   VALUES('$apartment_code','$tax_code','$tax_declare_form','$tax_department','$rent_fee_per_month','$fee_tax','$declare_fee_tax','$fee_management','$tenant_refund','$fee_cleaning','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
             
             $query_house_owner = "CALL ADDING_HOUSE_OWNER_INFO('$apartment_code')";

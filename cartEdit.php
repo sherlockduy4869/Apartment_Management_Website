@@ -47,7 +47,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Agent name</span>
-                            <input type="text" value="<?php echo $cart_by_id['DAILY_NAME'] ?>" name="agent_name" placeholder="Enter agent name" required>
+                            <input type="text" value="<?php echo $cart_by_id['AGENCY_NAME'] ?>" name="agent_name" placeholder="Enter agent name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
@@ -81,11 +81,11 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input type="text" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>" name="phone_owner" placeholder="Enter phone number" required>
+                            <input type="text" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>" name="phone_owner" placeholder="Enter phone number" required>
                         </div>     
                         <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input type="email" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>" name="email_owner" placeholder="Enter email" required>
+                            <span class="details">Email</span>
+                            <input type="email" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>" name="email_owner" placeholder="Enter email" required>
                         </div>     
                     </div>
                     <?php 
