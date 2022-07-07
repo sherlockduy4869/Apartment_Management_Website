@@ -84,6 +84,9 @@
                                     $ID++;
                                     $totalAmount = $result['TAX_FEE'] + $result['TAX_DECLARE'] + $result['TAX_MANAGEMENT'] 
                                                 + $result['REFUND_FOR_TENANT'] + $result['CLEANING_FEE'];
+
+                                    $start_date = date("d-m-Y", strtotime($result['START_DAY']));  
+                                    $end_date = date("d-m-Y", strtotime($result['END_DAY'])); 
                                     
                         ?>
                     <tr>
@@ -103,13 +106,13 @@
                             <p><?php echo $result['TAX_DECLARATION_FORM'];?>-<?php echo $result['TAX_APARTMENT'];?></p>
                         </td>
                         <td class="active">
-                            <p><?php echo $result['START_DAY'];?>-<?php echo $result['END_DAY'];?></p>
+                            <p><?php echo $start_date;?> - <?php echo $end_date;?></p>
                         </td>
                         <td class="active">
-                            <p><?php echo $totalAmount; ?></p>
+                            <p><?php echo number_format($totalAmount);?><sub>đ</sub></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Details</a>|<a href="#">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
+                            <a href="#">Details</a>|<a href="apartRentedEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
                     <?php

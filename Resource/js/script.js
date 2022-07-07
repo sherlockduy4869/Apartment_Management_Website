@@ -65,7 +65,6 @@ $(document).ready(function () {
         numeral: true,
         numeralThousandGroupStyle: 'thousand'
     });
-
     new Cleave('.from', {
         date: true,
         delimiter: '-',

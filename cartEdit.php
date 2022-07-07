@@ -43,11 +43,11 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input disabled type="text" value="<?php echo $cart_by_id['APARTMENT_CODE'] ?>" name="apartment_code" placeholder="Enter apartment code">
+                            <input disabled type="text" value="<?php echo $cart_by_id['APARTMENT_CODE'] ?>" name="apartment_code">
                         </div>
                         <div class="input-box">
                             <span class="details">Agency name</span>
-                            <input type="text" value="<?php echo $cart_by_id['AGENCY_NAME'] ?>" name="agent_name" placeholder="Enter agency name" required>
+                            <input type="text" value="<?php echo $cart_by_id['AGENCY_NAME'] ?>" name="agent_name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
@@ -73,19 +73,19 @@
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
-                            <input type="number" value="<?php echo $cart_by_id['SQM'] ?>" name="sqm" placeholder="Enter aparment area" required>
+                            <input type="number" value="<?php echo $cart_by_id['SQM'] ?>" name="sqm" required>
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
-                            <input type="text" value="<?php echo $cart_by_id['HOUSE_OWNER'] ?>" name="house_owner" placeholder="Enter house owner name" required>
+                            <input type="text" value="<?php echo $cart_by_id['HOUSE_OWNER'] ?>" name="house_owner" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input type="text" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>" name="phone_owner" placeholder="Enter phone number" required>
+                            <input type="text" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>" name="phone_owner" required>
                         </div>     
                         <div class="input-box">
                             <span class="details">Email</span>
-                            <input type="email" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>" name="email_owner" placeholder="Enter email" required>
+                            <input type="email" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>" name="email_owner" required>
                         </div>     
                     </div>
                     <?php 

@@ -59,7 +59,7 @@
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Add apartment rented failed</span> <br>";
+                $alert = "<span class = 'addError'>Apartment must be stored in apartment cart first</span> <br>";
                 return $alert;
             }
         }
@@ -79,5 +79,11 @@
             header('Location:apartRented.php');
         }
 
+        //Get apartment cart information 
+        public function get_apart_rented_by_id($apart_rented_id){
+            $query = "SELECT * FROM tbl_apartment_rented WHERE APARTMENT_CODE = '$apart_rented_id'";
+            $result = $this->db->select($query)->fetch_assoc();
+            return $result;
+        }
     }
 ?>
