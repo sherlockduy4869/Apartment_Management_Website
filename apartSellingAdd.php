@@ -17,7 +17,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT CART</span>
+                <span>APARTMENT SELLING</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -29,7 +29,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add Apartment Cart</div>
+                <div class="title">Add Apartment Selling</div>
 
                 <form action="cartAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
@@ -79,6 +79,17 @@
                             <span class="details">Email</span>
                             <input type="email" name="email_owner" placeholder="Enter email" required>
                         </div>  
+                        <div class="input-box">
+                            <span class="details">USD Price</span>
+                            <input type="text" name="phone_owner" placeholder="Enter USD price" required>
+                        </div>  
+                        <div class="input-box">
+                            <span class="details">VND Price</span>
+                            <input type="text" name="phone_owner" placeholder="Enter VND price" required>
+                        </div>  
+                    </div>
+                    <div class="note">
+                        <textarea name="" placeholder="Enter note here" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
                     // if(isset($cartAdd))

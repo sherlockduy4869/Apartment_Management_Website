@@ -433,6 +433,12 @@ form .user-details .input-box{
     border-color: #9b59b6;
 }
 
+.container form .note{
+    height: 75px;
+    margin-bottom: 5px;
+}
+
+
 .container form .button{
     height: 35px;
     margin: 25px 0;
@@ -445,6 +451,18 @@ form .user-details .input-box{
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;
+}
+
+.container form .note textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+}
+
+.container form .note textarea:focus,
+.container form .note textarea:valid{
+    border-color: #9b59b6;
 }
 
 /*-----------------------ALERT AREA-----------------------*/

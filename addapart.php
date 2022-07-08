@@ -29,11 +29,11 @@
             </div>
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <a href="#">Add Apart Selling</a>
+                <a href="apartSellingAdd.php">Add Apart Selling</a>
             </div>
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <a href="#">Add Apart Not Rented</a>
+                <a href="apartNotRentedAdd.php">Add Apart Not Rented</a>
             </div>
         </div>
 </section>
