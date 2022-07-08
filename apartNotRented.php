@@ -1,16 +1,16 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartRentedClass.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartNotRentedClass.php';
 ?>
 <?php
-    $apartRented = new apartrented();
+    $apartNotRented = new apartnotrented();
 
-    if(isset($_GET['delID']))
-    {
-        $delID = $_GET['delID'];
-        $delApartRented = $apartRented->delete_apart_rented($delID);
-    }  
+    // if(isset($_GET['delID']))
+    // {
+    //     $delID = $_GET['delID'];
+    //     $delApartRented = $apartRented->delete_apart_rented($delID);
+    // }  
 
 ?>
 <section id="interface">
@@ -62,35 +62,58 @@
             <table id="tbl_cart" width="100%">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Name</th>
-                        <th>Name</th>
-                        <th>Name</th>
-                        <th>Name</th>
+                        <th>STT</th>
+                        <th>Apartment Info</th>
+                        <th>House Owner</th>
+                        <th>Bedroom</th>
+                        <th>SQM</th>
+                        <th>Status Apart</th>
+                        <th>Customize</th>
                     </tr>
                 </thead>
                 <tbody>
+                        <?php
+                            $apartNotRentedList = $apartNotRented->show_apart_selling_list();
+                            
+                            if($apartNotRentedList)
+                            {   
+                                $ID = 0;
+                                while($result = $apartNotRentedList->fetch_assoc())
+                                {
+                                    $ID++;
+                                    
+                                    
+                        ?>
                     <tr>
+                        <td><?php echo $ID ?></td>
+                        <td class="people-des">
+                            <h5><?php echo $result['APARTMENT_CODE'];?></h5>
+                            <p><?php echo $result['AGENCY_NAME'];?> - <?php echo $result['AREA_APART'];?></p>
+                        </td>
                         <td class="people">
                             <div class="people-de">
-                                <h5>John Doe</h5>
-                                <p>john@gmail.com</p>
+                                <h5><?php echo $result['HOUSE_OWNER'];?></h5>
+                                <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
                             </div>
                         </td>
-                        <td class="people-des">
-                            <h5>Software Developer</h5>
-                            <p>Web dev</p>
-                        </td>
                         <td class="active">
-                            <p>Active</p>
+                            <p><?php echo $result['BEDROOM'];?></p>
                         </td>
                         <td class="role">
-                            <p>Owner</p>
+                            <p><?php echo $result['SQM'];?>m<sup>2</sup></p>
+                        </td>
+                        <td class="role">
+                            <p><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Edit</a>
+                            <a href="cartEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>
+                            |<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
+                        <?php
+                                }
+                            }
+                        ?>
                 </tbody>
             </table>
         </div>

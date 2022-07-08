@@ -42,5 +42,11 @@
                 return $alert;
             }
         }
+
+        public function show_apart_selling_list(){
+            $query = "SELECT * FROM tbl_apartment_not_rented";
+            $result = $this->db->select($query);
+            return $result;
+        }
     }
 ?>

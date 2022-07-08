@@ -60,7 +60,7 @@
         </div>
         <div class="board">
             <table id="tbl_cart" width="100%">
-            <thead>
+                <thead>
                     <tr>
                         <th>STT</th>
                         <th>Apartment Info</th>
