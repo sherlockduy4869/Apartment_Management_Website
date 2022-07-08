@@ -66,7 +66,7 @@
                         <th>Apartment Info</th>
                         <th>House Owner</th>
                         <th>Tax Info</th>
-                        <th>Duration</th>
+                        <th>Renting Duration</th>
                         <th>Total</th>
                         <th>Customization</th>
                     </tr>
@@ -106,10 +106,10 @@
                             <p><?php echo $result['TAX_DECLARATION_FORM'];?>-<?php echo $result['TAX_APARTMENT'];?></p>
                         </td>
                         <td class="active">
-                            <p><?php echo $start_date;?> - <?php echo $end_date;?></p>
+                            <p><?php echo $start_date;?><br><?php echo $end_date;?></p>
                         </td>
                         <td class="active">
-                            <p><?php echo number_format($totalAmount);?><sub>đ</sub></p>
+                            <p><?php echo number_format($totalAmount);?><sup>đ</sup></p>
                         </td>
                         <td class="edit">
                             <a href="#">Details</a>|<a href="apartRentedEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>

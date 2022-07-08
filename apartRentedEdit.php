@@ -17,10 +17,10 @@
 ?>
 <?php
 
-    // if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-    //     $apartRentedAdd = $apartrented->insert_apart_rented($_POST);
-    // }
+        $apartRentedEdit = $apartrented->edit_apart_rented($_POST, $apart_rented_id);
+    }
 ?>
 <section id="interface">
     <div class="navigation">
@@ -46,7 +46,7 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input  type="text" name="apartment_code" value="<?php echo $apart_rented_by_id['APARTMENT_CODE']?>" name="apartment_code" required>
+                            <input disabled type="text" name="apartment_code" value="<?php echo $apart_rented_by_id['APARTMENT_CODE']?>" name="apartment_code">
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Code</span>
@@ -111,11 +111,11 @@
                         </div>  
                     </div>
                     <?php 
-                    // if(isset($apartRentedAdd))
-                    // {
-                    //     echo $apartRentedAdd;
-                    // }
-                    // ?>
+                    if(isset($apartRentedEdit))
+                    {
+                        echo $apartRentedEdit;
+                    }
+                    ?>
                     <div class="button">
                         <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
                     </div>
