@@ -1,8 +1,8 @@
     <!--------------MENU BAR AREA-------------->
 
     <section id="menu">
-        <div class="logo">
-            <img src="./Resource/img/logo.png">
+        <div class="logo clickable">
+            <a href="index.php"><img src="./Resource/img/logo.png"></a>
             <span>BETTER HOMES</span>
         </div>
         <div class="items">

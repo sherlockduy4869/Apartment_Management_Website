@@ -4,12 +4,12 @@
     include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartNotRentedClass.php';
 ?>
 <?php
-    // $apartCart = new apartcart();
+    $apartNotRented = new apartnotrented();
 
-    // if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-    //     $cartAdd = $apartCart->insert_apart_cart($_POST);
-    // }
+        $notRentedAdd = $apartNotRented->insert_apart_not_rented($_POST);
+    }
 ?>
 <section id="interface">
     <div class="navigation">
@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="title">Add Apartment Not Rented</div>
 
-                <form action="cartAdd.php" method="POST" enctype="multipart/form-data">
+                <form action="apartNotRentedAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
@@ -80,16 +80,15 @@
                             <select name="status_apart">
                                 <option value="Not received the house handover">Not received the house handover</option>
                                 <option value="Received the house handover">Received the house handover</option>
-                                <option value="Available for rent">Available for rent</option>
                             </select>
                         </div>  
                     </div>
                     <?php 
-                    // if(isset($cartAdd))
-                    // {
-                    //     echo $cartAdd;
-                    // }
-                    // ?>
+                    if(isset($notRentedAdd))
+                    {
+                        echo $notRentedAdd;
+                    }
+                    ?>
                     <div class="button">
                         <input class="btn btn-primary" name="submit" type="submit" value="ADDING">
                     </div>

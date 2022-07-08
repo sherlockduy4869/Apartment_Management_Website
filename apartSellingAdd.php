@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="title">Add Apartment Selling</div>
 
-                <form action="cartAdd.php" method="POST" enctype="multipart/form-data">
+                <form action="apartSellingAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
@@ -92,11 +92,11 @@
                         <textarea name="note" placeholder="Enter note here" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
-                    // if(isset($cartAdd))
-                    // {
-                    //     echo $cartAdd;
-                    // }
-                    // ?>
+                    if(isset($sellingAdd))
+                    {
+                        echo $sellingAdd;
+                    }
+                    ?>
                     <div class="button">
                         <input class="btn btn-primary" name="submit" type="submit" value="ADDING">
                     </div>

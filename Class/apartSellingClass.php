@@ -31,16 +31,23 @@
             $vnd_price = mysqli_real_escape_string($this->db->link, $data['vnd_price']);
             $note = mysqli_real_escape_string($this->db->link, $data['note']);
 
-            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENCY_NAME,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM) 
-                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm')";
+            $price_usd =  str_replace(",","",$usd_price);
+            $price_vnd = str_replace(",","",$vnd_price);
+
+            $date_input_data = date("Y-m-d");
+
+            $query = "INSERT INTO tbl_apartment_selling(APARTMENT_CODE,AGENCY_NAME,AREA_APART,
+            HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM,USD_PRICE,VND_PRICE,DATE_INPUT_DATA,NOTE) 
+                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$email_owner',
+                  '$bedroom','$sqm','$price_usd','$price_vnd','$date_input_data','$note')";
             $result = $this->db->insert($query);
 
             if($result){
-                $alert = "<span class = 'addSuccess'>Add apartment cart succesfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Add apartment selling succesfully</span> <br>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Add apartment cart failed</span> <br>";
+                $alert = "<span class = 'addError'>Add apartment selling failed</span> <br>";
                 return $alert;
             }
         }
