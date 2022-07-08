@@ -12,7 +12,7 @@
             <div class="clickable"><i class="fas fa-sack-dollar"></i><a href="#">Apart Tax</a></div>
             <div class="clickable"><i class="fas fa-dollar-sign"></i><a href="#">Apart Finance</a></div>
             <div class="clickable"><i class="fas fa-comments"></i><a href="#">Apart Contract</a></div>
-            <div class="clickable"><i class="fab fa-sellcast"></i><a href="#">Apart Selling</a></div>
-            <div class="clickable"><i class="fas fa-chart-bar"></i><a href="#">Apart Not Rented</a></div>
+            <div class="clickable"><i class="fab fa-sellcast"></i><a href="apartSelling.php">Apart Selling</a></div>
+            <div class="clickable"><i class="fas fa-chart-bar"></i><a href="apartNotRented.php">Apart Not Rented</a></div>
         </div>
     </section>
