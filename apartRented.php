@@ -68,7 +68,7 @@
                         <th>Tax Info</th>
                         <th>Renting Duration</th>
                         <th>Total</th>
-                        <th>Customization</th>
+                        <th>Customize</th>
                     </tr>
                 </thead>
                 <tbody>

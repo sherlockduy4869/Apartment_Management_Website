@@ -66,11 +66,11 @@
                 <thead>
                     <tr>
                         <th>STT</th>
-                        <th>Apartment Infor</th>
+                        <th>Apartment Info</th>
                         <th>House Owner</th>
                         <th>Bedroom</th>
                         <th>SQM</th>
-                        <th>Customization</th>
+                        <th>Customize</th>
                     </tr>
                 </thead>
                 <tbody>

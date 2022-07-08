@@ -51,5 +51,12 @@
                 return $alert;
             }
         }
+
+        //Show apartment selling list
+        public function show_apart_selling_list(){
+            $query = "SELECT * FROM tbl_apartment_selling";
+            $result = $this->db->select($query);
+            return $result;
+        }
     }
 ?>
