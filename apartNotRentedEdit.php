@@ -17,7 +17,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-        $notRentedAdd = $apartNotRented->insert_apart_not_rented($_POST);
+        $notRentedEdit = $apartNotRented->edit_apart_not_rented($_POST, $apart_not_rented_id);
     }
 ?>
 <section id="interface">
@@ -93,9 +93,9 @@
                         </div>  
                     </div>
                     <?php 
-                    if(isset($notRentedAdd))
+                    if(isset($notRentedEdit))
                     {
-                        echo $notRentedAdd;
+                        echo $notRentedEdit;
                     }
                     ?>
                     <div class="button">

@@ -73,5 +73,50 @@
             $result = $this->db->select($query)->fetch_assoc();
             return $result;
         }
+
+        //Edit infor apartment selling
+        public function edit_apart_selling($data, $apart_selling_id){
+
+            $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
+            $area = mysqli_real_escape_string($this->db->link, $data['area']);
+            $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
+            $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
+            $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
+            $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
+            $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
+            $usd_price = mysqli_real_escape_string($this->db->link, $data['usd_price']);
+            $vnd_price = mysqli_real_escape_string($this->db->link, $data['vnd_price']);
+            $note = mysqli_real_escape_string($this->db->link, $data['note']);
+
+            $price_usd =  str_replace(",","",$usd_price);
+            $price_vnd = str_replace(",","",$vnd_price);
+
+            $date_input_data = date("Y-m-d");
+
+            $query = "UPDATE tbl_apartment_selling SET
+                    AGENCY_NAME = '$agent_name'
+                    ,AREA_APART = '$area'
+                    ,HOUSE_OWNER = '$house_owner'
+                    ,PHONE_OWNER = '$phone_owner'
+                    ,EMAIL_OWNER = '$email_owner'
+                    ,BEDROOM = '$bedroom'
+                    ,SQM = '$sqm'
+                    ,USD_PRICE = '$price_usd'
+                    ,VND_PRICE = '$price_vnd'
+                    ,DATE_INPUT_DATA = '$date_input_data'
+                    ,NOTE = '$note'
+                    WHERE APARTMENT_CODE ='$apart_selling_id'";
+
+            $result = $this->db->update($query);
+
+            if($result){
+                $alert = "<span class = 'addSuccess'>Edit apartment selling succesfully</span> <br>";
+                return $alert;
+            }
+            else{
+                $alert = "<span class = 'addError'>Edit apartment selling failed</span> <br>";
+                return $alert;
+            }
+        }
     }
 ?>

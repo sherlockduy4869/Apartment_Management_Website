@@ -17,7 +17,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-        $sellingAdd = $apartSelling->insert_apart_selling($_POST);
+        $sellingEdit = $apartSelling->edit_apart_selling($_POST, $apart_selling_id);
     }
 ?>
 <section id="interface">
@@ -101,9 +101,9 @@
                         <textarea name="note" value="<?php echo $apart_selling_by_id['NOTE']?>" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
-                    if(isset($sellingAdd))
+                    if(isset($sellingEdit))
                     {
-                        echo $sellingAdd;
+                        echo $sellingEdit;
                     }
                     ?>
                     <div class="button">

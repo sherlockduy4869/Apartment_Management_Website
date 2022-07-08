@@ -64,5 +64,39 @@
             $result = $this->db->select($query)->fetch_assoc();
             return $result;
         }
+
+        //Edit apartment not rented
+        public function edit_apart_not_rented($data, $apart_not_rented_id){
+
+            $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
+            $area = mysqli_real_escape_string($this->db->link, $data['area']);
+            $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
+            $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
+            $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
+            $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
+            $status_apart = mysqli_real_escape_string($this->db->link, $data['status_apart']);
+
+            $query = "UPDATE tbl_apartment_not_rented SET
+                    AGENCY_NAME = '$agent_name'
+                    ,AREA_APART = '$area'
+                    ,HOUSE_OWNER = '$house_owner'
+                    ,PHONE_OWNER = '$phone_owner'
+                    ,BEDROOM = '$bedroom'
+                    ,SQM = '$sqm'
+                    ,STATUS_APART = '$status_apart'
+                    WHERE APARTMENT_CODE ='$apart_not_rented_id'";
+
+            $result = $this->db->update($query);
+
+            if($result){
+                $alert = "<span class = 'addSuccess'>Edit apartment not rented succesfully</span> <br>";
+                return $alert;
+            }
+            else{
+                $alert = "<span class = 'addError'>Edit apartment not rented failed</span> <br>";
+                return $alert;
+            }
+
+        }
     }
 ?>
