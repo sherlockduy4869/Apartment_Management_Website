@@ -66,5 +66,12 @@
 
             header('Location:apartSelling.php');
         }
+
+        //Get apartment selling information 
+        public function get_apart_selling_by_id($apart_selling_id){
+            $query = "SELECT * FROM tbl_apartment_selling WHERE APARTMENT_CODE = '$apart_selling_id'";
+            $result = $this->db->select($query)->fetch_assoc();
+            return $result;
+        }
     }
 ?>

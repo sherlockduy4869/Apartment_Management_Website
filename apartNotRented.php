@@ -73,7 +73,7 @@
                 </thead>
                 <tbody>
                         <?php
-                            $apartNotRentedList = $apartNotRented->show_apart_selling_list();
+                            $apartNotRentedList = $apartNotRented->show_apart_not_rented_list();
                             
                             if($apartNotRentedList)
                             {   
@@ -93,7 +93,7 @@
                         <td class="people">
                             <div class="people-de">
                                 <h5><?php echo $result['HOUSE_OWNER'];?></h5>
-                                <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
+                                <p><?php echo $result['PHONE_OWNER'];?></p>
                             </div>
                         </td>
                         <td class="active">
@@ -106,7 +106,7 @@
                             <p><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a href="cartEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>
+                            <a href="apartNotRentedEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>
                             |<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>

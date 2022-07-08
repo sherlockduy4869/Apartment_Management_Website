@@ -43,17 +43,26 @@
             }
         }
 
-        public function show_apart_selling_list(){
+        //Showing apartment not rented
+        public function show_apart_not_rented_list(){
             $query = "SELECT * FROM tbl_apartment_not_rented";
             $result = $this->db->select($query);
             return $result;
         }
 
+        //Delete apartment not rented
         public function delete_apart_not_rented($delID){
             $query = "DELETE FROM tbl_apartment_not_rented WHERE APARTMENT_CODE = '$delID'";
             $result = $this->db->delete($query);
 
             header('Location:apartNotRented.php');
+        }
+
+        //Get apartment selling information 
+        public function get_apart_not_rented_by_id($apart_not_rented_id){
+            $query = "SELECT * FROM tbl_apartment_not_rented WHERE APARTMENT_CODE = '$apart_not_rented_id'";
+            $result = $this->db->select($query)->fetch_assoc();
+            return $result;
         }
     }
 ?>
