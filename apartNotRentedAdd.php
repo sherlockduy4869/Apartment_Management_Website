@@ -17,7 +17,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT CART</span>
+                <span>APARTMENT NOT RENTED</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -29,7 +29,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add Apartment Cart</div>
+                <div class="title">Add Apartment Not Rented</div>
 
                 <form action="cartAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
@@ -76,8 +76,12 @@
                             <input type="text" name="phone_owner" placeholder="Enter phone number" required>
                         </div>   
                         <div class="input-box">
-                            <span class="details">Email</span>
-                            <input type="email" name="email_owner" placeholder="Enter email" required>
+                            <span class="details">Status Apartment</span>
+                            <select name="status_apart">
+                                <option value="Not received the house handover">Not received the house handover</option>
+                                <option value="Received the house handover">Received the house handover</option>
+                                <option value="Available for rent">Available for rent</option>
+                            </select>
                         </div>  
                     </div>
                     <?php 
