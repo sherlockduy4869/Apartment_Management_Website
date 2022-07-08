@@ -58,5 +58,13 @@
             $result = $this->db->select($query);
             return $result;
         }
+
+        //Delete apartment selling
+        public function delete_apart_selling($delID){
+            $query = "DELETE FROM tbl_apartment_selling WHERE APARTMENT_CODE = '$delID'";
+            $result = $this->db->delete($query);
+
+            header('Location:apartSelling.php');
+        }
     }
 ?>

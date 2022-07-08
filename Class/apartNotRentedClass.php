@@ -48,5 +48,12 @@
             $result = $this->db->select($query);
             return $result;
         }
+
+        public function delete_apart_not_rented($delID){
+            $query = "DELETE FROM tbl_apartment_not_rented WHERE APARTMENT_CODE = '$delID'";
+            $result = $this->db->delete($query);
+
+            header('Location:apartNotRented.php');
+        }
     }
 ?>

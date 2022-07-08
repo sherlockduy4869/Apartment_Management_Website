@@ -6,11 +6,11 @@
 <?php
     $apartSelling = new apartselling();
 
-    // if(isset($_GET['delID']))
-    // {
-    //     $delID = $_GET['delID'];
-    //     $delApartRented = $apartRented->delete_apart_rented($delID);
-    // }  
+    if(isset($_GET['delID']))
+    {
+        $delID = $_GET['delID'];
+        $delApartSelling = $apartSelling->delete_apart_selling($delID);
+    }  
 
 ?>
 <section id="interface">
@@ -19,7 +19,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT Rented</span>
+                <span>APARTMENT SELLING</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
