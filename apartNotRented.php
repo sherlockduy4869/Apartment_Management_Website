@@ -95,7 +95,6 @@
             </table>
         </div>
 </section>
-    
 <?php 
 include_once "Include/footer.php";
 ?>

@@ -66,37 +66,31 @@
                         </div> 
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
-                            <input class="renting_fee_per_month" type="text" min="0" 
-                            value="<?php echo $apart_rented_by_id['FEE_PER_MONTH']?>" name="renting_fee_per_month" required>
+                            <input class="renting_fee_per_month" type="text" value="<?php echo $apart_rented_by_id['FEE_PER_MONTH']?>" name="renting_fee_per_month" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Tax Fee</span>
-                            <input class="tax_fee" min="0" type="text" name="tax_fee"
-                            value="<?php echo $apart_rented_by_id['TAX_FEE']?>" required>
+                            <input class="tax_fee" type="text" name="tax_fee" value="<?php echo $apart_rented_by_id['TAX_FEE']?>" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Tax Declare Fee</span>
-                            <input class="tax_declare_fee" min="0" type="text" 
-                            value="<?php echo $apart_rented_by_id['TAX_DECLARE']?>" name="tax_declare_fee" required>
+                            <input class="tax_declare_fee" type="text" value="<?php echo $apart_rented_by_id['TAX_DECLARE']?>" name="tax_declare_fee" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Management Fee</span>
-                            <input class="management_fee" min="0" type="text"
-                            value="<?php echo $apart_rented_by_id['TAX_MANAGEMENT']?>" name="management_fee" required>
+                            <input class="management_fee" type="text" value="<?php echo $apart_rented_by_id['TAX_MANAGEMENT']?>" name="management_fee" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Cleaning Fee</span>
-                            <input class="cleaning_fee" type="text" min="0"
-                            value="<?php echo $apart_rented_by_id['CLEANING_FEE']?>" name="cleaning_fee" required>
+                            <input class="cleaning_fee" type="text" value="<?php echo $apart_rented_by_id['CLEANING_FEE']?>" name="cleaning_fee" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Refund For Tenant</span>
-                            <input class="refund_for_tenant" type="text" min="0"
-                            value="<?php echo $apart_rented_by_id['REFUND_FOR_TENANT']?>" name="refund_for_tenant" required>
+                            <input class="refund_for_tenant" type="text" value="<?php echo $apart_rented_by_id['REFUND_FOR_TENANT']?>" name="refund_for_tenant" required>
                         </div>            
                         <div class="input-box">
                             <span class="details">Day Remind Negotiate</span>
-                            <input type="number" min="0" name="day_remind_negotiate" 
+                            <input type="number" min="1" name="day_remind_negotiate" 
                             value="<?php echo $apart_rented_by_id['DAY_REMIND']?>" required>
                         </div>      
                         <div class="input-box">
@@ -124,6 +118,45 @@
             </div>
         </div>
 </section>
+<script>
+    new Cleave('.renting_fee_per_month', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+
+    new Cleave('.tax_fee', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+
+    new Cleave('.tax_declare_fee', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+    new Cleave('.management_fee', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+    new Cleave('.cleaning_fee', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+    new Cleave('.refund_for_tenant', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+        new Cleave('.from', {
+        date: true,
+        delimiter: '-',
+        datePattern: ['d', 'm', 'Y']
+    });
+
+    new Cleave('.to', {
+        date: true,
+        delimiter: '-',
+        datePattern: ['d', 'm', 'Y']
+    });
+</script>
 <?php 
     include_once "Include/footer.php";
 ?>

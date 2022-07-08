@@ -73,7 +73,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
-                            <input type="number" value="<?php echo $cart_by_id['SQM'] ?>" name="sqm" required>
+                            <input type="number" min="1" value="<?php echo $cart_by_id['SQM'] ?>" name="sqm" required>
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>

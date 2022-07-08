@@ -4,12 +4,12 @@
     include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartSellingClass.php';
 ?>
 <?php
-    // $apartCart = new apartcart();
+    $apartSelling = new apartselling();
 
-    // if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-    //     $cartAdd = $apartCart->insert_apart_cart($_POST);
-    // }
+        $sellingAdd = $apartSelling->insert_apart_selling($_POST);
+    }
 ?>
 <section id="interface">
     <div class="navigation">
@@ -81,15 +81,15 @@
                         </div>  
                         <div class="input-box">
                             <span class="details">USD Price</span>
-                            <input type="text" name="phone_owner" placeholder="Enter USD price" required>
+                            <input class="usd_price" type="text" name="usd_price" placeholder="Enter USD price" required>
                         </div>  
                         <div class="input-box">
                             <span class="details">VND Price</span>
-                            <input type="text" name="phone_owner" placeholder="Enter VND price" required>
+                            <input class="vnd_price" type="text" name="vnd_price" placeholder="Enter VND price" required>
                         </div>  
                     </div>
                     <div class="note">
-                        <textarea name="" placeholder="Enter note here" cols="30" rows="10"></textarea>
+                        <textarea name="note" placeholder="Enter note here" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
                     // if(isset($cartAdd))
@@ -105,6 +105,16 @@
             </div>
         </div>
 </section>
+<script>
+    new Cleave('.vnd_price', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+    new Cleave('.usd_price', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+</script>
 <?php 
     include_once "Include/footer.php";
 ?>

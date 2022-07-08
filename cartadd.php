@@ -65,7 +65,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
-                            <input type="number" name="sqm" placeholder="Enter aparment area" required>
+                            <input type="number" min="1" name="sqm" placeholder="Enter aparment area" required>
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
