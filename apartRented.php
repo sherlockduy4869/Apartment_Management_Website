@@ -33,7 +33,7 @@
                 <thead>
                     <tr>
                         <th class="text-center">STT</th>
-                        <th>Apartment Info</th>
+                        <th class="text-center">Apartment Info</th>
                         <th class="text-center">House Owner</th>
                         <th class="text-center">Tax Info</th>
                         <th class="text-center">Renting Duration</th>
@@ -64,11 +64,11 @@
                                 <p><?php echo $result['AGENCY_NAME'];?> - <?php echo $result['AREA_APART'];?></p>
                             </div>
                         </td>
-                        <td class="people-des">
+                        <td class="people-de">
                             <h5><?php echo $result['HOUSE_OWNER'];?></h5>
                             <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
                         </td>
-                        <td class="people-des">
+                        <td class="people-de">
                             <h5><?php echo $result['TAX_CODE'];?></h5>
                             <p><?php echo $result['TAX_DECLARATION_FORM'];?>-<?php echo $result['TAX_APARTMENT'];?></p>
                         </td>
