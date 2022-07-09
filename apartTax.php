@@ -73,15 +73,15 @@
             <table id="tbl_cart" width="100%">
                 <thead>
                     <tr>
-                        <th>STT</th>
+                        <th class="text-center">STT</th>
                         <th>Apartment Info</th>
-                        <th>House Owner</th>
-                        <th>From</th>
-                        <th>To</th>
-                        <th>Total Amount</th>
-                        <th>Status</th>
-                        <th>Info</th>
-                        <th>Customize</th>
+                        <th class="text-center">House Owner</th>
+                        <th class="text-center">From</th>
+                        <th class="text-center">To</th>
+                        <th class="text-center">Total Amount</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Info</th>
+                        <th class="text-center">Customize</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -99,7 +99,7 @@
                                     
                                     
                         ?>
-                    <tr>
+                    <tr class="text-center">
                         <td><?php echo $ID ?></td>
                         <td class="people-des">
                             <h5><?php echo $result['APARTMENT_CODE'];?></h5>
@@ -124,7 +124,7 @@
                             <p><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Details</a><br><a href="#">Finance</a>
+                            <a href="#">Details</a><br><a href="financeApart.php?apartCode=<?php echo $result['APARTMENT_CODE'];?>">Finance</a>
                         </td>
                         <td class="edit">
                             <a onclick="return confirm('Do you want to markdone ?')" href="?markdoneID=<?php echo $result['APARTMENT_CODE'];?>">Markdone</a><br>

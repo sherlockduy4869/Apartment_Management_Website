@@ -5,7 +5,6 @@
 ?>
 <?php
     $apartContract = new apartcontract();
-
     if(isset($_GET['markdoneID']))
     {
         $markdoneID = $_GET['markdoneID'];
@@ -42,14 +41,14 @@
             <table id="tbl_cart" width="100%">
                 <thead>
                     <tr>
-                        <th>STT</th>
+                        <th class="text-center">STT</th>
                         <th>Apartment Info</th>
-                        <th>House Owner</th>
-                        <th>From</th>
-                        <th>To</th>
-                        <th>Renting_Fee<br>Per Month</th>
-                        <th>Status</th>
-                        <th>Customize</th>
+                        <th class="text-center">House Owner</th>
+                        <th class="text-center">From</th>
+                        <th class="text-center">To</th>
+                        <th class="text-center">Renting_Fee<br>Per Month</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Customize</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,7 +66,7 @@
                                     
                                     
                         ?>
-                    <tr>
+                    <tr class="text-center">
                         <td><?php echo $ID ?></td>
                         <td class="people-des">
                             <h5><?php echo $result['APARTMENT_CODE'];?></h5>

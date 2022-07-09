@@ -32,15 +32,15 @@
             <table id="tbl_cart" width="100%">
                 <thead>
                     <tr>
-                        <th>STT</th>
+                        <th class="text-center">STT</th>
                         <th>Apartment Info</th>
-                        <th>House Owner</th>
-                        <th>Bedroom</th>
-                        <th>SQM</th>
-                        <th>Price <p style="font-size: 8px;">(USD-VND)</p> </th>
-                        <th>Date</th>
-                        <th>Note</th>
-                        <th>Customize</th>
+                        <th class="text-center">House Owner</th>
+                        <th class="text-center">Bedroom</th>
+                        <th class="text-center">SQM</th>
+                        <th class="text-center">Price <p style="font-size: 8px;">(USD-VND)</p> </th>
+                        <th class="text-center">Date</th>
+                        <th class="text-center">Note</th>
+                        <th class="text-center">Customize</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,7 +56,7 @@
                                     $date_input_date = date("d-m-Y", strtotime($result['DATE_INPUT_DATA']));
                                     
                         ?>
-                    <tr>
+                    <tr class="text-center">
                         <td><?php echo $ID ?></td>
                         <td class="people-des">
                             <h5><?php echo $result['APARTMENT_CODE'];?></h5>

@@ -32,13 +32,13 @@
             <table id="tbl_cart" width="100%">
                 <thead>
                     <tr>
-                        <th>STT</th>
+                        <th class="text-center">STT</th>
                         <th>Apartment Info</th>
-                        <th>House Owner</th>
-                        <th>Tax Info</th>
-                        <th>Renting Duration</th>
-                        <th>Total</th>
-                        <th>Customize</th>
+                        <th class="text-center">House Owner</th>
+                        <th class="text-center">Tax Info</th>
+                        <th class="text-center">Renting Duration</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Customize</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,7 +56,7 @@
                                     $end_date = date("d-m-Y", strtotime($result['END_DAY'])); 
                                     
                         ?>
-                    <tr>
+                    <tr class="text-center">
                         <td><?php echo $ID ?></td>
                         <td class="people">
                             <div class="people-de">
