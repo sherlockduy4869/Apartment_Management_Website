@@ -190,7 +190,7 @@ BEGIN
 	SELECT START_DAY_TERM INTO start_term FROM tbl_apartment_money WHERE APARTMENT_CODE = apartment_code;
 	SELECT END_DAY_TERM INTO end_term FROM tbl_apartment_money WHERE APARTMENT_CODE = apartment_code;
 	
-	SET start_term_next = ADDDATE(start_term, INTERVAL 1 DAY);
+	SET start_term_next = ADDDATE(end_term, INTERVAL 1 DAY);
 	SET end_term_next = ADDDATE(end_term, INTERVAL term MONTH);
 
 	UPDATE tbl_apartment_money

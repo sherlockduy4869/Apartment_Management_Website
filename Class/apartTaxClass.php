@@ -26,5 +26,29 @@
             return $result;
         }
 
+        //Markdone apartment tax
+        public function markdone_apart_tax($markdoneID){
+            $query = "UPDATE tbl_apartment_money 
+                    SET STATUS_APART = 'Collected' 
+                    WHERE APARTMENT_CODE = '$markdoneID'";
+            $result = $this->db->update($query);
+            return $result;
+        }
+
+        //Redo apartment tax
+        public function redo_apart_tax($redoID){
+            $query = "UPDATE tbl_apartment_money 
+                    SET STATUS_APART = 'Not yet collected' 
+                    WHERE APARTMENT_CODE = '$redoID'";
+            $result = $this->db->update($query);
+            return $result;
+        }
+
+        //Skip apartment tax
+        public function skip_apart_tax($nextID){
+            $query = "CALL NEXT_MONEY_DAY('$nextID')";
+            $result = $this->db->execute($query);
+            return $result;
+        }
     }
 ?>

@@ -5,6 +5,24 @@
 ?>
 <?php
     $apartTax = new aparttax();
+
+    if(isset($_GET['markdoneID']))
+    {
+        $markdoneID = $_GET['markdoneID'];
+        $markdoneApartTax = $apartTax->markdone_apart_tax($markdoneID);
+    }  
+
+    if(isset($_GET['redoID']))
+    {
+        $redoID = $_GET['redoID'];
+        $redoApartTax = $apartTax->redo_apart_tax($redoID);
+    } 
+
+    if(isset($_GET['nextID']))
+    {
+        $nextID = $_GET['nextID'];
+        $nextApartTax = $apartTax->skip_apart_tax($nextID);
+    } 
 ?>
 <section id="interface">
         <div class="navigation">
@@ -62,6 +80,7 @@
                         <th>To</th>
                         <th>Total Amount</th>
                         <th>Status</th>
+                        <th>Info</th>
                         <th>Customize</th>
                     </tr>
                 </thead>
@@ -105,7 +124,11 @@
                             <p><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Details</a>
+                            <a href="#">Details</a><br><a href="#">Finance</a>
+                        </td>
+                        <td class="edit">
+                            <a onclick="return confirm('Do you want to markdone ?')" href="?markdoneID=<?php echo $result['APARTMENT_CODE'];?>">Markdone</a><br>
+                            <a onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a onclick="return confirm('Do you want to next cycle ?')" href="?nextID=<?php echo $result['APARTMENT_CODE'];?>">Next</a>
                         </td>
                     </tr>
                         <?php
