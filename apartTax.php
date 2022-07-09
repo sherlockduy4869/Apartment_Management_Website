@@ -99,10 +99,10 @@
                             <p><?php echo $end_day_term;?></p>
                         </td>
                         <td class="active">
-                            <p><?php echo number_format($result['TOTAL_AMOUNT']);?></p>
+                            <p><?php echo number_format($result['TOTAL_AMOUNT']);?><sup>đ</sup></p>
                         </td>
                         <td class="role">
-                            <p><?php echo $result['STATUS_APART'];?><sup>đ</sup></p>
+                            <p><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
                             <a href="#">Details</a>
