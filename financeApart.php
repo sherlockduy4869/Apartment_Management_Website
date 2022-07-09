@@ -10,6 +10,29 @@
     {
         $apartCode = $_GET['apartCode'];
         $showStatusFeeElement = $financeDetails->show_status_fee_element($apartCode)->fetch_assoc();
+        $getDuration = $financeDetails->get_duration_apartment($apartCode)->fetch_assoc();
+
+        $check_status_apart = $financeDetails->check_status_apart_finance($apartCode)->fetch_assoc()['STATUS_APART'];
+
+        $outcome = ($showStatusFeeElement['TAX_FEE']*$showStatusFeeElement['STATUS_TAX_FEE'])
+                    + ($showStatusFeeElement['TAX_DECLARE']*$showStatusFeeElement['STATUS_TAX_DECLARE'])
+                    + ($showStatusFeeElement['TAX_MANAGEMENT']*$showStatusFeeElement['STATUS_TAX_MANAGEMENT'])
+                    + ($showStatusFeeElement['REFUND_FOR_TENANT']*$showStatusFeeElement['STATUS_REFUND_FOR_TENANT'])
+                    + ($showStatusFeeElement['CLEANING_FEE']*$showStatusFeeElement['STATUS_CLEANING_FEE']);
+
+        $income = 0;
+
+        if($check_status_apart == 'Collected'){
+            $income = ($showStatusFeeElement['TAX_FEE']+$showStatusFeeElement['TAX_MANAGEMENT']
+                      + $showStatusFeeElement['REFUND_FOR_TENANT'] 
+                      + $showStatusFeeElement['CLEANING_FEE'])*$getDuration['PAYMENT_TERM']
+                      + $showStatusFeeElement['TAX_DECLARE'];
+        }
+
+        $balance = $income - $outcome;
+
+        $start_day_term = $getDuration['START_DAY_TERM'];
+        $end_day_term = $getDuration['END_DAY_TERM'];
     }  
 ?>
     <section id="interface">
@@ -25,35 +48,35 @@
                 <img src="./Resource/img/profile-1.jpg">
             </div>
         </div>
-
-        <h3 class="i-name">Apartment Code: <?php echo $apartCode; ?> </h3>
+            
+        <h3 class="i-name">Apartment Code: <?php echo $apartCode; ?> | From: <?php echo $start_day_term;?> To: <?php echo $end_day_term;?> </h3>
         <div class="values">
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
+                    <h3><?php echo number_format($income); ?><sup>đ</sup></h3>
+                    <span>Income</span>
                 </div>
             </div>
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
+                    <h3><?php echo number_format($outcome); ?><sup>đ</sup></h3>
+                    <span>Outcome</span>
                 </div>
             </div>
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
+                    <h3><?php echo number_format($balance); ?><sup>đ</sup></h3>
+                    <span>Balance</span>
                 </div>
             </div>
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
+                    <h3><?php echo $getDuration['PAYMENT_TERM'];?></h3>
+                    <span>Months Period</span>
                 </div>
             </div>
         </div>
@@ -75,7 +98,7 @@
                             <p>Tax Fee</p>
                         </td>
                         <td class="role">
-                            <p><?php echo $showStatusFeeElement['TAX_FEE'];?></p>
+                            <p><?php echo number_format($showStatusFeeElement['TAX_FEE']);?><sup>đ</sup></p>
                         </td>
                         <td class="active">
                             <p><?php echo $showStatusFeeElement['STATUS_TAX_FEE'];?></p>
@@ -90,7 +113,7 @@
                             <p>Tax Declaration</p>
                         </td>
                         <td class="role">
-                            <p><?php echo $showStatusFeeElement['TAX_DECLARE'];?></p>
+                            <p><?php echo number_format($showStatusFeeElement['TAX_DECLARE']);?><sup>đ</sup></p>
                         </td>
                         <td class="active">
                             <p><?php echo $showStatusFeeElement['STATUS_TAX_DECLARE'];?></p>
@@ -105,7 +128,7 @@
                             <p>Tax Management</p>
                         </td>
                         <td class="role">
-                            <p><?php echo $showStatusFeeElement['TAX_MANAGEMENT'];?></p>
+                            <p><?php echo number_format($showStatusFeeElement['TAX_MANAGEMENT']);?><sup>đ</sup></p>
                         </td>
                         <td class="active">
                             <p><?php echo $showStatusFeeElement['STATUS_TAX_MANAGEMENT'];?></p>
@@ -120,7 +143,7 @@
                             <p>Refund For Tenant</p>
                         </td>
                         <td class="role">
-                            <p><?php echo $showStatusFeeElement['REFUND_FOR_TENANT'];?></p>
+                            <p><?php echo number_format($showStatusFeeElement['REFUND_FOR_TENANT']);?><sup>đ</sup></p>
                         </td>
                         <td class="active">
                             <p><?php echo $showStatusFeeElement['STATUS_REFUND_FOR_TENANT'];?></p>
@@ -135,7 +158,7 @@
                             <p>Cleaning Fee</p>
                         </td>
                         <td class="role">
-                            <p><?php echo $showStatusFeeElement['CLEANING_FEE'];?></p>
+                            <p><?php echo number_format($showStatusFeeElement['CLEANING_FEE']);?><sup>đ</sup></p>
                         </td>
                         <td class="active">
                             <p><?php echo $showStatusFeeElement['STATUS_CLEANING_FEE'];?></p>
