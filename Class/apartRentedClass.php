@@ -42,12 +42,14 @@
             $fee_cleaning = str_replace(",","",$cleaning_fee);
             $tenant_refund = str_replace(",","",$refund_for_tenant);
 
+            $total_amount = $fee_tax + $declare_fee_tax + $fee_management + $fee_cleaning + $tenant_refund;
+
             $start_date = date("Y-m-d", strtotime($from));  
             $end_date = date("Y-m-d", strtotime($to)); 
 
             $query = "INSERT INTO tbl_apartment_rented
-            (APARTMENT_CODE,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM) 
-                  VALUES('$apartment_code','$tax_code','$tax_declare_form','$tax_department','$rent_fee_per_month','$fee_tax','$declare_fee_tax','$fee_management','$tenant_refund','$fee_cleaning','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
+            (APARTMENT_CODE,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,TOTAL,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM) 
+                  VALUES('$apartment_code','$tax_code','$tax_declare_form','$tax_department','$rent_fee_per_month','$fee_tax','$declare_fee_tax','$fee_management','$tenant_refund','$fee_cleaning','$total_amount','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
             
             $query_house_owner = "CALL ADDING_HOUSE_OWNER_INFO('$apartment_code')";
 
@@ -73,7 +75,8 @@
 
         //Delete apartment cart 
         public function delete_apart_rented($delID){
-            $query = "DELETE FROM tbl_apartment_rented WHERE APARTMENT_CODE = '$delID'";
+            //$query = "DELETE FROM tbl_apartment_rented WHERE APARTMENT_CODE = '$delID'";
+            $query = "CALL DELETING_APARTMENT_RENTED('$delID')";
             $result = $this->db->delete($query);
 
             header('Location:apartRented.php');
@@ -109,6 +112,8 @@
             $fee_cleaning = str_replace(",","",$cleaning_fee);
             $tenant_refund = str_replace(",","",$refund_for_tenant);
 
+            $total_amount = $fee_tax + $declare_fee_tax + $fee_management + $fee_cleaning + $tenant_refund;
+
             $start_date = date("Y-m-d", strtotime($from));  
             $end_date = date("Y-m-d", strtotime($to)); 
 
@@ -122,6 +127,7 @@
                     ,TAX_MANAGEMENT = '$fee_management'
                     ,REFUND_FOR_TENANT = '$tenant_refund'
                     ,CLEANING_FEE = '$fee_cleaning'
+                    ,TOTAL = '$total_amount'
                     ,START_DAY = '$start_date'
                     ,END_DAY = '$end_date'
                     ,DAY_REMIND = '$day_remind_negotiate'

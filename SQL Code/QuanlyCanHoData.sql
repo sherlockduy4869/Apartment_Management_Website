@@ -49,6 +49,7 @@ CREATE TABLE tbl_apartment_rented
 	TAX_MANAGEMENT FLOAT,
 	REFUND_FOR_TENANT FLOAT,
 	CLEANING_FEE FLOAT,
+	TOTAL FLOAT,
 	START_DAY DATE,
 	END_DAY DATE,
 	DAY_REMIND INT,
@@ -67,8 +68,8 @@ CREATE TABLE tbl_apartment_money
 	EMAIL_OWNER VARCHAR(255),
 	AGENCY_NAME VARCHAR(255),
 	AREA_APART VARCHAR(255),
-	START_DAY DATE,
-	END_DAY DATE,
+	START_DAY_TERM DATE,
+	END_DAY_TERM DATE,
 	PAYMENT_TERM INT,
 	TOTAL_AMOUNT FLOAT,
 	STATUS_APART VARCHAR(255) DEFAULT 'Not yet collected',
@@ -92,6 +93,8 @@ CREATE TABLE tbl_apartment_contract
 	TAX_MANAGEMENT FLOAT,
 	REFUND_FOR_TENANT FLOAT,
 	CLEANING_FEE FLOAT,
+	DATE_REMIND DATE,
+	NUM_DAY_REMIND INT,
 	STATUS_APART VARCHAR(255) DEFAULT 'NOT DONE',
 	FOREIGN KEY(APARTMENT_CODE) REFERENCES tbl_apartment_rented(APARTMENT_CODE)
 )
@@ -161,173 +164,174 @@ GO
 
 --PROC FOR DELETING INFORMATION OF APARMENT IN APARTMENTINFO AND APARTMENTMONEY
 CREATE PROC DELETING_APARTMENT
-@macanho NVARCHAR(25)
+apartment_code VARCHAR(255)
 AS
 BEGIN
-	DELETE FROM APARTMENT_INFO WHERE MACANHO = @macanho
-	DELETE FROM APARTMENT_MONEY WHERE MACANHO = @macanho
-	DELETE FROM APARTMENT_CONTRACT WHERE MACANHO = @macanho
-	DELETE FROM APARTMENT_FINANCE WHERE MACANHO = @macanho
+	DELETE FROM tbl_apartment_money WHERE APARTMENT_CODE = apartment_code;
+	DELETE FROM tbl_apartment_contract WHERE APARTMENT_CODE = apartment_code;
+	DELETE FROM tbl_apartment_finance WHERE APARTMENT_CODE = apartment_code;
+	DELETE FROM tbl_apartment_rented WHERE APARTMENT_CODE = apartment_code;
 END
 GO
 
 --PROC FOR NEXT CYCLING NGAYCANTHU FOR APARTMENT_MONEY
-CREATE PROC Next_Ngaycanthu
-@macanho NVARCHAR(25)
+CREATE PROC NEXT_MONEY_DAY
+apartment_code VARCHAR(255)
 AS
 BEGIN
 	
-	DECLARE @chuky INT
-	DECLARE @ngaydau DATE
-	DECLARE @ngaycuoi DATE
-	DECLARE @ngaydauNext DATE
-	DECLARE @ngaycuoiNext DATE
+	DECLARE term INT;
+	DECLARE start_term DATE;
+	DECLARE end_term DATE;
+	DECLARE start_term_next DATE;
+	DECLARE end_term_next DATE;
 
-	SELECT @chuky =  CHUKY FROM APARTMENT_MONEY WHERE MACANHO = @macanho
-	SELECT @ngaydau = NGAYDAU FROM APARTMENT_MONEY WHERE MACANHO = @macanho
-	SELECT @ngaycuoi = NGAYCUOI FROM APARTMENT_MONEY WHERE MACANHO = @macanho
+	SELECT PAYMENT_TERM INTO term FROM tbl_apartment_money WHERE APARTMENT_CODE = apartment_code;
+	SELECT START_DAY_TERM INTO start_term FROM tbl_apartment_money WHERE APARTMENT_CODE = apartment_code;
+	SELECT END_DAY_TERM INTO end_term FROM tbl_apartment_money WHERE APARTMENT_CODE = apartment_code;
 	
-	SET @ngaydauNext = DATEADD(DAY, 1 , @ngaycuoi)
-	SET @ngaycuoiNext = DATEADD(MONTH, @chuky , @ngaycuoi)
+	SET start_term_next = ADDDATE(start_term, INTERVAL 1 DAY);
+	SET end_term_next = ADDDATE(end_term, INTERVAL term MONTH);
 
-	UPDATE APARTMENT_MONEY
-	SET NGAYDAU = @ngaydauNext, NGAYCUOI = @ngaycuoiNext, TRANGTHAI = 'Chua thu tien'
-	WHERE MACANHO = @macanho
+	UPDATE tbl_apartment_money
+	SET START_DAY_TERM = start_term_next
+	,END_DAY_TERM = end_term_next
+	,STATUS_APART = 'Not yet collected'
+	WHERE APARTMENT_CODE = apartment_code;
 
-	UPDATE APARTMENT_FINANCE
-	SET STATUS_THUE = '0', STATUS_PHIKEKHAITHUE = '0', STATUS_PHIQUANLY= '0', 
-		STATUS_TIENREFUNDKHACH = '0', STATUS_PHIDONVESINH = '0', STATUS_TIENTHU  = '0'
-	WHERE MACANHO = @macanho
+	UPDATE tbl_apartment_finance
+	SET STATUS_TAX_FEE = '0', STATUS_TAX_DECLARE = '0', STATUS_TAX_MANAGEMENT= '0', 
+		STATUS_REFUND_FOR_TENANT = '0', STATUS_CLEANING_FEE = '0', STATUS_TOTAL_AMOUNT  = '0'
+	WHERE APARTMENT_CODE = apartment_code;
 
 END
 GO
 
+CREATE TABLE tbl_apartment_rented
+(
+	APARTMENT_CODE VARCHAR(255) PRIMARY KEY,
+	HOUSE_OWNER VARCHAR(255),
+	PHONE_OWNER VARCHAR(255),
+	EMAIL_OWNER VARCHAR(255),
+	AGENCY_NAME VARCHAR(255),
+	AREA_APART VARCHAR(255),
+	TAX_CODE VARCHAR(255),
+	TAX_DECLARATION_FORM VARCHAR(255),
+	TAX_APARTMENT VARCHAR(255),
+	FEE_PER_MONTH FLOAT,
+	TAX_FEE FLOAT,
+	TAX_DECLARE FLOAT,
+	TAX_MANAGEMENT FLOAT,
+	REFUND_FOR_TENANT FLOAT,
+	CLEANING_FEE FLOAT,
+	TOTAL FLOAT,
+	START_DAY DATE,
+	END_DAY DATE,
+	DAY_REMIND INT,
+	PAYMENT_TERM INT,
+	FOREIGN KEY(APARTMENT_CODE) REFERENCES tbl_apartment_cart(APARTMENT_CODE)
+)
+
 /*TRIGGER AREA*/
 --TRIGGER FOR ADDING INFORMATION FOR APARTMENT MONEY
 CREATE TRIGGER ADDING_APARTMENT_MONEY
-ON APARTMENT_INFO
+ON tbl_apartment_rented
 FOR INSERT
 AS
 BEGIN
-	DECLARE @macanho NVARCHAR(25)
-	DECLARE @tenchuho NVARCHAR(40)
-	DECLARE @daily NVARCHAR(30)
-	DECLARE @email NVARCHAR(30)
-	DECLARE @phone NVARCHAR(30)
-	DECLARE @duan NVARCHAR(50)
-	DECLARE @ngaycanthu DATE
-	DECLARE @chuky INT
-	DECLARE @ngaydau DATE
-	DECLARE @ngaycuoi DATE
-	DECLARE @ngaycuoiMinus DATE
-	DECLARE @tienthu FLOAT
-	DECLARE @tiencanthu FLOAT
+	DECLARE apart_code VARCHAR(255);
+
+	DECLARE term INT;
+	DECLARE start_term DATE;
+	DECLARE end_term DATE;
+	DECLARE end_term_minus DATE;
+	DECLARE total FLOAT;
 
 	
-	SELECT @macanho = MACANHO FROM inserted
-	SELECT @tenchuho = TENCHUHO FROM inserted
-	SELECT @daily = DAILY FROM inserted
-	SELECT @email = EMAIL FROM inserted
-	SELECT @phone = PHONE FROM inserted
-	SELECT @duan = DUAN FROM inserted
-	SELECT @ngaydau = NGAYBATDAU FROM inserted
-	SELECT @chuky = CHUKY FROM inserted
-	SELECT @tienthu = TIENTHU FROM inserted
+	SET apart_code = NEW.APARTMENT_CODE;
 
-	SET @ngaycuoi = DATEADD(MONTH, @chuky, @ngaydau)
-	SET @ngaycuoiMinus = DATEADD(DAY, -1, @ngaycuoi)
-	SET @tiencanthu = @tienthu
+	SET start_term = NEW.START_DAY;
+	SET term = NEW.PAYMENT_TERM;
+	SET total = NEW.TOTAL;
 
-	INSERT INTO APARTMENT_MONEY(MACANHO, TENCHUHO, DAILY, EMAIL, PHONE, DUAN, NGAYDAU, NGAYCUOI, CHUKY, TIENCANTHU)
-	VALUES(@macanho, @tenchuho,@daily,@email,@phone, @duan, @ngaydau, @ngaycuoiMinus, @chuky, @tiencanthu)
+	SET end_term = ADDDATE(start_term, INTERVAL term MONTH);
+	SET end_term_minus = ADDDATE(end_term, INTERVAL -1 DAY);
 	
+	INSERT INTO tbl_apartment_money(APARTMENT_CODE, START_DAY_TERM, END_DAY_TERM, PAYMENT_TERM, TOTAL_AMOUNT)
+	VALUES(apart_code, start_term, end_term_minus, term, total);
 END
 GO
 
 --TRIGGER FOR ADDING INFORMATION FOR APARTMENT_CONTRACT
 CREATE TRIGGER ADDING_APARTMENT_CONTRACT
-ON APARTMENT_INFO
+ON tbl_apartment_rented
 FOR INSERT
 AS
 BEGIN
-	DECLARE @macanho NVARCHAR(25)
-	DECLARE @tenchuho NVARCHAR(40)
-	DECLARE @daily NVARCHAR(30)
-	DECLARE @email NVARCHAR(30)
-	DECLARE @phone NVARCHAR(30)
-	DECLARE @duan NVARCHAR(50)
-	DECLARE @masothue NVARCHAR(25)
-	DECLARE @hinhthuckhaithue NVARCHAR(50)
-	DECLARE @coquanthuthue NVARCHAR(50)
-	DECLARE @thue FLOAT
-	DECLARE @phikekhaithue FLOAT
-	DECLARE @phiquanly FLOAT
-	DECLARE @tienrefundkhach FLOAT
-	DECLARE @phidonvesinh FLOAT
-	DECLARE @ngaybatdau DATE
-	DECLARE @ngayketthuc DATE
-	DECLARE @songaynhacnho INT
-	DECLARE @tienthu FLOAT
-	DECLARE @tienthuemotthang FLOAT
-	DECLARE @ngaynhac DATE
+	DECLARE apart_code VARCHAR(255);
+	
+	DECLARE fee_tax FLOAT;
+	DECLARE fee_management FLOAT;
+	DECLARE tenant_refund FLOAT;
+	DECLARE fee_cleaning FLOAT;
+	DECLARE fee_per_month FLOAT;
 
-	SELECT @macanho = MACANHO FROM inserted
-	SELECT @tenchuho = TENCHUHO FROM inserted
-	SELECT @daily = DAILY FROM inserted
-	SELECT @email = EMAIL FROM inserted
-	SELECT @phone = PHONE FROM inserted
-	SELECT @duan = DUAN FROM inserted
-	SELECT @masothue = MASOTHUE FROM inserted
-	SELECT @hinhthuckhaithue = HINHTHUCKHAITHUE FROM inserted
-	SELECT @coquanthuthue = COQUANTHUTHUE FROM inserted
-	SELECT @thue = THUE FROM inserted
-	SELECT @phikekhaithue = PHIKEKHAITHUE FROM inserted
-	SELECT @phiquanly = PHIQUANLY FROM inserted
-	SELECT @tienrefundkhach = TIENREFUNDKHACH FROM inserted
-	SELECT @phidonvesinh = PHIDONVESINH FROM inserted
-	SELECT @ngaybatdau = NGAYBATDAU FROM inserted
-	SELECT @ngayketthuc = NGAYKETTHUC FROM inserted
-	SELECT @songaynhacnho = SONGAYNHACNHO FROM inserted
-	SELECT @tienthu = TIENTHU FROM inserted
-	SELECT @tienthuemotthang = TIENTHUEMOTTHANG FROM inserted
+	DECLARE day_start DATE;
+	DECLARE day_end DATE;
 
-	SET @ngaynhac = DATEADD(DAY, -@songaynhacnho, @ngayketthuc)
+	DECLARE num_day_remind INT;
+	DECLARE remind_date DATE;
 
-	INSERT INTO APARTMENT_CONTRACT(MACANHO, TENCHUHO, DAILY, EMAIL, PHONE, DUAN, MASOTHUE, HINHTHUCKHAITHUE, 
-	COQUANTHUTHUE, THUE, PHIKEKHAITHUE, PHIQUANLY, TIENREFUNDKHACH, PHIDONVESINH, NGAYBATDAU, NGAYKETTHUC, 
-	NGAYNHAC, SONGAYNHACNHO, TIENTHU, TIENTHUEMOTTHANG) 
+	SET apart_code = NEW.APARTMENT_CODE;
 
-	VALUES(@macanho, @tenchuho, @daily,@email,@phone, @duan,@masothue,@hinhthuckhaithue,
-	@coquanthuthue,@thue,@phikekhaithue,@phiquanly,@tienrefundkhach,@phidonvesinh,@ngaybatdau, 
-	@ngayketthuc, @ngaynhac, @songaynhacnho, @tienthu, @tienthuemotthang)
+	SET fee_tax = NEW.TAX_FEE;
+	SET fee_management = NEW.TAX_MANAGEMENT;
+	SET tenant_refund = NEW.REFUND_FOR_TENANT;
+	SET fee_cleaning = NEW.CLEANING_FEE;
+	SET fee_per_month = NEW.FEE_PER_MONTH;
+
+	SET day_start = NEW.START_DAY;
+	SET day_end = NEW.END_DAY;
+
+	SET num_day_remind = NEW.DAY_REMIND;
+
+	SET remind_date = ADDDATE(day_end, INTERVAL -num_day_remind DAY);
+
+	INSERT INTO tbl_apartment_contract(APARTMENT_CODE,START_DAY,END_DAY,FEE_PER_MONTH,TAX_FEE,
+	TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,DATE_REMIND,NUM_DAY_REMIND) 
+	VALUES(apart_code,day_start,day_end,fee_per_month,
+	fee_tax,fee_management,tenant_refund,fee_cleaning,remind_date,num_day_remind);
 END
 GO
 
 --TRIGGER FOR ADDING INFORMATION FOR APARTMENT_FINANCE
 CREATE TRIGGER ADDING_APARTMENT_FINANCE
-ON APARTMENT_INFO
+ON tbl_apartment_rented
 FOR INSERT
 AS
 BEGIN
 
-	DECLARE @macanho NVARCHAR(25)
-	DECLARE @thue FLOAT
-	DECLARE @phikekhaithue FLOAT
-	DECLARE @phiquanly FLOAT
-	DECLARE @tienrefundkhach FLOAT
-	DECLARE @phidonvesinh FLOAT
-	DECLARE @tienthu FLOAT
+	DECLARE apart_code VARCHAR(255);
 
-	SELECT @macanho = MACANHO FROM inserted
-	SELECT @thue = THUE FROM inserted
-	SELECT @phikekhaithue = PHIKEKHAITHUE FROM inserted
-	SELECT @phiquanly = PHIQUANLY FROM inserted
-	SELECT @tienrefundkhach = TIENREFUNDKHACH FROM inserted
-	SELECT @phidonvesinh = PHIDONVESINH FROM inserted
-	SELECT @tienthu = TIENTHU FROM inserted
+	DECLARE fee_tax FLOAT;
+	DECLARE fee_declare_tax FLOAT;
+	DECLARE fee_management FLOAT;
+	DECLARE tenant_refund FLOAT;
+	DECLARE fee_cleaning FLOAT;
+	DECLARE total_amount FLOAT;
 
-	INSERT INTO APARTMENT_FINANCE(MACANHO, THUE, PHIKEKHAITHUE, PHIQUANLY, TIENREFUNDKHACH, PHIDONVESINH, TIENTHU) 
-	VALUES(@macanho, @thue, @phikekhaithue, @phiquanly, @tienrefundkhach, @phidonvesinh, @tienthu)
+	SET apart_code = NEW.APARTMENT_CODE;
+
+	SET fee_tax = NEW.TAX_FEE;
+	SET fee_declare_tax = NEW.TAX_DECLARE;
+	SET fee_management = NEW.TAX_MANAGEMENT;
+	SET tenant_refund = NEW.REFUND_FOR_TENANT;
+	SET fee_cleaning = NEW.CLEANING_FEE;
+	SET total_amount = NEW.TOTAL;
+
+	INSERT INTO tbl_apartment_finance(APARTMENT_CODE, TAX_FEE, TAX_DECLARE, TAX_MANAGEMENT, 
+	REFUND_FOR_TENANT, CLEANING_FEE, TOTAL_AMOUNT) 
+	VALUES(apart_code, fee_tax, fee_declare_tax, fee_management, tenant_refund, fee_cleaning, total_amount);
 
 END
 GO
@@ -396,6 +400,20 @@ BEGIN
         PHONE_OWNER = phone
 	WHERE APARTMENT_CODE = apartment_code;
 
-END
+	UPDATE tbl_apartment_contract
+	SET AREA_APART = area, 
+		AGENCY_NAME = agency,
+		HOUSE_OWNER = house_ower_name,
+    	EMAIL_OWNER = email,
+        PHONE_OWNER = phone
+	WHERE APARTMENT_CODE = apartment_code;
 
+	UPDATE tbl_apartment_money
+	SET AREA_APART = area, 
+		AGENCY_NAME = agency,
+		HOUSE_OWNER = house_ower_name,
+    	EMAIL_OWNER = email,
+        PHONE_OWNER = phone
+	WHERE APARTMENT_CODE = apartment_code;
+END
 

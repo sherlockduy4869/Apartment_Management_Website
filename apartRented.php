@@ -82,9 +82,6 @@
                                 while($result = $apartRentedList->fetch_assoc())
                                 {
                                     $ID++;
-                                    $totalAmount = $result['TAX_FEE'] + $result['TAX_DECLARE'] + $result['TAX_MANAGEMENT'] 
-                                                + $result['REFUND_FOR_TENANT'] + $result['CLEANING_FEE'];
-
                                     $start_date = date("d-m-Y", strtotime($result['START_DAY']));  
                                     $end_date = date("d-m-Y", strtotime($result['END_DAY'])); 
                                     
@@ -109,7 +106,7 @@
                             <p><?php echo $start_date;?><br><?php echo $end_date;?></p>
                         </td>
                         <td class="active">
-                            <p><?php echo number_format($totalAmount);?><sup>đ</sup></p>
+                            <p><?php echo number_format($result['TOTAL']);?><sup>đ</sup></p>
                         </td>
                         <td class="edit">
                             <a href="#">Details</a>|<a href="apartRentedEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
