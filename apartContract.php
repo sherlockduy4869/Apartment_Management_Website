@@ -5,6 +5,24 @@
 ?>
 <?php
     $apartContract = new apartcontract();
+
+    if(isset($_GET['markdoneID']))
+    {
+        $markdoneID = $_GET['markdoneID'];
+        $markdoneApartContract = $apartContract->markdone_apart_contract($markdoneID);
+    }  
+
+    if(isset($_GET['redoID']))
+    {
+        $redoID = $_GET['redoID'];
+        $redoApartContract = $apartContract->redo_apart_contract($redoID);
+    } 
+
+    if(isset($_GET['skipID']))
+    {
+        $skipID = $_GET['skipID'];
+        $skipApartContract = $apartContract->skip_apart_contract($skipID);
+    } 
 ?>
 <section id="interface">
         <div class="navigation">
@@ -74,8 +92,8 @@
                             <p><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Markdone</a>|<a href="#">Redo</a> <br>
-                            <a href="#">Details</a>|<a href="#">Skip</a>
+                            <a onclick="return confirm('Do you want to markdone ?')" href="?markdoneID=<?php echo $result['APARTMENT_CODE'];?>">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a> <br>
+                            <a href="#">Details</a>|<a onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
                         </td>
                     </tr>
                         <?php
