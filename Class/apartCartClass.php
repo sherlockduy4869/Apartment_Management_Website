@@ -49,18 +49,6 @@
             return $result;
         }
 
-        //Show apartment cart list
-        public function show_apart_cart_statistic(){
-            $query = "SELECT COUNT(APARTMENT_CODE) as NUM_APART,
-                             COUNT(AGENCY_NAME) as NUM_AGENT,
-                             COUNT(AREA_APART) as NUM_AREA,  
-                             COUNT(BEDROOM) as NUM_BEDROOM
-                             FROM tbl_apartment_cart
-                             WHERE STATUS_APART = 'AVAILABLE'";
-            $result = $this->db->select($query)->fetch_assoc();
-            return $result;
-        }
-
         //Delete apartment cart 
         public function delete_apart_cart($delID){
             $query = "DELETE FROM tbl_apartment_cart WHERE APARTMENT_CODE = '$delID'";

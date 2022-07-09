@@ -19,38 +19,7 @@
                 <img src="./Resource/img/profile-1.jpg">
             </div>
         </div>
-
         <h3 class="i-name">Dashboard</h3>
-        <div class="values">
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
-                </div>
-            </div>
-        </div>
         <div class="board">
             <table id="tbl_cart" width="100%">
                 <thead>
@@ -60,7 +29,7 @@
                         <th>House Owner</th>
                         <th>From</th>
                         <th>To</th>
-                        <th>Renting_Fee/Month</th>
+                        <th>Renting_Fee<br>Per Month</th>
                         <th>Status</th>
                         <th>Customize</th>
                     </tr>
@@ -105,7 +74,8 @@
                             <p><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Details</a>
+                            <a href="#">Markdone</a>|<a href="#">Redo</a> <br>
+                            <a href="#">Details</a>|<a href="#">Skip</a>
                         </td>
                     </tr>
                         <?php

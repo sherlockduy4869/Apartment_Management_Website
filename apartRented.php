@@ -28,36 +28,6 @@
         </div>
 
         <h3 class="i-name">Dashboard</h3>
-        <div class="values">
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3>8,567</h3>
-                    <span>New Users</span>
-                </div>
-            </div>
-        </div>
         <div class="board">
             <table id="tbl_cart" width="100%">
                 <thead>

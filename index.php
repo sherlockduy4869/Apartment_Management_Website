@@ -11,8 +11,6 @@
         $delID = $_GET['delID'];
         $delApartCart = $apartCart->delete_apart_cart($delID);
     }  
-
-    $show_statistic_apart_cart = $apartCart->show_apart_cart_statistic();
 ?>
 <section id="interface">
     
@@ -30,37 +28,6 @@
         </div>
 
         <h3 class="i-name">Dashboard</h3>
-        <div class="values">
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3 class="num"><?php echo $show_statistic_apart_cart['NUM_APART'];?></h3>
-                    <span>Cart Aparts</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3 class="num"><?php echo $show_statistic_apart_cart['NUM_AREA'];?></h3>
-                    <span>Different Areas</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3 class="num"><?php echo $show_statistic_apart_cart['NUM_AGENT'];?></h3>
-                    <span>Different Agents</span>
-                </div>
-            </div>
-            <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
-                <div>
-                    <h3 class="num"><?php echo $show_statistic_apart_cart['NUM_BEDROOM'];?></h3>
-                    <span>Bedroom Styles</span>
-                </div>
-            </div>
-        </div>
-
 <div class="board">
             <table id="tbl_cart" width="100%">
                 <thead>
