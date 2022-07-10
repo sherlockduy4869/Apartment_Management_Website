@@ -6,21 +6,15 @@
 <?php
     $apartrented = new apartrented();
 
-    if(isset($_GET['editID']))
+    if(isset($_GET['detailsID']))
     {
-        $apart_rented_id = $_GET['editID'];
+        $apart_rented_id = $_GET['detailsID'];
         $apart_rented_by_id = $apartrented->get_apart_rented_by_id($apart_rented_id);
 
         $start_date = date("d-m-Y", strtotime($apart_rented_by_id['START_DAY']));  
         $end_date = date("d-m-Y", strtotime($apart_rented_by_id['END_DAY'])); 
     }
 ?>
-<?php
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-
-        $apartRentedEdit = $apartrented->edit_apart_rented($_POST, $apart_rented_id);
-    }
 ?>
 <section id="interface">
     <div class="navigation">
@@ -40,78 +34,72 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Edit Apartment Rented</div>
+                <div class="title">Details Apartment Rented Information</div>
 
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form>
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input disabled type="text" name="apartment_code" value="<?php echo $apart_rented_by_id['APARTMENT_CODE']?>">
+                            <input disabled type="text" value="<?php echo $apart_rented_by_id['APARTMENT_CODE']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Code</span>
-                            <input type="text" name="tax_code" value="<?php echo $apart_rented_by_id['TAX_CODE']?>" required>
+                            <input disabled type="text" value="<?php echo $apart_rented_by_id['TAX_CODE']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Declaration Form</span>
-                            <input type="text" name="tax_declare_form" value="<?php echo $apart_rented_by_id['TAX_DECLARATION_FORM']?>" required>
+                            <input disabled type="text" value="<?php echo $apart_rented_by_id['TAX_DECLARATION_FORM']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Department</span>
-                            <input type="text" name="tax_department" value="<?php echo $apart_rented_by_id['TAX_APARTMENT']?>" required>
+                            <input disabled type="text" value="<?php echo $apart_rented_by_id['TAX_APARTMENT']?>">
                         </div>     
                         <div class="input-box">
                             <span class="details">Payment Term</span>
-                            <input type="number" value="1" min="1" value="<?php echo $apart_rented_by_id['PAYMENT_TERM']?>" name="payment_term" required>
+                            <input disabled type="number" value="1" min="1" value="<?php echo $apart_rented_by_id['PAYMENT_TERM']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
-                            <input class="renting_fee_per_month" type="text" value="<?php echo $apart_rented_by_id['FEE_PER_MONTH']?>" name="renting_fee_per_month" required>
+                            <input disabled class="renting_fee_per_month" type="text" value="<?php echo $apart_rented_by_id['FEE_PER_MONTH']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Tax Fee</span>
-                            <input class="tax_fee" type="text" name="tax_fee" value="<?php echo $apart_rented_by_id['TAX_FEE']?>" required>
+                            <input disabled class="tax_fee" type="text" value="<?php echo $apart_rented_by_id['TAX_FEE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Tax Declare Fee</span>
-                            <input class="tax_declare_fee" type="text" value="<?php echo $apart_rented_by_id['TAX_DECLARE']?>" name="tax_declare_fee" required>
+                            <input disabled class="tax_declare_fee" type="text" value="<?php echo $apart_rented_by_id['TAX_DECLARE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Management Fee</span>
-                            <input class="management_fee" type="text" value="<?php echo $apart_rented_by_id['TAX_MANAGEMENT']?>" name="management_fee" required>
+                            <input disabled class="management_fee" type="text" value="<?php echo $apart_rented_by_id['TAX_MANAGEMENT']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Cleaning Fee</span>
-                            <input class="cleaning_fee" type="text" value="<?php echo $apart_rented_by_id['CLEANING_FEE']?>" name="cleaning_fee" required>
+                            <input disabled class="cleaning_fee" type="text" value="<?php echo $apart_rented_by_id['CLEANING_FEE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Refund For Tenant</span>
-                            <input class="refund_for_tenant" type="text" value="<?php echo $apart_rented_by_id['REFUND_FOR_TENANT']?>" name="refund_for_tenant" required>
+                            <input disabled class="refund_for_tenant" type="text" value="<?php echo $apart_rented_by_id['REFUND_FOR_TENANT']?>">
                         </div>            
                         <div class="input-box">
                             <span class="details">Day Remind Negotiate</span>
-                            <input type="number" min="1" name="day_remind_negotiate" 
-                            value="<?php echo $apart_rented_by_id['DAY_REMIND']?>" required>
+                            <input disabled type="number" min="1" name="day_remind_negotiate" 
+                            value="<?php echo $apart_rented_by_id['DAY_REMIND']?>">
                         </div>      
                         <div class="input-box">
                             <span class="details">From</span>
-                            <input class="from" type="text" name="from" 
-                            value="<?php echo $start_date; ?>" required>
+                            <input disabled class="from" type="text"
+                            value="<?php echo $start_date; ?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">To</span>
-                            <input class="to" type="text" name="to" 
-                            value="<?php echo $end_date; ?>" required>
+                            <input disabled class="to" type="text"
+                            value="<?php echo $end_date; ?>">
                         </div>  
                     </div>
-                    <?php 
-                    if(isset($apartRentedEdit))
-                    {
-                        echo $apartRentedEdit;
-                    }
-                    ?>
                     <div class="button">
-                        <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
+                        <button class="btn btn-primary"><a href="apartRented.php">BACK TO RENTED LIST</a></button>
                     </div>
                 </form>
 

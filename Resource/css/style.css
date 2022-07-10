@@ -443,13 +443,19 @@ form .user-details .input-box{
     margin: 25px 0;
 }
 
-.container form .button input{
+.container form .button input,
+.container form .button button{
     height: 100%;
     width: 100%;
     outline: none;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;
+}
+
+.container form .button button a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .container form .note textarea{
