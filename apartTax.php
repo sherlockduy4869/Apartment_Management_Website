@@ -69,7 +69,7 @@
                                     
                                     
                         ?>
-                    <tr class="text-center">
+                    <tr>
                         <td><?php echo $ID ?></td>
                         <td class="people-de">
                             <h5><?php echo $result['APARTMENT_CODE'];?></h5>

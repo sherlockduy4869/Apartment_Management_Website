@@ -56,7 +56,7 @@
                                     $date_input_date = date("d-m-Y", strtotime($result['DATE_INPUT_DATA']));
                                     
                         ?>
-                    <tr class="text-center">
+                    <tr>
                         <td><?php echo $ID ?></td>
                         <td class="people-de">
                             <h5><?php echo $result['APARTMENT_CODE'];?></h5>
@@ -75,7 +75,7 @@
                             <p><?php echo $result['SQM'];?>m<sup>2</sup></p>
                         </td>
                         <td class="role">
-                            <p><?php echo '$'.number_format($result['USD_PRICE']);?>-<br><?php echo number_format($result['USD_PRICE']);?><sup>đ</sup></p>
+                            <p><?php echo '$'.number_format($result['USD_PRICE']);?>/<br><?php echo number_format($result['USD_PRICE']);?><sup>đ</sup></p>
                         </td>
                         <td class="role">
                             <p><?php echo $date_input_date;?></p>
