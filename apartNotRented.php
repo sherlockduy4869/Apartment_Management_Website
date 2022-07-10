@@ -76,7 +76,7 @@
                             <p><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Details</a>|<a href="apartNotRentedEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
+                            <a href="apartNotRentedDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a href="apartNotRentedEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
                         <?php
