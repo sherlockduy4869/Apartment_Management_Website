@@ -76,28 +76,28 @@
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3><?php echo number_format($income); ?><sup>đ</sup></h3>
+                    <h3><text class="num"><?php echo number_format($income); ?></text><sup>đ</sup></h3>
                     <span>Income</span>
                 </div>
             </div>
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3><?php echo number_format($outcome); ?><sup>đ</sup></h3>
+                    <h3><text class="num"><?php echo number_format($outcome); ?></text><sup>đ</sup></h3>
                     <span>Outcome</span>
                 </div>
             </div>
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3><?php echo number_format($balance); ?><sup>đ</sup></h3>
+                    <h3><text class="num"><?php echo number_format($balance); ?></text><sup>đ</sup></h3>
                     <span>Balance</span>
                 </div>
             </div>
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
                 <div>
-                    <h3><?php echo $getDuration['PAYMENT_TERM'];?></h3>
+                    <h3><text class="num"><?php echo $getDuration['PAYMENT_TERM'];?></text></h3>
                     <span>Months Period</span>
                 </div>
             </div>
