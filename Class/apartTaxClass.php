@@ -50,5 +50,15 @@
             $result = $this->db->execute($query);
             return $result;
         }
+
+        //Get apartment tax by id
+        public function get_apart_contract_by_id($apart_tax_id){
+            $query = "SELECT tbl_apartment_money.*,tbl_apartment_rented.*
+                    FROM tbl_apartment_money INNER JOIN tbl_apartment_rented
+                    ON tbl_apartment_money.APARTMENT_CODE = tbl_apartment_rented.APARTMENT_CODE
+                    WHERE tbl_apartment_money.APARTMENT_CODE = '$apart_tax_id'";
+            $result = $this->db->select($query)->fetch_assoc();
+            return $result;
+        }
     }
 ?>

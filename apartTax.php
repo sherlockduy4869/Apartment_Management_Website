@@ -94,7 +94,7 @@
                             <p><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a href="#">Details</a><br><a href="financeApart.php?apartCode=<?php echo $result['APARTMENT_CODE'];?>">Finance</a>
+                            <a href="apartTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a><br><a href="financeApart.php?apartCode=<?php echo $result['APARTMENT_CODE'];?>">Finance</a>
                         </td>
                         <td class="edit">
                             <a onclick="return confirm('Do you want to markdone ?')" href="?markdoneID=<?php echo $result['APARTMENT_CODE'];?>">Markdone</a><br>
