@@ -49,5 +49,12 @@
             $result = $this->db->delete($query);
             return $result;
         }
+
+        //Get apartment contract by id
+        public function get_apart_contract_by_id($apart_contract_id){
+            $query = "SELECT * FROM tbl_apartment_contract WHERE APARTMENT_CODE = '$apart_contract_id'";
+            $result = $this->db->select($query)->fetch_assoc();
+            return $result;
+        }
     }
 ?>

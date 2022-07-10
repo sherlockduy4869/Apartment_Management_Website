@@ -145,12 +145,11 @@
         numeral: true,
         numeralThousandGroupStyle: 'thousand'
     });
-        new Cleave('.from', {
+    new Cleave('.from', {
         date: true,
         delimiter: '-',
         datePattern: ['d', 'm', 'Y']
     });
-
     new Cleave('.to', {
         date: true,
         delimiter: '-',

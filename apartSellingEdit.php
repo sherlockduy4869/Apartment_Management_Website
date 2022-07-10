@@ -98,7 +98,7 @@
                         </div>  
                     </div>
                     <div class="note">
-                        <textarea name="note" value="<?php echo $apart_selling_by_id['NOTE']?>" cols="30" rows="10"></textarea>
+                        <textarea name="note" value="<?php echo $apart_selling_by_id['NOTE']?>" placeholder="Note" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
                     if(isset($sellingEdit))

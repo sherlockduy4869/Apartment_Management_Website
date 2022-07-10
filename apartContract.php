@@ -92,7 +92,7 @@
                         </td>
                         <td class="edit">
                             <a onclick="return confirm('Do you want to markdone ?')" href="?markdoneID=<?php echo $result['APARTMENT_CODE'];?>">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a> <br>
-                            <a href="#">Details</a>|<a onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
+                            <a href="apartContractDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
                         </td>
                     </tr>
                         <?php

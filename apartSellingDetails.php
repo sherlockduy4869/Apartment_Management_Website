@@ -31,7 +31,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Edit Apartment Selling</div>
+                <div class="title">Details Apartment Selling Information</div>
 
                 <form>
                     <div class="user-details">
@@ -77,7 +77,7 @@
                         </div>  
                     </div>
                     <div class="note">
-                        <textarea disabled value="<?php echo $apart_selling_by_id['NOTE']?>" cols="30" rows="10"></textarea>
+                        <textarea disabled value="<?php echo $apart_selling_by_id['NOTE']?>" placeholder="Note" cols="30" rows="10"></textarea>
                     </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartSelling.php">BACK TO SELLING LIST</a></button>
