@@ -12,8 +12,6 @@ $(document).ready(function () {
     })
 
     //Data table for tbl_cart
-    //$('#tbl_cart').DataTable();
-
     $('#tbl_cart').DataTable( {
         dom: 'Bfrtip',
         buttons: [
