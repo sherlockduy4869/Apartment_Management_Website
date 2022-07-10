@@ -30,10 +30,20 @@
             return $result;
         }
 
+        //Check status for apartment finance
         public function check_status_apart_finance($apartCode){
             $query = "SELECT STATUS_APART FROM tbl_apartment_money WHERE APARTMENT_CODE = '$apartCode' ";
             $result = $this->db->select($query);
             return $result;
+        }
+
+        //Update status finance for apartment finance
+        public function update_finance($apartCode,$status,$current_value){
+            $query = "UPDATE tbl_apartment_finance
+                    SET $status = '$current_value'
+                    WHERE APARTMENT_CODE = '$apartCode'";
+            $result = $this->db->update($query);
+            header('Location:financeApart.php?apartCode='.$apartCode);
         }
     }
 ?>
