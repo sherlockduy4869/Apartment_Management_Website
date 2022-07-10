@@ -94,11 +94,11 @@
                             <p><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a href="apartTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a><br><a href="financeApart.php?apartCode=<?php echo $result['APARTMENT_CODE'];?>">Finance</a>
+                            <a href="apartTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a><br><a style="color: #363949;" href="financeApart.php?apartCode=<?php echo $result['APARTMENT_CODE'];?>">Finance</a>
                         </td>
                         <td class="edit">
-                            <a onclick="return confirm('Do you want to markdone ?')" href="?markdoneID=<?php echo $result['APARTMENT_CODE'];?>">Markdone</a><br>
-                            <a onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a onclick="return confirm('Do you want to next cycle ?')" href="?nextID=<?php echo $result['APARTMENT_CODE'];?>">Next</a>
+                            <a style="color: #41f1b6;" onclick="return confirm('Do you want to markdone ?')" href="?markdoneID=<?php echo $result['APARTMENT_CODE'];?>">Markdone</a><br>
+                            <a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to next cycle ?')" href="?nextID=<?php echo $result['APARTMENT_CODE'];?>">Next</a>
                         </td>
                     </tr>
                         <?php

@@ -71,8 +71,8 @@
                             <p><?php echo $result['SQM'];?>m<sup>2</sup></p>
                         </td>
                         <td class="edit">
-                            <a href="cartDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a href="cartEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>
-                            |<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
+                            <a href="cartDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #41f1b6;" href="cartEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>
+                            |<a style="color: #ff7782;" onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
                         <?php
