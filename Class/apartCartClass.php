@@ -84,7 +84,10 @@
                     ,SQM = '$sqm'
                     WHERE APARTMENT_CODE ='$cart_id'";
 
+            $query_house_owner = "CALL ADDING_HOUSE_OWNER_INFO('$cart_id')";
+
             $result = $this->db->update($query);
+            $result_house_owner = $this->db->execute($query_house_owner);
 
             if($result){
                 $alert = "<span class = 'addSuccess'>Edit apartment cart successfully</span><br>";
