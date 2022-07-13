@@ -64,6 +64,7 @@
             return $result;
         }
 
+        //Edit apartment cart information
         public function edit_apart_cart($data,$cart_id){
 
             $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
