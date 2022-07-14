@@ -21,6 +21,8 @@
 
             $apartment_code = mysqli_real_escape_string($this->db->link, $data['apartment_code']);
             $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
+            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
+            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
             $area = mysqli_real_escape_string($this->db->link, $data['area']);
             $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
             $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
@@ -28,17 +30,17 @@
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
             $status_apart = mysqli_real_escape_string($this->db->link, $data['status_apart']);
 
-            $query = "INSERT INTO tbl_apartment_not_rented(APARTMENT_CODE,AGENCY_NAME,AREA_APART,
+            $query = "INSERT INTO tbl_apartment_not_rented(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,AREA_APART,
             HOUSE_OWNER,PHONE_OWNER,BEDROOM,SQM,STATUS_APART) 
-                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$bedroom','$sqm','$status_apart')";
+                  VALUES('$apartment_code','$agent_name','$agency_phone','$agency_email','$area','$house_owner','$phone_owner','$bedroom','$sqm','$status_apart')";
             $result = $this->db->insert($query);
 
             if($result){
-                $alert = "<span class = 'addSuccess'>Add apartment not rented succesfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Add apartment UC succesfully</span> <br>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Add apartment not rented failed</span> <br>";
+                $alert = "<span class = 'addError'>Add apartment UC failed</span> <br>";
                 return $alert;
             }
         }
@@ -69,6 +71,8 @@
         public function edit_apart_not_rented($data, $apart_not_rented_id){
 
             $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
+            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
+            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
             $area = mysqli_real_escape_string($this->db->link, $data['area']);
             $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
             $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
@@ -79,6 +83,8 @@
             $query = "UPDATE tbl_apartment_not_rented SET
                     AGENCY_NAME = '$agent_name'
                     ,AREA_APART = '$area'
+                    ,AGENCY_PHONE = '$agency_phone'
+                    ,AGENCY_EMAIL = '$agency_email'
                     ,HOUSE_OWNER = '$house_owner'
                     ,PHONE_OWNER = '$phone_owner'
                     ,BEDROOM = '$bedroom'
@@ -89,11 +95,11 @@
             $result = $this->db->update($query);
 
             if($result){
-                $alert = "<span class = 'addSuccess'>Edit apartment not rented succesfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Edit apartment UC succesfully</span> <br>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Edit apartment not rented failed</span> <br>";
+                $alert = "<span class = 'addError'>Edit apartment UC failed</span> <br>";
                 return $alert;
             }
 

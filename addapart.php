@@ -35,6 +35,8 @@
                 <i class="fa-solid fa-plus"></i>
                 <a href="apartSellingAdd.php">Add Apart Selling</a>
             </div>
+        </div>
+        <div class="values">
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
                 <a href="apartNotRentedAdd.php">Add Apart Not Rented</a>

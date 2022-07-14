@@ -61,6 +61,10 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">Agency Phone</span>
+                            <input type="text" name="agency_phone" value="<?php echo $apart_not_rented_by_id['AGENCY_PHONE'] ?>">
+                        </div>
+                        <div class="input-box">
                             <span class="details">Bedroom</span>
                             <select name="bedroom">
                                 <option <?php if($apart_not_rented_by_id['BEDROOM'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
@@ -73,6 +77,10 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">Agency Email</span>
+                            <input type="email" name="agency_email" value="<?php echo $apart_not_rented_by_id['AGENCY_EMAIL'] ?>">
+                        </div>
+                        <div class="input-box">
                             <span class="details">SQM</span>
                             <input type="number" name="sqm" value="<?php echo $apart_not_rented_by_id['SQM'] ?>" required>
                         </div>
@@ -81,16 +89,16 @@
                             <input type="text" name="house_owner" value="<?php echo $apart_not_rented_by_id['HOUSE_OWNER'] ?>" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input type="text" name="phone_owner" value="<?php echo $apart_not_rented_by_id['PHONE_OWNER'] ?>" required>
-                        </div>   
-                        <div class="input-box">
                             <span class="details">Status Apartment</span>
                             <select name="status_apart">
                                 <option <?php if($apart_not_rented_by_id['STATUS_APART'] == "Not received the house handover") {echo "SELECTED";} ?> value="Not received the house handover">Not received the house handover</option>
                                 <option <?php if($apart_not_rented_by_id['STATUS_APART'] == "Received the house handover") {echo "SELECTED";} ?> value="Received the house handover">Received the house handover</option>
                             </select>
                         </div>  
+                        <div class="input-box">
+                            <span class="details">Phone</span>
+                            <input type="text" name="phone_owner" value="<?php echo $apart_not_rented_by_id['PHONE_OWNER'] ?>" required>
+                        </div>   
                     </div>
                     <?php 
                     if(isset($notRentedEdit))
