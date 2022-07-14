@@ -1,14 +1,14 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartNoMoneyRentedClass.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartRentedNoTaxClass.php';
 ?>
 <?php
-    $apartnomoneyrented = new apartnomoneyrented();
+    $apartnrentednotax = new apartnrentednotax();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-        $apartNoMoneyRentedAdd = $apartnomoneyrented->insert_apart_no_money_rented($_POST);
+        $apartRentedNoTaxAdd = $apartnrentednotax->insert_apart_rented($_POST);
     }
 ?>
 <section id="interface">
@@ -17,7 +17,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT RENTED</span>
+                <span>APARTMENT FOR RENT NO TAX</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -29,25 +29,33 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add Apartment No Money Rented</div>
+                <div class="title">Add Apartment For Rent No Tax</div>
 
-                <form action="apartNoMoneyRentedAdd.php" method="POST" enctype="multipart/form-data">
+                <form action="apartRentedAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment Code</span>
                             <input  type="text" name="apartment_code" placeholder="Enter apartment code" required>
-                        </div>   
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Customer Name</span>
+                            <input  type="text" name="apartment_name" placeholder="Enter customer name" required>
+                        </div>
                         <div class="input-box">
                             <span class="details">Payment Term</span>
                             <input type="number" value="1" min="1" name="payment_term" required>
                         </div> 
                         <div class="input-box">
+                            <span class="details">Customer Phone</span>
+                            <input  type="text" name="apartment_phone" placeholder="Enter customer phone" required>
+                        </div>
+                        <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
                             <input class="renting_fee_per_month" type="text" name="renting_fee_per_month" required>
-                        </div>             
+                        </div>    
                         <div class="input-box">
-                            <span class="details">Day Remind Negotiate</span>
-                            <input type="number" min="1" name="day_remind_negotiate" required>
+                            <span class="details">Customer Email</span>
+                            <input  type="email" name="apartment_phone" placeholder="Enter customer email" required>
                         </div>      
                         <div class="input-box">
                             <span class="details">From</span>
@@ -56,12 +64,17 @@
                         <div class="input-box">
                             <span class="details">To</span>
                             <input class="to" type="text" name="to" required>
-                        </div>  
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Day Remind Negotiate</span>
+                            <input type="number" min="1" name="day_remind_negotiate" required>
+                        </div>      
+                         
                     </div>
                     <?php 
-                    if(isset($apartNoMoneyRentedAdd))
+                    if(isset($apartRentedAdd))
                     {
-                        echo $apartNoMoneyRentedAdd;
+                        echo $apartRentedAdd;
                     }
                     ?>
                     <div class="button">
@@ -77,7 +90,6 @@
         numeral: true,
         numeralThousandGroupStyle: 'thousand'
     });
-
     new Cleave('.from', {
         date: true,
         delimiter: '-',
