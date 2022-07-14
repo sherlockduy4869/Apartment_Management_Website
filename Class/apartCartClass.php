@@ -21,6 +21,8 @@
 
             $apartment_code = mysqli_real_escape_string($this->db->link, $data['apartment_code']);
             $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
+            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
+            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
             $area = mysqli_real_escape_string($this->db->link, $data['area']);
             $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
             $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
@@ -32,8 +34,8 @@
 
             $price =  str_replace(",","",$apart_price);
 
-            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENCY_NAME,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM,PRICE,STATUS_FURNITURE) 
-                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm','$price','$status_furniture')";
+            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM,PRICE,STATUS_FURNITURE) 
+                  VALUES('$apartment_code','$agent_name','$agency_phone','$agency_email','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm','$price','$status_furniture')";
             $result = $this->db->insert($query);
 
             if($result){
@@ -72,6 +74,8 @@
         public function edit_apart_cart($data,$cart_id){
 
             $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
+            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
+            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
             $area = mysqli_real_escape_string($this->db->link, $data['area']);
             $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
             $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
@@ -85,6 +89,8 @@
 
             $query = "UPDATE tbl_apartment_cart SET
                     AGENCY_NAME = '$agent_name'
+                    ,AGENCY_PHONE = '$agency_phone'
+                    ,AGENCY_EMAIL = '$agency_email'
                     ,AREA_APART = '$area'
                     ,HOUSE_OWNER = '$house_owner'
                     ,PHONE_OWNER = '$phone_owner'

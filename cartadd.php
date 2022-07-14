@@ -34,11 +34,11 @@
                 <form action="cartAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
-                            <span class="details">Apartment code</span>
+                            <span class="details">Apartment Code</span>
                             <input type="text" name="apartment_code" placeholder="Enter apartment code" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">Agency name</span>
+                            <span class="details">Agency Name</span>
                             <input type="text" name="agent_name" placeholder="Enter agency name" required>
                         </div>
                         <div class="input-box">
@@ -52,8 +52,8 @@
                             </select>
                         </div>
                         <div class="input-box">
-                            <span class="details">House owner</span>
-                            <input type="text" name="house_owner" placeholder="Enter house owner name" required>
+                            <span class="details">Agency Phone</span>
+                            <input type="text" name="agency_phone" placeholder="Enter agency phone">
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
@@ -68,16 +68,16 @@
                             </select>
                         </div>
                         <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input type="text" name="phone_owner" placeholder="Enter phone number">
-                        </div>   
+                            <span class="details">Agency Email</span>
+                            <input type="email" name="agency_email" placeholder="Enter agency email">
+                        </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
                             <input type="number" min="1" name="sqm" placeholder="Enter aparment area" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">Email</span>
-                            <input type="email" name="email_owner" placeholder="Enter email">
+                            <span class="details">House Owner</span>
+                            <input type="text" name="house_owner" placeholder="Enter house owner name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Status Furniture</span>
@@ -88,9 +88,17 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">Phone</span>
+                            <input type="text" name="phone_owner" placeholder="Enter phone number">
+                        </div>   
+                        <div class="input-box">
                             <span class="details">Price</span>
                             <input class="apart_price" type="text" name="apart_price" placeholder="Enter aparment price" required>
-                        </div>  
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="email" name="email_owner" placeholder="Enter email">
+                        </div>
                     </div>
                     <?php 
                     if(isset($cartAdd))

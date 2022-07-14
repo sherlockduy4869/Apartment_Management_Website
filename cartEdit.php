@@ -60,8 +60,8 @@
                             </select>
                         </div>
                         <div class="input-box">
-                            <span class="details">House owner</span>
-                            <input type="text" value="<?php echo $cart_by_id['HOUSE_OWNER'] ?>" name="house_owner" required>
+                            <span class="details">Agency Phone</span>
+                            <input type="text" name="agency_phone" value="<?php echo $cart_by_id['AGENCY_PHONE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
@@ -76,16 +76,16 @@
                             </select>
                         </div>
                         <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input type="text" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>" name="phone_owner">
-                        </div>   
+                            <span class="details">Agency Email</span>
+                            <input type="email" name="agency_email" value="<?php echo $cart_by_id['AGENCY_EMAIL'] ?>">
+                        </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
                             <input type="number" min="1" value="<?php echo $cart_by_id['SQM'] ?>" name="sqm" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">Email</span>
-                            <input type="email" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>" name="email_owner">
+                            <span class="details">House owner</span>
+                            <input type="text" value="<?php echo $cart_by_id['HOUSE_OWNER'] ?>" name="house_owner" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Status Furniture</span>
@@ -96,9 +96,17 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">Phone</span>
+                            <input type="text" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>" name="phone_owner">
+                        </div>   
+                        <div class="input-box">
                             <span class="details">Price</span>
                             <input class="apart_price" type="text" name="apart_price" value="<?php echo $cart_by_id['PRICE'] ?>" required>
-                        </div>      
+                        </div>  
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="email" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>" name="email_owner">
+                        </div>
                     </div>
                     <?php 
                     if(isset($apart_cart_edit))

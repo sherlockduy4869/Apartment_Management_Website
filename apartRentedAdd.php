@@ -39,15 +39,15 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Code</span>
-                            <input type="text" name="tax_code" placeholder="Enter tax code" required>
+                            <input type="text" name="tax_code" placeholder="Enter tax code">
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Declaration Form</span>
-                            <input type="text" name="tax_declare_form" placeholder="Enter tax declaration form" required>
+                            <input type="text" name="tax_declare_form" placeholder="Enter tax declaration form">
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Department</span>
-                            <input type="text" name="tax_department" placeholder="Enter tax department" required>
+                            <input type="text" name="tax_department" placeholder="Enter tax department">
                         </div>     
                         <div class="input-box">
                             <span class="details">Payment Term</span>
@@ -59,23 +59,23 @@
                         </div> 
                         <div class="input-box">
                             <span class="details">Tax Fee</span>
-                            <input class="tax_fee" type="text" name="tax_fee" required>
+                            <input class="tax_fee" type="text" name="tax_fee">
                         </div> 
                         <div class="input-box">
                             <span class="details">Tax Declare Fee</span>
-                            <input class="tax_declare_fee" type="text" name="tax_declare_fee" required>
+                            <input class="tax_declare_fee" type="text" name="tax_declare_fee">
                         </div> 
                         <div class="input-box">
                             <span class="details">Management Fee</span>
-                            <input class="management_fee" type="text" name="management_fee" required>
+                            <input class="management_fee" type="text" name="management_fee">
                         </div> 
                         <div class="input-box">
                             <span class="details">Cleaning Fee</span>
-                            <input class="cleaning_fee" type="text" name="cleaning_fee" required>
+                            <input class="cleaning_fee" type="text" name="cleaning_fee">
                         </div> 
                         <div class="input-box">
                             <span class="details">Refund For Tenant</span>
-                            <input class="refund_for_tenant" type="text" name="refund_for_tenant" required>
+                            <input class="refund_for_tenant" type="text" name="refund_for_tenant">
                         </div>            
                         <div class="input-box">
                             <span class="details">Day Remind Negotiate</span>
