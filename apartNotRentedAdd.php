@@ -17,7 +17,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT NOT RENTED</span>
+                <span>APARTMENT UNDER CONSTRUCTION</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -29,7 +29,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add Apartment Not Rented</div>
+                <div class="title">Add Apartment Under Construction</div>
 
                 <form action="apartNotRentedAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">

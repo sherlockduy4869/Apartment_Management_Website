@@ -19,7 +19,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT NOT RENTED</span>
+                <span>APARTMENT UNDER CONSTRUCTION</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -73,7 +73,7 @@
                             </div>
                         </td>
                         <td class="active">
-                            <p><?php echo $result['BEDROOM'];?>-<?php echo $result['SQM'];?>m<sup>2</sup></p>
+                            <p><?php echo $result['BEDROOM'];?>/<?php echo $result['SQM'];?>m<sup>2</sup></p>
                         </td>
                         <td class="role">
                             <p><?php echo $result['STATUS_APART'];?></p>

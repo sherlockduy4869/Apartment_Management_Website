@@ -18,7 +18,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT NOT RENTED</span>
+                <span>APARTMENT UNDER CONSTRUCTION</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -30,7 +30,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Details Apartment Not Rented Information</div>
+                <div class="title">Details Apartment Under Construction</div>
 
                 <form>
                     <div class="user-details">
@@ -76,7 +76,7 @@
                         </div>   
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary"><a href="apartNotRented.php">BACK TO NOT RENTED LIST</a></button>
+                        <button class="btn btn-primary"><a href="apartNotRented.php">BACK TO UNDER CONSTRUCTION LIST</a></button>
                     </div>
                 </form>
 
