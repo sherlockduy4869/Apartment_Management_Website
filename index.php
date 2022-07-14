@@ -35,8 +35,8 @@
                         <th class="text-center">STT</th>
                         <th class="text-center">Apartment Info</th>
                         <th class="text-center">House Owner</th>
-                        <th class="text-center">Bedroom</th>
-                        <th class="text-center">SQM</th>
+                        <th class="text-center">Apartment Details</th>
+                        <th class="text-center">Price</th>
                         <th class="text-center">Customize</th>
                     </tr>
                 </thead>
@@ -65,14 +65,14 @@
                             </div>
                         </td>
                         <td class="active">
-                            <p><?php echo $result['BEDROOM'];?></p>
+                            <p><?php echo $result['BEDROOM'];?> - <?php echo $result['SQM'];?>m<sup>2</sup> - <?php echo $result['STATUS_FURNITURE'];?></p>
                         </td>
                         <td class="role">
-                            <p><?php echo $result['SQM'];?>m<sup>2</sup></p>
+                            <p><?php echo number_format($result['PRICE']);?><sup>đ</sup></p>
                         </td>
                         <td class="edit">
-                            <a href="cartDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #41f1b6;" href="cartEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>
-                            |<a style="color: #ff7782;" onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
+                            <a href="cartDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #41f1b6;" href="cartEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a><br>
+                            <a style="color: #ff7782;" onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
                         <?php
