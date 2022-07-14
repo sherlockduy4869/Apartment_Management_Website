@@ -29,6 +29,10 @@
             </div>
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
+                <a href="apartNoMoneyRentedAdd.php">Add Apart No Money Rented</a>
+            </div>
+            <div class="val-box clickable">
+                <i class="fa-solid fa-plus"></i>
                 <a href="apartSellingAdd.php">Add Apart Selling</a>
             </div>
             <div class="val-box clickable">
