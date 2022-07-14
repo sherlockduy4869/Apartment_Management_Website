@@ -17,7 +17,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT CART</span>
+                <span>APARTMENT FOR RENT</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -29,7 +29,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add Apartment Cart</div>
+                <div class="title">Add Apartment For Rent</div>
 
                 <form action="cartAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">

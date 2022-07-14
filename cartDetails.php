@@ -18,7 +18,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT CART</span>
+                <span>APARTMENT FOR RENT</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -30,7 +30,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Details Apartment Cart Information</div>
+                <div class="title">Details Apartment For Rent</div>
 
                 <form>
                     <div class="user-details">
@@ -85,7 +85,7 @@
                         </div>     
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary"><a href="index.php">BACK TO CART LIST</a></button>
+                        <button class="btn btn-primary"><a href="index.php">BACK TO FOR RENT LIST</a></button>
                     </div>
                 </form>
 

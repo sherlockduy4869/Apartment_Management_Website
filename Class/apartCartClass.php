@@ -39,11 +39,11 @@
             $result = $this->db->insert($query);
 
             if($result){
-                $alert = "<span class = 'addSuccess'>Add apartment cart succesfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Add apartment for rent succesfully</span> <br>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Add apartment cart failed</span> <br>";
+                $alert = "<span class = 'addError'>Add apartment for rent failed</span> <br>";
                 return $alert;
             }
         }
@@ -107,11 +107,11 @@
             $result_house_owner = $this->db->execute($query_house_owner);
 
             if($result){
-                $alert = "<span class = 'addSuccess'>Edit apartment cart successfully</span><br>";
+                $alert = "<span class = 'addSuccess'>Edit apartment for rent successfully</span><br>";
                 return $alert;
             }
 
-            $alert = "<span class = 'addError'>Can not edit apartment cart</span> <br>";
+            $alert = "<span class = 'addError'>Can not edit apartment for rent</span> <br>";
             return $alert;
         }
     }
