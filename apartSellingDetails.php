@@ -37,47 +37,47 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input disabled type="text" name="apartment_code" value="<?php echo $apart_selling_by_id['APARTMENT_CODE']?>">
+                            <input disabled type="text" name="apartment_code" value="<?php echo $apart_selling_by_id['APARTMENT_CODE'];?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Agency name</span>
-                            <input disabled type="text" name="agent_name" value="<?php echo $apart_selling_by_id['AGENCY_NAME']?>">
+                            <input disabled type="text" name="agent_name" value="<?php echo $apart_selling_by_id['AGENCY_NAME'];?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <input disabled type="text" value="<?php echo $apart_selling_by_id['AREA_APART']?>">
+                            <input disabled type="text" value="<?php echo $apart_selling_by_id['AREA_APART'];?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <input disabled type="text" value="<?php echo $apart_selling_by_id['BEDROOM']?>">
+                            <input disabled type="text" value="<?php echo $apart_selling_by_id['BEDROOM'];?>">
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
-                            <input disabled type="number" value="<?php echo $apart_selling_by_id['SQM']?>">
+                            <input disabled type="number" value="<?php echo $apart_selling_by_id['SQM'];?>">
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
-                            <input disabled type="text" value="<?php echo $apart_selling_by_id['HOUSE_OWNER']?>">
+                            <input disabled type="text" value="<?php echo $apart_selling_by_id['HOUSE_OWNER'];?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input disabled type="text" value="<?php echo $apart_selling_by_id['PHONE_OWNER']?>">
+                            <input disabled type="text" value="<?php echo $apart_selling_by_id['PHONE_OWNER'];?>">
                         </div>   
                         <div class="input-box">
                             <span class="details">Email</span>
-                            <input disabled type="email" value="<?php echo $apart_selling_by_id['EMAIL_OWNER']?>">
+                            <input disabled type="email" value="<?php echo $apart_selling_by_id['EMAIL_OWNER'];?>">
                         </div>  
                         <div class="input-box">
                             <span class="details">USD Price</span>
-                            <input disabled class="usd_price" type="text" value="<?php echo $apart_selling_by_id['USD_PRICE']?>">
+                            <input disabled class="usd_price" type="text" value="<?php echo $apart_selling_by_id['USD_PRICE'];?>">
                         </div>  
                         <div class="input-box">
                             <span class="details">VND Price</span>
-                            <input disabled class="vnd_price" type="text" value="<?php echo $apart_selling_by_id['VND_PRICE']?>">
+                            <input disabled class="vnd_price" type="text" value="<?php echo $apart_selling_by_id['VND_PRICE'];?>">
                         </div>  
                     </div>
                     <div class="note">
-                        <textarea disabled value="<?php echo $apart_selling_by_id['NOTE']?>" placeholder="Note" cols="30" rows="10"></textarea>
+                        <textarea disabled value="<?php echo $apart_selling_by_id['NOTE'];?>" cols="30" rows="10"></textarea>
                     </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartSelling.php">BACK TO SELLING LIST</a></button>

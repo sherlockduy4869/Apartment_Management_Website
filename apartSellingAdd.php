@@ -17,7 +17,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT SELLING</span>
+                <span>APARTMENT FOR SELL</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -29,7 +29,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add Apartment Selling</div>
+                <div class="title">Add Apartment For Sell</div>
 
                 <form action="apartSellingAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
@@ -52,6 +52,10 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">Agency Phone</span>
+                            <input type="text" name="agency_phone" placeholder="Enter agency phone">
+                        </div>
+                        <div class="input-box">
                             <span class="details">Bedroom</span>
                             <select name="bedroom">
                                 <option value="1 Bed">1 Bed</option>
@@ -64,6 +68,10 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">Agency Email</span>
+                            <input type="email" name="agency_email" placeholder="Enter agency email">
+                        </div>
+                        <div class="input-box">
                             <span class="details">SQM</span>
                             <input type="number" name="sqm" placeholder="Enter aparment area" required>
                         </div>
@@ -72,20 +80,20 @@
                             <input type="text" name="house_owner" placeholder="Enter house owner name" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input type="text" name="phone_owner" placeholder="Enter phone number" required>
-                        </div>   
-                        <div class="input-box">
-                            <span class="details">Email</span>
-                            <input type="email" name="email_owner" placeholder="Enter email" required>
-                        </div>  
-                        <div class="input-box">
                             <span class="details">USD Price</span>
                             <input class="usd_price" type="text" name="usd_price" placeholder="Enter USD price" required>
                         </div>  
                         <div class="input-box">
+                            <span class="details">Phone</span>
+                            <input type="text" name="phone_owner" placeholder="Enter phone number" required>
+                        </div>   
+                        <div class="input-box">
                             <span class="details">VND Price</span>
                             <input class="vnd_price" type="text" name="vnd_price" placeholder="Enter VND price" required>
+                        </div>  
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="email" name="email_owner" placeholder="Enter email" required>
                         </div>  
                     </div>
                     <div class="note">

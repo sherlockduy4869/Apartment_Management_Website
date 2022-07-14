@@ -26,7 +26,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT SELLING</span>
+                <span>APARTMENT FOR SELL</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -38,17 +38,17 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Edit Apartment Selling</div>
+                <div class="title">Edit Apartment For Sell</div>
 
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input disabled type="text" name="apartment_code" value="<?php echo $apart_selling_by_id['APARTMENT_CODE']?>" required>
+                            <input disabled type="text" name="apartment_code" value="<?php echo $apart_selling_by_id['APARTMENT_CODE'];?>" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency name</span>
-                            <input type="text" name="agent_name" value="<?php echo $apart_selling_by_id['AGENCY_NAME']?>" required>
+                            <input type="text" name="agent_name" value="<?php echo $apart_selling_by_id['AGENCY_NAME'];?>" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
@@ -59,6 +59,10 @@
                                 <option <?php if($apart_selling_by_id['AREA_APART'] == "Estella") {echo "SELECTED";} ?> value="Estella">Estella</option>
                                 <option <?php if($apart_selling_by_id['AREA_APART'] == "Celesta") {echo "SELECTED";} ?> value="Celesta">Celesta</option>
                             </select>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Agency Phone</span>
+                            <input type="text" name="agency_phone" value="<?php echo $apart_selling_by_id['AGENCY_PHONE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
@@ -73,32 +77,36 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">Agency Email</span>
+                            <input type="email" name="agency_email" value="<?php echo $apart_selling_by_id['AGENCY_EMAIL']; ?>">
+                        </div>
+                        <div class="input-box">
                             <span class="details">SQM</span>
-                            <input type="number" name="sqm" value="<?php echo $apart_selling_by_id['SQM']?>" required>
+                            <input type="number" name="sqm" value="<?php echo $apart_selling_by_id['SQM'];?>" required>
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
-                            <input type="text" name="house_owner" value="<?php echo $apart_selling_by_id['HOUSE_OWNER']?>" required>
+                            <input type="text" name="house_owner" value="<?php echo $apart_selling_by_id['HOUSE_OWNER'];?>" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">USD Price</span>
+                            <input class="usd_price" type="text" name="usd_price" value="<?php echo $apart_selling_by_id['USD_PRICE'];?>" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input type="text" name="phone_owner" value="<?php echo $apart_selling_by_id['PHONE_OWNER']?>" required>
+                            <input type="text" name="phone_owner" value="<?php echo $apart_selling_by_id['PHONE_OWNER'];?>" required>
                         </div>   
                         <div class="input-box">
-                            <span class="details">Email</span>
-                            <input type="email" name="email_owner" value="<?php echo $apart_selling_by_id['EMAIL_OWNER']?>" required>
-                        </div>  
-                        <div class="input-box">
-                            <span class="details">USD Price</span>
-                            <input class="usd_price" type="text" name="usd_price" value="<?php echo $apart_selling_by_id['USD_PRICE']?>" required>
-                        </div>  
-                        <div class="input-box">
                             <span class="details">VND Price</span>
-                            <input class="vnd_price" type="text" name="vnd_price" value="<?php echo $apart_selling_by_id['VND_PRICE']?>" required>
+                            <input class="vnd_price" type="text" name="vnd_price" value="<?php echo $apart_selling_by_id['VND_PRICE'];?>" required>
+                        </div>  
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="email" name="email_owner" value="<?php echo $apart_selling_by_id['EMAIL_OWNER'];?>" required>
                         </div>  
                     </div>
                     <div class="note">
-                        <textarea name="note" value="<?php echo $apart_selling_by_id['NOTE']?>" placeholder="Note" cols="30" rows="10"></textarea>
+                        <textarea name="note" value="<?php echo $apart_selling_by_id['NOTE'];?>" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
                     if(isset($sellingEdit))

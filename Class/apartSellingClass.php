@@ -21,6 +21,8 @@
 
             $apartment_code = mysqli_real_escape_string($this->db->link, $data['apartment_code']);
             $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
+            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
+            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
             $area = mysqli_real_escape_string($this->db->link, $data['area']);
             $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
             $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
@@ -36,18 +38,18 @@
 
             $date_input_data = date("Y-m-d");
 
-            $query = "INSERT INTO tbl_apartment_selling(APARTMENT_CODE,AGENCY_NAME,AREA_APART,
+            $query = "INSERT INTO tbl_apartment_selling(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,AREA_APART,
             HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM,USD_PRICE,VND_PRICE,DATE_INPUT_DATA,NOTE) 
-                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$email_owner',
+                  VALUES('$apartment_code','$agent_name','$agency_phone','$agency_email','$area','$house_owner','$phone_owner','$email_owner',
                   '$bedroom','$sqm','$price_usd','$price_vnd','$date_input_data','$note')";
             $result = $this->db->insert($query);
 
             if($result){
-                $alert = "<span class = 'addSuccess'>Add apartment selling succesfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Add apartment for sell succesfully</span> <br>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Add apartment selling failed</span> <br>";
+                $alert = "<span class = 'addError'>Add apartment for sell failed</span> <br>";
                 return $alert;
             }
         }
@@ -78,6 +80,8 @@
         public function edit_apart_selling($data, $apart_selling_id){
 
             $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
+            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
+            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
             $area = mysqli_real_escape_string($this->db->link, $data['area']);
             $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
             $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
@@ -95,6 +99,8 @@
 
             $query = "UPDATE tbl_apartment_selling SET
                     AGENCY_NAME = '$agent_name'
+                    ,AGENCY_PHONE = '$agency_phone'
+                    ,AGENCY_EMAIL = '$agency_email'
                     ,AREA_APART = '$area'
                     ,HOUSE_OWNER = '$house_owner'
                     ,PHONE_OWNER = '$phone_owner'
@@ -110,11 +116,11 @@
             $result = $this->db->update($query);
 
             if($result){
-                $alert = "<span class = 'addSuccess'>Edit apartment selling succesfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Edit apartment for sell succesfully</span> <br>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Edit apartment selling failed</span> <br>";
+                $alert = "<span class = 'addError'>Edit apartment for sell failed</span> <br>";
                 return $alert;
             }
         }
