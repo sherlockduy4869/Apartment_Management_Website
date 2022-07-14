@@ -52,6 +52,10 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">House owner</span>
+                            <input type="text" name="house_owner" placeholder="Enter house owner name" required>
+                        </div>
+                        <div class="input-box">
                             <span class="details">Bedroom</span>
                             <select name="bedroom">
                                 <option value="1 Bed">1 Bed</option>
@@ -64,20 +68,28 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">Phone</span>
+                            <input type="text" name="phone_owner" placeholder="Enter phone number">
+                        </div>   
+                        <div class="input-box">
                             <span class="details">SQM</span>
                             <input type="number" min="1" name="sqm" placeholder="Enter aparment area" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">House owner</span>
-                            <input type="text" name="house_owner" placeholder="Enter house owner name" required>
+                            <span class="details">Email</span>
+                            <input type="email" name="email_owner" placeholder="Enter email">
                         </div>
                         <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input type="text" name="phone_owner" placeholder="Enter phone number" required>
-                        </div>   
+                            <span class="details">Status Furniture</span>
+                            <select name="status_furniture">
+                                <option value="No Furniture">No Furniture</option>
+                                <option value="Semi Furniture">Semi Furniture</option>
+                                <option value="Full Furniture">Full Furniture</option>
+                            </select>
+                        </div>
                         <div class="input-box">
-                            <span class="details">Email</span>
-                            <input type="email" name="email_owner" placeholder="Enter email" required>
+                            <span class="details">Price</span>
+                            <input class="apart_price" type="text" name="apart_price" placeholder="Enter aparment price" required>
                         </div>  
                     </div>
                     <?php 
@@ -94,6 +106,12 @@
             </div>
         </div>
 </section>
+<script>
+    new Cleave('.apart_price', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+</script>
 <?php 
     include_once "Include/footer.php";
 ?>

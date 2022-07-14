@@ -49,55 +49,47 @@
                             <input disabled type="text" name="apartment_code" value="<?php echo $apart_tax_by_id['APARTMENT_CODE']?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Agency name</span>
-                            <input disabled type="text" name="agent_name" value="<?php echo $apart_tax_by_id['AGENCY_NAME']?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Area</span>
-                            <input disabled type="text" value="<?php echo $apart_tax_by_id['AREA_APART']?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">House owner</span>
-                            <input disabled type="text" value="<?php echo $apart_tax_by_id['HOUSE_OWNER']?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input disabled type="text" value="<?php echo $apart_tax_by_id['PHONE_OWNER']?>">
-                        </div>   
-                        <div class="input-box">
-                            <span class="details">Tax Code</span>
-                            <input disabled value="<?php echo $apart_tax_by_id['TAX_CODE']?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Start Day</span>
-                            <input disabled class="start_day" type="text"
-                            value="<?php echo $start_day_term; ?>">
-                        </div> 
-                        <div class="input-box">
-                            <span class="details">End Day</span>
-                            <input disabled class="end_day" type="text"
-                            value="<?php echo $end_day_term; ?>">
-                        </div> 
-                        <div class="input-box">
                             <span class="details">Tax Fee</span>
                             <input disabled class="tax_fee" type="text" value="<?php echo $apart_tax_by_id['TAX_FEE']*$term?>">
                         </div> 
+                        <div class="input-box">
+                            <span class="details">Agency name</span>
+                            <input disabled type="text" name="agent_name" value="<?php echo $apart_tax_by_id['AGENCY_NAME']?>">
+                        </div>
                         <div class="input-box">
                             <span class="details">Tax Declaration</span>
                             <input disabled class="tax_declaration" type="text" value="<?php echo $apart_tax_by_id['TAX_DECLARE']?>">
                         </div> 
                         <div class="input-box">
+                            <span class="details">Area</span>
+                            <input disabled type="text" value="<?php echo $apart_tax_by_id['AREA_APART']?>">
+                        </div>
+                        <div class="input-box">
                             <span class="details">Tax Management</span>
                             <input disabled class="tax_management" type="text" value="<?php echo $apart_tax_by_id['TAX_MANAGEMENT']*$term?>">
                         </div> 
+                        <div class="input-box">
+                            <span class="details">House owner</span>
+                            <input disabled type="text" value="<?php echo $apart_tax_by_id['HOUSE_OWNER']?>">
+                        </div>
                         <div class="input-box">
                             <span class="details">Refund For Tenant</span>
                             <input disabled class="refund_for_tenant" type="text" value="<?php echo $apart_tax_by_id['REFUND_FOR_TENANT']*$term?>">
                         </div> 
                         <div class="input-box">
+                            <span class="details">From</span>
+                            <input disabled class="start_day" type="text"
+                            value="<?php echo $start_day_term; ?>">
+                        </div> 
+                        <div class="input-box">
                             <span class="details">Cleaning Fee</span>
                             <input disabled class="cleaning_fee" type="text" value="<?php echo $apart_tax_by_id['CLEANING_FEE']*$term?>">
                         </div>
+                        <div class="input-box">
+                            <span class="details">To</span>
+                            <input disabled class="end_day" type="text"
+                            value="<?php echo $end_day_term; ?>">
+                        </div> 
                         <div class="input-box">
                             <span class="details">Total Amount</span>
                             <input disabled class="total_amount" type="text" value="<?php echo $total; ?>">

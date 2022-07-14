@@ -60,6 +60,10 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">House owner</span>
+                            <input type="text" value="<?php echo $cart_by_id['HOUSE_OWNER'] ?>" name="house_owner" required>
+                        </div>
+                        <div class="input-box">
                             <span class="details">Bedroom</span>
                             <select name="bedroom">
                                 <option <?php if($cart_by_id['BEDROOM'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
@@ -72,21 +76,29 @@
                             </select>
                         </div>
                         <div class="input-box">
+                            <span class="details">Phone</span>
+                            <input type="text" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>" name="phone_owner">
+                        </div>   
+                        <div class="input-box">
                             <span class="details">SQM</span>
                             <input type="number" min="1" value="<?php echo $cart_by_id['SQM'] ?>" name="sqm" required>
                         </div>
                         <div class="input-box">
-                            <span class="details">House owner</span>
-                            <input type="text" value="<?php echo $cart_by_id['HOUSE_OWNER'] ?>" name="house_owner" required>
+                            <span class="details">Email</span>
+                            <input type="email" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>" name="email_owner">
                         </div>
                         <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input type="text" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>" name="phone_owner" required>
-                        </div>     
+                            <span class="details">Status Furniture</span>
+                            <select name="status_furniture">
+                                <option <?php if($cart_by_id['STATUS_FURNITURE'] == "No Furniture") {echo "SELECTED";} ?> value="No Furniture">No Furniture</option>
+                                <option <?php if($cart_by_id['STATUS_FURNITURE'] == "Semi Furniture") {echo "SELECTED";} ?> value="Semi Furniture">Semi Furniture</option>
+                                <option <?php if($cart_by_id['STATUS_FURNITURE'] == "Full Furniture") {echo "SELECTED";} ?> value="Full Furniture">Full Furniture</option>
+                            </select>
+                        </div>
                         <div class="input-box">
-                            <span class="details">Email</span>
-                            <input type="email" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>" name="email_owner" required>
-                        </div>     
+                            <span class="details">Price</span>
+                            <input class="apart_price" type="text" name="apart_price" value="<?php echo $cart_by_id['PRICE'] ?>" required>
+                        </div>      
                     </div>
                     <?php 
                     if(isset($apart_cart_edit))
@@ -102,6 +114,12 @@
             </div>
         </div>
 </section>
+<script>
+    new Cleave('.apart_price', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+</script>
 <?php 
     include_once "Include/footer.php";
 ?>

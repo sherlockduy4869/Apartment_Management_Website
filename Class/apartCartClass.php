@@ -27,9 +27,13 @@
             $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
             $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
+            $apart_price = mysqli_real_escape_string($this->db->link, $data['apart_price']);
+            $status_furniture = mysqli_real_escape_string($this->db->link, $data['status_furniture']);
 
-            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENCY_NAME,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM) 
-                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm')";
+            $price =  str_replace(",","",$apart_price);
+
+            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENCY_NAME,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM,PRICE,STATUS_FURNITURE) 
+                  VALUES('$apartment_code','$agent_name','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm','$price','$status_furniture')";
             $result = $this->db->insert($query);
 
             if($result){
@@ -74,6 +78,10 @@
             $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
             $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
+            $apart_price = mysqli_real_escape_string($this->db->link, $data['apart_price']);
+            $status_furniture = mysqli_real_escape_string($this->db->link, $data['status_furniture']);
+
+            $price =  str_replace(",","",$apart_price);
 
             $query = "UPDATE tbl_apartment_cart SET
                     AGENCY_NAME = '$agent_name'
@@ -83,6 +91,8 @@
                     ,EMAIL_OWNER = '$email_owner'
                     ,BEDROOM = '$bedroom'
                     ,SQM = '$sqm'
+                    ,PRICE = '$price'
+                    ,STATUS_FURNITURE = '$status_furniture'
                     WHERE APARTMENT_CODE ='$cart_id'";
 
             $query_house_owner = "CALL ADDING_HOUSE_OWNER_INFO('$cart_id')";
