@@ -2,14 +2,20 @@
     include_once "Include/header.php";
     include_once "Include/slider.php";
     include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartRentedNoTaxClass.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartCartClass.php';
 ?>
 <?php
     $apartnrentednotax = new apartnrentednotax();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-        $apartRentedNoTaxAdd = $apartnrentednotax->insert_apart_rented($_POST);
+        $apartRentedNoTaxAdd = $apartnrentednotax->insert_apart_rented_no_tax($_POST);
     }
+?>
+<?php
+    $apartCart = new apartcart();
+
+    $listApartCode = $apartCart->show_apart_cart_list();
 ?>
 <section id="interface">
     <div class="navigation">
@@ -31,15 +37,31 @@
             <div class="container">
                 <div class="title">Add Apartment For Rent No Tax</div>
 
-                <form action="apartRentedAdd.php" method="POST" enctype="multipart/form-data">
+                <form action="apartRentedNoTaxAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment Code</span>
-                            <input  type="text" name="apartment_code" placeholder="Enter apartment code" required>
+                            <input <?php if($listApartCode == false){echo 'disabled';} ?> list="apart_code_list" name="apartment_code" required>
+                            <datalist id="apart_code_list">
+                            <?php
+                            
+                                if($listApartCode)
+                                {   
+                                    $ID = 0;
+                                    while($result = $listApartCode->fetch_assoc())
+                                    {
+                                    
+                                ?>
+                                <option value="<?php echo $result['APARTMENT_CODE']; ?>">
+                            <?php
+                                    }
+                                }
+                            ?>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Customer Name</span>
-                            <input  type="text" name="apartment_name" placeholder="Enter customer name" required>
+                            <input  type="text" name="customer_name" placeholder="Enter customer name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Payment Term</span>
@@ -47,7 +69,7 @@
                         </div> 
                         <div class="input-box">
                             <span class="details">Customer Phone</span>
-                            <input  type="text" name="apartment_phone" placeholder="Enter customer phone" required>
+                            <input  type="text" name="customer_phone" placeholder="Enter customer phone" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
@@ -55,7 +77,7 @@
                         </div>    
                         <div class="input-box">
                             <span class="details">Customer Email</span>
-                            <input  type="email" name="apartment_phone" placeholder="Enter customer email" required>
+                            <input  type="email" name="customer_email" placeholder="Enter customer email" required>
                         </div>      
                         <div class="input-box">
                             <span class="details">From</span>
@@ -72,9 +94,9 @@
                          
                     </div>
                     <?php 
-                    if(isset($apartRentedAdd))
+                    if(isset($apartRentedNoTaxAdd))
                     {
-                        echo $apartRentedAdd;
+                        echo $apartRentedNoTaxAdd;
                     }
                     ?>
                     <div class="button">
