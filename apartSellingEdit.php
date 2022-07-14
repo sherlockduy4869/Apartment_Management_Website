@@ -106,7 +106,7 @@
                         </div>  
                     </div>
                     <div class="note">
-                        <textarea name="note" value="<?php echo $apart_selling_by_id['NOTE'];?>" cols="30" rows="10"></textarea>
+                        <input class="selling_note" name="note" type="text" placeholder="Enter note here" value="<?php echo $apart_selling_by_id['NOTE'];?>"></input>
                     </div>
                     <?php 
                     if(isset($sellingEdit))

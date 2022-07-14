@@ -458,7 +458,7 @@ form .user-details .input-box{
     color: #fff;
 }
 
-.container form .note textarea{
+.container form .note .selling_note{
     height: 100%;
     width: 100%;
     outline: none;
@@ -470,8 +470,8 @@ form .user-details .input-box{
     transition: all 300ms ease;
 }
 
-.container form .note textarea:focus,
-.container form .note textarea:valid{
+.container form .note .selling_note:focus,
+.container form .note .selling_note:valid{
     border-color: #9b59b6;
 }
 

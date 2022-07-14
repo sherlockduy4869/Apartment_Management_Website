@@ -19,7 +19,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT SELLING</span>
+                <span>APARTMENT FOR SELL</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -31,7 +31,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Details Apartment Selling Information</div>
+                <div class="title">Details Apartment For Sell</div>
 
                 <form>
                     <div class="user-details">
@@ -85,7 +85,7 @@
                         </div>  
                     </div>
                     <div class="note">
-                        <textarea disabled value="<?php echo $apart_selling_by_id['NOTE'];?>" cols="30" rows="10"></textarea>
+                        <input disabled class="selling_note" type="text" value="<?php echo $apart_selling_by_id['NOTE'];?>"></input>
                     </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartSelling.php">BACK TO SELLING LIST</a></button>

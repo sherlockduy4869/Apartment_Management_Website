@@ -97,7 +97,7 @@
                         </div>  
                     </div>
                     <div class="note">
-                        <textarea name="note" placeholder="Enter note here" cols="30" rows="10"></textarea>
+                        <input class="selling_note" name="note" type="text" placeholder="Enter note here"></input>
                     </div>
                     <?php 
                     if(isset($sellingAdd))

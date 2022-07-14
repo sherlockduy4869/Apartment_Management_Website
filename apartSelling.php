@@ -19,7 +19,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT SELLING</span>
+                <span>APARTMENT FOR SELL</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -75,7 +75,7 @@
                             </div>
                         </td>
                         <td class="active">
-                            <p><?php echo $result['BEDROOM'];?>-<?php echo $result['SQM'];?>m<sup>2</sup></p>
+                            <p><?php echo $result['BEDROOM'];?>/<?php echo $result['SQM'];?>m<sup>2</sup></p>
                         </td>
                         <td class="role">
                             <p><?php echo '$'.number_format($result['USD_PRICE']);?>/<br><?php echo number_format($result['USD_PRICE']);?><sup>đ</sup></p>
