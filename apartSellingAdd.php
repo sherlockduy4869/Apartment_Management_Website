@@ -66,7 +66,9 @@
                                 <option value="4 Bed">4 Bed</option>
                                 <option value="4 Bed + 1">4 Bed + 1</option>
                             </select>
+                            
                         </div>
+
                         <div class="input-box">
                             <span class="details">Agency Email</span>
                             <input type="email" name="agency_email" placeholder="Enter agency email">

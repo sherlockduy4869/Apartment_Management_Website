@@ -48,8 +48,16 @@
                             <input disabled type="text" value="<?php echo $apart_selling_by_id['AREA_APART'];?>">
                         </div>
                         <div class="input-box">
+                            <span class="details">Agency Phone</span>
+                            <input disabled type="text" name="agency_phone" value="<?php echo $apart_selling_by_id['AGENCY_PHONE'] ?>">
+                        </div>
+                        <div class="input-box">
                             <span class="details">Bedroom</span>
                             <input disabled type="text" value="<?php echo $apart_selling_by_id['BEDROOM'];?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Agency Email</span>
+                            <input disabled type="email" name="agency_email" value="<?php echo $apart_selling_by_id['AGENCY_EMAIL']; ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
@@ -60,20 +68,20 @@
                             <input disabled type="text" value="<?php echo $apart_selling_by_id['HOUSE_OWNER'];?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input disabled type="text" value="<?php echo $apart_selling_by_id['PHONE_OWNER'];?>">
-                        </div>   
-                        <div class="input-box">
-                            <span class="details">Email</span>
-                            <input disabled type="email" value="<?php echo $apart_selling_by_id['EMAIL_OWNER'];?>">
-                        </div>  
-                        <div class="input-box">
                             <span class="details">USD Price</span>
                             <input disabled class="usd_price" type="text" value="<?php echo $apart_selling_by_id['USD_PRICE'];?>">
                         </div>  
                         <div class="input-box">
+                            <span class="details">Phone</span>
+                            <input disabled type="text" value="<?php echo $apart_selling_by_id['PHONE_OWNER'];?>">
+                        </div>   
+                        <div class="input-box">
                             <span class="details">VND Price</span>
                             <input disabled class="vnd_price" type="text" value="<?php echo $apart_selling_by_id['VND_PRICE'];?>">
+                        </div>  
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input disabled type="email" value="<?php echo $apart_selling_by_id['EMAIL_OWNER'];?>">
                         </div>  
                     </div>
                     <div class="note">
