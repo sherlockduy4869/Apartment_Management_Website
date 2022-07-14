@@ -35,8 +35,8 @@
                         <th class="text-center">STT</th>
                         <th class="text-center">Apartment Info</th>
                         <th class="text-center">House Owner</th>
-                        <th class="text-center">Bedroom</th>
-                        <th class="text-center">SQM</th>
+                        <th class="text-center">Agency Info</th>
+                        <th class="text-center">Apart Details</th>
                         <th class="text-center">Status Apart</th>
                         <th class="text-center">Customize</th>
                     </tr>
@@ -58,7 +58,7 @@
                         <td><?php echo $ID ?></td>
                         <td class="people-de">
                             <h5><?php echo $result['APARTMENT_CODE'];?></h5>
-                            <p><?php echo $result['AGENCY_NAME'];?> - <?php echo $result['AREA_APART'];?></p>
+                            <p><?php echo $result['AREA_APART'];?></p>
                         </td>
                         <td class="people">
                             <div class="people-de">
@@ -66,11 +66,14 @@
                                 <p><?php echo $result['PHONE_OWNER'];?></p>
                             </div>
                         </td>
-                        <td class="active">
-                            <p><?php echo $result['BEDROOM'];?></p>
+                        <td class="people">
+                            <div class="people-de">
+                                <h5><?php echo $result['AGENCY_NAME'];?></h5>
+                                <p><?php echo $result['AGENCY_PHONE'];?>-<?php echo $result['AGENCY_EMAIL'];?></p>
+                            </div>
                         </td>
-                        <td class="role">
-                            <p><?php echo $result['SQM'];?>m<sup>2</sup></p>
+                        <td class="active">
+                            <p><?php echo $result['BEDROOM'];?>-<?php echo $result['SQM'];?>m<sup>2</sup></p>
                         </td>
                         <td class="role">
                             <p><?php echo $result['STATUS_APART'];?></p>
