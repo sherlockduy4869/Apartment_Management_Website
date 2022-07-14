@@ -47,33 +47,42 @@
                             <input disabled type="text" value="<?php echo $cart_by_id['AREA_APART'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">House owner</span>
-                            <input disabled type="text" value="<?php echo $cart_by_id['HOUSE_OWNER'] ?>">
+                            <span class="details">Agency Phone</span>
+                            <input disabled type="text" value="<?php echo $cart_by_id['AGENCY_PHONE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
                             <input disabled type="text" value="<?php echo $cart_by_id['BEDROOM'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input disabled type="text" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>">
-                        </div>  
+                            <span class="details">Agency Email</span>
+                            <input disabled type="email" value="<?php echo $cart_by_id['AGENCY_EMAIL'] ?>">
+                        </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
                             <input disabled type="number" min="1" value="<?php echo $cart_by_id['SQM'] ?>" >
                         </div>
+                        
                         <div class="input-box">
-                            <span class="details">Email</span>
-                            <input disabled type="email" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>">
-                        </div> 
+                            <span class="details">House owner</span>
+                            <input disabled type="text" value="<?php echo $cart_by_id['HOUSE_OWNER'] ?>">
+                        </div>
                         <div class="input-box">
                             <span class="details">Status Furniture</span>
                             <input disabled type="text" value="<?php echo $cart_by_id['STATUS_FURNITURE'] ?>">
                         </div>
                         <div class="input-box">
+                            <span class="details">Phone</span>
+                            <input disabled type="text" value="<?php echo $cart_by_id['PHONE_OWNER'] ?>">
+                        </div>  
+                        <div class="input-box">
                             <span class="details">Price</span>
                             <input disabled class="apart_price" type="text" name="apart_price" value="<?php echo $cart_by_id['PRICE'] ?>">
-                        </div>        
+                        </div>  
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input disabled type="email" value="<?php echo $cart_by_id['EMAIL_OWNER'] ?>">
+                        </div>     
                     </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="index.php">BACK TO CART LIST</a></button>

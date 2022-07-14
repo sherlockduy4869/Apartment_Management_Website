@@ -39,28 +39,20 @@
                 <form>
                     <div class="user-details">
                         <div class="input-box">
-                            <span class="details">Apartment code</span>
+                            <span class="details">Apartment Code</span>
                             <input disabled type="text" name="apartment_code" value="<?php echo $apart_contract_by_id['APARTMENT_CODE']?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Agency name</span>
-                            <input disabled type="text" name="agent_name" value="<?php echo $apart_contract_by_id['AGENCY_NAME']?>">
+                            <span class="details">Agency Name</span>
+                            <input disabled type="text" value="<?php echo $apart_contract_by_id['AGENCY_NAME']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
                             <input disabled type="text" value="<?php echo $apart_contract_by_id['AREA_APART']?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">House owner</span>
-                            <input disabled type="text" value="<?php echo $apart_contract_by_id['HOUSE_OWNER']?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Phone</span>
-                            <input disabled type="text" value="<?php echo $apart_contract_by_id['PHONE_OWNER']?>">
-                        </div>   
-                        <div class="input-box">
-                            <span class="details">Email</span>
-                            <input disabled type="email" value="<?php echo $apart_contract_by_id['EMAIL_OWNER']?>">
+                            <span class="details">Agency Phone</span>
+                            <input disabled type="text" value="<?php echo $apart_contract_by_id['AGENCY_PHONE']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Start Day</span>
@@ -68,39 +60,55 @@
                             value="<?php echo $start_date; ?>">
                         </div> 
                         <div class="input-box">
+                            <span class="details">Agency Email</span>
+                            <input disabled type="email" value="<?php echo $apart_contract_by_id['AGENCY_EMAIL']?>">
+                        </div>
+                        <div class="input-box">
                             <span class="details">End Day</span>
                             <input disabled class="end_day" type="text"
                             value="<?php echo $start_date; ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">House Owner</span>
+                            <input disabled type="text" value="<?php echo $apart_contract_by_id['HOUSE_OWNER']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Fee Per Month</span>
                             <input disabled class="fee_per_month" type="text" value="<?php echo $apart_contract_by_id['FEE_PER_MONTH']?>">
                         </div>  
                         <div class="input-box">
+                            <span class="details">Phone</span>
+                            <input disabled type="text" value="<?php echo $apart_contract_by_id['PHONE_OWNER']?>">
+                        </div>   
+                        <div class="input-box">
                             <span class="details">Tax Fee</span>
                             <input disabled class="tax_fee" type="text" value="<?php echo $apart_contract_by_id['TAX_FEE']?>">
                         </div> 
                         <div class="input-box">
+                            <span class="details">Email</span>
+                            <input disabled type="email" value="<?php echo $apart_contract_by_id['EMAIL_OWNER']?>">
+                        </div>
+                        <div class="input-box">
                             <span class="details">Tax Management</span>
                             <input disabled class="tax_management" type="text" value="<?php echo $apart_contract_by_id['TAX_MANAGEMENT']?>">
                         </div> 
-                        <div class="input-box">
-                            <span class="details">Refund For Tenant</span>
-                            <input disabled class="refund_for_tenant" type="text" value="<?php echo $apart_contract_by_id['REFUND_FOR_TENANT']?>">
-                        </div> 
-                        <div class="input-box">
-                            <span class="details">Cleaning Fee</span>
-                            <input disabled class="cleaning_fee" type="text" value="<?php echo $apart_contract_by_id['CLEANING_FEE']?>">
-                        </div>
                         <div class="input-box">
                             <span class="details">Date Remind</span>
                             <input disabled class="date_remind" type="text"
                             value="<?php echo $date_remind; ?>">
                         </div>
                         <div class="input-box">
+                            <span class="details">Refund For Tenant</span>
+                            <input disabled class="refund_for_tenant" type="text" value="<?php echo $apart_contract_by_id['REFUND_FOR_TENANT']?>">
+                        </div> 
+                        <div class="input-box">
                             <span class="details">Num Days Remind </span>
                             <input type="number" disabled value="<?php echo $apart_contract_by_id['NUM_DAY_REMIND']?>">
-                        </div>  
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Cleaning Fee</span>
+                            <input disabled class="cleaning_fee" type="text" value="<?php echo $apart_contract_by_id['CLEANING_FEE']?>">
+                        </div>
                         <div class="input-box">
                             <span class="details">Status Apart</span>
                             <input disabled type="text" value="<?php echo $apart_contract_by_id['STATUS_APART']?>">

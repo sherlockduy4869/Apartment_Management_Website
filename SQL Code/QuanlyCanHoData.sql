@@ -43,6 +43,8 @@ CREATE TABLE tbl_apartment_rented
 	PHONE_OWNER VARCHAR(255),
 	EMAIL_OWNER VARCHAR(255),
 	AGENCY_NAME VARCHAR(255),
+	AGENCY_PHONE VARCHAR(255),
+	AGENCY_EMAIL VARCHAR(255),
 	AREA_APART VARCHAR(255),
 	TAX_CODE VARCHAR(255),
 	TAX_DECLARATION_FORM VARCHAR(255),
@@ -71,6 +73,8 @@ CREATE TABLE tbl_apartment_money
 	PHONE_OWNER VARCHAR(255),
 	EMAIL_OWNER VARCHAR(255),
 	AGENCY_NAME VARCHAR(255),
+	AGENCY_PHONE VARCHAR(255),
+	AGENCY_EMAIL VARCHAR(255),
 	AREA_APART VARCHAR(255),
 	START_DAY_TERM DATE,
 	END_DAY_TERM DATE,
@@ -89,6 +93,8 @@ CREATE TABLE tbl_apartment_contract
 	PHONE_OWNER VARCHAR(255),
 	EMAIL_OWNER VARCHAR(255),
 	AGENCY_NAME VARCHAR(255),
+	AGENCY_PHONE VARCHAR(255),
+	AGENCY_EMAIL VARCHAR(255),
 	AREA_APART VARCHAR(255),
 	START_DAY DATE,
 	END_DAY DATE,
@@ -357,12 +363,16 @@ CREATE PROCEDURE ADDING_HOUSE_OWNER_INFO(IN code_apa VARCHAR(255))
 BEGIN
 	DECLARE area VARCHAR(255);
 	DECLARE agency VARCHAR(255);
+	DECLARE phone_agency VARCHAR(255);
+	DECLARE email_agency VARCHAR(255);
 	DECLARE ower_name VARCHAR(255);
     DECLARE email VARCHAR(255);
     DECLARE phone VARCHAR(255);
 
 	SELECT AREA_APART INTO area FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
 	SELECT AGENCY_NAME INTO agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_PHONE INTO phone_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_EMAIL INTO email_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
 	SELECT HOUSE_OWNER INTO ower_name FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
     SELECT EMAIL_OWNER INTO email FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
     SELECT PHONE_OWNER INTO phone FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
@@ -370,6 +380,8 @@ BEGIN
 	UPDATE tbl_apartment_rented
 	SET AREA_APART = area, 
 		AGENCY_NAME = agency,
+		AGENCY_PHONE = phone_agency,
+		AGENCY_EMAIL = email_agency,
 		HOUSE_OWNER = ower_name,
     	EMAIL_OWNER = email,
         PHONE_OWNER = phone
@@ -378,6 +390,8 @@ BEGIN
 	UPDATE tbl_apartment_contract
 	SET AREA_APART = area, 
 		AGENCY_NAME = agency,
+		AGENCY_PHONE = phone_agency,
+		AGENCY_EMAIL = email_agency,
 		HOUSE_OWNER = ower_name,
     	EMAIL_OWNER = email,
         PHONE_OWNER = phone
@@ -386,9 +400,10 @@ BEGIN
 	UPDATE tbl_apartment_money
 	SET AREA_APART = area, 
 		AGENCY_NAME = agency,
+		AGENCY_PHONE = phone_agency,
+		AGENCY_EMAIL = email_agency,
 		HOUSE_OWNER = ower_name,
     	EMAIL_OWNER = email,
         PHONE_OWNER = phone
 	WHERE APARTMENT_CODE = code_apa;
 END
-
