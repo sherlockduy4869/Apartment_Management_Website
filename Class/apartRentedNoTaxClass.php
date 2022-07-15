@@ -30,7 +30,10 @@
             $to = mysqli_real_escape_string($this->db->link, $data['to']);
 
             $rent_fee_per_month =  str_replace(",","",$renting_fee_per_month);
-            $management_fee =  str_replace(",","",$management_Fee);
+            $management_Fee = 0;
+            if($management_Fee){
+                $management_fee =  str_replace(",","",$management_Fee);
+            }
             $owner_recieved = $rent_fee_per_month - $management_fee;
 
             $start_date = date("Y-m-d", strtotime($from));  

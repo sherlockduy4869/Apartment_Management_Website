@@ -69,7 +69,7 @@
                         </div> 
                         <div class="input-box">
                             <span class="details">Customer Phone</span>
-                            <input  type="text" name="customer_phone" required>
+                            <input  type="text" name="customer_phone" >
                         </div>
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
@@ -77,7 +77,7 @@
                         </div>    
                         <div class="input-box">
                             <span class="details">Customer Email</span>
-                            <input  type="email" name="customer_email" required>
+                            <input  type="email" name="customer_email">
                         </div> 
                         <div class="input-box">
                             <span class="details">Day Remind Negotiate</span>
@@ -89,7 +89,7 @@
                         </div>      
                         <div class="input-box">
                             <span class="details">From</span>
-                            <input class="from" type="text" name="from"  required>
+                            <input class="from" type="text" name="from" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">To</span>
