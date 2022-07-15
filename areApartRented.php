@@ -24,16 +24,16 @@
                 <a href="apartRentedAdd.php">Add Apart Rented Tax</a>
             </div>
             <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
+                <i class="fas fa-info"></i>
                 <a href="apartRented.php">Apart Rented Tax</a>
             </div>
             <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
-                <a href="apartTax.php">Finance Rented Tax</a>
+                <i class="fas fa-comments"></i>
+                <a href="apartContract.php">Negotiate Rented Tax</a>
             </div>
             <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
-                <a href="apartContract.php">Negotiate Rented Tax</a>
+                <i class="fas fa-dollar-sign"></i>
+                <a href="apartTax.php">Finance Rented Tax</a>
             </div>
         </div>
 </section>

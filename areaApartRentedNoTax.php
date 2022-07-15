@@ -24,11 +24,11 @@
                 <a href="apartRentedNoTaxAdd.php">Add Apart Rented No Tax</a>
             </div>
             <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
+                <i class="fas fa-info"></i>
                 <a href="apartRentedNoTax.php">Apart Rented No Tax</a>
             </div>
             <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
+                <i class="fas fa-comments"></i>
                 <a href="apartContractNoTax.php">Negotiate Rented No Tax</a>
             </div>
         </div>
