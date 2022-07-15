@@ -35,9 +35,10 @@
                         <th class="text-center">STT</th>
                         <th class="text-center">Apartment Info</th>
                         <th class="text-center">House Owner</th>
+                        <th class="text-center">Customer</th>
                         <th class="text-center">Tax Info</th>
                         <th class="text-center">Renting Duration</th>
-                        <th class="text-center">Total</th>
+                        <th class="text-center">Owner Recieved</th>
                         <th class="text-center">Customize</th>
                     </tr>
                 </thead>
@@ -69,6 +70,10 @@
                             <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
                         </td>
                         <td class="people-de">
+                            <h5><?php echo $result['CUTOMER_NAME'];?></h5>
+                            <p><?php echo $result['CUTOMER_PHONE'];?>-<?php echo $result['CUTOMER_EMAIL'];?></p>
+                        </td>
+                        <td class="people-de">
                             <h5><?php echo $result['TAX_CODE'];?></h5>
                             <p><?php echo $result['TAX_DECLARATION_FORM'];?>-<?php echo $result['TAX_APARTMENT'];?></p>
                         </td>
@@ -76,7 +81,7 @@
                             <p><?php echo $start_date;?><br><?php echo $end_date;?></p>
                         </td>
                         <td class="active">
-                            <p><?php echo number_format($result['TOTAL']);?><sup>đ</sup></p>
+                            <p><?php echo number_format($result['OWNER_RECIEVED']);?><sup>đ</sup></p>
                         </td>
                         <td class="edit">
                             <a href="apartRentedDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>

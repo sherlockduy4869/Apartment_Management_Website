@@ -19,8 +19,9 @@
         //Insert apartment rented
         public function insert_apart_rented($data){
             $apartment_code = mysqli_real_escape_string($this->db->link, $data['apartment_code']);
-            // $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
-            // $area = mysqli_real_escape_string($this->db->link, $data['area']);
+            $customer_name = mysqli_real_escape_string($this->db->link, $data['customer_name']);
+            $customer_phone = mysqli_real_escape_string($this->db->link, $data['customer_phone']);
+            $customer_email = mysqli_real_escape_string($this->db->link, $data['customer_email']);
             $tax_code = mysqli_real_escape_string($this->db->link, $data['tax_code']);
             $tax_declare_form = mysqli_real_escape_string($this->db->link, $data['tax_declare_form']);
             $tax_department = mysqli_real_escape_string($this->db->link, $data['tax_department']);
@@ -35,26 +36,45 @@
             $from = mysqli_real_escape_string($this->db->link, $data['from']);
             $to = mysqli_real_escape_string($this->db->link, $data['to']);
 
+            //required
             $rent_fee_per_month =  str_replace(",","",$renting_fee_per_month);
-            $fee_tax = str_replace(",","",$tax_fee);
+            //no required
+            $fee_tax = 0;
+            if($tax_fee){
+                $fee_tax = str_replace(",","",$tax_fee);
+            }
+            //required
             $declare_fee_tax = str_replace(",","",$tax_declare_fee);
-            $fee_management = str_replace(",","",$management_fee);
-            $fee_cleaning = str_replace(",","",$cleaning_fee);
-            $tenant_refund = str_replace(",","",$refund_for_tenant);
+            //no required
+            $fee_management = 0;
+            if($management_fee){
+                $fee_management = str_replace(",","",$management_fee);
+            }
+            //no required
+            $fee_cleaning = 0;
+            if($cleaning_fee){
+                $fee_cleaning = str_replace(",","",$cleaning_fee);
+            }
+            //no required
+            $tenant_refund = 0;
+            if($refund_for_tenant){
+                $tenant_refund = str_replace(",","",$refund_for_tenant);
+            }
 
             $total_amount = $fee_tax + $declare_fee_tax + $fee_management + $fee_cleaning + $tenant_refund;
+            $owner_recieved = $rent_fee_per_month - $total_amount;
 
             $start_date = date("Y-m-d", strtotime($from));  
             $end_date = date("Y-m-d", strtotime($to)); 
 
             $query = "INSERT INTO tbl_apartment_rented
-            (APARTMENT_CODE,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,TOTAL,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM) 
-                  VALUES('$apartment_code','$tax_code','$tax_declare_form','$tax_department','$rent_fee_per_month','$fee_tax','$declare_fee_tax','$fee_management','$tenant_refund','$fee_cleaning','$total_amount','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
+            (APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,TOTAL,OWNER_RECIEVED,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM) 
+                  VALUES('$apartment_code','$customer_name','$customer_phone','$customer_email','$tax_code','$tax_declare_form','$tax_department','$rent_fee_per_month','$fee_tax','$declare_fee_tax','$fee_management','$tenant_refund','$fee_cleaning','$total_amount','$owner_recieved','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
             
-            $query_house_owner = "CALL ADDING_HOUSE_OWNER_INFO('$apartment_code')";
+            //$query_house_owner = "CALL ADDING_INFO_TAX('$apartment_code')";
 
             $result = $this->db->insert($query);
-            $result_house_owner = $this->db->execute($query_house_owner);
+            //$result_house_owner = $this->db->execute($query_house_owner);
 
             if($result){
                 $alert = "<span class = 'addSuccess'>Add apartment rented succesfully</span> <br>";
