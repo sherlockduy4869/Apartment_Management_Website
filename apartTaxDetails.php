@@ -28,7 +28,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT TAX</span>
+                <span>APARTMENT RENTED TAX</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -41,7 +41,6 @@
     <div class="boddyy">
             <div class="container">
                 <div class="title">DEBIT NOTE</div>
-
                 <form>
                     <div class="user-details">
                         <div class="input-box">
@@ -62,37 +61,34 @@
                             <input disabled class="end_day" type="text"
                             value="<?php echo $end_day_term; ?>">
                         </div> 
-
                     </div>
-                        <div class="input-box">
+                    <div class="debit-note-list">
+                        <div class="debit_note">
                             <span class="details">Tax Fee</span>
                             <input disabled class="tax_fee" type="text" value="<?php echo $apart_tax_by_id['TAX_FEE']*$term?>">
                         </div> 
-                        <div class="input-box">
+                        <div class="debit_note">
                             <span class="details">Tax Declaration</span>
                             <input disabled class="tax_declaration" type="text" value="<?php echo $apart_tax_by_id['TAX_DECLARE']?>">
                         </div> 
-                        <div class="input-box">
-                            <span class="details">Area</span>
-                            <input disabled type="text" value="<?php echo $apart_tax_by_id['AREA_APART']?>">
-                        </div>
-                        <div class="input-box">
+                        <div class="debit_note">
                             <span class="details">Management Fee</span>
                             <input disabled class="tax_management" type="text" value="<?php echo $apart_tax_by_id['TAX_MANAGEMENT']*$term?>">
                         </div> 
-                        <div class="input-box">
+                        <div class="debit_note">
                             <span class="details">Refund For Tenant</span>
                             <input disabled class="refund_for_tenant" type="text" value="<?php echo $apart_tax_by_id['REFUND_FOR_TENANT']*$term?>">
                         </div> 
                         
-                        <div class="input-box">
+                        <div class="debit_note">
                             <span class="details">Cleaning Fee</span>
                             <input disabled class="cleaning_fee" type="text" value="<?php echo $apart_tax_by_id['CLEANING_FEE']*$term?>">
                         </div>
-                        <div class="input-box">
+                        <div class="debit_note">
                             <span style="font-weight: bold;" class="details">Total Amount</span>
                             <input style="font-weight: bold;" disabled class="total_amount" type="text" value="<?php echo $total; ?>">
                         </div>
+                    </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartTax.php">BACK TO TAX LIST</a></button>
                     </div>
