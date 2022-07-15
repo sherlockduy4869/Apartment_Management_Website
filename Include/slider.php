@@ -12,7 +12,8 @@
             <div class="clickable"><i class="fas fa-house"></i><a href="apartRented.php">Rented</a></div>
             <div class="clickable"><i class="fas fa-house"></i><a href="apartRentedNoTax.php">Rented No Tax </a></div>
             <div class="clickable"><i class="fas fa-sack-dollar"></i><a href="apartTax.php">Finance</a></div>
-            <div class="clickable"><i class="fas fa-comments"></i><a href="apartContract.php">Negotiate Contract</a></div>
+            <div class="clickable"><i class="fas fa-comments"></i><a href="apartContract.php">Negotiate Tax</a></div>
+            <div class="clickable"><i class="fas fa-comments"></i><a href="apartContractNoTax.php">Negotiate No Tax</a></div>
             <div class="clickable"><i class="fab fa-sellcast"></i><a href="apartSelling.php">Apart For Sell</a></div>
             <div class="clickable"><i class="fas fa-chart-bar"></i><a href="apartNotRented.php">Apart UC</a></div>
         </div>
