@@ -29,7 +29,7 @@
             </div>
             <div class="val-box clickable">
                 <i class="fas fa-comments"></i>
-                <a href="apartContract.php">Negotiate Rented Tax</a>
+                <a href="apartContract.php">Contract Rented Tax</a>
             </div>
             <div class="val-box clickable">
                 <i class="fas fa-dollar-sign"></i>

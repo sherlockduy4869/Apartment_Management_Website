@@ -71,13 +71,13 @@
             (APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,TOTAL,OWNER_RECIEVED,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM) 
                   VALUES('$apartment_code','$customer_name','$customer_phone','$customer_email','$tax_code','$tax_declare_form','$tax_department','$rent_fee_per_month','$fee_tax','$declare_fee_tax','$fee_management','$tenant_refund','$fee_cleaning','$total_amount','$owner_recieved','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
             
-            //$query_house_owner = "CALL ADDING_INFO_TAX('$apartment_code')";
+            $query_tax = "CALL ADDING_INFO_TAX('$apartment_code')";
 
             $result = $this->db->insert($query);
-            //$result_house_owner = $this->db->execute($query_house_owner);
+            $result_tax = $this->db->execute($query_tax);
 
             if($result){
-                $alert = "<span class = 'addSuccess'>Add apartment rented succesfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Add apartment rented tax succesfully</span> <br>";
                 return $alert;
             }
             else{
@@ -96,7 +96,7 @@
         //Delete apartment cart 
         public function delete_apart_rented($delID){
             //$query = "DELETE FROM tbl_apartment_rented WHERE APARTMENT_CODE = '$delID'";
-            $query = "CALL DELETING_APARTMENT_RENTED('$delID')";
+            $query = "CALL DELETING_APARTMENT_RENTED_TAX('$delID')";
             $result = $this->db->delete($query);
 
             header('Location:apartRented.php');

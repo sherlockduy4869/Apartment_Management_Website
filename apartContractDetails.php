@@ -22,7 +22,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT CONTRACT</span>
+                <span>APARTMENT CONTRACT TAX</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -34,7 +34,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Details Apartment Contract Information</div>
+                <div class="title">Details Apartment Contract Tax</div>
 
                 <form>
                     <div class="user-details">
@@ -55,7 +55,7 @@
                             <input disabled type="text" value="<?php echo $apart_contract_by_id['AGENCY_PHONE']?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Start Day</span>
+                            <span class="details">From</span>
                             <input disabled class="start_day" type="text"
                             value="<?php echo $start_date; ?>">
                         </div> 
@@ -64,7 +64,7 @@
                             <input disabled type="email" value="<?php echo $apart_contract_by_id['AGENCY_EMAIL']?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">End Day</span>
+                            <span class="details">To</span>
                             <input disabled class="end_day" type="text"
                             value="<?php echo $start_date; ?>">
                         </div>
@@ -81,41 +81,41 @@
                             <input disabled type="text" value="<?php echo $apart_contract_by_id['PHONE_OWNER']?>">
                         </div>   
                         <div class="input-box">
-                            <span class="details">Tax Fee</span>
-                            <input disabled class="tax_fee" type="text" value="<?php echo $apart_contract_by_id['TAX_FEE']?>">
-                        </div> 
-                        <div class="input-box">
-                            <span class="details">Email</span>
-                            <input disabled type="email" value="<?php echo $apart_contract_by_id['EMAIL_OWNER']?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Tax Management</span>
-                            <input disabled class="tax_management" type="text" value="<?php echo $apart_contract_by_id['TAX_MANAGEMENT']?>">
-                        </div> 
-                        <div class="input-box">
                             <span class="details">Date Remind</span>
                             <input disabled class="date_remind" type="text"
                             value="<?php echo $date_remind; ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Refund For Tenant</span>
-                            <input disabled class="refund_for_tenant" type="text" value="<?php echo $apart_contract_by_id['REFUND_FOR_TENANT']?>">
-                        </div> 
+                            <span class="details">Email</span>
+                            <input disabled type="email" value="<?php echo $apart_contract_by_id['EMAIL_OWNER']?>">
+                        </div>
                         <div class="input-box">
                             <span class="details">Num Days Remind </span>
                             <input type="number" disabled value="<?php echo $apart_contract_by_id['NUM_DAY_REMIND']?>">
                         </div> 
                         <div class="input-box">
-                            <span class="details">Cleaning Fee</span>
-                            <input disabled class="cleaning_fee" type="text" value="<?php echo $apart_contract_by_id['CLEANING_FEE']?>">
-                        </div>
+                            <span class="details">Customer Name</span>
+                            <input disabled type="text" value="<?php echo $apart_contract_by_id['CUTOMER_NAME']?>">
+                        </div>   
                         <div class="input-box">
                             <span class="details">Status Apart</span>
                             <input disabled type="text" value="<?php echo $apart_contract_by_id['STATUS_APART']?>">
                         </div>
+                        <div class="input-box">
+                            <span class="details">Customer Phone</span>
+                            <input disabled type="text" value="<?php echo $apart_contract_by_id['CUTOMER_PHONE']?>">
+                        </div> 
+                        <div class="input-box">
+                            <span class="details"></span>
+                            <input type="hidden" >
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Customer Email</span>
+                            <input disabled type="text" value="<?php echo $apart_contract_by_id['CUTOMER_EMAIL']?>">
+                        </div> 
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary"><a href="apartContract.php">BACK TO CONTRACT LIST</a></button>
+                        <button class="btn btn-primary"><a href="apartContract.php">BACK TO CONTRACT TAX LIST</a></button>
                     </div>
                 </form>
 
@@ -124,22 +124,6 @@
 </section>
 <script>
     new Cleave('.fee_per_month', {
-        numeral: true,
-        numeralThousandGroupStyle: 'thousand'
-    });
-    new Cleave('.tax_fee', {
-        numeral: true,
-        numeralThousandGroupStyle: 'thousand'
-    });
-    new Cleave('.tax_management', {
-        numeral: true,
-        numeralThousandGroupStyle: 'thousand'
-    });
-    new Cleave('.refund_for_tenant', {
-        numeral: true,
-        numeralThousandGroupStyle: 'thousand'
-    });
-    new Cleave('.cleaning_fee', {
         numeral: true,
         numeralThousandGroupStyle: 'thousand'
     });

@@ -101,10 +101,12 @@
                     ,STATUS_FURNITURE = '$status_furniture'
                     WHERE APARTMENT_CODE ='$cart_id'";
 
-            //$query_house_owner = "CALL ADDING_HOUSE_OWNER_INFO('$cart_id')";
+            $query_tax = "CALL ADDING_INFO_TAX('$cart_id')";
+            $query_no_tax = "CALL ADDING_INFO_NO_TAX('$cart_id')";
 
             $result = $this->db->update($query);
-            //$result_house_owner = $this->db->execute($query_house_owner);
+            $result_tax = $this->db->execute($query_tax);
+            $result_no_tax = $this->db->execute($query_no_tax);
 
             if($result){
                 $alert = "<span class = 'addSuccess'>Edit apartment for rent successfully</span><br>";

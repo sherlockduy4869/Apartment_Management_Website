@@ -123,7 +123,7 @@ CREATE TABLE tbl_apartment_rented
 	END_DAY DATE,
 	DAY_REMIND INT,
 	PAYMENT_TERM INT,
-	
+
 	FOREIGN KEY(APARTMENT_CODE) REFERENCES tbl_apartment_cart(APARTMENT_CODE)
 )
 GO
@@ -138,6 +138,9 @@ CREATE TABLE tbl_apartment_money
 	AGENCY_NAME VARCHAR(255),
 	AGENCY_PHONE VARCHAR(255),
 	AGENCY_EMAIL VARCHAR(255),
+	CUTOMER_NAME VARCHAR(255),
+	CUTOMER_PHONE VARCHAR(255),
+	CUTOMER_EMAIL VARCHAR(255),
 	AREA_APART VARCHAR(255),
 	START_DAY_TERM DATE,
 	END_DAY_TERM DATE,
@@ -155,12 +158,19 @@ CREATE TABLE tbl_apartment_contract
 	HOUSE_OWNER VARCHAR(255),
 	PHONE_OWNER VARCHAR(255),
 	EMAIL_OWNER VARCHAR(255),
+
 	AGENCY_NAME VARCHAR(255),
 	AGENCY_PHONE VARCHAR(255),
 	AGENCY_EMAIL VARCHAR(255),
+
+	CUTOMER_NAME VARCHAR(255),
+	CUTOMER_PHONE VARCHAR(255),
+	CUTOMER_EMAIL VARCHAR(255),
+	
 	AREA_APART VARCHAR(255),
 	START_DAY DATE,
 	END_DAY DATE,
+
 	FEE_PER_MONTH FLOAT,
 	TAX_FEE FLOAT,
 	TAX_MANAGEMENT FLOAT,
@@ -375,16 +385,6 @@ BEGIN
         PHONE_OWNER = phone
 	WHERE APARTMENT_CODE = code_apa;
 
-	UPDATE tbl_apartment_rented_not_money
-	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
-		HOUSE_OWNER = ower_name,
-    	EMAIL_OWNER = email,
-        PHONE_OWNER = phone
-	WHERE APARTMENT_CODE = code_apa;
-
 	UPDATE tbl_apartment_contract
 	SET AREA_APART = area, 
 		AGENCY_NAME = agency,
@@ -415,7 +415,7 @@ END
 
 --TRIGGER FOR ADDING INFORMATION FOR APARTMENT CONTRACT NO TAX
 CREATE TRIGGER ADDING_APARTMENT_CONTRACT_NO_TAX
-ON tbl_apartment_rented_not_money
+ON tbl_apartment_rented
 FOR INSERT
 AS
 BEGIN
@@ -496,6 +496,10 @@ BEGIN
 	DECLARE end_term DATE;
 	DECLARE end_term_minus DATE;
 	DECLARE total_money FLOAT;
+	
+	DECLARE cus_name VARCHAR(255);
+	DECLARE cus_phone VARCHAR(255);
+	DECLARE cus_email VARCHAR(255);
 
 	
 	SET apart_code = NEW.APARTMENT_CODE;
@@ -504,11 +508,15 @@ BEGIN
 	SET term = NEW.PAYMENT_TERM;
 	SET total_money = NEW.TOTAL;
 
+	SET cus_name = NEW.CUTOMER_NAME;
+	SET cus_phone = NEW.CUTOMER_PHONE;
+	SET cus_email = NEW.CUTOMER_EMAIL;
+
 	SET end_term = ADDDATE(start_term, INTERVAL term MONTH);
 	SET end_term_minus = ADDDATE(end_term, INTERVAL -1 DAY);
 	
-	INSERT INTO tbl_apartment_money(APARTMENT_CODE, START_DAY_TERM, END_DAY_TERM, PAYMENT_TERM, TOTAL_AMOUNT)
-	VALUES(apart_code, start_term, end_term_minus, term, total_money);
+	INSERT INTO tbl_apartment_money(APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY_TERM, END_DAY_TERM, PAYMENT_TERM, TOTAL_AMOUNT)
+	VALUES(apart_code, cus_name, cus_phone, cus_email, start_term, end_term_minus, term, total_money);
 END
 GO
 
@@ -526,6 +534,10 @@ BEGIN
 	DECLARE fee_cleaning FLOAT;
 	DECLARE fee_per_month FLOAT;
 
+	DECLARE cus_name VARCHAR(255);
+	DECLARE cus_phone VARCHAR(255);
+	DECLARE cus_email VARCHAR(255);
+
 	DECLARE day_start DATE;
 	DECLARE day_end DATE;
 
@@ -540,6 +552,10 @@ BEGIN
 	SET fee_cleaning = NEW.CLEANING_FEE;
 	SET fee_per_month = NEW.FEE_PER_MONTH;
 
+	SET cus_name = NEW.CUTOMER_NAME;
+	SET cus_phone = NEW.CUTOMER_PHONE;
+	SET cus_email = NEW.CUTOMER_EMAIL;
+
 	SET day_start = NEW.START_DAY;
 	SET day_end = NEW.END_DAY;
 
@@ -547,9 +563,9 @@ BEGIN
 
 	SET remind_date = ADDDATE(day_end, INTERVAL -num_day_remind DAY);
 
-	INSERT INTO tbl_apartment_contract(APARTMENT_CODE,START_DAY,END_DAY,FEE_PER_MONTH,TAX_FEE,
+	INSERT INTO tbl_apartment_contract(APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY,END_DAY,FEE_PER_MONTH,TAX_FEE,
 	TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,DATE_REMIND,NUM_DAY_REMIND) 
-	VALUES(apart_code,day_start,day_end,fee_per_month,
+	VALUES(apart_code,cus_name, cus_phone, cus_email,day_start,day_end,fee_per_month,
 	fee_tax,fee_management,tenant_refund,fee_cleaning,remind_date,num_day_remind);
 END
 GO

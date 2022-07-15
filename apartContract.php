@@ -29,7 +29,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT CONTRACT</span>
+                <span>APARTMENT CONTRACT TAX</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
