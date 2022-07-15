@@ -106,7 +106,7 @@
                         
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary"><a href="apartContract.php">BACK TO CONTRACT NO TAX LIST</a></button>
+                        <button class="btn btn-primary"><a href="apartContractNoTax.php">BACK TO CONTRACT NO TAX LIST</a></button>
                     </div>
                 </form>
 

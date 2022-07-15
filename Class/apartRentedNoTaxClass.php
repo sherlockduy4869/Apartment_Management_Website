@@ -61,7 +61,7 @@
 
         //Delete apartment rented no tax 
         public function delete_apart_rented_no_tax($delID){
-            $query = "CALL DELETING_APARTMENT_RENTED_TAX('$delID')";
+            $query = "CALL DELETING_APARTMENT_RENTED_NO_TAX('$delID')";
             $result = $this->db->delete($query);
 
             header('Location:apartRentedNoTax.php');

@@ -45,7 +45,7 @@
 
         //Skip apartment contract no tax
         public function skip_apart_contract_no_tax($skipID){
-            $query = "CALL DELETING_APARTMENT_RENTED_TAX('$skipID')";
+            $query = "CALL DELETING_APARTMENT_RENTED_NO_TAX('$skipID')";
             $result = $this->db->execute($query);
             return $result;
         }
