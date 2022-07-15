@@ -23,6 +23,8 @@
                 <i class="fa-solid fa-plus"></i>
                 <a href="cartAdd.php">Add Apart For Rent</a>
             </div>
+        </div>
+        <div class="values">
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
                 <a href="index.php">Apart For Rent</a>

@@ -23,6 +23,8 @@
                 <i class="fa-solid fa-plus"></i>
                 <a href="apartNotRentedAdd.php">Add Apart UC</a>
             </div>
+        </div>
+        <div class="values">
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
                 <a href="apartNotRented.php">Apart UC</a>
