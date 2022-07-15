@@ -71,7 +71,7 @@
                             <p><?php echo $result['BEDROOM'];?>/<?php echo $result['SQM'];?>m<sup>2</sup></p>
                         </td>
                         <td class="role">
-                            <p><?php echo '$'.number_format($result['USD_PRICE']);?>/<br><?php echo number_format($result['USD_PRICE']);?><sup>đ</sup></p>
+                            <p><?php echo '$'.number_format($result['USD_PRICE']);?>/<br><?php echo number_format($result['VND_PRICE']);?><sup>đ</sup></p>
                         </td>
                         <td class="role">
                             <p><?php echo $date_input_date;?></p>

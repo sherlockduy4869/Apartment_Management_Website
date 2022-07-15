@@ -5,7 +5,7 @@
 
 <?php
 
-    class apartnrentednotax
+    class apartrentednotax
     {
         private $db ;
         private $fm ;
@@ -16,7 +16,7 @@
             $this->fm = new Format();
         }
 
-        //Insert apartment rented
+        //Insert apartment rented no tax
         public function insert_apart_rented_no_tax($data){
             $apartment_code = mysqli_real_escape_string($this->db->link, $data['apartment_code']);
             $payment_term = mysqli_real_escape_string($this->db->link, $data['payment_term']);
@@ -36,8 +36,11 @@
             $query = "INSERT INTO tbl_apartment_rented_no_tax
             (APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,FEE_PER_MONTH,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM) 
                   VALUES('$apartment_code','$customer_name','$customer_phone','$customer_email','$rent_fee_per_month','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
-        
+
+            $query_no_tax = "CALL ADDING_INFO_NO_TAX('$apartment_code')";
+
             $result = $this->db->insert($query);
+            $result_no_tax = $this->db->execute($query_no_tax);
 
             if($result){
                 $alert = "<span class = 'addSuccess'>Add apartment rented no tax succesfully</span> <br>";
@@ -49,9 +52,9 @@
             }
         }
 
-        //Show aparment rented list
-        public function show_apart_rented_list(){
-            $query = "SELECT * FROM tbl_apartment_rented";
+        //Show aparment rented no tax list
+        public function show_apart_rented_no_tax_list(){
+            $query = "SELECT * FROM tbl_apartment_rented_no_tax";
             $result = $this->db->select($query);
             return $result;
         }

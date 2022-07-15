@@ -89,7 +89,7 @@
                 </tbody>
             </table>
         </div>
-    </section>
+</section>
     
 <?php 
 include_once "Include/footer.php";

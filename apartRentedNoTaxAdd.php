@@ -5,11 +5,11 @@
     include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartCartClass.php';
 ?>
 <?php
-    $apartnrentednotax = new apartnrentednotax();
+    $apartrentednotax = new apartrentednotax();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-        $apartRentedNoTaxAdd = $apartnrentednotax->insert_apart_rented_no_tax($_POST);
+        $apartRentedNoTaxAdd = $apartrentednotax->insert_apart_rented_no_tax($_POST);
     }
 ?>
 <?php
@@ -23,7 +23,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT FOR RENT NO TAX</span>
+                <span>APARTMENT RENTED NO TAX</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -35,7 +35,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add Apartment For Rent No Tax</div>
+                <div class="title">Add Apartment Rented No Tax</div>
 
                 <form action="apartRentedNoTaxAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
