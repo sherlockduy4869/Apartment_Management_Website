@@ -24,18 +24,21 @@
             $customer_phone = mysqli_real_escape_string($this->db->link, $data['customer_phone']);
             $customer_email = mysqli_real_escape_string($this->db->link, $data['customer_email']);
             $renting_fee_per_month = mysqli_real_escape_string($this->db->link, $data['renting_fee_per_month']);
+            $management_Fee = mysqli_real_escape_string($this->db->link, $data['management_Fee']);
             $day_remind_negotiate = mysqli_real_escape_string($this->db->link, $data['day_remind_negotiate']);
             $from = mysqli_real_escape_string($this->db->link, $data['from']);
             $to = mysqli_real_escape_string($this->db->link, $data['to']);
 
             $rent_fee_per_month =  str_replace(",","",$renting_fee_per_month);
+            $management_fee =  str_replace(",","",$management_Fee);
+            $owner_recieved = $rent_fee_per_month - $management_fee;
 
             $start_date = date("Y-m-d", strtotime($from));  
             $end_date = date("Y-m-d", strtotime($to)); 
 
             $query = "INSERT INTO tbl_apartment_rented_no_tax
-            (APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,FEE_PER_MONTH,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM) 
-                  VALUES('$apartment_code','$customer_name','$customer_phone','$customer_email','$rent_fee_per_month','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
+            (APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,FEE_PER_MONTH,MANAGEMENT_FEE,OWNER_RECIEVED,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM) 
+                  VALUES('$apartment_code','$customer_name','$customer_phone','$customer_email','$rent_fee_per_month','$management_fee','$owner_recieved','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
 
             $query_no_tax = "CALL ADDING_INFO_NO_TAX('$apartment_code')";
 

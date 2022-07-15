@@ -78,6 +78,14 @@
                         <div class="input-box">
                             <span class="details">Customer Email</span>
                             <input  type="email" name="customer_email" required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Day Remind Negotiate</span>
+                            <input type="number" min="1" name="day_remind_negotiate" required>
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Management Fee</span>
+                            <input class="management_fee" type="text" name="management_Fee" >
                         </div>      
                         <div class="input-box">
                             <span class="details">From</span>
@@ -87,11 +95,6 @@
                             <span class="details">To</span>
                             <input class="to" type="text" name="to" required>
                         </div> 
-                        <div class="input-box">
-                            <span class="details">Day Remind Negotiate</span>
-                            <input type="number" min="1" name="day_remind_negotiate" required>
-                        </div>      
-                         
                     </div>
                     <?php 
                     if(isset($apartRentedNoTaxAdd))
@@ -103,12 +106,15 @@
                         <input class="btn btn-primary" name="submit" type="submit" value="ADDING">
                     </div>
                 </form>
-
             </div>
         </div>
 </section>
 <script>
     new Cleave('.renting_fee_per_month', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+    new Cleave('.management_fee', {
         numeral: true,
         numeralThousandGroupStyle: 'thousand'
     });
