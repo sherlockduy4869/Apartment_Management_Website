@@ -9,7 +9,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT ADDING</span>
+                <span>APARTMENT UNDER CONSTRUCTION</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -21,18 +21,11 @@
         <div class="values">
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <a href="cartAdd.php">Apart For Rent</a>
+                <a href="apartNotRentedAdd.php">Add Apart UC</a>
             </div>
-            
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <a href="apartSellingAdd.php">Apart For Sell</a>
-            </div>
-        </div>
-        <div class="values">
-            <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
-                <a href="apartNotRentedAdd.php">Apart UC</a>
+                <a href="apartNotRented.php">Apart UC</a>
             </div>
         </div>
 </section>

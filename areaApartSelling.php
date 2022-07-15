@@ -9,7 +9,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT RENTED TAX AREA</span>
+                <span>APARTMENT FOR SELL</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -21,19 +21,11 @@
         <div class="values">
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <a href="apartRentedAdd.php">Add Apart Rented Tax</a>
+                <a href="apartSellingAdd.php">Add Apart For Sell</a>
             </div>
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <a href="apartRented.php">Apart Rented Tax</a>
-            </div>
-            <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
-                <a href="apartTax.php">Finance Rented Tax</a>
-            </div>
-            <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
-                <a href="apartContract.php">Negotiate Rented Tax</a>
+                <a href="apartSelling.php">Apart For Sell</a>
             </div>
         </div>
 </section>

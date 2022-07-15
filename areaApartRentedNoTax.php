@@ -21,7 +21,7 @@
         <div class="values">
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <a href="apartRentedNoTaxAdd.php">Apart Rented No Tax</a>
+                <a href="apartRentedNoTaxAdd.php">Add Apart Rented No Tax</a>
             </div>
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
