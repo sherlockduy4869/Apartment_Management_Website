@@ -8,19 +8,19 @@
     if(isset($_GET['markdoneID']))
     {
         $markdoneID = $_GET['markdoneID'];
-        $markdoneApartContract = $apartContractNoTax->markdone_apart_contract($markdoneID);
+        $markdoneApartContractNoTax = $apartContractNoTax->markdone_apart_contract_no_tax($markdoneID);
     }  
 
     if(isset($_GET['redoID']))
     {
         $redoID = $_GET['redoID'];
-        $redoApartContract = $apartContract->redo_apart_contract($redoID);
+        $redoApartContractNoTax = $apartContractNoTax->redo_apart_contract_no_tax($redoID);
     } 
 
     if(isset($_GET['skipID']))
     {
         $skipID = $_GET['skipID'];
-        $skipApartContract = $apartContract->skip_apart_contract($skipID);
+        $skipApartContractNoTax = $apartContractNoTax->skip_apart_contract_no_tax($skipID);
     } 
 ?>
 <section id="interface">
@@ -99,7 +99,7 @@
                         </td>
                         <td class="edit">
                             <a style="color: #41f1b6;" onclick="return confirm('Do you want to markdone ?')" href="?markdoneID=<?php echo $result['APARTMENT_CODE'];?>">Markdone</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a> <br>
-                            <a href="apartContractDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
+                            <a href="apartContractNoTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
                         </td>
                     </tr>
                         <?php
