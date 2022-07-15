@@ -64,25 +64,19 @@ GO
 CREATE TABLE tbl_apartment_contract_no_tax
 (
 	APARTMENT_CODE VARCHAR(255) PRIMARY KEY,
-
 	HOUSE_OWNER VARCHAR(255),
 	PHONE_OWNER VARCHAR(255),
 	EMAIL_OWNER VARCHAR(255),
-
 	AGENCY_NAME VARCHAR(255),
 	AGENCY_PHONE VARCHAR(255),
 	AGENCY_EMAIL VARCHAR(255),
-
 	AREA_APART VARCHAR(255),
-	
 	START_DAY DATE,
 	END_DAY DATE,
 	FEE_PER_MONTH FLOAT,
-
 	CUTOMER_NAME VARCHAR(255),
 	CUTOMER_PHONE VARCHAR(255),
 	CUTOMER_EMAIL VARCHAR(255),
-
 	DATE_REMIND DATE,
 	NUM_DAY_REMIND INT,
 	STATUS_APART VARCHAR(255) DEFAULT 'NOT DONE',
@@ -102,9 +96,15 @@ CREATE TABLE tbl_apartment_rented
 	HOUSE_OWNER VARCHAR(255),
 	PHONE_OWNER VARCHAR(255),
 	EMAIL_OWNER VARCHAR(255),
+
 	AGENCY_NAME VARCHAR(255),
 	AGENCY_PHONE VARCHAR(255),
 	AGENCY_EMAIL VARCHAR(255),
+
+	CUTOMER_NAME VARCHAR(255),
+	CUTOMER_PHONE VARCHAR(255),
+	CUTOMER_EMAIL VARCHAR(255),
+
 	AREA_APART VARCHAR(255),
 	TAX_CODE VARCHAR(255),
 	TAX_DECLARATION_FORM VARCHAR(255),
@@ -120,9 +120,10 @@ CREATE TABLE tbl_apartment_rented
 	END_DAY DATE,
 	DAY_REMIND INT,
 	PAYMENT_TERM INT,
+
 	FOREIGN KEY(APARTMENT_CODE) REFERENCES tbl_apartment_cart(APARTMENT_CODE)
 )
-
+GO
 
 --TABLE INCLUDES APARTMENT RENTED TAX NEED TO PAY MONEY FOR ITS TAX
 CREATE TABLE tbl_apartment_money
@@ -240,7 +241,7 @@ GO
 
 /*---------------------------------RENTED NO TAX PROC AREA---------------------------------*/
 
---PROC FOR DELETING INFORMATION OF APARMENT IN APARTMENTINFO AND APARTMENTMONEY
+--PROC FOR DELETING INFORMATION OF APARMENT IN APARTMENT RENTED NO TAX AND APARTMENT RENTED NO TAX CONTRACT
 CREATE PROC DELETING_APARTMENT_RENTED_NO_TAX
 code_apa VARCHAR(255)
 AS
@@ -249,10 +250,52 @@ BEGIN
 	DELETE FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = code_apa;
 END
 
+--PROC ADDING INFOMATION OF APARTMENT RENTED NO TAX + APARTMENT RENTED NO TAX CONTRACT
+CREATE PROCEDURE ADDING_INFO_NO_TAX(IN code_apa VARCHAR(255))
+BEGIN
+	DECLARE area VARCHAR(255);
+	DECLARE agency VARCHAR(255);
+	DECLARE phone_agency VARCHAR(255);
+	DECLARE email_agency VARCHAR(255);
+	DECLARE ower_name VARCHAR(255);
+    DECLARE email VARCHAR(255);
+    DECLARE phone VARCHAR(255);
+
+	SELECT AREA_APART INTO area FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_NAME INTO agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_PHONE INTO phone_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_EMAIL INTO email_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+	SELECT HOUSE_OWNER INTO ower_name FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+    SELECT EMAIL_OWNER INTO email FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+    SELECT PHONE_OWNER INTO phone FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+
+	UPDATE tbl_apartment_rented_no_tax
+	SET AREA_APART = area, 
+		AGENCY_NAME = agency,
+		AGENCY_PHONE = phone_agency,
+		AGENCY_EMAIL = email_agency,
+		HOUSE_OWNER = ower_name,
+    	EMAIL_OWNER = email,
+        PHONE_OWNER = phone
+	WHERE APARTMENT_CODE = code_apa;
+
+	UPDATE tbl_apartment_contract_no_tax
+	SET AREA_APART = area, 
+		AGENCY_NAME = agency,
+		AGENCY_PHONE = phone_agency,
+		AGENCY_EMAIL = email_agency,
+		HOUSE_OWNER = ower_name,
+    	EMAIL_OWNER = email,
+        PHONE_OWNER = phone
+	WHERE APARTMENT_CODE = code_apa;
+END
+
 /*---------------------------------------END----------------------------------------*/
 
 
 GO
+
+/*---------------------------------RENTED TAX PROC AREA---------------------------------*/
 
 --PROC FOR DELETING INFORMATION OF APARMENT IN APARTMENTINFO AND APARTMENTMONEY
 CREATE PROC DELETING_APARTMENT_RENTED_TAX
@@ -263,12 +306,11 @@ BEGIN
 	DELETE FROM tbl_apartment_contract WHERE APARTMENT_CODE = code_apa;
 	DELETE FROM tbl_apartment_finance WHERE APARTMENT_CODE = code_apa;
 	DELETE FROM tbl_apartment_rented WHERE APARTMENT_CODE = code_apa;
-	DELETE FROM tbl_apartment_rented_not_money WHERE APARTMENT_CODE = code_apa;
 END
 GO
 
 --Fixed
---PROC FOR NEXT CYCLING NGAYCANTHU FOR APARTMENT_MONEY
+--PROC FOR NEXT CYCLING PAYMENT_DAY FOR APARTMENT MONEY
 CREATE PROC NEXT_MONEY_DAY
 code_apa VARCHAR(255)
 AS
@@ -301,7 +343,143 @@ BEGIN
 END
 GO
 
-/*TRIGGER AREA*/
+--PROC FOR ADDING INFORMATION OF APARTMENT RELATE TO APARMENT RENTED TAX
+CREATE PROCEDURE ADDING_INFO_TAX(IN code_apa VARCHAR(255))
+BEGIN
+	DECLARE area VARCHAR(255);
+	DECLARE agency VARCHAR(255);
+	DECLARE phone_agency VARCHAR(255);
+	DECLARE email_agency VARCHAR(255);
+	DECLARE ower_name VARCHAR(255);
+    DECLARE email VARCHAR(255);
+    DECLARE phone VARCHAR(255);
+
+	SELECT AREA_APART INTO area FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_NAME INTO agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_PHONE INTO phone_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_EMAIL INTO email_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+	SELECT HOUSE_OWNER INTO ower_name FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+    SELECT EMAIL_OWNER INTO email FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+    SELECT PHONE_OWNER INTO phone FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
+
+	UPDATE tbl_apartment_rented
+	SET AREA_APART = area, 
+		AGENCY_NAME = agency,
+		AGENCY_PHONE = phone_agency,
+		AGENCY_EMAIL = email_agency,
+		HOUSE_OWNER = ower_name,
+    	EMAIL_OWNER = email,
+        PHONE_OWNER = phone
+	WHERE APARTMENT_CODE = code_apa;
+
+	UPDATE tbl_apartment_rented_not_money
+	SET AREA_APART = area, 
+		AGENCY_NAME = agency,
+		AGENCY_PHONE = phone_agency,
+		AGENCY_EMAIL = email_agency,
+		HOUSE_OWNER = ower_name,
+    	EMAIL_OWNER = email,
+        PHONE_OWNER = phone
+	WHERE APARTMENT_CODE = code_apa;
+
+	UPDATE tbl_apartment_contract
+	SET AREA_APART = area, 
+		AGENCY_NAME = agency,
+		AGENCY_PHONE = phone_agency,
+		AGENCY_EMAIL = email_agency,
+		HOUSE_OWNER = ower_name,
+    	EMAIL_OWNER = email,
+        PHONE_OWNER = phone
+	WHERE APARTMENT_CODE = code_apa;
+
+	UPDATE tbl_apartment_money
+	SET AREA_APART = area, 
+		AGENCY_NAME = agency,
+		AGENCY_PHONE = phone_agency,
+		AGENCY_EMAIL = email_agency,
+		HOUSE_OWNER = ower_name,
+    	EMAIL_OWNER = email,
+        PHONE_OWNER = phone
+	WHERE APARTMENT_CODE = code_apa;
+END
+
+
+/*---------------------------------------END----------------------------------------*/
+
+/*---------------------------------------TRIGGER AREA---------------------------------------*/
+
+/*---------------------------------RENTED NO TAX TRIGGER AREA---------------------------------*/
+
+--TRIGGER FOR ADDING INFORMATION FOR APARTMENT CONTRACT NO TAX
+CREATE TRIGGER ADDING_APARTMENT_CONTRACT_NO_TAX
+ON tbl_apartment_rented_not_money
+FOR INSERT
+AS
+BEGIN
+	DECLARE apart_code VARCHAR(255);
+	DECLARE fee_per_month FLOAT;
+
+	DECLARE cus_name VARCHAR(255);
+	DECLARE cus_phone VARCHAR(255);
+	DECLARE cus_email VARCHAR(255);
+
+	DECLARE day_start DATE;
+	DECLARE day_end DATE;
+
+	DECLARE num_day_remind INT;
+	DECLARE remind_date DATE;
+
+	SET apart_code = NEW.APARTMENT_CODE;
+	SET fee_per_month = NEW.FEE_PER_MONTH;
+
+	SET cus_name = NEW.CUTOMER_NAME;
+	SET cus_phone = NEW.CUTOMER_PHONE;
+	SET cus_email = NEW.CUTOMER_EMAIL;
+
+	SET day_start = NEW.START_DAY;
+	SET day_end = NEW.END_DAY;
+
+	SET num_day_remind = NEW.DAY_REMIND;
+
+	SET remind_date = ADDDATE(day_end, INTERVAL -num_day_remind DAY);
+
+	INSERT INTO tbl_apartment_contract_no_tax(APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY,END_DAY,FEE_PER_MONTH,DATE_REMIND,NUM_DAY_REMIND) 
+	VALUES(apart_code,cus_name,cus_phone,cus_email,day_start,day_end,fee_per_month,remind_date,num_day_remind);
+END
+GO
+
+--TRIGGER FOR REMOVING APARTMENT_CART WHEN ADDING NEW RENTED NO TAX APARTMENT
+CREATE TRIGGER REMOVING_APARMENT_CART_NO_TAX
+ON APARTMENT_INFO
+FOR INSERT
+AS
+BEGIN
+
+	UPDATE tbl_apartment_cart
+	SET STATUS_APART = 'NOT AVAILABLE'
+	WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+
+END
+GO
+
+--TRIGGER FOR REMOVING APARTMENT_CART WHEN ADDING NEW RENTED NO TAX APARTMENT
+CREATE TRIGGER ADDING_APARMENT_CART_NO_TAX
+ON APARTMENT_INFO
+FOR DELETE
+AS
+BEGIN
+
+	UPDATE tbl_apartment_cart
+	SET STATUS_APART = 'AVAILABLE'
+	WHERE APARTMENT_CODE = OLD.APARTMENT_CODE;
+
+END
+GO
+
+/*---------------------------------------END----------------------------------------*/
+
+
+/*---------------------------------RENTED TAX TRIGGER AREA---------------------------------*/
 --TRIGGER FOR ADDING INFORMATION FOR APARTMENT MONEY
 CREATE TRIGGER ADDING_APARTMENT_MONEY
 ON tbl_apartment_rented
@@ -373,43 +551,7 @@ BEGIN
 END
 GO
 
---TRIGGER FOR ADDING INFORMATION FOR APARTMENT_CONTRACT
-CREATE TRIGGER ADDING_APARTMENT_CONTRACT_NO_TAX
-ON tbl_apartment_rented_not_money
-FOR INSERT
-AS
-BEGIN
-	DECLARE apart_code VARCHAR(255);
-	DECLARE fee_per_month FLOAT;
 
-	DECLARE cus_name VARCHAR(255);
-	DECLARE cus_phone VARCHAR(255);
-	DECLARE cus_email VARCHAR(255);
-
-	DECLARE day_start DATE;
-	DECLARE day_end DATE;
-
-	DECLARE num_day_remind INT;
-	DECLARE remind_date DATE;
-
-	SET apart_code = NEW.APARTMENT_CODE;
-	SET fee_per_month = NEW.FEE_PER_MONTH;
-
-	SET cus_name = NEW.CUTOMER_NAME;
-	SET cus_phone = NEW.CUTOMER_PHONE;
-	SET cus_email = NEW.CUTOMER_EMAIL;
-
-	SET day_start = NEW.START_DAY;
-	SET day_end = NEW.END_DAY;
-
-	SET num_day_remind = NEW.DAY_REMIND;
-
-	SET remind_date = ADDDATE(day_end, INTERVAL -num_day_remind DAY);
-
-	INSERT INTO tbl_apartment_contract_no_tax(APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY,END_DAY,FEE_PER_MONTH,DATE_REMIND,NUM_DAY_REMIND) 
-	VALUES(apart_code,cus_name,cus_phone,cus_email,day_start,day_end,fee_per_month,remind_date,num_day_remind);
-END
-GO
 
 --TRIGGER FOR ADDING INFORMATION FOR APARTMENT_FINANCE
 CREATE TRIGGER ADDING_APARTMENT_FINANCE
@@ -473,138 +615,11 @@ BEGIN
 END
 GO
 
+/*---------------------------------------END----------------------------------------*/
 
---Fixed
---TRIGGER FOR REMOVING APARTMENT_CART WHEN ADDING NEW RENTED APARTMENT
-CREATE TRIGGER REMOVING_APARMENT_CART_NO_TAX
-ON APARTMENT_INFO
-FOR INSERT
-AS
-BEGIN
-
-	UPDATE tbl_apartment_cart
-	SET STATUS_APART = 'NOT AVAILABLE'
-	WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-
-END
-GO
-
---Fixed
---TRIGGER FOR REMOVING APARTMENT_CART WHEN ADDING NEW RENTED APARTMENT
-CREATE TRIGGER ADDING_APARMENT_CART_NO_TAX
-ON APARTMENT_INFO
-FOR DELETE
-AS
-BEGIN
-
-	UPDATE tbl_apartment_cart
-	SET STATUS_APART = 'AVAILABLE'
-	WHERE APARTMENT_CODE = OLD.APARTMENT_CODE;
-
-END
-GO
-/*DEFAULT AREA*/
+/*---------------------------------------DEFAULT AREA----------------------------------------*/
 --CREATE DEFAULT ACCOUNT FOR PROGRAM
 INSERT INTO ACCOUNT(USERNAME,PASSWORD) VALUES('admin1','2251022057731868917119086224872421513662')
 GO
 
---Fixed
-CREATE PROCEDURE ADDING_INFO_TAX(IN code_apa VARCHAR(255))
-BEGIN
-	DECLARE area VARCHAR(255);
-	DECLARE agency VARCHAR(255);
-	DECLARE phone_agency VARCHAR(255);
-	DECLARE email_agency VARCHAR(255);
-	DECLARE ower_name VARCHAR(255);
-    DECLARE email VARCHAR(255);
-    DECLARE phone VARCHAR(255);
 
-	SELECT AREA_APART INTO area FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_NAME INTO agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_PHONE INTO phone_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_EMAIL INTO email_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT HOUSE_OWNER INTO ower_name FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-    SELECT EMAIL_OWNER INTO email FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-    SELECT PHONE_OWNER INTO phone FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-
-	UPDATE tbl_apartment_rented
-	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
-		HOUSE_OWNER = ower_name,
-    	EMAIL_OWNER = email,
-        PHONE_OWNER = phone
-	WHERE APARTMENT_CODE = code_apa;
-
-	UPDATE tbl_apartment_rented_not_money
-	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
-		HOUSE_OWNER = ower_name,
-    	EMAIL_OWNER = email,
-        PHONE_OWNER = phone
-	WHERE APARTMENT_CODE = code_apa;
-
-	UPDATE tbl_apartment_contract
-	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
-		HOUSE_OWNER = ower_name,
-    	EMAIL_OWNER = email,
-        PHONE_OWNER = phone
-	WHERE APARTMENT_CODE = code_apa;
-
-	UPDATE tbl_apartment_money
-	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
-		HOUSE_OWNER = ower_name,
-    	EMAIL_OWNER = email,
-        PHONE_OWNER = phone
-	WHERE APARTMENT_CODE = code_apa;
-END
-
-
---Fixed
-CREATE PROCEDURE ADDING_INFO_NO_TAX(IN code_apa VARCHAR(255))
-BEGIN
-	DECLARE area VARCHAR(255);
-	DECLARE agency VARCHAR(255);
-	DECLARE phone_agency VARCHAR(255);
-	DECLARE email_agency VARCHAR(255);
-	DECLARE ower_name VARCHAR(255);
-    DECLARE email VARCHAR(255);
-    DECLARE phone VARCHAR(255);
-
-	SELECT AREA_APART INTO area FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_NAME INTO agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_PHONE INTO phone_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_EMAIL INTO email_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT HOUSE_OWNER INTO ower_name FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-    SELECT EMAIL_OWNER INTO email FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-    SELECT PHONE_OWNER INTO phone FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-
-	UPDATE tbl_apartment_rented_no_tax
-	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
-		HOUSE_OWNER = ower_name,
-    	EMAIL_OWNER = email,
-        PHONE_OWNER = phone
-	WHERE APARTMENT_CODE = code_apa;
-
-	UPDATE tbl_apartment_contract_no_tax
-	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
-		HOUSE_OWNER = ower_name,
-    	EMAIL_OWNER = email,
-        PHONE_OWNER = phone
-	WHERE APARTMENT_CODE = code_apa;
-END
