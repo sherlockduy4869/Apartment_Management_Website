@@ -90,7 +90,7 @@
                             <span class="details">Day Remind Negotiate</span>
                             <input disabled type="number" min="1" value="<?php echo $apart_rented_no_tax_by_id['DAY_REMIND']?>">
                         </div> 
-                        <div class="input-box">
+                        <div class="input-box <?php if($apart_rented_no_tax_by_id['CUTOMER_NAME'] == false) {echo 'not_display';} ?>">
                             <span class="details">Customer Name</span>
                             <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_NAME']?>">
                         </div> 
@@ -98,7 +98,7 @@
                             <span class="details">From</span>
                             <input disabled class="from" type="text" value="<?php echo $start_date; ?>">
                         </div> 
-                        <div class="input-box">
+                        <div class="input-box <?php if($apart_rented_no_tax_by_id['CUTOMER_PHONE'] == false) {echo 'not_display';} ?>">
                             <span class="details">Customer Phone</span>
                             <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_PHONE']?>">
                         </div> 
@@ -106,7 +106,7 @@
                             <span class="details">To</span>
                             <input disabled class="to" type="text" value="<?php echo $end_date; ?>">
                         </div>  
-                        <div class="input-box">
+                        <div class="input-box <?php if($apart_rented_no_tax_by_id['CUTOMER_EMAIL'] == false) {echo 'not_display';} ?>">
                             <span class="details">Customer Email</span>
                             <input disabled type="email" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_EMAIL']?>">
                         </div> 

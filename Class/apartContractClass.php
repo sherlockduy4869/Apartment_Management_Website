@@ -18,8 +18,8 @@
 
         //Showing apartment contract
         public function show_apart_contract_list(){
-            //$today = date("Y-m-d");
-            $today = "2022-11-21";
+            $today = date("Y-m-d");
+            //$today = "2022-11-21";
             $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
             $result = $this->db->select($query);
             return $result;
@@ -45,7 +45,7 @@
 
         //Skip apartment contract
         public function skip_apart_contract($skipID){
-            $query = "DELETE FROM tbl_apartment_contract WHERE APARTMENT_CODE = '$skipID'";
+            $query = "CALL DELETING_APARTMENT_RENTED_TAX('$skipID')";
             $result = $this->db->delete($query);
             return $result;
         }

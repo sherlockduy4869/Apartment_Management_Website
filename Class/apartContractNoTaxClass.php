@@ -18,8 +18,8 @@
 
         //Showing apartment contract no tax
         public function show_apart_contract_no_tax_list(){
-            //$today = date("Y-m-d");
-            $today = "2022-11-21";
+            $today = date("Y-m-d");
+            //$today = "2022-11-21";
             $query = "SELECT * FROM tbl_apartment_contract_no_tax WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
             $result = $this->db->select($query);
             return $result;

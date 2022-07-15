@@ -516,3 +516,8 @@ form .debit-note-list .debit_note input{
     position: absolute;
 }
 
+
+/*-----------------------DISPLAY NONE FOR DETAILS AREA-----------------------*/
+.not_display{
+    display: none;
+}
