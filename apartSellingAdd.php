@@ -35,11 +35,11 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input type="text" name="apartment_code" placeholder="Enter apartment code" required>
+                            <input type="text" name="apartment_code" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency name</span>
-                            <input type="text" name="agent_name" placeholder="Enter agency name" required>
+                            <input type="text" name="agent_name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
-                            <input type="text" name="agency_phone" placeholder="Enter agency phone">
+                            <input type="text" name="agency_phone">
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
@@ -69,35 +69,35 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Email</span>
-                            <input type="email" name="agency_email" placeholder="Enter agency email">
+                            <input type="email" name="agency_email">
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
-                            <input type="number" name="sqm" placeholder="Enter aparment area" required>
+                            <input type="number" name="sqm" required>
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
-                            <input type="text" name="house_owner" placeholder="Enter house owner name" required>
+                            <input type="text" name="house_owner" required>
                         </div>
                         <div class="input-box">
                             <span class="details">USD Price</span>
-                            <input class="usd_price" type="text" name="usd_price" placeholder="Enter USD price" required>
+                            <input class="usd_price" type="text" name="usd_price" required>
                         </div>  
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input type="text" name="phone_owner" placeholder="Enter phone number" required>
+                            <input type="text" name="phone_owner" required>
                         </div>   
                         <div class="input-box">
                             <span class="details">VND Price</span>
-                            <input class="vnd_price" type="text" name="vnd_price" placeholder="Enter VND price" required>
+                            <input class="vnd_price" type="text" name="vnd_price" required>
                         </div>  
                         <div class="input-box">
                             <span class="details">Email</span>
-                            <input type="email" name="email_owner" placeholder="Enter email" required>
+                            <input type="email" name="email_owner" required>
                         </div>  
                     </div>
                     <div class="note">
-                        <input class="selling_note" name="note" type="text" placeholder="Enter note here"></input>
+                        <input class="selling_note" name="note" type="text"></input>
                     </div>
                     <?php 
                     if(isset($sellingAdd))

@@ -61,7 +61,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Customer Name</span>
-                            <input  type="text" name="customer_name" placeholder="Enter customer name" required>
+                            <input  type="text" name="customer_name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Payment Term</span>
@@ -69,7 +69,7 @@
                         </div> 
                         <div class="input-box">
                             <span class="details">Customer Phone</span>
-                            <input  type="text" name="customer_phone" placeholder="Enter customer phone" required>
+                            <input  type="text" name="customer_phone" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
@@ -77,7 +77,7 @@
                         </div>    
                         <div class="input-box">
                             <span class="details">Customer Email</span>
-                            <input  type="email" name="customer_email" placeholder="Enter customer email" required>
+                            <input  type="email" name="customer_email" required>
                         </div>      
                         <div class="input-box">
                             <span class="details">From</span>

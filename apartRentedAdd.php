@@ -35,52 +35,54 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input  type="text" name="apartment_code" placeholder="Enter apartment code" required>
+                            <input  type="text" name="apartment_code" required>
                         </div>
-                        <div class="input-box">
-                            <span class="details">Tax Code</span>
-                            <input type="text" name="tax_code" placeholder="Enter tax code">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Tax Declaration Form</span>
-                            <input type="text" name="tax_declare_form" placeholder="Enter tax declaration form">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Tax Department</span>
-                            <input type="text" name="tax_department" placeholder="Enter tax department">
-                        </div>     
-                        <div class="input-box">
-                            <span class="details">Payment Term</span>
-                            <input type="number" value="1" min="1" name="payment_term" required>
-                        </div> 
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
                             <input class="renting_fee_per_month" type="text" name="renting_fee_per_month" required>
                         </div> 
                         <div class="input-box">
+                            <span class="details">Tax Code</span>
+                            <input type="text" name="tax_code" required>
+                        </div>
+                        <div class="input-box">
                             <span class="details">Tax Fee</span>
                             <input class="tax_fee" type="text" name="tax_fee">
                         </div> 
+                        
+                        <div class="input-box">
+                            <span class="details">Tax Declaration Form</span>
+                            <input type="text" name="tax_declare_form" required>
+                        </div>
                         <div class="input-box">
                             <span class="details">Tax Declare Fee</span>
-                            <input class="tax_declare_fee" type="text" name="tax_declare_fee">
+                            <input class="tax_declare_fee" type="text" name="tax_declare_fee" required>
                         </div> 
+                        
+                        <div class="input-box">
+                            <span class="details">Tax Department</span>
+                            <input type="text" name="tax_department" required>
+                        </div>     
                         <div class="input-box">
                             <span class="details">Management Fee</span>
                             <input class="management_fee" type="text" name="management_fee">
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Payment Term</span>
+                            <input type="number" min="1" name="payment_term" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Cleaning Fee</span>
                             <input class="cleaning_fee" type="text" name="cleaning_fee">
                         </div> 
                         <div class="input-box">
+                            <span class="details">Day Remind Negotiate</span>
+                            <input type="number" min="1" name="day_remind_negotiate" required>
+                        </div>    
+                        <div class="input-box">
                             <span class="details">Refund For Tenant</span>
                             <input class="refund_for_tenant" type="text" name="refund_for_tenant">
                         </div>            
-                        <div class="input-box">
-                            <span class="details">Day Remind Negotiate</span>
-                            <input type="number" min="1" name="day_remind_negotiate" required>
-                        </div>      
                         <div class="input-box">
                             <span class="details">From</span>
                             <input class="from" type="text" name="from"  required>
@@ -89,6 +91,18 @@
                             <span class="details">To</span>
                             <input class="to" type="text" name="to" required>
                         </div>  
+                        <div class="input-box">
+                            <span class="details">Customer Name</span>
+                            <input type="text" name="customer_name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Customer Phone</span>
+                            <input type="text" name="customer_phone">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Customer Email</span>
+                            <input type="email" name="customer_email" >
+                        </div>
                     </div>
                     <?php 
                     if(isset($apartRentedAdd))

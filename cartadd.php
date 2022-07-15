@@ -35,11 +35,11 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment Code</span>
-                            <input type="text" name="apartment_code" placeholder="Enter apartment code" required>
+                            <input type="text" name="apartment_code" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Name</span>
-                            <input type="text" name="agent_name" placeholder="Enter agency name" required>
+                            <input type="text" name="agent_name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
-                            <input type="text" name="agency_phone" placeholder="Enter agency phone">
+                            <input type="text" name="agency_phone" >
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
@@ -69,15 +69,15 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Email</span>
-                            <input type="email" name="agency_email" placeholder="Enter agency email">
+                            <input type="email" name="agency_email" >
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
-                            <input type="number" min="1" name="sqm" placeholder="Enter aparment area" required>
+                            <input type="number" min="1" name="sqm" required>
                         </div>
                         <div class="input-box">
                             <span class="details">House Owner</span>
-                            <input type="text" name="house_owner" placeholder="Enter house owner name" required>
+                            <input type="text" name="house_owner" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Status Furniture</span>
@@ -89,15 +89,15 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input type="text" name="phone_owner" placeholder="Enter phone number">
+                            <input type="text" name="phone_owner">
                         </div>   
                         <div class="input-box">
                             <span class="details">Price</span>
-                            <input class="apart_price" type="text" name="apart_price" placeholder="Enter aparment price" required>
+                            <input class="apart_price" type="text" name="apart_price" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Email</span>
-                            <input type="email" name="email_owner" placeholder="Enter email">
+                            <input type="email" name="email_owner">
                         </div>
                     </div>
                     <?php 
