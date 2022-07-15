@@ -36,6 +36,7 @@
                         <th class="text-center">Apartment Info</th>
                         <th class="text-center">House Owner</th>
                         <th class="text-center">Fee/Month</th>
+                        <th class="text-center">Owner Recieved</th>
                         <th class="text-center">Renting Duration</th>
                         <th class="text-center">Payment Term</th>
                         <th class="text-center">Customize</th>
@@ -67,13 +68,16 @@
                             <h5><?php echo $result['HOUSE_OWNER'];?></h5>
                             <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
                         </td>
-                        <td class="role">
+                        <td class="active">
                             <p><?php echo number_format($result['FEE_PER_MONTH']);?><sup>đ</sup></p>
+                        </td>
+                        <td class="active">
+                            <p><?php echo number_format($result['OWNER_RECIEVED']);?><sup>đ</sup></p>
                         </td>
                         <td class="active">
                             <p><?php echo $start_date;?><br><?php echo $end_date;?></p>
                         </td>
-                        <td class="active">
+                        <td class="role">
                             <p><?php echo $result['PAYMENT_TERM'].' Month(s)';?></p>
                         </td>
                         <td class="edit">

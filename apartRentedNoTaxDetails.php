@@ -71,33 +71,41 @@
                             <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['AGENCY_NAME']?>">
                         </div> 
                         <div class="input-box">
-                            <span class="details">Day Remind Negotiate</span>
-                            <input disabled type="number" min="1" value="<?php echo $apart_rented_no_tax_by_id['DAY_REMIND']?>">
-                        </div>     
+                            <span class="details">Management Fee</span>
+                            <input disabled class="management_fee" type="text" value="<?php echo $apart_rented_no_tax_by_id['MANAGEMENT_FEE']?>">
+                        </div>   
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
                             <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['AGENCY_PHONE']?>">
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Owner Recieved</span>
+                            <input disabled class="owner_recieved" type="text" value="<?php echo $apart_rented_no_tax_by_id['OWNER_RECIEVED']?>">
+                        </div>  
+                        <div class="input-box">
+                            <span class="details">Agency Email</span>
+                            <input disabled type="email" value="<?php echo $apart_rented_no_tax_by_id['AGENCY_EMAIL']?>">
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Day Remind Negotiate</span>
+                            <input disabled type="number" min="1" value="<?php echo $apart_rented_no_tax_by_id['DAY_REMIND']?>">
+                        </div> 
+                        <div class="input-box">
+                            <span class="details">Customer Name</span>
+                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_NAME']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">From</span>
                             <input disabled class="from" type="text" value="<?php echo $start_date; ?>">
                         </div> 
                         <div class="input-box">
-                            <span class="details">Agency Email</span>
-                            <input disabled type="email" value="<?php echo $apart_rented_no_tax_by_id['AGENCY_EMAIL']?>">
+                            <span class="details">Customer Phone</span>
+                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_PHONE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">To</span>
                             <input disabled class="to" type="text" value="<?php echo $end_date; ?>">
                         </div>  
-                        <div class="input-box">
-                            <span class="details">Customer Name</span>
-                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_NAME']?>">
-                        </div> 
-                        <div class="input-box">
-                            <span class="details">Customer Phone</span>
-                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_PHONE']?>">
-                        </div> 
                         <div class="input-box">
                             <span class="details">Customer Email</span>
                             <input disabled type="email" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_EMAIL']?>">
@@ -112,6 +120,14 @@
 </section>
 <script>
     new Cleave('.renting_fee_per_month', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+    new Cleave('.management_fee', {
+        numeral: true,
+        numeralThousandGroupStyle: 'thousand'
+    });
+    new Cleave('.owner_recieved', {
         numeral: true,
         numeralThousandGroupStyle: 'thousand'
     });
