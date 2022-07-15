@@ -59,18 +59,17 @@
             return $result;
         }
 
-        //Delete apartment cart 
-        public function delete_apart_rented($delID){
-            //$query = "DELETE FROM tbl_apartment_rented WHERE APARTMENT_CODE = '$delID'";
-            $query = "CALL DELETING_APARTMENT_RENTED('$delID')";
+        //Delete apartment rented no tax 
+        public function delete_apart_rented_no_tax($delID){
+            $query = "CALL DELETING_APARTMENT_RENTED_TAX('$delID')";
             $result = $this->db->delete($query);
 
-            header('Location:apartRented.php');
+            header('Location:apartRentedNoTax.php');
         }
 
-        //Get apartment cart information 
-        public function get_apart_rented_by_id($apart_rented_id){
-            $query = "SELECT * FROM tbl_apartment_rented WHERE APARTMENT_CODE = '$apart_rented_id'";
+        //Get apartment rented no tax information 
+        public function get_apart_rented_no_tax_by_id($apart_rented_no_tax_id){
+            $query = "SELECT * FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = '$apart_rented_no_tax_id'";
             $result = $this->db->select($query)->fetch_assoc();
             return $result;
         }

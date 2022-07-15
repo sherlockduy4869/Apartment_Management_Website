@@ -9,7 +9,7 @@
     if(isset($_GET['delID']))
     {
         $delID = $_GET['delID'];
-        $delApartRented = $apartRented->delete_apart_rented($delID);
+        $delApartRentedNoTax = $apartrentednotax->delete_apart_rented_no_tax($delID);
     }  
 
 ?>
@@ -77,7 +77,7 @@
                             <p><?php echo $result['PAYMENT_TERM'].' Month(s)';?></p>
                         </td>
                         <td class="edit">
-                            <a href="apartRentedDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
+                            <a href="apartRentedNoTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
                     <?php

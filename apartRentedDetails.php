@@ -56,7 +56,7 @@
                         </div>     
                         <div class="input-box">
                             <span class="details">Payment Term</span>
-                            <input disabled type="number" value="1" min="1" value="<?php echo $apart_rented_by_id['PAYMENT_TERM']?>">
+                            <input disabled type="number" min="1" value="<?php echo $apart_rented_by_id['PAYMENT_TERM']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
