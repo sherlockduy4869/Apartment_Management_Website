@@ -108,6 +108,9 @@
                             <input class="to" type="text" name="to" required>
                         </div> 
                     </div>
+                    <div class="note">
+                        <textarea class="selling_note" name="note" cols="30" rows="10"></textarea>
+                    </div>
                     <?php 
                     if(isset($apartRentedNoTaxAdd))
                     {
