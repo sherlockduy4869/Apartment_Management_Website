@@ -37,7 +37,7 @@
                         <th class="text-center">House Owner</th>
                         <th class="text-center">Fee/Month</th>
                         <th class="text-center">Owner Recieved</th>
-                        <th class="text-center">Renting Duration</th>
+                        <th class="text-center">Duration</th>
                         <th class="text-center">Payment Term</th>
                         <th class="text-center">Customize</th>
                     </tr>
@@ -75,7 +75,7 @@
                             <p><?php echo number_format($result['OWNER_RECIEVED']);?><sup>đ</sup></p>
                         </td>
                         <td class="active">
-                            <p><?php echo $start_date;?><br><?php echo $end_date;?></p>
+                            <p><?php echo $start_date;?><br>/<?php echo $end_date;?></p>
                         </td>
                         <td class="role">
                             <p><?php echo $result['PAYMENT_TERM'].' Month(s)';?></p>
