@@ -75,6 +75,9 @@
                             <input disabled type="text" value="<?php echo $apart_not_rented_by_id['PHONE_OWNER'] ?>">
                         </div>   
                     </div>
+                    <div class="note">
+                        <textarea disabled class="selling_note" cols="30" rows="10"><?php echo $apart_not_rented_by_id['NOTE'] ?></textarea>
+                    </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartNotRented.php">BACK TO UNDER CONSTRUCTION LIST</a></button>
                     </div>

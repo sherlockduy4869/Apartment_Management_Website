@@ -100,6 +100,9 @@
                             <input type="text" name="phone_owner" value="<?php echo $apart_not_rented_by_id['PHONE_OWNER'] ?>" required>
                         </div>   
                     </div>
+                    <div class="note">
+                        <textarea class="selling_note" name="note" cols="30" rows="10"><?php echo $apart_not_rented_by_id['NOTE'] ?></textarea>
+                    </div>
                     <?php 
                     if(isset($notRentedEdit))
                     {

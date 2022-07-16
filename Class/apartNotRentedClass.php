@@ -29,10 +29,11 @@
             $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
             $status_apart = mysqli_real_escape_string($this->db->link, $data['status_apart']);
+            $note = mysqli_real_escape_string($this->db->link, $data['note']);
 
             $query = "INSERT INTO tbl_apartment_not_rented(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,AREA_APART,
-            HOUSE_OWNER,PHONE_OWNER,BEDROOM,SQM,STATUS_APART) 
-                  VALUES('$apartment_code','$agent_name','$agency_phone','$agency_email','$area','$house_owner','$phone_owner','$bedroom','$sqm','$status_apart')";
+            HOUSE_OWNER,PHONE_OWNER,BEDROOM,SQM,STATUS_APART,NOTE) 
+                  VALUES('$apartment_code','$agent_name','$agency_phone','$agency_email','$area','$house_owner','$phone_owner','$bedroom','$sqm','$status_apart','$note')";
             $result = $this->db->insert($query);
 
             if($result){
@@ -79,6 +80,7 @@
             $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
             $status_apart = mysqli_real_escape_string($this->db->link, $data['status_apart']);
+            $note = mysqli_real_escape_string($this->db->link, $data['note']);
 
             $query = "UPDATE tbl_apartment_not_rented SET
                     AGENCY_NAME = '$agent_name'
@@ -90,6 +92,7 @@
                     ,BEDROOM = '$bedroom'
                     ,SQM = '$sqm'
                     ,STATUS_APART = '$status_apart'
+                    ,NOTE = '$note'
                     WHERE APARTMENT_CODE ='$apart_not_rented_id'";
 
             $result = $this->db->update($query);
