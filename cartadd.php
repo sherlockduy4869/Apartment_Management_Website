@@ -100,6 +100,9 @@
                             <input type="email" name="email_owner">
                         </div>
                     </div>
+                    <div class="note">
+                        <textarea class="selling_note" name="note" cols="30" rows="10"></textarea>
+                    </div>
                     <?php 
                     if(isset($cartAdd))
                     {

@@ -111,6 +111,9 @@
                             <input disabled type="email" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_EMAIL']?>">
                         </div> 
                     </div>
+                    <div class="note">
+                        <textarea disabled class="selling_note" name="note" cols="30" rows="10"><?php echo $apart_rented_no_tax_by_id['NOTE']?></textarea>
+                    </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartRentedNoTax.php">BACK TO RENTED NO TAX LIST</a></button>
                     </div>

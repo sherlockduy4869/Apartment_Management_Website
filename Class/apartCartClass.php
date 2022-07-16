@@ -30,12 +30,13 @@
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
             $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
             $apart_price = mysqli_real_escape_string($this->db->link, $data['apart_price']);
+            $note = mysqli_real_escape_string($this->db->link, $data['note']);
             $status_furniture = mysqli_real_escape_string($this->db->link, $data['status_furniture']);
 
             $price =  str_replace(",","",$apart_price);
 
-            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM,PRICE,STATUS_FURNITURE) 
-                  VALUES('$apartment_code','$agent_name','$agency_phone','$agency_email','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm','$price','$status_furniture')";
+            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM,PRICE,NOTE,STATUS_FURNITURE) 
+                  VALUES('$apartment_code','$agent_name','$agency_phone','$agency_email','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm','$price','$note','$status_furniture')";
             $result = $this->db->insert($query);
 
             if($result){
@@ -83,6 +84,7 @@
             $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
             $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
             $apart_price = mysqli_real_escape_string($this->db->link, $data['apart_price']);
+            $note = mysqli_real_escape_string($this->db->link, $data['note']);
             $status_furniture = mysqli_real_escape_string($this->db->link, $data['status_furniture']);
 
             $price =  str_replace(",","",$apart_price);
@@ -98,6 +100,7 @@
                     ,BEDROOM = '$bedroom'
                     ,SQM = '$sqm'
                     ,PRICE = '$price'
+                    ,NOTE = '$note'
                     ,STATUS_FURNITURE = '$status_furniture'
                     WHERE APARTMENT_CODE ='$cart_id'";
 
