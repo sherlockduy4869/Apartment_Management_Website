@@ -60,49 +60,49 @@
                             </datalist>
                         </div>
                         <div class="input-box">
-                            <span class="details">Customer Name</span>
-                            <input  type="text" name="customer_name" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Payment Term</span>
-                            <input type="number" value="1" min="1" name="payment_term" required>
-                        </div> 
-                        <div class="input-box">
-                            <span class="details">Customer Phone</span>
-                            <input  type="text" name="customer_phone" >
+                            <span class="details">Agency Name</span>
+                            <input  type="text" name="agency_name" required >
                         </div>
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
                             <input class="renting_fee_per_month" type="text" name="renting_fee_per_month" required>
                         </div>    
                         <div class="input-box">
-                            <span class="details">Customer Email</span>
-                            <input  type="email" name="customer_email">
+                            <span class="details">Agency Phone</span>
+                            <input  type="text" name="agency_phone" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Management Fee</span>
+                            <input class="management_fee" type="text" name="management_Fee" >
+                        </div>   
+                        <div class="input-box">
+                            <span class="details">Agency Email</span>
+                            <input  type="email" name="agency_email" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Payment Term</span>
+                            <input type="number" value="1" min="1" name="payment_term" required>
                         </div> 
+                        <div class="input-box">
+                            <span class="details">Customer Name</span>
+                            <input  type="text" name="customer_name" required>
+                        </div>
                         <div class="input-box">
                             <span class="details">Day Remind Negotiate</span>
                             <input type="number" min="1" name="day_remind_negotiate" required>
                         </div> 
                         <div class="input-box">
-                            <span class="details">Agency Name</span>
-                            <input  type="text" name="agency_name" >
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Management Fee</span>
-                            <input class="management_fee" type="text" name="management_Fee" >
-                        </div>      
-                        <div class="input-box">
-                            <span class="details">Agency Phone</span>
-                            <input  type="text" name="agency_phone" >
+                            <span class="details">Customer Phone</span>
+                            <input  type="text" name="customer_phone" >
                         </div>
                         <div class="input-box">
                             <span class="details">From</span>
                             <input class="from" type="text" name="from" required>
                         </div> 
                         <div class="input-box">
-                            <span class="details">Agency Email</span>
-                            <input  type="text" name="agency_email" >
-                        </div>
+                            <span class="details">Customer Email</span>
+                            <input  type="email" name="customer_email">
+                        </div> 
                         <div class="input-box">
                             <span class="details">To</span>
                             <input class="to" type="text" name="to" required>
