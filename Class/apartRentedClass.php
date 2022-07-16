@@ -22,6 +22,9 @@
             $customer_name = mysqli_real_escape_string($this->db->link, $data['customer_name']);
             $customer_phone = mysqli_real_escape_string($this->db->link, $data['customer_phone']);
             $customer_email = mysqli_real_escape_string($this->db->link, $data['customer_email']);
+            $agency_name = mysqli_real_escape_string($this->db->link, $data['agency_name']);
+            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
+            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
             $tax_code = mysqli_real_escape_string($this->db->link, $data['tax_code']);
             $tax_declare_form = mysqli_real_escape_string($this->db->link, $data['tax_declare_form']);
             $tax_department = mysqli_real_escape_string($this->db->link, $data['tax_department']);
@@ -35,6 +38,7 @@
             $day_remind_negotiate = mysqli_real_escape_string($this->db->link, $data['day_remind_negotiate']);
             $from = mysqli_real_escape_string($this->db->link, $data['from']);
             $to = mysqli_real_escape_string($this->db->link, $data['to']);
+            $note = mysqli_real_escape_string($this->db->link, $data['note']);
 
             //required
             $rent_fee_per_month =  str_replace(",","",$renting_fee_per_month);
@@ -68,8 +72,15 @@
             $end_date = date("Y-m-d", strtotime($to)); 
 
             $query = "INSERT INTO tbl_apartment_rented
-            (APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,TOTAL,OWNER_RECIEVED,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM) 
-                  VALUES('$apartment_code','$customer_name','$customer_phone','$customer_email','$tax_code','$tax_declare_form','$tax_department','$rent_fee_per_month','$fee_tax','$declare_fee_tax','$fee_management','$tenant_refund','$fee_cleaning','$total_amount','$owner_recieved','$start_date','$end_date','$day_remind_negotiate','$payment_term')";
+            (APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,CUTOMER_NAME,CUTOMER_PHONE,
+            CUTOMER_EMAIL,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,
+            TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,TOTAL,
+            OWNER_RECIEVED,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM,NOTE) 
+            VALUES('$apartment_code','$agency_name','$agency_phone','$agency_email','$customer_name'
+            ,'$customer_phone','$customer_email','$tax_code','$tax_declare_form','$tax_department'
+            ,'$rent_fee_per_month','$fee_tax','$declare_fee_tax','$fee_management','$tenant_refund'
+            ,'$fee_cleaning','$total_amount','$owner_recieved','$start_date','$end_date'
+            ,'$day_remind_negotiate','$payment_term','$note')";
             
             $query_tax = "CALL ADDING_INFO_TAX('$apartment_code')";
 

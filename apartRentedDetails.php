@@ -145,6 +145,9 @@
                             <input disabled class="owner_recieved" type="text" value="<?php echo $apart_rented_by_id['OWNER_RECIEVED']?>">
                         </div>           
                     </div>
+                    <div class="note">
+                        <textarea disabled class="selling_note" name="note" cols="30" rows="10"><?php echo $apart_rented_by_id['NOTE']?></textarea>
+                    </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartRented.php">BACK TO RENTED TAX LIST</a></button>
                     </div>

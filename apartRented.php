@@ -37,7 +37,7 @@
                         <th class="text-center">House Owner</th>
                         <th class="text-center">Customer</th>
                         <th class="text-center">Tax Info</th>
-                        <th class="text-center">Renting Duration</th>
+                        <th class="text-center">Duration</th>
                         <th class="text-center">Owner Recieved</th>
                         <th class="text-center">Customize</th>
                     </tr>
@@ -78,7 +78,7 @@
                             <p><?php echo $result['TAX_DECLARATION_FORM'];?>-<?php echo $result['TAX_APARTMENT'];?></p>
                         </td>
                         <td class="active">
-                            <p><?php echo $start_date;?><br><?php echo $end_date;?></p>
+                            <p><?php echo $start_date;?><br>/<?php echo $end_date;?></p>
                         </td>
                         <td class="active">
                             <p><?php echo number_format($result['OWNER_RECIEVED']);?><sup>đ</sup></p>

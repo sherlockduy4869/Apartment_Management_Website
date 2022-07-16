@@ -351,26 +351,17 @@ GO
 CREATE PROCEDURE ADDING_INFO_TAX(IN code_apa VARCHAR(255))
 BEGIN
 	DECLARE area VARCHAR(255);
-	DECLARE agency VARCHAR(255);
-	DECLARE phone_agency VARCHAR(255);
-	DECLARE email_agency VARCHAR(255);
 	DECLARE ower_name VARCHAR(255);
     DECLARE email VARCHAR(255);
     DECLARE phone VARCHAR(255);
 
 	SELECT AREA_APART INTO area FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_NAME INTO agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_PHONE INTO phone_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_EMAIL INTO email_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
 	SELECT HOUSE_OWNER INTO ower_name FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
     SELECT EMAIL_OWNER INTO email FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
     SELECT PHONE_OWNER INTO phone FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
 
 	UPDATE tbl_apartment_rented
 	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
 		HOUSE_OWNER = ower_name,
     	EMAIL_OWNER = email,
         PHONE_OWNER = phone
@@ -378,9 +369,6 @@ BEGIN
 
 	UPDATE tbl_apartment_contract
 	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
 		HOUSE_OWNER = ower_name,
     	EMAIL_OWNER = email,
         PHONE_OWNER = phone
@@ -388,9 +376,6 @@ BEGIN
 
 	UPDATE tbl_apartment_money
 	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
 		HOUSE_OWNER = ower_name,
     	EMAIL_OWNER = email,
         PHONE_OWNER = phone
@@ -500,7 +485,10 @@ BEGIN
 	DECLARE cus_phone VARCHAR(255);
 	DECLARE cus_email VARCHAR(255);
 
-	
+	DECLARE agency VARCHAR(255);
+	DECLARE phone_agency VARCHAR(255);
+	DECLARE email_agency VARCHAR(255);
+
 	SET apart_code = NEW.APARTMENT_CODE;
 
 	SET start_term = NEW.START_DAY;
@@ -511,11 +499,15 @@ BEGIN
 	SET cus_phone = NEW.CUTOMER_PHONE;
 	SET cus_email = NEW.CUTOMER_EMAIL;
 
+	SET agency = NEW.AGENCY_NAME;
+	SET phone_agency = NEW.AGENCY_PHONE;
+	SET email_agency = NEW.AGENCY_EMAIL;
+
 	SET end_term = ADDDATE(start_term, INTERVAL term MONTH);
 	SET end_term_minus = ADDDATE(end_term, INTERVAL -1 DAY);
 	
-	INSERT INTO tbl_apartment_money(APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY_TERM, END_DAY_TERM, PAYMENT_TERM, TOTAL_AMOUNT)
-	VALUES(apart_code, cus_name, cus_phone, cus_email, start_term, end_term_minus, term, total_money);
+	INSERT INTO tbl_apartment_money(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY_TERM, END_DAY_TERM, PAYMENT_TERM, TOTAL_AMOUNT)
+	VALUES(apart_code,agency,phone_agency,email_agency, cus_name, cus_phone, cus_email, start_term, end_term_minus, term, total_money);
 END
 GO
 
@@ -537,6 +529,10 @@ BEGIN
 	DECLARE cus_phone VARCHAR(255);
 	DECLARE cus_email VARCHAR(255);
 
+	DECLARE agency VARCHAR(255);
+	DECLARE phone_agency VARCHAR(255);
+	DECLARE email_agency VARCHAR(255);
+
 	DECLARE day_start DATE;
 	DECLARE day_end DATE;
 
@@ -555,6 +551,10 @@ BEGIN
 	SET cus_phone = NEW.CUTOMER_PHONE;
 	SET cus_email = NEW.CUTOMER_EMAIL;
 
+	SET agency = NEW.AGENCY_NAME;
+	SET phone_agency = NEW.AGENCY_PHONE;
+	SET email_agency = NEW.AGENCY_EMAIL;
+
 	SET day_start = NEW.START_DAY;
 	SET day_end = NEW.END_DAY;
 
@@ -562,9 +562,9 @@ BEGIN
 
 	SET remind_date = ADDDATE(day_end, INTERVAL -num_day_remind DAY);
 
-	INSERT INTO tbl_apartment_contract(APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY,END_DAY,FEE_PER_MONTH,TAX_FEE,
+	INSERT INTO tbl_apartment_contract(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY,END_DAY,FEE_PER_MONTH,TAX_FEE,
 	TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,DATE_REMIND,NUM_DAY_REMIND) 
-	VALUES(apart_code,cus_name, cus_phone, cus_email,day_start,day_end,fee_per_month,
+	VALUES(apart_code,agency,phone_agency,email_agency,cus_name, cus_phone, cus_email,day_start,day_end,fee_per_month,
 	fee_tax,fee_management,tenant_refund,fee_cleaning,remind_date,num_day_remind);
 END
 GO

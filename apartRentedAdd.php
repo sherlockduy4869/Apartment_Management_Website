@@ -96,37 +96,49 @@
                             <input class="tax_fee" type="text" name="tax_fee">
                         </div> 
                         <div class="input-box">
-                            <span class="details">From</span>
-                            <input class="from" type="text" name="from" required>
-                        </div> 
+                            <span class="details">Agency Name</span>
+                            <input  type="text" name="agency_name" required >
+                        </div>
                         <div class="input-box">
                             <span class="details">Tax Declare Fee</span>
                             <input class="tax_declare_fee" type="text" name="tax_declare_fee" required>
                         </div> 
                         <div class="input-box">
-                            <span class="details">To</span>
-                            <input class="to" type="text" name="to" required>
-                        </div>  
+                            <span class="details">Agency Phone</span>
+                            <input  type="text" name="agency_phone" >
+                        </div>
                         <div class="input-box">
                             <span class="details">Management Fee</span>
                             <input class="management_fee" type="text" name="management_fee">
                         </div> 
                         <div class="input-box">
+                            <span class="details">Agency Email</span>
+                            <input  type="text" name="agency_email" >
+                        </div>
+                        
+                        <div class="input-box">
+                            <span class="details">Cleaning Fee</span>
+                            <input class="cleaning_fee" type="text" name="cleaning_fee">
+                        </div>  
+                        <div class="input-box">
                             <span class="details">Payment Term</span>
                             <input type="number" min="1" name="payment_term" required>
                         </div> 
                         <div class="input-box">
-                            <span class="details">Cleaning Fee</span>
-                            <input class="cleaning_fee" type="text" name="cleaning_fee">
-                        </div> 
-                        <div class="input-box">
-                            <span class="details"></span>
-                            <input type="hidden" >
-                        </div>    
-                        <div class="input-box">
                             <span class="details">Refund For Tenant</span>
                             <input class="refund_for_tenant" type="text" name="refund_for_tenant">
-                        </div>            
+                        </div>   
+                        <div class="input-box">
+                            <span class="details">From</span>
+                            <input class="from" type="text" name="from" required>
+                        </div>          
+                        <div class="input-box">
+                            <span class="details">To</span>
+                            <input class="to" type="text" name="to" required>
+                        </div> 
+                    </div>
+                    <div class="note">
+                        <textarea class="selling_note" name="note" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
                     if(isset($apartRentedAdd))
