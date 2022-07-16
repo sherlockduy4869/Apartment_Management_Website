@@ -84,13 +84,25 @@
                             <input type="number" min="1" name="day_remind_negotiate" required>
                         </div> 
                         <div class="input-box">
+                            <span class="details">Agency Name</span>
+                            <input  type="text" name="agency_name" >
+                        </div>
+                        <div class="input-box">
                             <span class="details">Management Fee</span>
                             <input class="management_fee" type="text" name="management_Fee" >
                         </div>      
                         <div class="input-box">
+                            <span class="details">Agency Phone</span>
+                            <input  type="text" name="agency_phone" >
+                        </div>
+                        <div class="input-box">
                             <span class="details">From</span>
                             <input class="from" type="text" name="from" required>
                         </div> 
+                        <div class="input-box">
+                            <span class="details">Agency Email</span>
+                            <input  type="text" name="agency_email" >
+                        </div>
                         <div class="input-box">
                             <span class="details">To</span>
                             <input class="to" type="text" name="to" required>

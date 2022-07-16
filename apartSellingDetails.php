@@ -85,7 +85,7 @@
                         </div>  
                     </div>
                     <div class="note">
-                        <input disabled class="selling_note" type="text" value="<?php echo $apart_selling_by_id['NOTE'];?>"></input>
+                        <textarea disabled class="selling_note" name="note" cols="30" rows="10"><?php echo $apart_selling_by_id['NOTE'];?></textarea>
                     </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartSelling.php">BACK TO SELLING LIST</a></button>

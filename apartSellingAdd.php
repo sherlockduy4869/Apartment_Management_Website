@@ -97,7 +97,7 @@
                         </div>  
                     </div>
                     <div class="note">
-                        <input class="selling_note" name="note" type="text"></input>
+                        <textarea class="selling_note" name="note" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
                     if(isset($sellingAdd))

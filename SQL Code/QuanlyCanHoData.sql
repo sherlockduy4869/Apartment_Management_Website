@@ -31,6 +31,7 @@ CREATE TABLE tbl_apartment_cart
 	SQM FLOAT,
 	PRICE FLOAT,
 	STATUS_FURNITURE VARCHAR(255),
+	NOTE TEXT,
 	STATUS_APART VARCHAR(255) DEFAULT 'AVAILABLE'
 )
 GO
@@ -58,6 +59,7 @@ CREATE TABLE tbl_apartment_rented_no_tax
 	END_DAY DATE,
 	DAY_REMIND INT,
 	PAYMENT_TERM INT,
+	NOTE TEXT,
 	FOREIGN KEY(APARTMENT_CODE) REFERENCES tbl_apartment_cart(APARTMENT_CODE)
 )
 GO
@@ -123,7 +125,7 @@ CREATE TABLE tbl_apartment_rented
 	END_DAY DATE,
 	DAY_REMIND INT,
 	PAYMENT_TERM INT,
-
+	NOTE TEXT,
 	FOREIGN KEY(APARTMENT_CODE) REFERENCES tbl_apartment_cart(APARTMENT_CODE)
 )
 GO
@@ -221,7 +223,7 @@ CREATE TABLE tbl_apartment_selling
 	USD_PRICE FLOAT,
 	VND_PRICE FLOAT,
 	DATE_INPUT_DATA DATE,
-	NOTE VARCHAR(255)
+	NOTE TEXT
 )
 GO
 
@@ -267,26 +269,17 @@ END
 CREATE PROCEDURE ADDING_INFO_NO_TAX(IN code_apa VARCHAR(255))
 BEGIN
 	DECLARE area VARCHAR(255);
-	DECLARE agency VARCHAR(255);
-	DECLARE phone_agency VARCHAR(255);
-	DECLARE email_agency VARCHAR(255);
 	DECLARE ower_name VARCHAR(255);
     DECLARE email VARCHAR(255);
     DECLARE phone VARCHAR(255);
 
 	SELECT AREA_APART INTO area FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_NAME INTO agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_PHONE INTO phone_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_EMAIL INTO email_agency FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
 	SELECT HOUSE_OWNER INTO ower_name FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
     SELECT EMAIL_OWNER INTO email FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
     SELECT PHONE_OWNER INTO phone FROM tbl_apartment_cart WHERE APARTMENT_CODE = code_apa;
 
 	UPDATE tbl_apartment_rented_no_tax
 	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
 		HOUSE_OWNER = ower_name,
     	EMAIL_OWNER = email,
         PHONE_OWNER = phone
@@ -294,9 +287,6 @@ BEGIN
 
 	UPDATE tbl_apartment_contract_no_tax
 	SET AREA_APART = area, 
-		AGENCY_NAME = agency,
-		AGENCY_PHONE = phone_agency,
-		AGENCY_EMAIL = email_agency,
 		HOUSE_OWNER = ower_name,
     	EMAIL_OWNER = email,
         PHONE_OWNER = phone
@@ -432,12 +422,20 @@ BEGIN
 	DECLARE num_day_remind INT;
 	DECLARE remind_date DATE;
 
+	DECLARE agency VARCHAR(255);
+	DECLARE phone_agency VARCHAR(255);
+	DECLARE email_agency VARCHAR(255);
+
 	SET apart_code = NEW.APARTMENT_CODE;
 	SET fee_per_month = NEW.FEE_PER_MONTH;
 
 	SET cus_name = NEW.CUTOMER_NAME;
 	SET cus_phone = NEW.CUTOMER_PHONE;
 	SET cus_email = NEW.CUTOMER_EMAIL;
+
+	SET agency = NEW.AGENCY_NAME;
+	SET phone_agency = NEW.AGENCY_PHONE;
+	SET email_agency = NEW.AGENCY_EMAIL;
 
 	SET day_start = NEW.START_DAY;
 	SET day_end = NEW.END_DAY;
@@ -446,8 +444,8 @@ BEGIN
 
 	SET remind_date = ADDDATE(day_end, INTERVAL -num_day_remind DAY);
 
-	INSERT INTO tbl_apartment_contract_no_tax(APARTMENT_CODE,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY,END_DAY,FEE_PER_MONTH,DATE_REMIND,NUM_DAY_REMIND) 
-	VALUES(apart_code,cus_name,cus_phone,cus_email,day_start,day_end,fee_per_month,remind_date,num_day_remind);
+	INSERT INTO tbl_apartment_contract_no_tax(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY,END_DAY,FEE_PER_MONTH,DATE_REMIND,NUM_DAY_REMIND) 
+	VALUES(apart_code,agency,phone_agency,email_agency,cus_name,cus_phone,cus_email,day_start,day_end,fee_per_month,remind_date,num_day_remind);
 END
 GO
 
