@@ -63,24 +63,24 @@
                         </div> 
                     </div>
                     <div class="debit-note-list">
-                        <div class="debit_note">
+                        <div class="debit_note <?php if($apart_tax_by_id['TAX_FEE'] == 0) {echo 'not_display';} ?>">
                             <span class="details">Tax Fee</span>
                             <input disabled class="tax_fee" type="text" value="<?php echo $apart_tax_by_id['TAX_FEE']*$term?>">
                         </div> 
-                        <div class="debit_note">
+                        <div class="debit_note <?php if($apart_tax_by_id['TAX_DECLARE'] == 0) {echo 'not_display';} ?>">
                             <span class="details">Tax Declaration</span>
                             <input disabled class="tax_declaration" type="text" value="<?php echo $apart_tax_by_id['TAX_DECLARE']?>">
                         </div> 
-                        <div class="debit_note">
+                        <div class="debit_note <?php if($apart_tax_by_id['TAX_MANAGEMENT'] == 0) {echo 'not_display';} ?>">
                             <span class="details">Management Fee</span>
                             <input disabled class="tax_management" type="text" value="<?php echo $apart_tax_by_id['TAX_MANAGEMENT']*$term?>">
                         </div> 
-                        <div class="debit_note">
+                        <div class="debit_note <?php if($apart_tax_by_id['REFUND_FOR_TENANT'] == 0) {echo 'not_display';} ?>">
                             <span class="details">Refund For Tenant</span>
                             <input disabled class="refund_for_tenant" type="text" value="<?php echo $apart_tax_by_id['REFUND_FOR_TENANT']*$term?>">
                         </div> 
                         
-                        <div class="debit_note">
+                        <div class="debit_note <?php if($apart_tax_by_id['CLEANING_FEE'] == 0) {echo 'not_display';} ?>">
                             <span class="details">Cleaning Fee</span>
                             <input disabled class="cleaning_fee" type="text" value="<?php echo $apart_tax_by_id['CLEANING_FEE']*$term?>">
                         </div>
