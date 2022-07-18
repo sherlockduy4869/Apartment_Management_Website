@@ -111,35 +111,59 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
-                            <textarea name="internet_note" cols="30" rows="10"></textarea>
+                            <textarea name="internet_note"></textarea>
                         </div>
                         <div class="input-box">
                             <span class="details">The Cu Dan</span>
                             <input type="text" name="the_cu_dan" required>
                         </div>
                         <div class="input-box">
+                            <span class="details">Note</span>
+                            <textarea name="the_cu_dan_note"></textarea>
+                        </div>
+                        <div class="input-box">
                             <span class="details">Chia Kho Co</span>
                             <input type="text" name="chia_khoa_co" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Note</span>
+                            <textarea name="chia_khoa_co_note"></textarea>
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Lon</span>
                             <input type="text" name="the_tu_lon" required>
                         </div>
                         <div class="input-box">
+                            <span class="details">Note</span>
+                            <textarea name="the_tu_lon_note"></textarea>
+                        </div>
+                        <div class="input-box">
                             <span class="details">The Tu Nho</span>
                             <input type="text" name="the_tu_nho" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Note</span>
+                            <textarea name="the_tu_nho_note"></textarea>
                         </div>
                         <div class="input-box">
                             <span class="details">Key Hom Thu</span>
                             <input type="text" name="key_hom_thu" required>
                         </div>
                         <div class="input-box">
+                            <span class="details">Note</span>
+                            <textarea name="key_hom_thu_note"></textarea>
+                        </div>
+                        <div class="input-box">
                             <span class="details">Remote Dieu Hoa</span>
                             <input type="text" name="remote_dieu_hoa" required>
                         </div>
+                        <div class="input-box">
+                            <span class="details">Note</span>
+                            <textarea name="remote_dieu_hoa_note"></textarea>
+                        </div>
                     </div>
                     <div class="note">
-                        <textarea class="selling_note" name="note" cols="30" rows="10"></textarea>
+                        <textarea class="selling_note" placeholder="Other note here" name="note" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
                     if(isset($notRentedAdd))
@@ -148,7 +172,7 @@
                     }
                     ?>
                     <div class="button">
-                        <input class="btn btn-primary" placeholder="Other note" name="submit" type="submit" value="ADDING">
+                        <input class="btn btn-primary" name="submit" type="submit" value="ADDING">
                     </div>
                 </form>
 
