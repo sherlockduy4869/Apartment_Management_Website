@@ -97,8 +97,8 @@
         }
 
         //Get apartment key information 
-        public function get_apart_selling_by_id($apart_selling_id){
-            $query = "SELECT * FROM tbl_apartment_key_detail WHERE APARTMENT_CODE = '$apart_selling_id'";
+        public function get_apart_key_by_id($apart_key_id){
+            $query = "SELECT * FROM tbl_apartment_key_detail WHERE APARTMENT_CODE = '$apart_key_id'";
             $result = $this->db->select($query)->fetch_assoc();
             return $result;
         }
