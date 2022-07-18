@@ -33,7 +33,7 @@
             </div>
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <a href="#">KEY</a>
+                <a href="apartKeyAdd.php">Add Apart KEY</a>
             </div>
         </div>
 </section>

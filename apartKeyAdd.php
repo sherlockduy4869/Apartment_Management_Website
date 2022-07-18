@@ -1,14 +1,14 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartNotRentedClass.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartKey.php';
 ?>
 <?php
-    $apartNotRented = new apartnotrented();
+    $apartKey = new apartkey();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-        $notRentedAdd = $apartNotRented->insert_apart_not_rented($_POST);
+        $keyAdd = $apartKey->insert_apart_key($_POST);
     }
 ?>
 <section id="interface">
@@ -59,7 +59,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Management Fee</span>
-                            <input class="management_fee" type="text" name="management_Fee" required >
+                            <input class="management_fee" type="text" name="management_fee" >
                         </div>   
                         <div class="input-box">
                             <span class="details">Wifi Pass</span>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Key</span>
-                            <input type="text" name="key" required>
+                            <input type="text" name="key_info" required>
                         </div>
                         <div class="input-box">
                             <span class="details">PN2</span>
@@ -163,12 +163,12 @@
                         </div>
                     </div>
                     <div class="note">
-                        <textarea class="selling_note" placeholder="Other note here" name="note" cols="30" rows="10"></textarea>
+                        <textarea class="selling_note" placeholder="Other note here" name="other_note" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
-                    if(isset($notRentedAdd))
+                    if(isset($keyAdd))
                     {
-                        echo $notRentedAdd;
+                        echo $keyAdd;
                     }
                     ?>
                     <div class="button">
