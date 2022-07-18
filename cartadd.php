@@ -43,13 +43,27 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <select name="area">
+                            <input list="area_list" name="area">
+                            <datalist id="area_list">
                                 <option value="Vinhomes Golden River">Vinhomes Golden River</option>
                                 <option value="Vinhomes Central Park">Vinhomes Central Park</option>
-                                <option value="Estella Height">Estella Height</option>
-                                <option value="Estella">Estella</option>
-                                <option value="Celesta">Celesta</option>
-                            </select>
+                                <option value="Estella Height">Vinhomes Grand Park</option>
+                                <option value="Estella">Sunwah Pearl</option>
+                                <option value="Celesta">Estella Height</option>
+                                <option value="Celesta">The Estella</option>
+                                <option value="Celesta">The Vista An Phu</option>
+                                <option value="Celesta">Xi Riverview</option>
+                                <option value="Celesta">Empire City</option>
+                                <option value="Celesta">Palm Heights</option>
+                                <option value="Celesta">Saigon Pearl </option>
+                                <option value="Celesta">Sun Avenue</option>
+                                <option value="Celesta">Thao Dien Green</option>
+                                <option value="Celesta">The Infiniti</option>
+                                <option value="Celesta">The View Riviera Point</option>
+                                <option value="Celesta">Zennity</option>
+                                <option value="Celesta">Metropole</option>
+                                <option value="Celesta">Other</option>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>

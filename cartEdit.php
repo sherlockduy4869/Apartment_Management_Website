@@ -51,13 +51,27 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <select name="area">
-                                <option <?php if($cart_by_id['AREA_APART'] == "Vinhomes Golden River") {echo "SELECTED";} ?> value="Vinhomes Golden River">Vinhomes Golden River</option>
-                                <option <?php if($cart_by_id['AREA_APART'] == "Vinhomes Central Park") {echo "SELECTED";} ?> value="Vinhomes Central Park">Vinhomes Central Park</option>
-                                <option <?php if($cart_by_id['AREA_APART'] == "Estella Height") {echo "SELECTED";} ?> value="Estella Height">Estella Height</option>
-                                <option <?php if($cart_by_id['AREA_APART'] == "Estella") {echo "SELECTED";} ?> value="Estella">Estella</option>
-                                <option <?php if($cart_by_id['AREA_APART'] == "Celesta") {echo "SELECTED";} ?> value="Celesta">Celesta</option>
-                            </select>
+                            <input list="area_list" name="area">
+                            <datalist id="area_list">
+                                <option value="Vinhomes Golden River">Vinhomes Golden River</option>
+                                <option value="Vinhomes Central Park">Vinhomes Central Park</option>
+                                <option value="Estella Height">Vinhomes Grand Park</option>
+                                <option value="Estella">Sunwah Pearl</option>
+                                <option value="Celesta">Estella Height</option>
+                                <option value="Celesta">The Estella</option>
+                                <option value="Celesta">The Vista An Phu</option>
+                                <option value="Celesta">Xi Riverview</option>
+                                <option value="Celesta">Empire City</option>
+                                <option value="Celesta">Palm Heights</option>
+                                <option value="Celesta">Saigon Pearl </option>
+                                <option value="Celesta">Sun Avenue</option>
+                                <option value="Celesta">Thao Dien Green</option>
+                                <option value="Celesta">The Infiniti</option>
+                                <option value="Celesta">The View Riviera Point</option>
+                                <option value="Celesta">Zennity</option>
+                                <option value="Celesta">Metropole</option>
+                                <option value="Celesta">Other</option>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
