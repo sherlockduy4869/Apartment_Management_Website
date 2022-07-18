@@ -11,7 +11,6 @@
         $delID = $_GET['delID'];
         $delApartRented = $apartRented->delete_apart_rented($delID);
     }  
-
 ?>
 <section id="interface">
         <div class="navigation">
@@ -87,7 +86,7 @@
                             <a href="apartRentedDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
-                    <?php
+                        <?php
                                 }
                             }
                         ?>

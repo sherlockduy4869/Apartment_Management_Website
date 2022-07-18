@@ -81,24 +81,24 @@
             }
         }
 
-        //Show apartment selling list
-        public function show_apart_selling_list(){
-            $query = "SELECT * FROM tbl_apartment_selling";
+        //Show apartment key list
+        public function show_apart_key_list(){
+            $query = "SELECT * FROM tbl_apartment_key_detail";
             $result = $this->db->select($query);
             return $result;
         }
 
-        //Delete apartment selling
-        public function delete_apart_selling($delID){
-            $query = "DELETE FROM tbl_apartment_selling WHERE APARTMENT_CODE = '$delID'";
+        //Delete apartment key
+        public function delete_apart_key($delID){
+            $query = "DELETE FROM tbl_apartment_key_detail WHERE APARTMENT_CODE = '$delID'";
             $result = $this->db->delete($query);
 
-            header('Location:apartSelling.php');
+            header('Location:apartKey.php');
         }
 
-        //Get apartment selling information 
+        //Get apartment key information 
         public function get_apart_selling_by_id($apart_selling_id){
-            $query = "SELECT * FROM tbl_apartment_selling WHERE APARTMENT_CODE = '$apart_selling_id'";
+            $query = "SELECT * FROM tbl_apartment_key_detail WHERE APARTMENT_CODE = '$apart_selling_id'";
             $result = $this->db->select($query)->fetch_assoc();
             return $result;
         }

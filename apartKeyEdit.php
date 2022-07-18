@@ -4,11 +4,20 @@
     include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartKeyClass.php';
 ?>
 <?php
+
     $apartKey = new apartkey();
+
+    if(isset($_GET['editID']))
+    {
+        $apart_selling_id = $_GET['editID'];
+        $apart_selling_by_id = $apartSelling->get_apart_selling_by_id($apart_selling_id);  
+    }
+?>
+<?php
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-        $keyAdd = $apartKey->insert_apart_key($_POST);
+        $sellingEdit = $apartSelling->edit_apart_selling($_POST, $apart_selling_id);
     }
 ?>
 <section id="interface">
