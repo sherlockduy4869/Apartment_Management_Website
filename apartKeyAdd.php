@@ -39,7 +39,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Project</span>
-                            <input type="text" name="project" required>
+                            <input type="text" name="project">
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Door Pass</span>
-                            <input type="text" name="door_pass" required >
+                            <input type="text" name="door_pass" >
                         </div>
                         <div class="input-box">
                             <span class="details">Management Fee</span>
@@ -63,43 +63,43 @@
                         </div>   
                         <div class="input-box">
                             <span class="details">Wifi Pass</span>
-                            <input type="text" name="wifi_pass" required>
+                            <input type="text" name="wifi_pass">
                         </div>
                         <div class="input-box">
                             <span class="details">Electric Code</span>
-                            <input type="text" name="electric_code" required>
+                            <input type="text" name="electric_code">
                         </div>
                         <div class="input-box">
                             <span class="details">PN1</span>
-                            <input type="text" name="pn1" required>
+                            <input type="text" name="pn1">
                         </div>
                         <div class="input-box">
                             <span class="details">Key</span>
-                            <input type="text" name="key_info" required>
+                            <input type="text" name="key_info">
                         </div>
                         <div class="input-box">
                             <span class="details">PN2</span>
-                            <input type="text" name="pn2" required>
+                            <input type="text" name="pn2">
                         </div>
                         <div class="input-box">
                             <span class="details">Kho</span>
-                            <input type="text" name="kho" required>
+                            <input type="text" name="kho">
                         </div>
                         <div class="input-box">
                             <span class="details">PN3</span>
-                            <input type="text" name="pn3" required>
+                            <input type="text" name="pn3">
                         </div>
                         <div class="input-box">
                             <span class="details">Lo Gia</span>
-                            <input type="text" name="lo_gia" required>
+                            <input type="text" name="lo_gia">
                         </div>
                         <div class="input-box">
                             <span class="details">PN4</span>
-                            <input type="text" name="pn4" required>
+                            <input type="text" name="pn4">
                         </div>
                         <div class="input-box">
                             <span class="details">Balcony</span>
-                            <input type="text" name="balcony" required>
+                            <input type="text" name="balcony">
                         </div>
                         <div class="input-box">
                             <span class="details"></span>
@@ -107,7 +107,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Internet Code</span>
-                            <input type="text" name="internet_code" required>
+                            <input type="text" name="internet_code">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
@@ -115,7 +115,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">The Cu Dan</span>
-                            <input type="text" name="the_cu_dan" required>
+                            <input type="text" name="the_cu_dan">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
@@ -123,7 +123,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Chia Kho Co</span>
-                            <input type="text" name="chia_khoa_co" required>
+                            <input type="text" name="chia_khoa_co">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
@@ -131,7 +131,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Lon</span>
-                            <input type="text" name="the_tu_lon" required>
+                            <input type="text" name="the_tu_lon">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Nho</span>
-                            <input type="text" name="the_tu_nho" required>
+                            <input type="text" name="the_tu_nho">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Key Hom Thu</span>
-                            <input type="text" name="key_hom_thu" required>
+                            <input type="text" name="key_hom_thu">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
@@ -155,7 +155,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Remote Dieu Hoa</span>
-                            <input type="text" name="remote_dieu_hoa" required>
+                            <input type="text" name="remote_dieu_hoa">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
