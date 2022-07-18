@@ -4,20 +4,12 @@
     include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartKeyClass.php';
 ?>
 <?php
-
     $apartKey = new apartkey();
 
-    if(isset($_GET['editID']))
+    if(isset($_GET['detailsID']))
     {
-        $apart_key_id = $_GET['editID'];
+        $apart_key_id = $_GET['detailsID'];
         $apart_key_by_id = $apartKey->get_apart_key_by_id($apart_key_id);  
-    }
-?>
-<?php
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-
-        $keyEdit = $apartKey->edit_apart_key($_POST, $apart_key_id);
     }
 ?>
 <section id="interface">
@@ -38,150 +30,136 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Edit Apartment KEY</div>
+                <div class="title">Details Apartment KEY</div>
 
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input disabled type="text" name="apartment_code" value="<?php echo $apart_key_by_id['APARTMENT_CODE'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['APARTMENT_CODE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Project</span>
-                            <input type="text" name="project" value="<?php echo $apart_key_by_id['PROJECT'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['PROJECT'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <select name="bedroom">
-                                <option <?php if($apart_key_by_id['BEDROOM'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
-                                <option <?php if($apart_key_by_id['BEDROOM'] == "2 Bed") {echo "SELECTED";} ?> value="2 Bed">2 Bed</option>
-                                <option <?php if($apart_key_by_id['BEDROOM'] == "2 Bed + 1") {echo "SELECTED";} ?> value="2 Bed + 1">2 Bed + 1</option>
-                                <option <?php if($apart_key_by_id['BEDROOM'] == "3 Bed") {echo "SELECTED";} ?> value="3 Bed">3 Bed</option>
-                                <option <?php if($apart_key_by_id['BEDROOM'] == "3 Bed + 1") {echo "SELECTED";} ?> value="3 Bed + 1">3 Bed + 1</option>
-                                <option <?php if($apart_key_by_id['BEDROOM'] == "4 Bed") {echo "SELECTED";} ?> value="4 Bed">4 Bed</option>
-                                <option <?php if($apart_key_by_id['BEDROOM'] == "4 Bed + 1") {echo "SELECTED";} ?> value="4 Bed + 1">4 Bed + 1</option>
-                            </select>
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['BEDROOM'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Door Pass</span>
-                            <input type="text" name="door_pass" value="<?php echo $apart_key_by_id['DOOR_PASS'] ?>" >
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['DOOR_PASS'] ?>" >
                         </div>
                         <div class="input-box">
                             <span class="details">Management Fee</span>
-                            <input class="management_fee" type="text" name="management_fee" value="<?php echo $apart_key_by_id['MANAGEMENT_FEE'] ?>" >
+                            <input disabled class="management_fee" type="text" value="<?php echo $apart_key_by_id['MANAGEMENT_FEE'] ?>" >
                         </div>   
                         <div class="input-box">
                             <span class="details">Wifi Pass</span>
-                            <input type="text" name="wifi_pass" value="<?php echo $apart_key_by_id['WIFI_PASS'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['WIFI_PASS'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Electric Code</span>
-                            <input type="text" name="electric_code" value="<?php echo $apart_key_by_id['ELECTRIC_CODE'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['ELECTRIC_CODE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">PN1</span>
-                            <input type="text" name="pn1" value="<?php echo $apart_key_by_id['PN1'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['PN1'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Key</span>
-                            <input type="text" name="key_info" value="<?php echo $apart_key_by_id['KEY_INFO'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['KEY_INFO'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">PN2</span>
-                            <input type="text" name="pn2" value="<?php echo $apart_key_by_id['PN2'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['PN2'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Kho</span>
-                            <input type="text" name="kho" value="<?php echo $apart_key_by_id['KHO'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['KHO'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">PN3</span>
-                            <input type="text" name="pn3" value="<?php echo $apart_key_by_id['PN3'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['PN3'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Lo Gia</span>
-                            <input type="text" name="lo_gia" value="<?php echo $apart_key_by_id['LO_GIA'] ?>">
+                            <input type="text" value="<?php echo $apart_key_by_id['LO_GIA'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">PN4</span>
-                            <input type="text" name="pn4" value="<?php echo $apart_key_by_id['PN4'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['PN4'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Balcony</span>
-                            <input type="text" name="balcony" value="<?php echo $apart_key_by_id['BALCONY'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['BALCONY'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details"></span>
-                            <input type="hidden">
+                            <input disabled type="hidden">
                         </div>
                         <div class="input-box">
                             <span class="details">Internet Code</span>
-                            <input type="text" name="internet_code" value="<?php echo $apart_key_by_id['INTERNET_CODE'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['INTERNET_CODE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
-                            <textarea name="internet_note"><?php echo $apart_key_by_id['INTERNET_NOTE'] ?></textarea>
+                            <textarea disabled ><?php echo $apart_key_by_id['INTERNET_NOTE'] ?></textarea>
                         </div>
                         <div class="input-box">
                             <span class="details">The Cu Dan</span>
-                            <input type="text" name="the_cu_dan" value="<?php echo $apart_key_by_id['THE_CU_DAN'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['THE_CU_DAN'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
-                            <textarea name="the_cu_dan_note"><?php echo $apart_key_by_id['THE_CU_DAN_NOTE'] ?></textarea>
+                            <textarea disabled ><?php echo $apart_key_by_id['THE_CU_DAN_NOTE'] ?></textarea>
                         </div>
                         <div class="input-box">
                             <span class="details">Chia Kho Co</span>
-                            <input type="text" name="chia_khoa_co" value="<?php echo $apart_key_by_id['CHIA_KHOA_CO'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['CHIA_KHOA_CO'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
-                            <textarea name="chia_khoa_co_note"><?php echo $apart_key_by_id['CHIA_KHOA_CO_NOTE'] ?></textarea>
+                            <textarea disabled ><?php echo $apart_key_by_id['CHIA_KHOA_CO_NOTE'] ?></textarea>
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Lon</span>
-                            <input type="text" name="the_tu_lon" value="<?php echo $apart_key_by_id['THE_TU_LON'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['THE_TU_LON'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
-                            <textarea name="the_tu_lon_note"><?php echo $apart_key_by_id['THE_TU_LON_NOTE'] ?></textarea>
+                            <textarea disabled ><?php echo $apart_key_by_id['THE_TU_LON_NOTE'] ?></textarea>
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Nho</span>
-                            <input type="text" name="the_tu_nho" value="<?php echo $apart_key_by_id['THE_TU_NHO'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['THE_TU_NHO'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
-                            <textarea name="the_tu_nho_note"><?php echo $apart_key_by_id['THE_TU_NHO_NOTE'] ?></textarea>
+                            <textarea disabled ><?php echo $apart_key_by_id['THE_TU_NHO_NOTE'] ?></textarea>
                         </div>
                         <div class="input-box">
                             <span class="details">Key Hom Thu</span>
-                            <input type="text" name="key_hom_thu" value="<?php echo $apart_key_by_id['KEY_HOM_THU'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['KEY_HOM_THU'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
-                            <textarea name="key_hom_thu_note"><?php echo $apart_key_by_id['KEY_HOM_THU_NOTE'] ?></textarea>
+                            <textarea disabled ><?php echo $apart_key_by_id['KEY_HOM_THU_NOTE'] ?></textarea>
                         </div>
                         <div class="input-box">
                             <span class="details">Remote Dieu Hoa</span>
-                            <input type="text" name="remote_dieu_hoa" value="<?php echo $apart_key_by_id['REMOTE_DIEU_HOA'] ?>">
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['REMOTE_DIEU_HOA'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
-                            <textarea name="remote_dieu_hoa_note"><?php echo $apart_key_by_id['REMOTE_DIEU_HOA_NOTE'] ?></textarea>
+                            <textarea disabled ><?php echo $apart_key_by_id['REMOTE_DIEU_HOA_NOTE'] ?></textarea>
                         </div>
                     </div>
                     <div class="note">
-                        <textarea class="selling_note" placeholder="Other note here" name="other_note" cols="30" rows="10"><?php echo $apart_key_by_id['OTHER_NOTE'] ?></textarea>
+                        <textarea disabled class="selling_note" cols="30" rows="10"><?php echo $apart_key_by_id['OTHER_NOTE'] ?></textarea>
                     </div>
-                    <?php 
-                    if(isset($keyEdit))
-                    {
-                        echo $keyEdit;
-                    }
-                    ?>
                     <div class="button">
-                        <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
+                        <button class="btn btn-primary"><a href="apartKey.php">BACK TO APART KEY LIST</a></button>
                     </div>
                 </form>
 

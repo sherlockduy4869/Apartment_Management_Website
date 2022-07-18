@@ -104,50 +104,91 @@
         }
 
         //Edit infor apartment selling
-        public function edit_apart_selling($data, $apart_selling_id){
+        public function edit_apart_key($data, $apart_key_id){
 
-            $agent_name = mysqli_real_escape_string($this->db->link, $data['agent_name']);
-            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
-            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
-            $area = mysqli_real_escape_string($this->db->link, $data['area']);
+            $project = mysqli_real_escape_string($this->db->link, $data['project']);
             $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
-            $sqm = mysqli_real_escape_string($this->db->link, $data['sqm']);
-            $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
-            $phone_owner = mysqli_real_escape_string($this->db->link, $data['phone_owner']);
-            $email_owner = mysqli_real_escape_string($this->db->link, $data['email_owner']);
-            $usd_price = mysqli_real_escape_string($this->db->link, $data['usd_price']);
-            $vnd_price = mysqli_real_escape_string($this->db->link, $data['vnd_price']);
-            $note = mysqli_real_escape_string($this->db->link, $data['note']);
+            $door_pass = mysqli_real_escape_string($this->db->link, $data['door_pass']);
+            $management_fee = mysqli_real_escape_string($this->db->link, $data['management_fee']);
 
-            $price_usd =  str_replace(",","",$usd_price);
-            $price_vnd = str_replace(",","",$vnd_price);
+            $wifi_pass = mysqli_real_escape_string($this->db->link, $data['wifi_pass']);
+            $electric_code = mysqli_real_escape_string($this->db->link, $data['electric_code']);
+            $pn1 = mysqli_real_escape_string($this->db->link, $data['pn1']);
+            $key_info = mysqli_real_escape_string($this->db->link, $data['key_info']);
+            $pn2 = mysqli_real_escape_string($this->db->link, $data['pn2']);
+            $kho = mysqli_real_escape_string($this->db->link, $data['kho']);
+            $pn3 = mysqli_real_escape_string($this->db->link, $data['pn3']);
+            $lo_gia = mysqli_real_escape_string($this->db->link, $data['lo_gia']);
 
-            $date_input_data = date("Y-m-d");
+            $pn4 = mysqli_real_escape_string($this->db->link, $data['pn4']);
+            $balcony = mysqli_real_escape_string($this->db->link, $data['balcony']);
+            $internet_code = mysqli_real_escape_string($this->db->link, $data['internet_code']);
+            $internet_note = mysqli_real_escape_string($this->db->link, $data['internet_note']);
+            $the_cu_dan = mysqli_real_escape_string($this->db->link, $data['the_cu_dan']);
+            $the_cu_dan_note = mysqli_real_escape_string($this->db->link, $data['the_cu_dan_note']);
 
-            $query = "UPDATE tbl_apartment_selling SET
-                    AGENCY_NAME = '$agent_name'
-                    ,AGENCY_PHONE = '$agency_phone'
-                    ,AGENCY_EMAIL = '$agency_email'
-                    ,AREA_APART = '$area'
-                    ,HOUSE_OWNER = '$house_owner'
-                    ,PHONE_OWNER = '$phone_owner'
-                    ,EMAIL_OWNER = '$email_owner'
+            $chia_khoa_co = mysqli_real_escape_string($this->db->link, $data['chia_khoa_co']);
+            $chia_khoa_co_note = mysqli_real_escape_string($this->db->link, $data['chia_khoa_co_note']);
+            $the_tu_lon = mysqli_real_escape_string($this->db->link, $data['the_tu_lon']);
+
+            $the_tu_lon_note = mysqli_real_escape_string($this->db->link, $data['the_tu_lon_note']);
+            $the_tu_nho = mysqli_real_escape_string($this->db->link, $data['the_tu_nho']);
+            $the_tu_nho_note = mysqli_real_escape_string($this->db->link, $data['the_tu_nho_note']);
+            $key_hom_thu = mysqli_real_escape_string($this->db->link, $data['key_hom_thu']);
+            $key_hom_thu_note = mysqli_real_escape_string($this->db->link, $data['key_hom_thu_note']);
+            $remote_dieu_hoa = mysqli_real_escape_string($this->db->link, $data['remote_dieu_hoa']);
+            $remote_dieu_hoa_note = mysqli_real_escape_string($this->db->link, $data['remote_dieu_hoa_note']);
+
+            $other_note = mysqli_real_escape_string($this->db->link, $data['other_note']);
+
+            $fee_management = 0;
+            if($management_fee){
+                $fee_management =  str_replace(",","",$management_fee);
+            }
+
+            $query = "UPDATE tbl_apartment_key_detail SET
+                    PROJECT = '$project'
                     ,BEDROOM = '$bedroom'
-                    ,SQM = '$sqm'
-                    ,USD_PRICE = '$price_usd'
-                    ,VND_PRICE = '$price_vnd'
-                    ,DATE_INPUT_DATA = '$date_input_data'
-                    ,NOTE = '$note'
-                    WHERE APARTMENT_CODE ='$apart_selling_id'";
+                    ,DOOR_PASS = '$door_pass'
+                    ,WIFI_PASS = '$wifi_pass'
+                    ,MANAGEMENT_FEE = '$fee_management'
+                    ,ELECTRIC_CODE = '$electric_code'
+                    ,INTERNET_CODE = '$internet_code'
+                    ,KEY_INFO = '$key_info'
+                    ,PN1 = '$pn1'
+                    ,PN2 = '$pn2'
+                    ,PN3 = '$pn3'
+                    ,PN4 = '$pn4'
+                    ,KHO = '$kho'
+                    ,LO_GIA = '$lo_gia'
+                    ,BALCONY = '$balcony'
+
+                    ,THE_CU_DAN = '$the_cu_dan'
+                    ,CHIA_KHOA_CO = '$chia_khoa_co'
+                    ,THE_TU_LON = '$the_tu_lon'
+                    ,THE_TU_NHO = '$the_tu_nho'
+
+                    ,KEY_HOM_THU = '$key_hom_thu'
+                    ,REMOTE_DIEU_HOA = '$remote_dieu_hoa'
+
+                    ,INTERNET_NOTE = '$internet_note'
+                    ,THE_CU_DAN_NOTE = '$the_cu_dan_note'
+                    ,CHIA_KHOA_CO_NOTE = '$chia_khoa_co_note'
+                    ,THE_TU_LON_NOTE = '$the_tu_lon_note'
+                    ,THE_TU_NHO_NOTE = '$the_tu_nho_note'
+                    ,KEY_HOM_THU_NOTE = '$key_hom_thu_note'
+                    ,REMOTE_DIEU_HOA_NOTE = '$remote_dieu_hoa_note'
+                    ,OTHER_NOTE = '$other_note'
+                    WHERE APARTMENT_CODE ='$apart_key_id'";
 
             $result = $this->db->update($query);
 
             if($result){
-                $alert = "<span class = 'addSuccess'>Edit apartment for sell succesfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Edit apartment key succesfully</span> <br>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Edit apartment for sell failed</span> <br>";
+                $alert = "<span class = 'addError'>Edit apartment key failed</span> <br>";
                 return $alert;
             }
         }
