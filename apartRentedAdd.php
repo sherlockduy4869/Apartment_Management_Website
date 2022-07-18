@@ -115,7 +115,6 @@
                             <span class="details">Agency Email</span>
                             <input  type="text" name="agency_email" >
                         </div>
-                        
                         <div class="input-box">
                             <span class="details">Cleaning Fee</span>
                             <input class="cleaning_fee" type="text" name="cleaning_fee">
