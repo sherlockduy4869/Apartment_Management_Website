@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    
 
     //Tracking menu siderbar
     $('.items li').click(function () { 
