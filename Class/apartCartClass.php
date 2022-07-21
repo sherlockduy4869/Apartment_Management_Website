@@ -35,16 +35,19 @@
 
             $price =  str_replace(",","",$apart_price);
 
-            $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM,PRICE,NOTE,STATUS_FURNITURE) 
-                  VALUES('$apartment_code','$agent_name','$agency_phone','$agency_email','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm','$price','$note','$status_furniture')";
-            $result = $this->db->insert($query);
+            $query_check = "SELECT * FROM tbl_apartment_cart WHERE APARTMENT_CODE = '$apartment_code'";
+            $result_check = $this->db->select($query_check);
 
-            if($result){
-                $alert = "<span class = 'addSuccess'>Add apartment for rent succesfully</span> <br>";
+            if($result_check){
+                $alert = "<span class = 'addError'>Apartment code is added in database</span> <br>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Add apartment for rent failed</span> <br>";
+                $query = "INSERT INTO tbl_apartment_cart(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,AREA_APART,HOUSE_OWNER,PHONE_OWNER,EMAIL_OWNER,BEDROOM,SQM,PRICE,NOTE,STATUS_FURNITURE) 
+                  VALUES('$apartment_code','$agent_name','$agency_phone','$agency_email','$area','$house_owner','$phone_owner','$email_owner','$bedroom','$sqm','$price','$note','$status_furniture')";
+                $result = $this->db->insert($query);
+
+                $alert = "<span class = 'addSuccess'>Add apartment for rent succesfully</span> <br>";
                 return $alert;
             }
         }
