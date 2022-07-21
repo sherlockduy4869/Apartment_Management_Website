@@ -26,7 +26,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT INFO</span>
+                <span>APARTMENT MANAGEMENT</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -38,7 +38,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Edit Apartment Info</div>
+                <div class="title">Edit Apartment Management</div>
 
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="user-details">

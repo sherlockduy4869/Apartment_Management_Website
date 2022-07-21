@@ -17,7 +17,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT KEY</span>
+                <span>APARTMENT MANAGEMENT</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -29,7 +29,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add Apartment KEY</div>
+                <div class="title">Add Apartment Management</div>
 
                 <form action="apartKeyAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
