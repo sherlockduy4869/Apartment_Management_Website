@@ -77,7 +77,7 @@
                         </div>   
                         <div class="input-box">
                             <span class="details">Agency Email</span>
-                            <input  type="email" name="agency_email" >
+                            <input type="email" name="agency_email" >
                         </div>
                         <div class="input-box">
                             <span class="details">Payment Term</span>

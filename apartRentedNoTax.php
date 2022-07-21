@@ -81,7 +81,8 @@
                             <p><?php echo $result['PAYMENT_TERM'].' Month(s)';?></p>
                         </td>
                         <td class="edit">
-                            <a href="apartRentedNoTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
+                            <a href="apartRentedNoTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #41f1b6;" href="apartRentedNoTaxEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a><br>
+                            <a style="color: #ff7782;" onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
                         </td>
                     </tr>
                     <?php

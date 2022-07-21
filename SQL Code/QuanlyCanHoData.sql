@@ -435,7 +435,7 @@ END
 
 --TRIGGER FOR ADDING INFORMATION FOR APARTMENT CONTRACT NO TAX
 CREATE TRIGGER ADDING_APARTMENT_CONTRACT_NO_TAX
-ON tbl_apartment_rented
+ON tbl_apartment_rented_no_tax
 FOR INSERT
 AS
 BEGIN
@@ -476,6 +476,64 @@ BEGIN
 
 	INSERT INTO tbl_apartment_contract_no_tax(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,START_DAY,END_DAY,FEE_PER_MONTH,DATE_REMIND,NUM_DAY_REMIND) 
 	VALUES(apart_code,agency,phone_agency,email_agency,cus_name,cus_phone,cus_email,day_start,day_end,fee_per_month,remind_date,num_day_remind);
+END
+GO
+
+--TRIGGER FOR UPDATING INFORMATION FOR APARTMENT CONTRACT NO TAX
+CREATE TRIGGER UPDATING_APARTMENT_CONTRACT_NO_TAX
+ON tbl_apartment_rented_no_tax
+FOR UPDATE
+AS
+BEGIN
+	DECLARE apart_code VARCHAR(255);
+	DECLARE fee_per_month FLOAT;
+
+	DECLARE cus_name VARCHAR(255);
+	DECLARE cus_phone VARCHAR(255);
+	DECLARE cus_email VARCHAR(255);
+
+	DECLARE day_start DATE;
+	DECLARE day_end DATE;
+
+	DECLARE num_day_remind INT;
+	DECLARE remind_date DATE;
+
+	DECLARE agency VARCHAR(255);
+	DECLARE phone_agency VARCHAR(255);
+	DECLARE email_agency VARCHAR(255);
+
+	SET apart_code = NEW.APARTMENT_CODE;
+	SET fee_per_month = NEW.FEE_PER_MONTH;
+
+	SET cus_name = NEW.CUTOMER_NAME;
+	SET cus_phone = NEW.CUTOMER_PHONE;
+	SET cus_email = NEW.CUTOMER_EMAIL;
+
+	SET agency = NEW.AGENCY_NAME;
+	SET phone_agency = NEW.AGENCY_PHONE;
+	SET email_agency = NEW.AGENCY_EMAIL;
+
+	SET day_start = NEW.START_DAY;
+	SET day_end = NEW.END_DAY;
+
+	SET num_day_remind = NEW.DAY_REMIND;
+
+	SET remind_date = ADDDATE(day_end, INTERVAL -num_day_remind DAY);
+
+	UPDATE tbl_apartment_contract_no_tax
+	SET AGENCY_NAME = agency
+		,AGENCY_PHONE = phone_agency
+		,AGENCY_EMAIL = email_agency
+		,CUTOMER_NAME = cus_name
+		,CUTOMER_PHONE = cus_phone
+		,CUTOMER_EMAIL = cus_email
+		,START_DAY = day_start
+		,END_DAY = day_end
+		,FEE_PER_MONTH = fee_per_month
+		,DATE_REMIND = remind_date
+		,NUM_DAY_REMIND = num_day_remind
+		,STATUS_APART = 'NOT DONE'
+	WHERE APARTMENT_CODE = apart_code;
 END
 GO
 

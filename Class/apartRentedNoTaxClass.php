@@ -83,6 +83,59 @@
             $result = $this->db->select($query)->fetch_assoc();
             return $result;
         }
+        
+        //Edit apartment rented no tax information
+        public function edit_apart_rented_no_tax($data, $apart_rented_no_tax_id){
+            $payment_term = mysqli_real_escape_string($this->db->link, $data['payment_term']);
+            $agency_name = mysqli_real_escape_string($this->db->link, $data['agency_name']);
+            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
+            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
+            $customer_name = mysqli_real_escape_string($this->db->link, $data['customer_name']);
+            $customer_phone = mysqli_real_escape_string($this->db->link, $data['customer_phone']);
+            $customer_email = mysqli_real_escape_string($this->db->link, $data['customer_email']);
+            $renting_fee_per_month = mysqli_real_escape_string($this->db->link, $data['renting_fee_per_month']);
+            $management_Fee = mysqli_real_escape_string($this->db->link, $data['management_Fee']);
+            $day_remind_negotiate = mysqli_real_escape_string($this->db->link, $data['day_remind_negotiate']);
+            $note = mysqli_real_escape_string($this->db->link, $data['note']);
+            $from = mysqli_real_escape_string($this->db->link, $data['from']);
+            $to = mysqli_real_escape_string($this->db->link, $data['to']);
 
+            $rent_fee_per_month =  str_replace(",","",$renting_fee_per_month);
+            $management_Fee = 0;
+            if($management_Fee){
+                $management_fee =  str_replace(",","",$management_Fee);
+            }
+            $owner_recieved = $rent_fee_per_month - $management_fee;
+
+            $start_date = date("Y-m-d", strtotime($from));  
+            $end_date = date("Y-m-d", strtotime($to)); 
+
+            $query = "UPDATE tbl_apartment_rented_no_tax SET
+                    AGENCY_NAME = '$agency_name'
+                    ,AGENCY_PHONE = '$agency_phone'
+                    ,AGENCY_EMAIL = '$agency_email'
+                    ,CUTOMER_NAME = '$customer_name'
+                    ,CUTOMER_PHONE = '$customer_phone'
+                    ,CUTOMER_EMAIL = '$customer_email'
+                    ,FEE_PER_MONTH = '$rent_fee_per_month'
+                    ,MANAGEMENT_FEE = '$management_fee'
+                    ,OWNER_RECIEVED = '$owner_recieved'
+                    ,START_DAY = '$start_date'
+                    ,END_DAY = '$end_date'
+                    ,DAY_REMIND = '$day_remind_negotiate'
+                    ,PAYMENT_TERM = '$payment_term'
+                    ,NOTE = '$note'
+                    WHERE APARTMENT_CODE ='$apart_rented_no_tax_id'";
+            
+            $result = $this->db->update($query);
+            if($result){
+                $alert = "<span class = 'addSuccess'>Edit apartment rented no tax succesfully</span> <br>";
+                return $alert;
+            }
+            else{
+                $alert = "<span class = 'addError'>Failed to edit apartment rented no tax</span> <br>";
+                return $alert;
+            }
+        }
     }
 ?>
