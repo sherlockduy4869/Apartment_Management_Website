@@ -71,7 +71,7 @@
             </div>
         </div>
             
-        <h3 class="i-name">Apartment Code: <?php echo $apartCode; ?> | From: <?php echo $start_day_term;?> To: <?php echo $end_day_term;?> </h3>
+        <h3 class="i-name">Apartment Code: <?php echo $apartCode; ?> | From: <?php echo $start_day_term;?> | To: <?php echo $end_day_term;?> </h3>
         <div class="values">
             <div class="val-box">
                 <i class="fas fa-chart-bar"></i>
@@ -98,7 +98,7 @@
                 <i class="fas fa-chart-bar"></i>
                 <div>
                     <h3><text class="num"><?php echo $getDuration['PAYMENT_TERM'];?></text></h3>
-                    <span>Months Period</span>
+                    <span>Payment Terms</span>
                 </div>
             </div>
         </div>
