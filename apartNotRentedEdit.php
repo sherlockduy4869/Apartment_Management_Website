@@ -52,13 +52,20 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <select name="area">
-                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Vinhomes Golden River") {echo "SELECTED";} ?> value="Vinhomes Golden River">Vinhomes Golden River</option>
-                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Vinhomes Central Park") {echo "SELECTED";} ?> value="Vinhomes Central Park">Vinhomes Central Park</option>
-                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Estella Height") {echo "SELECTED";} ?> value="Estella Height">Estella Height</option>
-                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Estella") {echo "SELECTED";} ?> value="Estella">Estella</option>
-                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Celesta") {echo "SELECTED";} ?> value="Celesta">Celesta</option>
-                            </select>
+                            <input list="area_list" name="area" value="<?php echo $apart_not_rented_by_id['AREA_APART'] ?>" required>
+                            <datalist id="area_list">
+                                <option value="Vinhomes Golden River">Vinhomes Golden River</option>
+                                <option value="Vinhomes Central Park">Vinhomes Central Park</option>
+                                <option value="Estella Height">Estella Height</option>
+                                <option value="Estella">Estella</option>
+                                <option value="Celesta">Celesta</option>
+                                <option value="Thao Dien Green">Thao Dien Green</option>
+                                <option value="The Infiniti">The Infiniti</option>
+                                <option value="Zennity">Zennity</option>
+                                <option value="Celesta Rise">Celesta Rise</option>
+                                <option value="Empire City">Empire City</option>
+                                <option value="Metropole">Metropole</option>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>

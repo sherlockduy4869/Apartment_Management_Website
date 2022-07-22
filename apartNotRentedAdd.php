@@ -43,13 +43,20 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <select name="area">
+                            <input list="area_list" name="area">
+                            <datalist id="area_list">
                                 <option value="Vinhomes Golden River">Vinhomes Golden River</option>
                                 <option value="Vinhomes Central Park">Vinhomes Central Park</option>
                                 <option value="Estella Height">Estella Height</option>
                                 <option value="Estella">Estella</option>
                                 <option value="Celesta">Celesta</option>
-                            </select>
+                                <option value="Thao Dien Green">Thao Dien Green</option>
+                                <option value="The Infiniti">The Infiniti</option>
+                                <option value="Zennity">Zennity</option>
+                                <option value="Celesta Rise">Celesta Rise</option>
+                                <option value="Empire City">Empire City</option>
+                                <option value="Metropole">Metropole</option>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
