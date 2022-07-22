@@ -28,7 +28,6 @@
             $wifi_pass = mysqli_real_escape_string($this->db->link, $data['wifi_pass']);
             $electric_code = mysqli_real_escape_string($this->db->link, $data['electric_code']);
             $pn1 = mysqli_real_escape_string($this->db->link, $data['pn1']);
-            $key_info = mysqli_real_escape_string($this->db->link, $data['key_info']);
             $pn2 = mysqli_real_escape_string($this->db->link, $data['pn2']);
             $kho = mysqli_real_escape_string($this->db->link, $data['kho']);
             $pn3 = mysqli_real_escape_string($this->db->link, $data['pn3']);
@@ -61,11 +60,11 @@
             }
 
             $query = "INSERT INTO tbl_apartment_key_detail(APARTMENT_CODE,PROJECT,BEDROOM,DOOR_PASS,
-            WIFI_PASS,MANAGEMENT_FEE,ELECTRIC_CODE,INTERNET_CODE,KEY_INFO,PN1,PN2,PN3,PN4,KHO,LO_GIA,
+            WIFI_PASS,MANAGEMENT_FEE,ELECTRIC_CODE,INTERNET_CODE,PN1,PN2,PN3,PN4,KHO,LO_GIA,
             BALCONY,THE_CU_DAN,CHIA_KHOA_CO,THE_TU_LON,THE_TU_NHO,KEY_HOM_THU,REMOTE_DIEU_HOA,INTERNET_NOTE,
             THE_CU_DAN_NOTE,CHIA_KHOA_CO_NOTE,THE_TU_LON_NOTE,THE_TU_NHO_NOTE,KEY_HOM_THU_NOTE,REMOTE_DIEU_HOA_NOTE,OTHER_NOTE) 
                   VALUES('$apartment_code','$project','$bedroom','$door_pass','$wifi_pass','$fee_management',
-                  '$electric_code','$internet_code','$key_info','$pn1','$pn2','$pn3','$pn4',
+                  '$electric_code','$internet_code','$pn1','$pn2','$pn3','$pn4',
                   '$kho','$lo_gia','$balcony','$the_cu_dan','$chia_khoa_co','$the_tu_lon','$the_tu_nho',
                   '$key_hom_thu','$remote_dieu_hoa','$internet_note','$the_cu_dan_note','$chia_khoa_co_note',
                   '$the_tu_lon_note','$the_tu_nho_note','$key_hom_thu_note','$remote_dieu_hoa_note','$other_note')";
@@ -114,7 +113,6 @@
             $wifi_pass = mysqli_real_escape_string($this->db->link, $data['wifi_pass']);
             $electric_code = mysqli_real_escape_string($this->db->link, $data['electric_code']);
             $pn1 = mysqli_real_escape_string($this->db->link, $data['pn1']);
-            $key_info = mysqli_real_escape_string($this->db->link, $data['key_info']);
             $pn2 = mysqli_real_escape_string($this->db->link, $data['pn2']);
             $kho = mysqli_real_escape_string($this->db->link, $data['kho']);
             $pn3 = mysqli_real_escape_string($this->db->link, $data['pn3']);
@@ -154,7 +152,6 @@
                     ,MANAGEMENT_FEE = '$fee_management'
                     ,ELECTRIC_CODE = '$electric_code'
                     ,INTERNET_CODE = '$internet_code'
-                    ,KEY_INFO = '$key_info'
                     ,PN1 = '$pn1'
                     ,PN2 = '$pn2'
                     ,PN3 = '$pn3'
