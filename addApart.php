@@ -33,7 +33,7 @@
             </div>
             <div class="val-box clickable">
                 <i class="fa-solid fa-plus"></i>
-                <a href="apartKeyAdd.php">Add Apart Info</a>
+                <a href="apartKeyAdd.php">Quan Ly Can Ho</a>
             </div>
         </div>
 </section>

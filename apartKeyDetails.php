@@ -18,7 +18,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT MANAGEMENT</span>
+                <span>QUAN LY CAN HO</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -30,8 +30,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Details Apartment Management</div>
-
+                <div class="title">Details Quan Ly Can Ho</div>
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
                         <div class="input-box">
@@ -63,48 +62,32 @@
                             <input disabled type="text" value="<?php echo $apart_key_by_id['ELECTRIC_CODE'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">PN1</span>
+                            <span class="details">Key PN1</span>
                             <input disabled type="text" value="<?php echo $apart_key_by_id['PN1'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key</span>
-                            <input disabled type="text" value="<?php echo $apart_key_by_id['KEY_INFO'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">PN2</span>
-                            <input disabled type="text" value="<?php echo $apart_key_by_id['PN2'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Kho</span>
+                            <span class="details">Key Kho</span>
                             <input disabled type="text" value="<?php echo $apart_key_by_id['KHO'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">PN3</span>
-                            <input disabled type="text" value="<?php echo $apart_key_by_id['PN3'] ?>">
+                            <span class="details">Key PN2</span>
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['PN2'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Lo Gia</span>
+                            <span class="details">Key Lo Gia</span>
                             <input type="text" value="<?php echo $apart_key_by_id['LO_GIA'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">PN4</span>
-                            <input disabled type="text" value="<?php echo $apart_key_by_id['PN4'] ?>">
+                            <span class="details">Key PN3</span>
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['PN3'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Balcony</span>
+                            <span class="details">Key Balcony</span>
                             <input disabled type="text" value="<?php echo $apart_key_by_id['BALCONY'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details"></span>
-                            <input disabled type="hidden">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Internet Code</span>
-                            <input disabled type="text" value="<?php echo $apart_key_by_id['INTERNET_CODE'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea disabled ><?php echo $apart_key_by_id['INTERNET_NOTE'] ?></textarea>
+                            <span class="details">Key PN4</span>
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['PN4'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">The Cu Dan</span>
@@ -115,7 +98,7 @@
                             <textarea disabled ><?php echo $apart_key_by_id['THE_CU_DAN_NOTE'] ?></textarea>
                         </div>
                         <div class="input-box">
-                            <span class="details">Chia Kho Co</span>
+                            <span class="details">Khoa</span>
                             <input disabled type="text" value="<?php echo $apart_key_by_id['CHIA_KHOA_CO'] ?>">
                         </div>
                         <div class="input-box">
@@ -153,6 +136,14 @@
                         <div class="input-box">
                             <span class="details">Note</span>
                             <textarea disabled ><?php echo $apart_key_by_id['REMOTE_DIEU_HOA_NOTE'] ?></textarea>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Internet Code</span>
+                            <input disabled type="text" value="<?php echo $apart_key_by_id['INTERNET_CODE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Note</span>
+                            <textarea disabled ><?php echo $apart_key_by_id['INTERNET_NOTE'] ?></textarea>
                         </div>
                     </div>
                     <div class="note">

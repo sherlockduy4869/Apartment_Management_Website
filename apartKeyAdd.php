@@ -17,7 +17,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT MANAGEMENT</span>
+                <span>QUAN LY CAN HO</span>
             </div>
             <div class="profile">
                 <i class="fas fa-chart-bar"></i>
@@ -29,7 +29,7 @@
 
     <div class="boddyy">
             <div class="container">
-                <div class="title">Add Apartment Management</div>
+                <div class="title">Add Quan Ly Can Ho</div>
 
                 <form action="apartKeyAdd.php" method="POST" enctype="multipart/form-data">
                     <div class="user-details">
@@ -70,48 +70,32 @@
                             <input type="text" name="electric_code">
                         </div>
                         <div class="input-box">
-                            <span class="details">PN1</span>
+                            <span class="details">Key PN1</span>
                             <input type="text" name="pn1">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key</span>
-                            <input type="text" name="key_info">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">PN2</span>
-                            <input type="text" name="pn2">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Kho</span>
+                            <span class="details">Key Kho</span>
                             <input type="text" name="kho">
                         </div>
                         <div class="input-box">
-                            <span class="details">PN3</span>
-                            <input type="text" name="pn3">
+                            <span class="details">Key PN2</span>
+                            <input type="text" name="pn2">
                         </div>
                         <div class="input-box">
-                            <span class="details">Lo Gia</span>
+                            <span class="details">Key Lo Gia</span>
                             <input type="text" name="lo_gia">
                         </div>
                         <div class="input-box">
-                            <span class="details">PN4</span>
-                            <input type="text" name="pn4">
+                            <span class="details">Key PN3</span>
+                            <input type="text" name="pn3">
                         </div>
                         <div class="input-box">
-                            <span class="details">Balcony</span>
+                            <span class="details">Key Balcony</span>
                             <input type="text" name="balcony">
                         </div>
                         <div class="input-box">
-                            <span class="details"></span>
-                            <input type="hidden">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Internet Code</span>
-                            <input type="text" name="internet_code">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="internet_note"></textarea>
+                            <span class="details">Key PN4</span>
+                            <input type="text" name="pn4">
                         </div>
                         <div class="input-box">
                             <span class="details">The Cu Dan</span>
@@ -122,7 +106,7 @@
                             <textarea name="the_cu_dan_note"></textarea>
                         </div>
                         <div class="input-box">
-                            <span class="details">Chia Kho Co</span>
+                            <span class="details">Khoa</span>
                             <input type="text" name="chia_khoa_co">
                         </div>
                         <div class="input-box">
@@ -160,6 +144,14 @@
                         <div class="input-box">
                             <span class="details">Note</span>
                             <textarea name="remote_dieu_hoa_note"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Internet Code</span>
+                            <input type="text" name="internet_code">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Note</span>
+                            <textarea name="internet_note"></textarea>
                         </div>
                     </div>
                     <div class="note">
