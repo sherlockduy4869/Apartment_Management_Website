@@ -75,19 +75,20 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
-                            <input type="text" name="agency_phone" value="<?php echo $cart_by_id['AGENCY_PHONE'] ?>">
+                            <input type="text" name="agency_phone" value="<?php echo $cart_by_id['AGENCY_PHONE']; ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <select name="bedroom">
-                                <option <?php if($cart_by_id['BEDROOM'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
-                                <option <?php if($cart_by_id['BEDROOM'] == "2 Bed") {echo "SELECTED";} ?> value="2 Bed">2 Bed</option>
-                                <option <?php if($cart_by_id['BEDROOM'] == "2 Bed + 1") {echo "SELECTED";} ?> value="2 Bed + 1">2 Bed + 1</option>
-                                <option <?php if($cart_by_id['BEDROOM'] == "3 Bed") {echo "SELECTED";} ?> value="3 Bed">3 Bed</option>
-                                <option <?php if($cart_by_id['BEDROOM'] == "3 Bed + 1") {echo "SELECTED";} ?> value="3 Bed + 1">3 Bed + 1</option>
-                                <option <?php if($cart_by_id['BEDROOM'] == "Vinhomes Golden River") {echo "SELECTED";} ?> value="4 Bed">4 Bed</option>
-                                <option <?php if($cart_by_id['BEDROOM'] == "4 Bed") {echo "SELECTED";} ?> value="4 Bed + 1">4 Bed + 1</option>
-                            </select>
+                            <input required list="bedroom_list" name="bedroom" value="<?php echo $cart_by_id['BEDROOM'] ?>">
+                            <datalist id="bedroom_list">
+                                <option value="1 Bed">1 Bed</option>
+                                <option value="2 Bed">2 Bed</option>
+                                <option value="2 Bed + 1">2 Bed + 1</option>
+                                <option value="3 Bed">3 Bed</option>
+                                <option value="3 Bed + 1">3 Bed + 1</option>
+                                <option value="4 Bed">4 Bed</option>
+                                <option value="4 Bed + 1">4 Bed + 1</option>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Email</span>
@@ -103,11 +104,12 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Status Furniture</span>
-                            <select name="status_furniture">
-                                <option <?php if($cart_by_id['STATUS_FURNITURE'] == "No Furniture") {echo "SELECTED";} ?> value="No Furniture">No Furniture</option>
-                                <option <?php if($cart_by_id['STATUS_FURNITURE'] == "Semi Furniture") {echo "SELECTED";} ?> value="Semi Furniture">Semi Furniture</option>
-                                <option <?php if($cart_by_id['STATUS_FURNITURE'] == "Full Furniture") {echo "SELECTED";} ?> value="Full Furniture">Full Furniture</option>
-                            </select>
+                            <input list="status_furniture_list" value="<?php echo $cart_by_id['STATUS_FURNITURE'] ?>" name="status_furniture" required>
+                            <datalist id="status_furniture_list">
+                                <option value="No Furniture">No Furniture</option>
+                                <option value="Semi Furniture">Semi Furniture</option>
+                                <option value="Full Furniture">Full Furniture</option>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Phone</span>

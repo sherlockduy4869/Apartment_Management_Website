@@ -73,15 +73,16 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <select name="bedroom">
-                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
-                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "2 Bed") {echo "SELECTED";} ?> value="2 Bed">2 Bed</option>
-                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "2 Bed + 1") {echo "SELECTED";} ?> value="2 Bed + 1">2 Bed + 1</option>
-                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "3 Bed") {echo "SELECTED";} ?> value="3 Bed">3 Bed</option>
-                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "3 Bed + 1") {echo "SELECTED";} ?> value="3 Bed + 1">3 Bed + 1</option>
-                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "Vinhomes Golden River") {echo "SELECTED";} ?> value="4 Bed">4 Bed</option>
-                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "4 Bed") {echo "SELECTED";} ?> value="4 Bed + 1">4 Bed + 1</option>
-                            </select>
+                            <input list="bedroom_list" name="bedroom" value="<?php echo $apart_not_rented_by_id['BEDROOM'] ?>" required>
+                            <datalist id="bedroom_list">
+                                <option value="1 Bed">1 Bed</option>
+                                <option value="2 Bed">2 Bed</option>
+                                <option value="2 Bed + 1">2 Bed + 1</option>
+                                <option value="3 Bed">3 Bed</option>
+                                <option value="3 Bed + 1">3 Bed + 1</option>
+                                <option value="4 Bed">4 Bed</option>
+                                <option value="4 Bed + 1">4 Bed + 1</option>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Email</span>
@@ -97,10 +98,11 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Status Apartment</span>
-                            <select name="status_apart">
-                                <option <?php if($apart_not_rented_by_id['STATUS_APART'] == "Not received the house handover") {echo "SELECTED";} ?> value="Not received the house handover">Not received the house handover</option>
-                                <option <?php if($apart_not_rented_by_id['STATUS_APART'] == "Received the house handover") {echo "SELECTED";} ?> value="Received the house handover">Received the house handover</option>
-                            </select>
+                            <input list="status_apart_list" value="<?php echo $apart_not_rented_by_id['STATUS_APART'] ?>" name="status_apart" required>
+                            <datalist id="status_apart_list">
+                                <option value="Not received the house handover">Not received the house handover</option>
+                                <option value="Received the house handover">Received the house handover</option>
+                            </datalist>
                         </div>  
                         <div class="input-box">
                             <span class="details">Phone</span>

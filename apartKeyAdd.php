@@ -43,7 +43,8 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <select name="bedroom">
+                            <input list="bedroom_list" name="bedroom" required>
+                            <datalist id="bedroom_list">
                                 <option value="1 Bed">1 Bed</option>
                                 <option value="2 Bed">2 Bed</option>
                                 <option value="2 Bed + 1">2 Bed + 1</option>
@@ -51,7 +52,7 @@
                                 <option value="3 Bed + 1">3 Bed + 1</option>
                                 <option value="4 Bed">4 Bed</option>
                                 <option value="4 Bed + 1">4 Bed + 1</option>
-                            </select>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Door Pass</span>

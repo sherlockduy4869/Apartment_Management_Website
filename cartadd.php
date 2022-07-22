@@ -71,7 +71,8 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <select name="bedroom">
+                            <input list="bedroom_list" name="bedroom" required>
+                            <datalist id="bedroom_list">
                                 <option value="1 Bed">1 Bed</option>
                                 <option value="2 Bed">2 Bed</option>
                                 <option value="2 Bed + 1">2 Bed + 1</option>
@@ -79,7 +80,7 @@
                                 <option value="3 Bed + 1">3 Bed + 1</option>
                                 <option value="4 Bed">4 Bed</option>
                                 <option value="4 Bed + 1">4 Bed + 1</option>
-                            </select>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Email</span>
@@ -95,11 +96,12 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Status Furniture</span>
-                            <select name="status_furniture">
+                            <input list="status_furniture_list" name="status_furniture" required>
+                            <datalist id="status_furniture_list">
                                 <option value="No Furniture">No Furniture</option>
                                 <option value="Semi Furniture">Semi Furniture</option>
                                 <option value="Full Furniture">Full Furniture</option>
-                            </select>
+                            </datalist>
                         </div>
                         <div class="input-box">
                             <span class="details">Phone</span>
