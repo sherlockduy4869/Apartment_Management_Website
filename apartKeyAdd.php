@@ -107,7 +107,7 @@
                             <textarea name="the_cu_dan_note"></textarea>
                         </div>
                         <div class="input-box">
-                            <span class="details">Khoa</span>
+                            <span class="details">Chia Khoa Co</span>
                             <input type="text" name="chia_khoa_co">
                         </div>
                         <div class="input-box">

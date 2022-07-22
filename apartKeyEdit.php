@@ -116,7 +116,7 @@
                             <textarea name="the_cu_dan_note"><?php echo $apart_key_by_id['THE_CU_DAN_NOTE'] ?></textarea>
                         </div>
                         <div class="input-box">
-                            <span class="details">Khoa</span>
+                            <span class="details">Chia Khoa Co</span>
                             <input type="text" name="chia_khoa_co" value="<?php echo $apart_key_by_id['CHIA_KHOA_CO'] ?>">
                         </div>
                         <div class="input-box">
