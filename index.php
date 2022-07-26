@@ -34,6 +34,7 @@
                     <tr>
                         <th class="text-center">STT</th>
                         <th class="text-center">Apartment Info</th>
+                        <th class="text-center">Area</th>
                         <th class="text-center">House Owner</th>
                         <th class="text-center">Apartment Details</th>
                         <th class="text-center">Price</th>
@@ -56,7 +57,10 @@
                         <td><?php echo $ID ?></td>
                         <td class="people-de">
                             <h5><?php echo $result['APARTMENT_CODE'];?></h5>
-                            <p><?php echo $result['AGENCY_NAME'];?> - <?php echo $result['AREA_APART'];?></p>
+                            <p><?php echo $result['AGENCY_NAME'];?></p>
+                        </td>
+                        <td class="role">
+                            <p><?php echo $result['AREA_APART'];?></p>
                         </td>
                         <td class="people">
                             <div class="people-de">

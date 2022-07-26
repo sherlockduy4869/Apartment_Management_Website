@@ -1,5 +1,5 @@
     <!--------------MENU BAR AREA-------------->
-
+    <?php $adminName = Session::get('adminName') ?>
     <section id="menu">
         <div class="logo clickable">
             <a href="index.php"><img src="./Resource/img/logo.png"></a>
@@ -13,6 +13,6 @@
             <div class="clickable"><i class="fas fa-key"></i><a href="apartKey.php">Quan ly can ho</a></div>
             <div class="clickable"><i class="fab fa-sellcast"></i><a href="apartSelling.php">Apart For Sell</a></div>
             <div class="clickable"><i class="fas fa-chart-bar"></i><a href="apartNotRented.php">Apart UC</a></div>
-            <div class="clickable"><i class="fas fa-users"></i><a href="user.php">User</a></div>
+            <div class="clickable <?php if($adminName != 'Giang'){echo 'not_display';} ?>"><i class="fas fa-users"></i><a href="user.php">User</a></div>
         </div>
     </section>
