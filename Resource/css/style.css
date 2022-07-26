@@ -438,6 +438,7 @@ form .user-details .input-box{
     font-size: 16px;
     border-bottom-width: 2px;
     transition: all 300ms ease;
+    color: black;
 }
 
 /* .user-details .input-box input:focus,
@@ -510,6 +511,7 @@ form .debit-note-list .debit_note input{
     font-size: 16px;
     border-bottom-width: 2px;
     transition: all 300ms ease;
+    color: black;
 }
 
 /* .container form .note .selling_note:focus,
