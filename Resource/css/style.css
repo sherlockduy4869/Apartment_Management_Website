@@ -98,6 +98,7 @@ body{
     border-bottom: 3px solid #594ef7;
     position: fixed;
     width: calc(100% - 250px);
+    z-index: 999;
 }
 
 

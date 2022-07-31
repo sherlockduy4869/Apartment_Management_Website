@@ -91,13 +91,13 @@
                             <span class="details">Status Apartment</span>
                             <input list="status_apart_list" name="status_apart" required>
                             <datalist id="status_apart_list">
-                                <option value="Not received the house handover">Not received the house handover</option>
-                                <option value="Received the house handover">Received the house handover</option>
+                                <option value="Handover">Handover</option>
+                                <option value="Not yet handover">Not yet handover</option>
                             </datalist>
                         </div>  
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input type="text" name="phone_owner" required>
+                            <input type="text" name="phone_owner">
                         </div> 
                     </div>
                     <div class="note">
