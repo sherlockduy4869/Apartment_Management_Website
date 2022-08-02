@@ -45,48 +45,48 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input disabled type="text" name="apartment_code" value="<?php echo $apart_tax_by_id['APARTMENT_CODE']?>">
+                            <input type="text" name="apartment_code" value="<?php echo $apart_tax_by_id['APARTMENT_CODE']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Mr/Mrs</span>
-                            <input disabled type="text" value="<?php echo $apart_tax_by_id['HOUSE_OWNER']?>">
+                            <input type="text" value="<?php echo $apart_tax_by_id['HOUSE_OWNER']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">From</span>
-                            <input disabled class="start_day" type="text"
+                            <input class="start_day" type="text"
                             value="<?php echo $start_day_term; ?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">To</span>
-                            <input disabled class="end_day" type="text"
+                            <input class="end_day" type="text"
                             value="<?php echo $end_day_term; ?>">
                         </div> 
                     </div>
                     <div class="debit-note-list">
                         <div class="debit_note <?php if($apart_tax_by_id['TAX_FEE'] == 0) {echo 'not_display';} ?>">
                             <span class="details">Tax Fee</span>
-                            <input disabled class="tax_fee" type="text" value="<?php echo $apart_tax_by_id['TAX_FEE']*$term?>">
+                            <input class="tax_fee" type="text" value="<?php echo $apart_tax_by_id['TAX_FEE']*$term?>">
                         </div> 
                         <div class="debit_note <?php if($apart_tax_by_id['TAX_DECLARE'] == 0) {echo 'not_display';} ?>">
                             <span class="details">Tax Declaration</span>
-                            <input disabled class="tax_declaration" type="text" value="<?php echo $apart_tax_by_id['TAX_DECLARE']?>">
+                            <input class="tax_declaration" type="text" value="<?php echo $apart_tax_by_id['TAX_DECLARE']?>">
                         </div> 
                         <div class="debit_note <?php if($apart_tax_by_id['TAX_MANAGEMENT'] == 0) {echo 'not_display';} ?>">
                             <span class="details">Management Fee</span>
-                            <input disabled class="tax_management" type="text" value="<?php echo $apart_tax_by_id['TAX_MANAGEMENT']*$term?>">
+                            <input class="tax_management" type="text" value="<?php echo $apart_tax_by_id['TAX_MANAGEMENT']*$term?>">
                         </div> 
                         <div class="debit_note <?php if($apart_tax_by_id['REFUND_FOR_TENANT'] == 0) {echo 'not_display';} ?>">
                             <span class="details">Refund For Tenant</span>
-                            <input disabled class="refund_for_tenant" type="text" value="<?php echo $apart_tax_by_id['REFUND_FOR_TENANT']*$term?>">
+                            <input class="refund_for_tenant" type="text" value="<?php echo $apart_tax_by_id['REFUND_FOR_TENANT']*$term?>">
                         </div> 
                         
                         <div class="debit_note <?php if($apart_tax_by_id['CLEANING_FEE'] == 0) {echo 'not_display';} ?>">
                             <span class="details">Cleaning Fee</span>
-                            <input disabled class="cleaning_fee" type="text" value="<?php echo $apart_tax_by_id['CLEANING_FEE']*$term?>">
+                            <input class="cleaning_fee" type="text" value="<?php echo $apart_tax_by_id['CLEANING_FEE']*$term?>">
                         </div>
                         <div class="debit_note">
                             <span style="font-weight: bold;" class="details">Total Amount</span>
-                            <input style="font-weight: bold;" disabled class="total_amount" type="text" value="<?php echo $total; ?>">
+                            <input style="font-weight: bold;" class="total_amount" type="text" value="<?php echo $total; ?>">
                         </div>
                     </div>
                     <div class="button">

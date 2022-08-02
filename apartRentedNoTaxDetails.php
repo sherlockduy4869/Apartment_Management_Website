@@ -40,79 +40,79 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['APARTMENT_CODE']?>">
+                            <input  type="text" value="<?php echo $apart_rented_no_tax_by_id['APARTMENT_CODE']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Owner Name</span>
-                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['HOUSE_OWNER']?>">
+                            <input  type="text" value="<?php echo $apart_rented_no_tax_by_id['HOUSE_OWNER']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['AREA_APART']?>">
+                            <input  type="text" value="<?php echo $apart_rented_no_tax_by_id['AREA_APART']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Owner Phone</span>
-                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['PHONE_OWNER']?>">
+                            <input  type="text" value="<?php echo $apart_rented_no_tax_by_id['PHONE_OWNER']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
-                            <input disabled class="renting_fee_per_month" type="text" value="<?php echo $apart_rented_no_tax_by_id['FEE_PER_MONTH']?>">
+                            <input  class="renting_fee_per_month" type="text" value="<?php echo $apart_rented_no_tax_by_id['FEE_PER_MONTH']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Owner Email</span>
-                            <input disabled type="email" value="<?php echo $apart_rented_no_tax_by_id['EMAIL_OWNER']?>">
+                            <input  type="email" value="<?php echo $apart_rented_no_tax_by_id['EMAIL_OWNER']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Management Fee</span>
-                            <input disabled class="management_fee" type="text" value="<?php echo $apart_rented_no_tax_by_id['MANAGEMENT_FEE']?>">
+                            <input  class="management_fee" type="text" value="<?php echo $apart_rented_no_tax_by_id['MANAGEMENT_FEE']?>">
                         </div>   
                         <div class="input-box">
                             <span class="details">Agency Name</span>
-                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['AGENCY_NAME']?>">
+                            <input  type="text" value="<?php echo $apart_rented_no_tax_by_id['AGENCY_NAME']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Owner Recieved</span>
-                            <input disabled class="owner_recieved" type="text" value="<?php echo $apart_rented_no_tax_by_id['OWNER_RECIEVED']?>">
+                            <input  class="owner_recieved" type="text" value="<?php echo $apart_rented_no_tax_by_id['OWNER_RECIEVED']?>">
                         </div>  
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
-                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['AGENCY_PHONE']?>">
+                            <input  type="text" value="<?php echo $apart_rented_no_tax_by_id['AGENCY_PHONE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Payment Term</span>
-                            <input disabled type="number" min="1" value="<?php echo $apart_rented_no_tax_by_id['PAYMENT_TERM']?>">
+                            <input  type="number" min="1" value="<?php echo $apart_rented_no_tax_by_id['PAYMENT_TERM']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Agency Email</span>
-                            <input disabled type="email" value="<?php echo $apart_rented_no_tax_by_id['AGENCY_EMAIL']?>">
+                            <input  type="email" value="<?php echo $apart_rented_no_tax_by_id['AGENCY_EMAIL']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Day Remind Negotiate</span>
-                            <input disabled type="number" min="1" value="<?php echo $apart_rented_no_tax_by_id['DAY_REMIND']?>">
+                            <input  type="number" min="1" value="<?php echo $apart_rented_no_tax_by_id['DAY_REMIND']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Customer Name</span>
-                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_NAME']?>">
+                            <input  type="text" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_NAME']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">From</span>
-                            <input disabled class="from" type="text" value="<?php echo $start_date; ?>">
+                            <input  class="from" type="text" value="<?php echo $start_date; ?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Customer Phone</span>
-                            <input disabled type="text" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_PHONE']?>">
+                            <input  type="text" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_PHONE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">To</span>
-                            <input disabled class="to" type="text" value="<?php echo $end_date; ?>">
+                            <input  class="to" type="text" value="<?php echo $end_date; ?>">
                         </div>  
                         <div class="input-box">
                             <span class="details">Customer Email</span>
-                            <input disabled type="email" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_EMAIL']?>">
+                            <input  type="email" value="<?php echo $apart_rented_no_tax_by_id['CUTOMER_EMAIL']?>">
                         </div> 
                     </div>
                     <div class="note">
-                        <textarea disabled class="selling_note" name="note" cols="30" rows="10"><?php echo $apart_rented_no_tax_by_id['NOTE']?></textarea>
+                        <textarea  class="selling_note" name="note" cols="30" rows="10"><?php echo $apart_rented_no_tax_by_id['NOTE']?></textarea>
                     </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartRentedNoTax.php">BACK TO RENTED NO TAX LIST</a></button>

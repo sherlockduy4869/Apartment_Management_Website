@@ -36,47 +36,47 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input disabled type="text" value="<?php echo $apart_not_rented_by_id['APARTMENT_CODE'] ?>">
+                            <input  type="text" value="<?php echo $apart_not_rented_by_id['APARTMENT_CODE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Agency name</span>
-                            <input disabled type="text" value="<?php echo $apart_not_rented_by_id['AGENCY_NAME'] ?>">
+                            <input  type="text" value="<?php echo $apart_not_rented_by_id['AGENCY_NAME'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <input disabled type="text" value="<?php echo $apart_not_rented_by_id['AREA_APART'] ?>">
+                            <input  type="text" value="<?php echo $apart_not_rented_by_id['AREA_APART'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
-                            <input disabled type="text" name="agency_phone" value="<?php echo $apart_not_rented_by_id['AGENCY_PHONE'] ?>">
+                            <input  type="text" name="agency_phone" value="<?php echo $apart_not_rented_by_id['AGENCY_PHONE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <input disabled type="text" value="<?php echo $apart_not_rented_by_id['BEDROOM'] ?>">
+                            <input  type="text" value="<?php echo $apart_not_rented_by_id['BEDROOM'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Email</span>
-                            <input disabled type="email" name="agency_email" value="<?php echo $apart_not_rented_by_id['AGENCY_EMAIL'] ?>">
+                            <input  type="email" name="agency_email" value="<?php echo $apart_not_rented_by_id['AGENCY_EMAIL'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
-                            <input disabled type="number" value="<?php echo $apart_not_rented_by_id['SQM'] ?>">
+                            <input  type="number" value="<?php echo $apart_not_rented_by_id['SQM'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
-                            <input disabled type="text" value="<?php echo $apart_not_rented_by_id['HOUSE_OWNER'] ?>">
+                            <input  type="text" value="<?php echo $apart_not_rented_by_id['HOUSE_OWNER'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Status Apartment</span>
-                            <input disabled type="text" value="<?php echo $apart_not_rented_by_id['STATUS_APART'] ?>">
+                            <input  type="text" value="<?php echo $apart_not_rented_by_id['STATUS_APART'] ?>">
                         </div>  
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input disabled type="text" value="<?php echo $apart_not_rented_by_id['PHONE_OWNER'] ?>">
+                            <input  type="text" value="<?php echo $apart_not_rented_by_id['PHONE_OWNER'] ?>">
                         </div>   
                     </div>
                     <div class="note">
-                        <textarea disabled class="selling_note" cols="30" rows="10"><?php echo $apart_not_rented_by_id['NOTE'] ?></textarea>
+                        <textarea  class="selling_note" cols="30" rows="10"><?php echo $apart_not_rented_by_id['NOTE'] ?></textarea>
                     </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartNotRented.php">BACK TO UNDER CONSTRUCTION LIST</a></button>

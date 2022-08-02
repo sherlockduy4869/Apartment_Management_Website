@@ -12,6 +12,7 @@ $(document).ready(function () {
 
     //Data table for tbl_cart
     $('#tbl_cart').DataTable( {
+        "pageLength": 100,
         dom: 'Bfrtip',
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
