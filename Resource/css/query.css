@@ -51,6 +51,9 @@
         border-collapse: collapse;
     }
 
+    .i-name{
+        font-size: 18px;
+    }
 }
 
 @media(max-width: 477px){
@@ -60,7 +63,6 @@
 
     .i-name{
         padding: 30px 15px 0 15px;
-
     }
 
     .values{

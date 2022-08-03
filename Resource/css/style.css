@@ -142,7 +142,7 @@ body{
 .i-name{
     color: #444a53;
     padding: 30px 30px 0 30px;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     margin-top: 70px;
 }
@@ -537,4 +537,14 @@ form .debit-note-list .debit_note input{
 /*-----------------------DISPLAY NONE FOR DETAILS AREA-----------------------*/
 .not_display{
     display: none;
+}
+
+#back_to_finance_list a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+#back_to_finance_list{
+    margin-left: 30px;
 }

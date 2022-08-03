@@ -71,24 +71,25 @@
             </div>
         </div>
             
-        <h3 class="i-name">Apartment Code: <?php echo $apartCode; ?> | From: <?php echo $start_day_term;?> | To: <?php echo $end_day_term;?> </h3>
+        <h3 class="i-name"><span>Apartment Code: <?php echo $apartCode; ?></span> | <span style="color: #ffbb55;">From: <?php echo $start_day_term;?></span> | <span style="color: #ff7782;">To: <?php echo $end_day_term;?></span> </h3>
+        <button class="btn btn-primary" id="back_to_finance_list"><a href="apartTax.php">BACK TO FINANCE LIST</a></button>
         <div class="values">
             <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-sack-dollar"></i>
                 <div>
                     <h3><text class="num"><?php echo number_format($income); ?></text><sup>đ</sup></h3>
                     <span>Income</span>
                 </div>
             </div>
             <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-hand-holding-usd"></i>
                 <div>
                     <h3><text class="num"><?php echo number_format($outcome); ?></text><sup>đ</sup></h3>
                     <span>Outcome</span>
                 </div>
             </div>
             <div class="val-box">
-                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-balance-scale"></i>
                 <div>
                     <h3><text class="num"><?php echo number_format($balance); ?></text><sup>đ</sup></h3>
                     <span>Balance</span>
@@ -110,7 +111,7 @@
                         <th class="text-center">Fee Elements</th>
                         <th class="text-center">Values</th>
                         <th class="text-center">Number Of Paying</th>
-                        <th class="text-center">Customize</th>
+                        <th class="text-center <?php if($income == 0){ echo "not_display"; } ?>">Customize</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -125,7 +126,7 @@
                         <td class="active">
                             <p><?php echo $showStatusFeeElement['STATUS_TAX_FEE'];?></p>
                         </td>
-                        <td class="edit">
+                        <td class="edit <?php if($income == 0){ echo "not_display"; } ?>">
                             <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_TAX_FEE">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_TAX_FEE">Redo</a>
                         </td>
                     </tr>
@@ -140,7 +141,7 @@
                         <td class="active">
                             <p><?php echo $showStatusFeeElement['STATUS_TAX_DECLARE'];?></p>
                         </td>
-                        <td class="edit">
+                        <td class="edit <?php if($income == 0){ echo "not_display"; } ?>">
                             <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_TAX_DECLARE">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_TAX_DECLARE">Redo</a>
                         </td>
                     </tr>
@@ -155,7 +156,7 @@
                         <td class="active">
                             <p><?php echo $showStatusFeeElement['STATUS_TAX_MANAGEMENT'];?></p>
                         </td>
-                        <td class="edit">
+                        <td class="edit <?php if($income == 0){ echo "not_display"; } ?>">
                             <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_TAX_MANAGEMENT">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_TAX_MANAGEMENT">Redo</a>
                         </td>
                     </tr>
@@ -170,7 +171,7 @@
                         <td class="active">
                             <p><?php echo $showStatusFeeElement['STATUS_REFUND_FOR_TENANT'];?></p>
                         </td>
-                        <td class="edit">
+                        <td class="edit <?php if($income == 0){ echo "not_display"; } ?>">
                             <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_REFUND_FOR_TENANT">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_REFUND_FOR_TENANT">Redo</a>
                         </td>
                     </tr>
@@ -185,7 +186,7 @@
                         <td class="active">
                             <p><?php echo $showStatusFeeElement['STATUS_CLEANING_FEE'];?></p>
                         </td>
-                        <td class="edit">
+                        <td class="edit <?php if($income == 0){ echo "not_display"; } ?>">
                             <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_CLEANING_FEE">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_CLEANING_FEE">Redo</a>
                         </td>
                     </tr>
