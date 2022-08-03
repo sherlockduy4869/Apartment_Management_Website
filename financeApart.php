@@ -72,7 +72,7 @@
         </div>
             
         <h3 class="i-name"><span>Apartment Code: <?php echo $apartCode; ?></span> | <span style="color: #ffbb55;">From: <?php echo $start_day_term;?></span> | <span style="color: #ff7782;">To: <?php echo $end_day_term;?></span> </h3>
-        <button class="btn btn-primary" id="back_to_finance_list"><a href="apartTax.php">BACK TO FINANCE LIST</a></button>
+        <button class="btn btn-primary" id="back_to_finance_list"><a href="apartTax.php">BACK TO TAX LIST</a></button>
         <div class="values">
             <div class="val-box">
                 <i class="fas fa-sack-dollar"></i>
@@ -127,7 +127,7 @@
                             <p><?php echo $showStatusFeeElement['STATUS_TAX_FEE'];?></p>
                         </td>
                         <td class="edit <?php if($income == 0){ echo "not_display"; } ?>">
-                            <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_TAX_FEE">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_TAX_FEE">Redo</a>
+                            <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_TAX_FEE">Markdone</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_TAX_FEE">Redo</a>
                         </td>
                     </tr>
                     <tr class="text-center">
@@ -142,7 +142,7 @@
                             <p><?php echo $showStatusFeeElement['STATUS_TAX_DECLARE'];?></p>
                         </td>
                         <td class="edit <?php if($income == 0){ echo "not_display"; } ?>">
-                            <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_TAX_DECLARE">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_TAX_DECLARE">Redo</a>
+                            <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_TAX_DECLARE">Markdone</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_TAX_DECLARE">Redo</a>
                         </td>
                     </tr>
                     <tr class="text-center">
@@ -157,7 +157,7 @@
                             <p><?php echo $showStatusFeeElement['STATUS_TAX_MANAGEMENT'];?></p>
                         </td>
                         <td class="edit <?php if($income == 0){ echo "not_display"; } ?>">
-                            <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_TAX_MANAGEMENT">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_TAX_MANAGEMENT">Redo</a>
+                            <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_TAX_MANAGEMENT">Markdone</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_TAX_MANAGEMENT">Redo</a>
                         </td>
                     </tr>
                     <tr class="text-center">
@@ -172,7 +172,7 @@
                             <p><?php echo $showStatusFeeElement['STATUS_REFUND_FOR_TENANT'];?></p>
                         </td>
                         <td class="edit <?php if($income == 0){ echo "not_display"; } ?>">
-                            <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_REFUND_FOR_TENANT">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_REFUND_FOR_TENANT">Redo</a>
+                            <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_REFUND_FOR_TENANT">Markdone</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_REFUND_FOR_TENANT">Redo</a>
                         </td>
                     </tr>
                     <tr class="text-center">
@@ -187,7 +187,7 @@
                             <p><?php echo $showStatusFeeElement['STATUS_CLEANING_FEE'];?></p>
                         </td>
                         <td class="edit <?php if($income == 0){ echo "not_display"; } ?>">
-                            <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_CLEANING_FEE">Markdone</a>|<a onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_CLEANING_FEE">Redo</a>
+                            <a onclick="return confirm('Do you want to markdone ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&markDone=STATUS_CLEANING_FEE">Markdone</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="financeApart.php?apartCode=<?php echo $apartCode ?>&reDo=STATUS_CLEANING_FEE">Redo</a>
                         </td>
                     </tr>
                 </tbody>

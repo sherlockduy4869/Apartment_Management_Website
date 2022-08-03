@@ -20,8 +20,14 @@
         public function show_apart_tax_list(){
             $today = date("Y-m-d");
             //$today = "2022-12-12";
-            $query = "SELECT * FROM tbl_apartment_money 
-                    WHERE (START_DAY_TERM <= '$today' AND '$today' <= END_DAY_TERM) OR '$today' >= END_DAY_TERM";
+            // $query = "SELECT * FROM tbl_apartment_money 
+            //         WHERE (START_DAY_TERM <= '$today' AND '$today' <= END_DAY_TERM) OR '$today' >= END_DAY_TERM";
+            
+            $query = "SELECT tbl_apartment_money.*, tbl_apartment_rented.*
+                    FROM tbl_apartment_money INNER JOIN tbl_apartment_rented
+                    ON tbl_apartment_money.APARTMENT_CODE = tbl_apartment_rented.APARTMENT_CODE
+                    WHERE ((tbl_apartment_money.START_DAY_TERM <= '$today' AND '$today' <= tbl_apartment_money.END_DAY_TERM) OR '$today' >= tbl_apartment_money.END_DAY_TERM)
+                    AND (tbl_apartment_rented.END_DAY > tbl_apartment_money.END_DAY_TERM)";
             $result = $this->db->select($query);
             return $result;
         }
