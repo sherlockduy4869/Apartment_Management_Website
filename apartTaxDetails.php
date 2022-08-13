@@ -31,6 +31,7 @@
                 <span>APARTMENT RENTED TAX</span>
             </div>
             <div class="profile">
+                <i class="fas fa-chart-bar"></i>
                 <img src="./Resource/img/profile-1.jpg">
             </div>
         </div>
