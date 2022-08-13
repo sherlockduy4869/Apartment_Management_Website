@@ -536,7 +536,7 @@ form .debit-note-list .debit_note input{
 
 /*-----------------------DISPLAY NONE FOR DETAILS AREA-----------------------*/
 .not_display{
-    display: none;
+    display: none !important;
 }
 
 #back_to_finance_list a{

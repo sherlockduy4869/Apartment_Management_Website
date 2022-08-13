@@ -72,8 +72,8 @@
                                 ?>
                             </p>
                         </td>
-                        <td class="edit">
-                            <a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['ACCOUNT_ID'];?>">Remove</a>
+                        <td class="edit <?php if($result['NAME'] == 'Giang'){echo 'not_display';} ?>">
+                            <a onclick="return confirm('Do you want to remove ?')" href="?delID=<?php echo $result['ACCOUNT_ID'];?>">Remove</a>
                         </td>
                     </tr>
                         <?php
