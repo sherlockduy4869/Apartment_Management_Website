@@ -20,7 +20,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT CART</span>
+                <span>USER MANAGEMENT</span>
             </div>
             <div class="profile">
                 <img src="./Resource/img/profile-1.jpg">
