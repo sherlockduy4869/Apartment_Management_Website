@@ -20,8 +20,8 @@
             <span class="material-symbols-sharp">analytics</span>
             <div class="middle">
                 <div class="left">
-                    <h4>Total Sales</h4>
-                    <h3>$25,024</h3>
+                    <h4>Apart For Rent</h4>
+                    <h3>300</h3>
                 </div>
                 <div class="percent">
                     <svg>
@@ -33,15 +33,15 @@
                     </div>
                 </div>
             </div>
-            <small class="text-muted">Last 24 Hours</small>
+            <small>Apart For Rent</small>
         </div>
         <!----------------------------END OF SALES---------------------------->
         <div class="expenses">
             <span class="material-symbols-sharp">bar_chart</span>
             <div class="middle">
                 <div class="left">
-                    <h4>Total Expenses</h4>
-                    <h3>$25,024</h3>
+                    <h4>Apart Rented Tax</h4>
+                    <h3>4000</h3>
                 </div>
                 <div class="percent">
                     <svg>
@@ -53,15 +53,15 @@
                     </div>
                 </div>
             </div>
-            <small class="text-muted">Last 24 Hours</small>
+            <small>Apart Rented Tax</small>
         </div>
         <!----------------------------END OF EXPENSES---------------------------->
         <div class="income">
             <span class="material-symbols-sharp">stacked_line_chart</span>
             <div class="middle">
                 <div class="left">
-                    <h4>Total Income</h4>
-                    <h3>$25,024</h3>
+                    <h4>Apart Rented No Tax</h4>
+                    <h3>6000</h3>
                 </div>
                 <div class="percent">
                     <svg>
@@ -73,15 +73,15 @@
                     </div>
                 </div>
             </div>
-            <small class="text-muted">Last 24 Hours</small>
+            <small>Apart Rented No Tax</small>
         </div>
         <!----------------------------END OF INCOME---------------------------->
         <div class="total">
             <span class="material-symbols-sharp">stacked_line_chart</span>
             <div class="middle">
                 <div class="left">
-                    <h4>Total Income</h4>
-                    <h3>$25,024</h3>
+                    <h4>Contract Rented Tax</h4>
+                    <h3>12</h3>
                 </div>
                 <div class="percent">
                     <svg>
@@ -93,7 +93,47 @@
                     </div>
                 </div>
             </div>
-            <small class="text-muted">Last 24 Hours</small>
+            <small>Contract Rented Tax</small>
+        </div>
+        <!----------------------------END OF TOTAL---------------------------->
+        <div class="total">
+            <span class="material-symbols-sharp">stacked_line_chart</span>
+            <div class="middle">
+                <div class="left">
+                    <h4>Contract Rented No Tax</h4>
+                    <h3>12</h3>
+                </div>
+                <div class="percent">
+                    <svg>
+                        <circle cx="50" cy="50" r = "50"></circle>
+                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * 50) / 100);"></circle>
+                    </svg>
+                    <div class="number">
+                        <h2>50%</h2>
+                    </div>
+                </div>
+            </div>
+            <small>Contract Rented No Tax</small>
+        </div>
+        <!----------------------------END OF TOTAL---------------------------->
+        <div class="total">
+            <span class="material-symbols-sharp">stacked_line_chart</span>
+            <div class="middle">
+                <div class="left">
+                    <h4>Tax Collect</h4>
+                    <h3>12</h3>
+                </div>
+                <div class="percent">
+                    <svg>
+                        <circle cx="50" cy="50" r = "50"></circle>
+                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * 50) / 100);"></circle>
+                    </svg>
+                    <div class="number">
+                        <h2>50%</h2>
+                    </div>
+                </div>
+            </div>
+            <small>Tax Collect</small>
         </div>
         <!----------------------------END OF TOTAL---------------------------->
 </section>
