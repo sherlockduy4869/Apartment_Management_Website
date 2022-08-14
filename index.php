@@ -9,31 +9,49 @@
             <div>
                 <i id="menu-btn" class="fas fa-bars"></i>
             </div>
+            <span>DATA SUMMARY AND ANALYTICS</span>
         </div>
         <div class="profile">
             <img src="./Resource/img/profile-1.jpg">
         </div>
     </div>
-
-    <h3 class="i-name">DATA SUMMARY AND ANALYTICS</h3>
-    <div class="values">
-        <div class="val-box clickable">
-            <i class="fas fa-house"></i>
-            <a href="cartAdd.php">Add Apart For Rent</a>
-        </div>
-        <div class="val-box clickable">
-            <i class="fas fa-comments"></i>
-            <a href="apartContractNoTax.php">Add Apart For Sell</a>
-        </div>
-        <div class="val-box clickable">
-            <i class="fas fa-comments-dollar"></i>
-            <a href="apartContract.php">Add Apart UC</a>
-        </div>
-        <div class="val-box clickable">
-            <i class="fas fa-sack-dollar"></i>
-            <a href="apartTax.php">Quan Ly Can Ho</a>
-        </div>
+    <main>
+    <div class="insights">
+                <div class="sales">
+                    <span class="material-symbols-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Sales</h3>
+                            <h1>$25,024</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!----------------------------END OF SALES---------------------------->
+                <div class="expenses">
+                    <span class="material-symbols-sharp">bar_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Expenses</h3>
+                            <h1>$25,024</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!----------------------------END OF EXPENSES---------------------------->
+                <div class="income">
+                    <span class="material-symbols-sharp">stacked_line_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Income</h3>
+                            <h1>$25,024</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!----------------------------END OF INCOME---------------------------->
     </div>
+    </main>
 </section>
 
 <?php 
