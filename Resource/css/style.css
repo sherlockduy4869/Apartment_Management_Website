@@ -67,11 +67,11 @@ body{
 }
 
 #menu .items{
-    margin-top: 35px;
+    margin-top: 30px;
 }
 
 #menu .items div{
-    padding: 12px 0;
+    padding: 10px 0;
     transition: 0.3s ease;
 }
 
@@ -86,11 +86,11 @@ body{
 
 #menu .items div i{
     color: rgb(134, 141, 151);
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+    width: 27px;
+    height: 27px;
+    line-height: 27px;
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     margin: 0 10px 0 25px;
 }
 
@@ -581,7 +581,9 @@ form .debit-note-list .debit_note input{
     display: flex;
     flex-wrap: wrap;
     gap: 1.6rem;
-    margin-left: 35px;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-between;
 }
 
 .insights>div{
@@ -591,6 +593,7 @@ form .debit-note-list .debit_note input{
     margin-top: 1rem;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
+    justify-content: flex-start;
 }
 
 .insights>div:hover{
