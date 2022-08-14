@@ -7,7 +7,7 @@
         </div>
         <div class="items">
             <div class="clickable"><i class="fas fa-plus"></i><a href="addApart.php">Add Apart</a></div>
-            <div class="clickable"><i class="fas fa-cart-plus"></i><a href="index.php">Apart For Rent</a></div>
+            <div class="clickable"><i class="fas fa-cart-plus"></i><a href="cartList.php">Apart For Rent</a></div>
             <div class="clickable"><i class="fas fa-hand-holding-usd"></i><a href="areApartRented.php">Rented Tax</a></div>
             <div class="clickable"><i class="fas fa-home-lg"></i><a href="areaApartRentedNoTax.php">Rented No Tax </a></div>
             <div class="clickable"><i class="fas fa-key"></i><a href="apartKey.php">Quan ly can ho</a></div>

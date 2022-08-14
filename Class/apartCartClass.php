@@ -64,7 +64,7 @@
             $query = "DELETE FROM tbl_apartment_cart WHERE APARTMENT_CODE = '$delID'";
             $result = $this->db->delete($query);
 
-            header('Location:index.php');
+            header('Location:cartList.php');
         }
 
         //Get apartment cart information 

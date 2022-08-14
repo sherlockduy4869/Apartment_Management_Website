@@ -87,7 +87,7 @@
                         <textarea class="selling_note" name="note" cols="30" rows="10"><?php echo $cart_by_id['NOTE'] ?></textarea>
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary"><a href="index.php">BACK TO FOR RENT LIST</a></button>
+                        <button class="btn btn-primary"><a href="cartList.php">BACK TO FOR RENT LIST</a></button>
                     </div>
                 </form>
 

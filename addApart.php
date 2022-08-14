@@ -3,7 +3,6 @@
     include_once "Include/slider.php";
 ?>
 <section id="interface">
-    
         <div class="navigation">
             <div class="n1">
                 <div>
