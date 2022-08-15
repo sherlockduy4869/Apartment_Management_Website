@@ -74,20 +74,25 @@
         public function get_apart_rented_tax_contract_percentage(){
             $today = date("Y-m-d");
 
-            $query_rented_tax_contract = "SELECT COUNT(tbl_apartment_contract.APARTMENT_CODE) AS QUAN_APART_RENTED_TAX_CONTRACT FROM tbl_apartment_contract";
+            $query_rented_tax_contract = "SELECT COUNT(tbl_apartment_contract.APARTMENT_CODE) AS QUAN_APART_RENTED_TAX_CONTRACT 
+                                            FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
             $result_rented_tax_contract= $this->db->select($query_rented_tax_contract)->fetch_assoc();
             $num_rented_tax_contract = $result_rented_tax_contract['QUAN_APART_RENTED_TAX_CONTRACT'];
 
-            $query_rented_tax_contract_today = "SELECT COUNT(tbl_apartment_contract.APARTMENT_CODE) AS QUAN_APART_RENTED_TAX_CONTRACT_TODAY
-                                                FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY ";
+            if(!$num_rented_tax_contract){
+                $num_rented_tax_contract = 1;
+            }
 
-            $result_rented_tax_contract_today= $this->db->select($query_rented_tax_contract_today)->fetch_assoc();
-            $num_rented_tax_contract_today = $result_rented_tax_contract_today['QUAN_APART_RENTED_TAX_CONTRACT_TODAY'];
+            $query_rented_tax_contract_not_done = "SELECT COUNT(tbl_apartment_contract.APARTMENT_CODE) AS QUAN_APART_RENTED_TAX_CONTRACT_NOT_DONE
+                                                FROM tbl_apartment_contract WHERE (DATE_REMIND <= '$today' AND '$today' <= END_DAY) AND (STATUS_APART='NOT DONE') ";
 
-            $percentage = ($num_rented_tax_contract_today / $num_rented_tax_contract)*100;
+            $result_rented_tax_contract_not_done= $this->db->select($query_rented_tax_contract_not_done)->fetch_assoc();
+            $num_rented_tax_contract_not_done = $result_rented_tax_contract_not_done['QUAN_APART_RENTED_TAX_CONTRACT_NOT_DONE'];
+
+            $percentage = ($num_rented_tax_contract_not_done / $num_rented_tax_contract)*100;
 
             $result_array = array();
-            array_push($result_array, $num_rented_tax_contract_today, $percentage);
+            array_push($result_array, $num_rented_tax_contract_not_done, $percentage);
 
             return $result_array;
         }
@@ -96,20 +101,28 @@
         public function get_apart_rented_no_tax_contract_percentage(){
             $today = date("Y-m-d");
 
-            $query_rented_no_tax_contract = "SELECT COUNT(tbl_apartment_contract_no_tax.APARTMENT_CODE) AS QUAN_APART_RENTED_NO_TAX_CONTRACT FROM tbl_apartment_contract_no_tax";
+            $query_rented_no_tax_contract = "SELECT COUNT(tbl_apartment_contract_no_tax.APARTMENT_CODE) AS QUAN_APART_RENTED_NO_TAX_CONTRACT 
+                                            FROM tbl_apartment_contract_no_tax WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
             $result_rented_no_tax_contract= $this->db->select($query_rented_no_tax_contract)->fetch_assoc();
             $num_rented_no_tax_contract = $result_rented_no_tax_contract['QUAN_APART_RENTED_NO_TAX_CONTRACT'];
 
-            $query_rented_no_tax_contract_today = "SELECT COUNT(tbl_apartment_contract_no_tax.APARTMENT_CODE) AS QUAN_APART_RENTED_NO_TAX_CONTRACT_TODAY
-                                                FROM tbl_apartment_contract_no_tax WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
+            $query_rented_no_tax_contract_not_done = "SELECT COUNT(tbl_apartment_contract_no_tax.APARTMENT_CODE) AS QUAN_APART_RENTED_NO_TAX_CONTRACT_NOT_DONE
+                                                FROM tbl_apartment_contract_no_tax WHERE (DATE_REMIND <= '$today' AND '$today' <= END_DAY)
+                                                AND (STATUS_APART = 'NOT DONE')";
+            
+            
 
-            $result_rented_no_tax_contract_today= $this->db->select($query_rented_no_tax_contract_today)->fetch_assoc();
-            $num_rented_no_tax_contract_today = $result_rented_no_tax_contract_today['QUAN_APART_RENTED_NO_TAX_CONTRACT_TODAY'];
+            $result_rented_no_tax_contract_not_done= $this->db->select($query_rented_no_tax_contract_not_done)->fetch_assoc();
+            $num_rented_no_tax_contract_not_done = $result_rented_no_tax_contract_not_done['QUAN_APART_RENTED_NO_TAX_CONTRACT_NOT_DONE'];
 
-            $percentage = ($num_rented_no_tax_contract_today / $num_rented_no_tax_contract)*100;
+            if(!$num_rented_no_tax_contract){
+                $num_rented_no_tax_contract = 1;
+            }
+
+            $percentage = ($num_rented_no_tax_contract_not_done / $num_rented_no_tax_contract)*100;
 
             $result_array = array();
-            array_push($result_array, $num_rented_no_tax_contract_today, $percentage);
+            array_push($result_array, $num_rented_no_tax_contract_not_done, $percentage);
 
             return $result_array;
         }
