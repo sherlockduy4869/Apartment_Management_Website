@@ -52,6 +52,7 @@ body{
     position: fixed;
     top: 0;
     left: 0;
+    overflow-y: auto;
 }
 
 #menu .logo {
@@ -67,11 +68,11 @@ body{
 }
 
 #menu .items{
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 #menu .items div{
-    padding: 10px 0;
+    padding: 12px 0;
     transition: 0.3s ease;
 }
 
@@ -86,11 +87,11 @@ body{
 
 #menu .items div i{
     color: rgb(134, 141, 151);
-    width: 27px;
-    height: 27px;
-    line-height: 27px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     margin: 0 10px 0 25px;
 }
 
@@ -625,7 +626,16 @@ form .debit-note-list .debit_note input{
 
 .insights>div .middle h4{
     margin: 1rem 0 0.6rem;
+    font-size: 1.3rem;
+}
+
+.insights>div .middle h3{
     font-size: 1rem;
+}
+
+.insights>div button a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .percent{
