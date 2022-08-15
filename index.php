@@ -7,8 +7,6 @@
 <?php
     $dataAnalytic = new dataAnalytic();
     $result_cart_for_rent = $dataAnalytic->get_apart_for_rent_percentage();
-    //$result_rented_tax = $dataAnalytic->get_apart_rented_with_tax_percentage();
-    //$result_rented_no_tax = $dataAnalytic->get_apart_rented_with_no_tax_percentage();
     $result_rented_tax_contract = $dataAnalytic->get_apart_rented_tax_contract_percentage();
     $result_rented_no_tax_contract = $dataAnalytic->get_apart_rented_no_tax_contract_percentage();
     $result_rented_money = $dataAnalytic->get_apart_rented_money_percentage();
