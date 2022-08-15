@@ -1,6 +1,17 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/dataAnalyticsClass.php';
+?>
+
+<?php
+    $dataAnalytic = new dataAnalytic();
+    $result_cart_for_rent = $dataAnalytic->get_apart_for_rent_percentage();
+    $result_rented_tax = $dataAnalytic->get_apart_rented_with_tax_percentage();
+    $result_rented_no_tax = $dataAnalytic->get_apart_rented_with_no_tax_percentage();
+    $result_rented_tax_contract = $dataAnalytic->get_apart_rented_tax_contract_percentage();
+    $result_rented_no_tax_contract = $dataAnalytic->get_apart_rented_no_tax_contract_percentage();
+    $result_rented_money = $dataAnalytic->get_apart_rented_money_percentage();
 ?>
 <section id="interface">
         <div class="navigation">
@@ -20,16 +31,16 @@
             <i class="fas fa-house"></i>
             <div class="middle">
                 <div class="left">
-                    <h4 style="color: var(--color-primary);"><span>300</span> Aparts</h4>
+                    <h4 style="color: var(--color-primary);"><span class="num"><?php echo $result_cart_for_rent[0]; ?></span> Aparts</h4>
                     <h3>Available for rent</h3>
                 </div>
                 <div class="percent">
                     <svg>
                         <circle cx="50" cy="50" r = "50"></circle>
-                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * 60) / 100);"></circle>
+                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * <?php echo $result_cart_for_rent[1]; ?>) / 100);"></circle>
                     </svg>
                     <div class="number">
-                        <h2>60%</h2>
+                        <h2><span class="num"><?php echo number_format($result_cart_for_rent[1], 1); ?></span> %</h2>
                     </div>
                 </div>
             </div>
@@ -40,16 +51,16 @@
             <i class="fas fa-house-user"></i>
             <div class="middle">
                 <div class="left">
-                    <h4 style="color: var(--color-primary);"><span>300</span> Aparts</h4>
+                    <h4 style="color: var(--color-primary);"><span class="num"><?php echo $result_rented_tax[0]; ?></span> Aparts</h4>
                     <h3>Rented with tax</h3>
                 </div>
                 <div class="percent">
                     <svg>
                         <circle cx="50" cy="50" r = "50"></circle>
-                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * 30) / 100);"></circle>
+                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * <?php echo $result_rented_tax[1]; ?>) / 100);"></circle>
                     </svg>
                     <div class="number">
-                        <h2>30%</h2>
+                        <h2><span class="num"><?php echo number_format($result_rented_tax[1], 1); ?></span> %</h2>
                     </div>
                 </div>
             </div>
@@ -57,19 +68,19 @@
         </div>
         <!----------------------------END OF EXPENSES---------------------------->
         <div class="rented_no_tax">
-            <i class="fas fa-home"></i>
+            <i class="fas fa-landmark"></i>
             <div class="middle">
                 <div class="left">
-                    <h4 style="color: var(--color-primary);"><span>300</span> Aparts</h4>
+                    <h4 style="color: var(--color-primary);"><span class="num"><?php echo $result_rented_no_tax[0]; ?></span> Aparts</h4>
                     <h3>Rented with no tax</h3>
                 </div>
                 <div class="percent">
                     <svg>
                         <circle cx="50" cy="50" r = "50"></circle>
-                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * 90) / 100);"></circle>
+                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * <?php echo $result_rented_no_tax[1]; ?>) / 100);"></circle>
                     </svg>
                     <div class="number">
-                        <h2>90%</h2>
+                        <h2><span class="num"><?php echo number_format($result_rented_no_tax[1], 1); ?></span> %</h2>
                     </div>
                 </div>
             </div>
@@ -80,16 +91,16 @@
             <i class="fas fa-comments-dollar"></i>
             <div class="middle">
                 <div class="left">
-                    <h4 style="color: var(--color-primary);"><span>300</span> Rented-Tax</h4>
+                    <h4 style="color: var(--color-primary);"><span class="num"><?php echo $result_rented_tax_contract[0]; ?></span> Rented-Tax</h4>
                     <h3>Need to negotiate</h3>
                 </div>
                 <div class="percent">
                     <svg>
                         <circle cx="50" cy="50" r = "50"></circle>
-                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * 50) / 100);"></circle>
+                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * <?php echo $result_rented_tax_contract[1]; ?>) / 100);"></circle>
                     </svg>
                     <div class="number">
-                        <h2>50%</h2>
+                        <h2><span class="num"><?php echo number_format($result_rented_tax_contract[1], 1); ?></span> %</h2>
                     </div>
                 </div>
             </div>
@@ -100,16 +111,16 @@
             <i class="fas fa-comments"></i>
             <div class="middle">
                 <div class="left">
-                    <h4 style="color: var(--color-primary);"><span>300</span> Rented-No-Tax</h4>
+                    <h4 style="color: var(--color-primary);"><span class="num"><?php echo $result_rented_no_tax_contract[0]; ?></span> Rented-No-Tax</h4>
                     <h3>Need to negotiate</h3>
                 </div>
                 <div class="percent">
                     <svg>
                         <circle cx="50" cy="50" r = "50"></circle>
-                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * 50) / 100);"></circle>
+                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * <?php echo $result_rented_no_tax_contract[1]; ?>) / 100);"></circle>
                     </svg>
                     <div class="number">
-                        <h2>50%</h2>
+                        <h2><span class="num"><?php echo number_format($result_rented_no_tax_contract[1], 1); ?></span> %</h2>
                     </div>
                 </div>
             </div>
@@ -120,16 +131,16 @@
             <i class="fas fa-sack-dollar"></i>
             <div class="middle">
                 <div class="left">
-                    <h4 style="color: var(--color-primary);"><span>300</span> Aparts</h4>
+                    <h4 style="color: var(--color-primary);"><span class="num"><?php echo $result_rented_money[0]; ?></span> Aparts</h4>
                     <h3>Need to collect tax fees</h3>
                 </div>
                 <div class="percent">
                     <svg>
                         <circle cx="50" cy="50" r = "50"></circle>
-                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * 50) / 100);"></circle>
+                        <circle cx="50" cy="50" r = "50" style="stroke-dashoffset: calc(314 - (314 * <?php echo $result_rented_money[1]; ?>) / 100);"></circle>
                     </svg>
                     <div class="number">
-                        <h2>50%</h2>
+                        <h2><span class="num"><?php echo number_format($result_rented_money[1], 1); ?></span>%</h2>
                     </div>
                 </div>
             </div>
