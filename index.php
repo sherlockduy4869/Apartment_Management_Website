@@ -16,11 +16,11 @@
         </div>
 
         <div class="insights">
-        <div class="sales">
-            <span class="material-symbols-sharp">analytics</span>
+        <div class="for_rent">
+            <i class="fas fa-house"></i>
             <div class="middle">
                 <div class="left">
-                    <h4><num>300</num> Aparts</h4>
+                    <h4 style="color: var(--color-primary);"><span>300</span> Aparts</h4>
                     <h3>Available for rent</h3>
                 </div>
                 <div class="percent">
@@ -33,14 +33,14 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary"><a href="">See More</a></button>
+            <button class="btn btn-primary"><a href="cartList.php">See More</a></button>
         </div>
         <!----------------------------END OF SALES---------------------------->
-        <div class="expenses">
-            <span class="material-symbols-sharp">bar_chart</span>
+        <div class="rented_tax">
+            <i class="fas fa-house-user"></i>
             <div class="middle">
                 <div class="left">
-                    <h4><num>300</num> Aparts</h4>
+                    <h4 style="color: var(--color-primary);"><span>300</span> Aparts</h4>
                     <h3>Rented with tax</h3>
                 </div>
                 <div class="percent">
@@ -53,14 +53,14 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary"><a href="">See More</a></button>
+            <button class="btn btn-primary"><a href="apartRented.php">See More</a></button>
         </div>
         <!----------------------------END OF EXPENSES---------------------------->
-        <div class="income">
-            <span class="material-symbols-sharp">stacked_line_chart</span>
+        <div class="rented_no_tax">
+            <i class="fas fa-home"></i>
             <div class="middle">
                 <div class="left">
-                    <h4><num>300</num> Aparts</h4>
+                    <h4 style="color: var(--color-primary);"><span>300</span> Aparts</h4>
                     <h3>Rented with no tax</h3>
                 </div>
                 <div class="percent">
@@ -73,14 +73,14 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary"><a href="">See More</a></button>
+            <button class="btn btn-primary"><a href="apartRentedNoTax.php">See More</a></button>
         </div>
         <!----------------------------END OF INCOME---------------------------->
-        <div class="total">
-            <span class="material-symbols-sharp">stacked_line_chart</span>
+        <div class="contract_tax">
+            <i class="fas fa-comments-dollar"></i>
             <div class="middle">
                 <div class="left">
-                    <h4><num>300</num> Rented-Tax</h4>
+                    <h4 style="color: var(--color-primary);"><span>300</span> Rented-Tax</h4>
                     <h3>Need to negotiate</h3>
                 </div>
                 <div class="percent">
@@ -93,14 +93,14 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary"><a href="">See More</a></button>
+            <button class="btn btn-primary"><a href="apartContract.php">See More</a></button>
         </div>
         <!----------------------------END OF TOTAL---------------------------->
-        <div class="total">
-            <span class="material-symbols-sharp">stacked_line_chart</span>
+        <div class="contract_no_tax">
+            <i class="fas fa-comments"></i>
             <div class="middle">
                 <div class="left">
-                    <h4><num>300</num> Rented-No-Tax</h4>
+                    <h4 style="color: var(--color-primary);"><span>300</span> Rented-No-Tax</h4>
                     <h3>Need to negotiate</h3>
                 </div>
                 <div class="percent">
@@ -113,14 +113,14 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary"><a href="">See More</a></button>
+            <button class="btn btn-primary"><a href="apartContractNoTax.php">See More</a></button>
         </div>
         <!----------------------------END OF TOTAL---------------------------->
-        <div class="total">
-            <span class="material-symbols-sharp">stacked_line_chart</span>
+        <div class="collect_tax_fee">
+            <i class="fas fa-sack-dollar"></i>
             <div class="middle">
                 <div class="left">
-                    <h4><num>300</num> Aparts</h4>
+                    <h4 style="color: var(--color-primary);"><span>300</span> Aparts</h4>
                     <h3>Need to collect tax fees</h3>
                 </div>
                 <div class="percent">
@@ -133,7 +133,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary"><a href="">See More</a></button>
+            <button class="btn btn-primary"><a href="apartTax.php">See More</a></button>
         </div>
         <!----------------------------END OF TOTAL---------------------------->
 </section>

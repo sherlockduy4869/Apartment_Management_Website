@@ -10,7 +10,7 @@
 }
 
 :root{
-    --color-primary: #7380ec;
+    --color-primary: #0E4BF1;
     --color-danger: #ff7782;
     --color-success: #41f1b6;
     --color-warning: #ffbb55;
@@ -602,7 +602,7 @@ form .debit-note-list .debit_note input{
     box-shadow: none;
 }
 
-.insights>div span{
+.insights>div i{
     background: var(--color-primary);
     padding: 0.5rem;
     border-radius: 50%;
@@ -610,12 +610,28 @@ form .debit-note-list .debit_note input{
     font-size: 2rem;
 }
 
-.insights>div.expenses span{
-    background: var(--color-danger);
+.insights>div.for_rent i{
+    background: var(--color-primary);
 }
 
-.insights>div.income span{
-    background: var(--color-success);
+.insights>div.rented_tax i{
+    background: var(--color-primary);
+}
+
+.insights>div.rented_no_tax i{
+    background: var(--color-primary);
+}
+
+.insights>div.contract_tax i{
+    background: var(--color-primary);
+}
+
+.insights>div.contract_no_tax i{
+    background: var(--color-primary);
+}
+
+.insights>div.collect_tax_fee i{
+    background: var(--color-primary);
 }
 
 .insights>div .middle{

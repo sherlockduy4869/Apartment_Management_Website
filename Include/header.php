@@ -39,8 +39,5 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="//cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
     <script src="//cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
-
-    <!--MATERIAL ICONS-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
