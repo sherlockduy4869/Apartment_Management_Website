@@ -614,24 +614,16 @@ form .debit-note-list .debit_note input{
     background: var(--color-primary);
 }
 
-.insights>div.rented_tax i{
-    background: var(--color-primary);
-}
-
-.insights>div.rented_no_tax i{
-    background: var(--color-primary);
+.insights>div.collect_tax_fee i{
+    background: var(--color-danger);
 }
 
 .insights>div.contract_tax i{
-    background: var(--color-primary);
+    background: var(--color-success);
 }
 
 .insights>div.contract_no_tax i{
-    background: var(--color-primary);
-}
-
-.insights>div.collect_tax_fee i{
-    background: var(--color-primary);
+    background: var(--color-warning);
 }
 
 .insights>div .middle{
@@ -683,8 +675,20 @@ form .debit-note-list .debit_note input{
     stroke: #f3f3f3;
 }
 
-.percent svg circle:nth-child(2){
+.percent svg circle.circle_for_rent{
     stroke: #03a9f4;
+}
+
+.percent svg circle.circle_tax_fee{
+    stroke: var(--color-danger);
+}
+
+.percent svg circle.circle_contract_tax{
+    stroke: var(--color-success);
+}
+
+.percent svg circle.circle_contract_no_tax{
+    stroke: var(--color-warning);
 }
 
 .percent .number{
