@@ -46,20 +46,22 @@
                                 <option value="Vinhomes Golden River">Vinhomes Golden River</option>
                                 <option value="Vinhomes Central Park">Vinhomes Central Park</option>
                                 <option value="Vinhomes Grand Park">Vinhomes Grand Park</option>
-                                <option value="Sunwah Pearl">Sunwah Pearl</option>
                                 <option value="Estella Height">Estella Height</option>
+                                <option value="Celesta Rise">Celesta Rise</option>
                                 <option value="The Estella">The Estella</option>
+                                <option value="Celesta">Celesta</option>
+                                <option value="Sunwah Pearl">Sunwah Pearl</option>
+                                <option value="Thao Dien Green">Thao Dien Green</option>
                                 <option value="The Vista An Phu">The Vista An Phu</option>
                                 <option value="Xi Riverview">Xi Riverview</option>
-                                <option value="Empire City">Empire City</option>
-                                <option value="Palm Heights">Palm Heights</option>
-                                <option value="Saigon Pearl">Saigon Pearl</option>
-                                <option value="Sun Avenue">Sun Avenue</option>
-                                <option value="Thao Dien Green">Thao Dien Green</option>
-                                <option value="The Infiniti">The Infiniti</option>
                                 <option value="The View Riviera Point">The View Riviera Point</option>
+                                <option value="The Infiniti">The Infiniti</option>
                                 <option value="Zennity">Zennity</option>
+                                <option value="Empire City">Empire City</option>
                                 <option value="Metropole">Metropole</option>
+                                <option value="Sun Avenue">Sun Avenue</option>
+                                <option value="Saigon Pearl">Saigon Pearl</option>
+                                <option value="Palm Heights">Palm Heights</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
