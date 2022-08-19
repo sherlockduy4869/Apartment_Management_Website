@@ -52,13 +52,13 @@
                         <div class="input-box">
                             <span class="details">Bedroom</span>
                             <select name="bedroom" class="select2_tag">
-                                <option <?php if($get_product['CATEGORY_ID'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
-                                <option <?php if($get_product['CATEGORY_ID'] == "2 Bed") {echo "SELECTED";} ?> value="2 Bed">2 Bed</option>
-                                <option <?php if($get_product['CATEGORY_ID'] == "2 Bed + 1") {echo "SELECTED";} ?> value="2 Bed + 1">2 Bed + 1</option>
-                                <option <?php if($get_product['CATEGORY_ID'] == "3 Bed") {echo "SELECTED";} ?> value="3 Bed">3 Bed</option>
-                                <option <?php if($get_product['CATEGORY_ID'] == "3 Bed + 1") {echo "SELECTED";} ?> value="3 Bed + 1">3 Bed + 1</option>
-                                <option <?php if($get_product['CATEGORY_ID'] == "4 Bed") {echo "SELECTED";} ?> value="4 Bed">4 Bed</option>
-                                <option <?php if($get_product['CATEGORY_ID'] == "4 Bed + 1") {echo "SELECTED";} ?> value="4 Bed + 1">4 Bed + 1</option>
+                                <option <?php if($apart_key_by_id['BEDROOM'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
+                                <option <?php if($apart_key_by_id['BEDROOM'] == "2 Bed") {echo "SELECTED";} ?> value="2 Bed">2 Bed</option>
+                                <option <?php if($apart_key_by_id['BEDROOM'] == "2 Bed + 1") {echo "SELECTED";} ?> value="2 Bed + 1">2 Bed + 1</option>
+                                <option <?php if($apart_key_by_id['BEDROOM'] == "3 Bed") {echo "SELECTED";} ?> value="3 Bed">3 Bed</option>
+                                <option <?php if($apart_key_by_id['BEDROOM'] == "3 Bed + 1") {echo "SELECTED";} ?> value="3 Bed + 1">3 Bed + 1</option>
+                                <option <?php if($apart_key_by_id['BEDROOM'] == "4 Bed") {echo "SELECTED";} ?> value="4 Bed">4 Bed</option>
+                                <option <?php if($apart_key_by_id['BEDROOM'] == "4 Bed + 1") {echo "SELECTED";} ?> value="4 Bed + 1">4 Bed + 1</option>
                             </select>
                         </div>
                         <div class="input-box">

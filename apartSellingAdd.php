@@ -42,8 +42,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <input list="area_list" name="area">
-                            <datalist id="area_list">
+                            <select name="area" class="select2_tag">
                                 <option value="Vinhomes Golden River">Vinhomes Golden River</option>
                                 <option value="Vinhomes Central Park">Vinhomes Central Park</option>
                                 <option value="Vinhomes Grand Park">Vinhomes Grand Park</option>
@@ -62,7 +61,7 @@
                                 <option value="Zennity">Zennity</option>
                                 <option value="Metropole">Metropole</option>
                                 <option value="Other">Other</option>
-                            </datalist>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
@@ -70,8 +69,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <input list="bedroom_list" name="bedroom" required>
-                            <datalist id="bedroom_list">
+                            <select name="bedroom" class="select2_tag">
                                 <option value="1 Bed">1 Bed</option>
                                 <option value="2 Bed">2 Bed</option>
                                 <option value="2 Bed + 1">2 Bed + 1</option>
@@ -79,7 +77,7 @@
                                 <option value="3 Bed + 1">3 Bed + 1</option>
                                 <option value="4 Bed">4 Bed</option>
                                 <option value="4 Bed + 1">4 Bed + 1</option>
-                            </datalist>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Email</span>

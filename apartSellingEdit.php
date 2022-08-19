@@ -52,10 +52,12 @@
                         <div class="input-box">
                             <span class="details">Area</span>
                             <input list="area_list" name="area" value="<?php echo $apart_selling_by_id['AREA_APART'];?>">
-                            <datalist id="area_list">
+                            <select name="area" class="select2_tag">
                                 <option value="Vinhomes Golden River">Vinhomes Golden River</option>
                                 <option value="Vinhomes Central Park">Vinhomes Central Park</option>
                                 <option value="Vinhomes Grand Park">Vinhomes Grand Park</option>
+                                <option value="Celesta Rise">Celesta Rise</option>
+                                <option value="Celesta">Celesta</option>
                                 <option value="Sunwah Pearl">Sunwah Pearl</option>
                                 <option value="Estella Height">Estella Height</option>
                                 <option value="The Estella">The Estella</option>
@@ -71,7 +73,7 @@
                                 <option value="Zennity">Zennity</option>
                                 <option value="Metropole">Metropole</option>
                                 <option value="Other">Other</option>
-                            </datalist>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
@@ -79,16 +81,15 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <input required list="bedroom_list" name="bedroom" value="<?php echo $apart_selling_by_id['BEDROOM'] ?>">
-                            <datalist id="bedroom_list">
-                                <option value="1 Bed">1 Bed</option>
-                                <option value="2 Bed">2 Bed</option>
-                                <option value="2 Bed + 1">2 Bed + 1</option>
-                                <option value="3 Bed">3 Bed</option>
-                                <option value="3 Bed + 1">3 Bed + 1</option>
-                                <option value="4 Bed">4 Bed</option>
-                                <option value="4 Bed + 1">4 Bed + 1</option>
-                            </datalist>
+                            <select name="bedroom" class="select2_tag">
+                            <option <?php if($apart_not_rented_by_id['BEDROOM'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
+                                <option <?php if($apart_selling_by_id['BEDROOM'] == "2 Bed") {echo "SELECTED";} ?> value="2 Bed">2 Bed</option>
+                                <option <?php if($apart_selling_by_id['BEDROOM'] == "2 Bed + 1") {echo "SELECTED";} ?> value="2 Bed + 1">2 Bed + 1</option>
+                                <option <?php if($apart_selling_by_id['BEDROOM'] == "3 Bed") {echo "SELECTED";} ?> value="3 Bed">3 Bed</option>
+                                <option <?php if($apart_selling_by_id['BEDROOM'] == "3 Bed + 1") {echo "SELECTED";} ?> value="3 Bed + 1">3 Bed + 1</option>
+                                <option <?php if($apart_selling_by_id['BEDROOM'] == "4 Bed") {echo "SELECTED";} ?> value="4 Bed">4 Bed</option>
+                                <option <?php if($apart_selling_by_id['BEDROOM'] == "4 Bed + 1") {echo "SELECTED";} ?> value="4 Bed + 1">4 Bed + 1</option>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Email</span>

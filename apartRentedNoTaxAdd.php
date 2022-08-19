@@ -40,7 +40,7 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment Code</span>
-                            <select name="apartment_code" id="select2_tag">
+                            <select name="apartment_code" class="select2_tag">
                             <?php
                             
                                 if($listApartCode)
@@ -50,7 +50,7 @@
                                     {
                                     
                                 ?>
-                                <option value="<?php echo $result['APARTMENT_CODE']; ?>">
+                                <option value="<?php echo $result['APARTMENT_CODE']; ?>"><?php echo $result['APARTMENT_CODE'];?></option>
                             <?php
                                     }
                                 }
