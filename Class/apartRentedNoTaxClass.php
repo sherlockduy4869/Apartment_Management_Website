@@ -34,7 +34,7 @@
             $to = mysqli_real_escape_string($this->db->link, $data['to']);
 
             $rent_fee_per_month =  str_replace(",","",$renting_fee_per_month);
-            $management_Fee = 0;
+            $management_fee = 0;
             if($management_Fee){
                 $management_fee =  str_replace(",","",$management_Fee);
             }
@@ -101,7 +101,7 @@
             $to = mysqli_real_escape_string($this->db->link, $data['to']);
 
             $rent_fee_per_month =  str_replace(",","",$renting_fee_per_month);
-            $management_Fee = 0;
+            $management_fee = 0;
             if($management_Fee){
                 $management_fee =  str_replace(",","",$management_Fee);
             }

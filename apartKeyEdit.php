@@ -153,11 +153,7 @@
                             <span class="details">Note</span>
                             <textarea name="remote_dieu_hoa_note"><?php echo $apart_key_by_id['REMOTE_DIEU_HOA_NOTE'] ?></textarea>
                         </div>
-                    </div>
-                    <div class="note">
-                        <textarea class="selling_note" placeholder="Other note here" name="other_note" cols="30" rows="10"><?php echo $apart_key_by_id['OTHER_NOTE'] ?></textarea>
-                    </div>
-                    <div class="input-box">
+                        <div class="input-box">
                             <span class="details">Internet Code</span>
                             <input type="text" name="internet_code" value="<?php echo $apart_key_by_id['INTERNET_CODE'] ?>">
                         </div>
@@ -165,6 +161,10 @@
                             <span class="details">Note</span>
                             <textarea name="internet_note"><?php echo $apart_key_by_id['INTERNET_NOTE'] ?></textarea>
                         </div>
+                    </div>
+                    <div class="note">
+                        <textarea class="selling_note" placeholder="Other note here" name="other_note" cols="30" rows="10"><?php echo $apart_key_by_id['OTHER_NOTE'] ?></textarea>
+                    </div>
                     <?php 
                     if(isset($keyEdit))
                     {
@@ -173,6 +173,9 @@
                     ?>
                     <div class="button">
                         <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
+                    </div>
+                    <div class="button">
+                        <button class="btn btn-primary"><a href="apartKey.php">BACK TO APART KEY LIST</a></button>
                     </div>
                 </form>
 

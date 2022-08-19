@@ -135,6 +135,9 @@
                     <div class="button">
                         <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
                     </div>
+                    <div class="button">
+                        <button class="btn btn-primary"><a href="cartList.php">BACK TO FOR RENT LIST</a></button>
+                    </div>
                 </form>
 
             </div>
