@@ -52,19 +52,25 @@
                         <div class="input-box">
                             <span class="details">Area</span>
                             <input list="area_list" name="area" value="<?php echo $apart_not_rented_by_id['AREA_APART'] ?>" required>
-                            <datalist id="area_list">
-                                <option value="Vinhomes Golden River">Vinhomes Golden River</option>
-                                <option value="Vinhomes Central Park">Vinhomes Central Park</option>
-                                <option value="Estella Height">Estella Height</option>
-                                <option value="Estella">Estella</option>
-                                <option value="Celesta">Celesta</option>
-                                <option value="Thao Dien Green">Thao Dien Green</option>
-                                <option value="The Infiniti">The Infiniti</option>
-                                <option value="Zennity">Zennity</option>
-                                <option value="Celesta Rise">Celesta Rise</option>
-                                <option value="Empire City">Empire City</option>
-                                <option value="Metropole">Metropole</option>
-                            </datalist>
+                            <select name="area" id="select2_tag">
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Vinhomes Golden River") {echo "SELECTED";} ?> value="Vinhomes Golden River">Vinhomes Golden River</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Vinhomes Central Park") {echo "SELECTED";} ?> value="Vinhomes Central Park">Vinhomes Central Park</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Vinhomes Grand Park") {echo "SELECTED";} ?> value="Vinhomes Grand Park">Vinhomes Grand Park</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Estella Height") {echo "SELECTED";} ?> value="Estella Height">Estella Height</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Estella") {echo "SELECTED";} ?> value="Estella">Estella</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Celesta") {echo "SELECTED";} ?> value="Celesta">Celesta</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Thao Dien Green") {echo "SELECTED";} ?> value="Thao Dien Green">Thao Dien Green</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "The Vista An Phu") {echo "SELECTED";} ?> value="The Vista An Phu">The Vista An Phu</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Xi Riverview") {echo "SELECTED";} ?> value="Xi Riverview">Xi Riverview</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "The View Riviera Point") {echo "SELECTED";} ?> value="The View Riviera Point">The View Riviera Point</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "The Infiniti") {echo "SELECTED";} ?> value="The Infiniti">The Infiniti</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Zennity") {echo "SELECTED";} ?> value="Zennity">Zennity</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Celesta Rise") {echo "SELECTED";} ?> value="Celesta Rise">Celesta Rise</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Empire City") {echo "SELECTED";} ?> value="Empire City">Empire City</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Metropole") {echo "SELECTED";} ?> value="Metropole">Metropole</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Palm Heights") {echo "SELECTED";} ?> value="Palm Heights">Palm Heights</option>
+                                <option <?php if($apart_not_rented_by_id['AREA_APART'] == "Sunwah Pearl") {echo "SELECTED";} ?> value="Sunwah Pearl">Sunwah Pearl</option>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
@@ -72,16 +78,15 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <input list="bedroom_list" name="bedroom" value="<?php echo $apart_not_rented_by_id['BEDROOM'] ?>" required>
-                            <datalist id="bedroom_list">
-                                <option value="1 Bed">1 Bed</option>
-                                <option value="2 Bed">2 Bed</option>
-                                <option value="2 Bed + 1">2 Bed + 1</option>
-                                <option value="3 Bed">3 Bed</option>
-                                <option value="3 Bed + 1">3 Bed + 1</option>
-                                <option value="4 Bed">4 Bed</option>
-                                <option value="4 Bed + 1">4 Bed + 1</option>
-                            </datalist>
+                            <select name="bedroom" id="select2_tag">
+                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
+                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "2 Bed") {echo "SELECTED";} ?> value="2 Bed">2 Bed</option>
+                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "2 Bed + 1") {echo "SELECTED";} ?> value="2 Bed + 1">2 Bed + 1</option>
+                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "3 Bed") {echo "SELECTED";} ?> value="3 Bed">3 Bed</option>
+                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "3 Bed + 1") {echo "SELECTED";} ?> value="3 Bed + 1">3 Bed + 1</option>
+                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "4 Bed") {echo "SELECTED";} ?> value="4 Bed">4 Bed</option>
+                                <option <?php if($apart_not_rented_by_id['BEDROOM'] == "4 Bed + 1") {echo "SELECTED";} ?> value="4 Bed + 1">4 Bed + 1</option>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Email</span>
@@ -98,10 +103,10 @@
                         <div class="input-box">
                             <span class="details">Status Apartment</span>
                             <input list="status_apart_list" value="<?php echo $apart_not_rented_by_id['STATUS_APART'] ?>" name="status_apart" required>
-                            <datalist id="status_apart_list">
-                                <option value="Not received the house handover">Not received the house handover</option>
-                                <option value="Received the house handover">Received the house handover</option>
-                            </datalist>
+                            <select name="status_apart" id="select2_tag">
+                                <option <?php if($apart_not_rented_by_id['STATUS_APART'] == "Handover") {echo "SELECTED";} ?> value="Handover">Handover</option>
+                                <option <?php if($apart_not_rented_by_id['STATUS_APART'] == "Not yet handover") {echo "SELECTED";} ?> value="Not yet handover">Not yet handover</option>
+                            </select>
                         </div>  
                         <div class="input-box">
                             <span class="details">Phone</span>

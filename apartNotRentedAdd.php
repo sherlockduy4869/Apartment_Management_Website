@@ -42,20 +42,25 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <input list="area_list" name="area">
-                            <datalist id="area_list">
+                            <select name="area" id="select2_tag">
                                 <option value="Vinhomes Golden River">Vinhomes Golden River</option>
                                 <option value="Vinhomes Central Park">Vinhomes Central Park</option>
+                                <option value="Vinhomes Grand Park">Vinhomes Grand Park</option>
                                 <option value="Estella Height">Estella Height</option>
                                 <option value="Estella">Estella</option>
                                 <option value="Celesta">Celesta</option>
                                 <option value="Thao Dien Green">Thao Dien Green</option>
+                                <option value="The Vista An Phu">The Vista An Phu</option>
+                                <option value="Xi Riverview">Xi Riverview</option>
+                                <option value="The View Riviera Point">The View Riviera Point</option>
                                 <option value="The Infiniti">The Infiniti</option>
                                 <option value="Zennity">Zennity</option>
                                 <option value="Celesta Rise">Celesta Rise</option>
                                 <option value="Empire City">Empire City</option>
                                 <option value="Metropole">Metropole</option>
-                            </datalist>
+                                <option value="Palm Heights">Palm Heights</option>
+                                <option value="Sunwah Pearl">Sunwah Pearl</option>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
@@ -63,8 +68,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <input list="bedroom_list" name="bedroom" required>
-                            <datalist id="bedroom_list">
+                            <select name="bedroom" id="select2_tag">
                                 <option value="1 Bed">1 Bed</option>
                                 <option value="2 Bed">2 Bed</option>
                                 <option value="2 Bed + 1">2 Bed + 1</option>
@@ -72,7 +76,7 @@
                                 <option value="3 Bed + 1">3 Bed + 1</option>
                                 <option value="4 Bed">4 Bed</option>
                                 <option value="4 Bed + 1">4 Bed + 1</option>
-                            </datalist>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Email</span>
@@ -88,11 +92,10 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Status Apartment</span>
-                            <input list="status_apart_list" name="status_apart" required>
-                            <datalist id="status_apart_list">
+                            <select name="status_apart" id="select2_tag">
                                 <option value="Handover">Handover</option>
                                 <option value="Not yet handover">Not yet handover</option>
-                            </datalist>
+                            </select>
                         </div>  
                         <div class="input-box">
                             <span class="details">Phone</span>
