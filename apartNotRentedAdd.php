@@ -42,7 +42,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Area</span>
-                            <select name="area" id="select2_tag">
+                            <select name="area" class="select2_tag">
                                 <option value="Vinhomes Golden River">Vinhomes Golden River</option>
                                 <option value="Vinhomes Central Park">Vinhomes Central Park</option>
                                 <option value="Vinhomes Grand Park">Vinhomes Grand Park</option>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <select name="bedroom" id="select2_tag">
+                            <select name="bedroom" class="select2_tag">
                                 <option value="1 Bed">1 Bed</option>
                                 <option value="2 Bed">2 Bed</option>
                                 <option value="2 Bed + 1">2 Bed + 1</option>
@@ -92,7 +92,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Status Apartment</span>
-                            <select name="status_apart" id="select2_tag">
+                            <select name="status_apart" class="select2_tag">
                                 <option value="Handover">Handover</option>
                                 <option value="Not yet handover">Not yet handover</option>
                             </select>

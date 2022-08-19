@@ -28,5 +28,5 @@ $(document).ready(function () {
     $(".num").counterUp();
 
     //Change format of select tag to select2
-     $('#select2_tag').select2();
+     $('.select2_tag').select2();
 });

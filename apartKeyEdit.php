@@ -51,7 +51,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <select name="bedroom" id="select2_tag">
+                            <select name="bedroom" class="select2_tag">
                                 <option <?php if($get_product['CATEGORY_ID'] == "1 Bed") {echo "SELECTED";} ?> value="1 Bed">1 Bed</option>
                                 <option <?php if($get_product['CATEGORY_ID'] == "2 Bed") {echo "SELECTED";} ?> value="2 Bed">2 Bed</option>
                                 <option <?php if($get_product['CATEGORY_ID'] == "2 Bed + 1") {echo "SELECTED";} ?> value="2 Bed + 1">2 Bed + 1</option>

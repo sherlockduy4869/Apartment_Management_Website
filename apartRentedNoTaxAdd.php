@@ -40,8 +40,7 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment Code</span>
-                            <input <?php if($listApartCode == false){echo 'disabled';} ?> list="apart_code_list" name="apartment_code" required>
-                            <datalist id="apart_code_list">
+                            <select name="apartment_code" id="select2_tag">
                             <?php
                             
                                 if($listApartCode)
@@ -56,7 +55,7 @@
                                     }
                                 }
                             ?>
-                            </datalist>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Name</span>

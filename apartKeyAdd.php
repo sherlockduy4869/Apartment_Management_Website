@@ -42,7 +42,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Bedroom</span>
-                            <select name="bedroom" id="select2_tag">
+                            <select name="bedroom" class="select2_tag">
                                 <option value="1 Bed">1 Bed</option>
                                 <option value="2 Bed">2 Bed</option>
                                 <option value="2 Bed + 1">2 Bed + 1</option>
