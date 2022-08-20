@@ -19,39 +19,32 @@
         }
 
         //Check login
-        public function login_check($adminUser, $adminPassword){
-            $adminUser = $this->fm->validation($adminUser);
-            $adminPassword = $this->fm->validation($adminPassword);
+        public function login_check($user_name, $password){
+            $user_name = $this->fm->validation($user_name);
+            $password = $this->fm->validation($password);
 
-            $adminUser = mysqli_real_escape_string($this->db->link, $adminUser);
-            $adminPassword = mysqli_real_escape_string($this->db->link, $adminPassword);
+            $user_name = mysqli_real_escape_string($this->db->link, $user_name);
+            $password = mysqli_real_escape_string($this->db->link, $password);
 
-            if(empty($adminUser) || empty($adminPassword))
+            $query = "SELECT * FROM tbl_account WHERE USERNAME = '$user_name' AND PASSWORD = '$password' LIMIT 1";
+            $result = $this->db->select($query);
+
+            if($result != false)
             {
-                $alert = "User and password can not be empty";
+                $value = $result->fetch_assoc();
+                Session::set('adminLogin',true);
+                Session::set('adminID',$value['ACCOUNT_ID']);
+                Session::set('adminUser',$value['USERNAME']);
+                Session::set('adminName',$value['NAME']);
+                header('Location:index.php');
+            } 
+            else
+            {
+                $alert = "Wrong User_Name or Password";
                 return $alert;
-            }
-            else 
-            {
-                $query = "SELECT * FROM tbl_account WHERE USERNAME = '$adminUser' AND PASSWORD = '$adminPassword' LIMIT 1";
-                $result = $this->db->select($query);
-
-                if($result != false)
-                {
-                    $value = $result->fetch_assoc();
-                    Session::set('adminLogin',true);
-                    Session::set('adminID',$value['ACCOUNT_ID']);
-                    Session::set('adminUser',$value['USERNAME']);
-                    Session::set('adminName',$value['NAME']);
-                    header('Location:index.php');
-                } 
-                else
-                {
-                    $alert = "Wrong User_Name or Password";
-                    return $alert;
-                }
             }
         }
     }
+    
 
 ?>

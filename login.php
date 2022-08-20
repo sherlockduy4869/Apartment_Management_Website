@@ -1,49 +1,45 @@
 <?php
     ob_start();
-    include $_SERVER['DOCUMENT_ROOT'].'/Class/adminLogin.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/adminLogin.php';
 ?>
 
 <?php
     $adminLogin = new adminLogin();
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $adminUser = $_POST['adminUser'];
-        $adminPassword = md5($_POST['adminPassword']);
+        $user_name = $_POST['user_name'];
+        $password = md5($_POST['password']);
 
-        $loginCheck = $adminLogin -> login_check($adminUser,$adminPassword);
+        $loginCheck = $adminLogin->login_check($user_name,$password);
     }
 ?>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="./Resource/css/style.css">
+    <link rel="stylesheet" href="/Resource/css/styleLogin.css?v=<?php echo time(); ?>">
+    <title>QSDECOR</title>
 </head>
 <body>
-
-    <!--NAVIGATION AREA-->
-    <section class="login-area">
-        <div class="login-box">
-            <h1>Login</h1> 
+    <section>
+        <div class="form-container">
+            <h1>BETTER HOMES</h1>
             <span><?php if(isset($loginCheck)){echo $loginCheck;} ?></span>
             <form action="login.php" method="POST">
-                <div class="text-field">
-                    <input required type="text" name="adminUser"> 
-                    <span></span>
-                    <label for="">User Name</label>
+                <div class="control">
+                    <label for="user_name">UserName</label>
+                    <input required type="text" name="user_name">
                 </div>
-                <div class="text-field">
-                    <input required type="password" name="adminPassword"> 
-                    <span></span>
-                    <label for="">Password</label>
+                <div class="control">
+                    <label for="password">Password</label>
+                    <input required type="password" name="password">
                 </div>
-                <input class="login-btn" type="submit" value="Login">
+                <div class="control">
+                    <input type="submit" name="submit" value="LOGIN">
+                </div>
             </form>
         </div>
     </section>
-
 </body>
 </html>

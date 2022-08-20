@@ -46,7 +46,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Level</span>
-                            <select name="level">
+                            <select name="level" class="select2_tag">
                                 <option value="0">Admin</option>
                                 <option value="1">Employee</option>
                             </select>
