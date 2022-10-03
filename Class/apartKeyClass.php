@@ -25,6 +25,8 @@
             $door_pass = mysqli_real_escape_string($this->db->link, $data['door_pass']);
             $management_fee = mysqli_real_escape_string($this->db->link, $data['management_fee']);
 
+            $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
+
             $wifi_pass = mysqli_real_escape_string($this->db->link, $data['wifi_pass']);
             $electric_code = mysqli_real_escape_string($this->db->link, $data['electric_code']);
             $pn1 = mysqli_real_escape_string($this->db->link, $data['pn1']);
@@ -59,11 +61,11 @@
                 $fee_management =  str_replace(",","",$management_fee);
             }
 
-            $query = "INSERT INTO tbl_apartment_key_detail(APARTMENT_CODE,PROJECT,BEDROOM,DOOR_PASS,
+            $query = "INSERT INTO tbl_apartment_key_detail(APARTMENT_CODE,PROJECT,BEDROOM,HOUSE_OWNER,DOOR_PASS,
             WIFI_PASS,MANAGEMENT_FEE,ELECTRIC_CODE,INTERNET_CODE,PN1,PN2,PN3,PN4,KHO,LO_GIA,
             BALCONY,THE_CU_DAN,CHIA_KHOA_CO,THE_TU_LON,THE_TU_NHO,KEY_HOM_THU,REMOTE_DIEU_HOA,INTERNET_NOTE,
             THE_CU_DAN_NOTE,CHIA_KHOA_CO_NOTE,THE_TU_LON_NOTE,THE_TU_NHO_NOTE,KEY_HOM_THU_NOTE,REMOTE_DIEU_HOA_NOTE,OTHER_NOTE) 
-                  VALUES('$apartment_code','$project','$bedroom','$door_pass','$wifi_pass','$fee_management',
+                  VALUES('$apartment_code','$project','$bedroom','$house_owner','$door_pass','$wifi_pass','$fee_management',
                   '$electric_code','$internet_code','$pn1','$pn2','$pn3','$pn4',
                   '$kho','$lo_gia','$balcony','$the_cu_dan','$chia_khoa_co','$the_tu_lon','$the_tu_nho',
                   '$key_hom_thu','$remote_dieu_hoa','$internet_note','$the_cu_dan_note','$chia_khoa_co_note',
@@ -109,6 +111,8 @@
             $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
             $door_pass = mysqli_real_escape_string($this->db->link, $data['door_pass']);
             $management_fee = mysqli_real_escape_string($this->db->link, $data['management_fee']);
+            
+            $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
 
             $wifi_pass = mysqli_real_escape_string($this->db->link, $data['wifi_pass']);
             $electric_code = mysqli_real_escape_string($this->db->link, $data['electric_code']);
@@ -147,6 +151,7 @@
             $query = "UPDATE tbl_apartment_key_detail SET
                     PROJECT = '$project'
                     ,BEDROOM = '$bedroom'
+                    ,HOUSE_OWNER='$house_owner'
                     ,DOOR_PASS = '$door_pass'
                     ,WIFI_PASS = '$wifi_pass'
                     ,MANAGEMENT_FEE = '$fee_management'

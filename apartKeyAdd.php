@@ -41,6 +41,14 @@
                             <input type="text" name="project">
                         </div>
                         <div class="input-box">
+                            <span class="details">House owner</span>
+                            <input type="text" name="house_owner" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Door Pass</span>
+                            <input type="text" name="door_pass" >
+                        </div>
+                        <div class="input-box">
                             <span class="details">Bedroom</span>
                             <select name="bedroom" class="select2_tag">
                                 <option value="1 Bed">1 Bed</option>
@@ -51,50 +59,50 @@
                                 <option value="4 Bed">4 Bed</option>
                                 <option value="4 Bed + 1">4 Bed + 1</option>
                             </select>
-                        </div>
+                        </div> 
                         <div class="input-box">
-                            <span class="details">Door Pass</span>
-                            <input type="text" name="door_pass" >
+                            <span class="details">Wifi Pass</span>
+                            <input type="text" name="wifi_pass">
                         </div>
                         <div class="input-box">
                             <span class="details">Management Fee</span>
                             <input class="management_fee" type="text" name="management_fee" >
-                        </div>   
+                        </div>  
                         <div class="input-box">
-                            <span class="details">Wifi Pass</span>
-                            <input type="text" name="wifi_pass">
+                            <span class="details">Key PN1</span>
+                            <input type="text" name="pn1">
                         </div>
                         <div class="input-box">
                             <span class="details">Electric Code</span>
                             <input type="text" name="electric_code">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key PN1</span>
-                            <input type="text" name="pn1">
+                            <span class="details">Key PN2</span>
+                            <input type="text" name="pn2">
                         </div>
                         <div class="input-box">
                             <span class="details">Key Kho</span>
                             <input type="text" name="kho">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key PN2</span>
-                            <input type="text" name="pn2">
+                            <span class="details">Key PN3</span>
+                            <input type="text" name="pn3">
                         </div>
                         <div class="input-box">
                             <span class="details">Key Lo Gia</span>
                             <input type="text" name="lo_gia">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key PN3</span>
-                            <input type="text" name="pn3">
+                            <span class="details">Key PN4</span>
+                            <input type="text" name="pn4">
                         </div>
                         <div class="input-box">
                             <span class="details">Key Balcony</span>
                             <input type="text" name="balcony">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key PN4</span>
-                            <input type="text" name="pn4">
+                            <span class="details"></span>
+                            <input type="hidden">
                         </div>
                         <div class="input-box">
                             <span class="details">The Cu Dan</span>

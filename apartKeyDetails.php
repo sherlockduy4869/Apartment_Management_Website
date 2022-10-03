@@ -38,59 +38,67 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Project</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['PROJECT'] ?>">
+                            <input type="text" value="<?php echo $apart_key_by_id['PROJECT'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Bedroom</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['BEDROOM'] ?>">
+                            <span class="details">House owner</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['HOUSE_OWNER'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Door Pass</span>
                             <input  type="text" value="<?php echo $apart_key_by_id['DOOR_PASS'] ?>" >
                         </div>
                         <div class="input-box">
-                            <span class="details">Management Fee</span>
-                            <input  class="management_fee" type="text" value="<?php echo $apart_key_by_id['MANAGEMENT_FEE'] ?>" >
-                        </div>   
+                            <span class="details">Bedroom</span>
+                            <input  type="text" value="<?php echo $apart_key_by_id['BEDROOM'] ?>">
+                        </div>
                         <div class="input-box">
                             <span class="details">Wifi Pass</span>
                             <input  type="text" value="<?php echo $apart_key_by_id['WIFI_PASS'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Electric Code</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['ELECTRIC_CODE'] ?>">
+                            <span class="details">Management Fee</span>
+                            <input  class="management_fee" type="text" value="<?php echo $apart_key_by_id['MANAGEMENT_FEE'] ?>" >
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN1</span>
                             <input  type="text" value="<?php echo $apart_key_by_id['PN1'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key Kho</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['KHO'] ?>">
+                            <span class="details">Electric Code</span>
+                            <input  type="text" value="<?php echo $apart_key_by_id['ELECTRIC_CODE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN2</span>
                             <input  type="text" value="<?php echo $apart_key_by_id['PN2'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key Lo Gia</span>
-                            <input type="text" value="<?php echo $apart_key_by_id['LO_GIA'] ?>">
+                            <span class="details">Key Kho</span>
+                            <input  type="text" value="<?php echo $apart_key_by_id['KHO'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN3</span>
                             <input  type="text" value="<?php echo $apart_key_by_id['PN3'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key Balcony</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['BALCONY'] ?>">
+                            <span class="details">Key Lo Gia</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['LO_GIA'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN4</span>
                             <input  type="text" value="<?php echo $apart_key_by_id['PN4'] ?>">
                         </div>
                         <div class="input-box">
+                            <span class="details">Key Balcony</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['BALCONY'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details"></span>
+                            <input type="hidden">
+                        </div>
+                        <div class="input-box">
                             <span class="details">The Cu Dan</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['THE_CU_DAN'] ?>">
+                            <input type="text" value="<?php echo $apart_key_by_id['THE_CU_DAN'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Note</span>
