@@ -504,7 +504,8 @@ form .debit-note-list .debit_note input{
 
 .container form .note{
     height: 75px;
-    margin-bottom: 5px;
+    margin-bottom: 45px;
+    width: 100%;
 }
 
 
@@ -526,6 +527,12 @@ form .debit-note-list .debit_note input{
 .container form .button button a{
     text-decoration: none;
     color: #fff;
+}
+
+.container form .note .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
 }
 
 .container form .note .selling_note{

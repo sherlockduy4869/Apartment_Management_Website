@@ -69,28 +69,58 @@
                             <input class="management_fee" type="text" name="management_fee" >
                         </div>  
                         <div class="input-box">
+                            <span class="details">Electric Code</span>
+                            <input type="text" name="electric_code">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Internet Code</span>
+                            <textarea name="internet_code"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Internet Note</span>
+                            <textarea name="internet_note"></textarea>
+                        </div>
+                        
+                        <div class="input-box">
+                            <span style="color: red;" class="details">Key stored in Office:</span>
+                            <input type="hidden">
+                        </div>
+                        <div class="input-box">
+                            <span style="color: red;" class="details">Key handover for customer: </span>
+                            <input type="hidden">
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details">Chia Khoa Co</span>
+                            <input type="text" name="chia_khoa_co">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Chia Khoa Co</span>
+                            <input type="text" name="chia_khoa_co">
+                        </div>
+                        <div class="input-box">
                             <span class="details">Key PN1</span>
                             <input type="text" name="pn1">
                         </div>
                         <div class="input-box">
-                            <span class="details">Electric Code</span>
-                            <input type="text" name="electric_code">
+                            <span class="details">Key PN1</span>
+                            <input type="text" name="pn1">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN2</span>
                             <input type="text" name="pn2">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key Kho</span>
-                            <input type="text" name="kho">
+                            <span class="details">Key PN2</span>
+                            <input type="text" name="pn2">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN3</span>
                             <input type="text" name="pn3">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key Lo Gia</span>
-                            <input type="text" name="lo_gia">
+                            <span class="details">Key PN3</span>
+                            <input type="text" name="pn3">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN4</span>
@@ -101,68 +131,60 @@
                             <input type="text" name="balcony">
                         </div>
                         <div class="input-box">
-                            <span class="details"></span>
+                            <span class="details">MailBox</span>
+                            <input type="text" name="mail_box">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">MailBox</span>
+                            <input type="text" name="mail_box">
+                        </div>
+
+                        <div class="note">
+                        <span class="details">Note for key</span>
+                        <textarea class="selling_note" name="other_note" cols="30" rows="10"></textarea>
+                        </div>
+
+                        <div class="input-box">
+                            <span style="color: red;" class="details">Card stored in Office:</span>
                             <input type="hidden">
                         </div>
                         <div class="input-box">
-                            <span class="details">The Cu Dan</span>
-                            <input type="text" name="the_cu_dan">
+                            <span style="color: red;" class="details">Card handover for customer: </span>
+                            <input type="hidden">
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details">The Thang May</span>
+                            <input type="text" name="the_tu_lon">
                         </div>
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="the_cu_dan_note"></textarea>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Chia Khoa Co</span>
-                            <input type="text" name="chia_khoa_co">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="chia_khoa_co_note"></textarea>
+                            <span class="details">The Thang May</span>
+                            <input type="text" name="the_tu_lon">
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Lon</span>
                             <input type="text" name="the_tu_lon">
                         </div>
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="the_tu_lon_note"></textarea>
+                            <span class="details">The Tu Lon</span>
+                            <input type="text" name="the_tu_lon">
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Nho</span>
                             <input type="text" name="the_tu_nho">
                         </div>
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="the_tu_nho_note"></textarea>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Key Hom Thu</span>
-                            <input type="text" name="key_hom_thu">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="key_hom_thu_note"></textarea>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Remote Dieu Hoa</span>
-                            <input type="text" name="remote_dieu_hoa">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="remote_dieu_hoa_note"></textarea>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Internet Code</span>
-                            <input type="text" name="internet_code">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="internet_note"></textarea>
+                            <span class="details">The Tu Nho</span>
+                            <input type="text" name="the_tu_nho">
                         </div>
                     </div>
                     <div class="note">
-                        <textarea class="selling_note" placeholder="Other note here" name="other_note" cols="30" rows="10"></textarea>
+                        <span class="details">Remote Dieu Hoa</span>
+                        <textarea class="selling_note" name="other_note" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="note">
+                        <span class="details">Other Note</span>
+                        <textarea class="selling_note" name="other_note" cols="30" rows="10"></textarea>
                     </div>
                     <?php 
                     if(isset($keyAdd))
