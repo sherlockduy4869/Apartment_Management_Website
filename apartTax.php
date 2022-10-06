@@ -91,7 +91,7 @@
                             <p><?php echo number_format($result['TOTAL_AMOUNT']);?><sup>đ</sup></p>
                         </td>
                         <td class="role">
-                            <p><?php echo $result['STATUS_APART'];?></p>
+                            <p style="color: <?php if($result['STATUS_APART'] != 'Collected'){ echo 'red';}?>; font-weight: <?php if($result['STATUS_APART'] != 'Collected'){ echo 'bold';}?>;"><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
                             <a href="apartTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a><br><a style="color: #363949;" href="financeApart.php?apartCode=<?php echo $result['APARTMENT_CODE'];?>">Finance</a>
