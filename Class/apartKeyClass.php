@@ -21,39 +21,52 @@
 
             $apartment_code = mysqli_real_escape_string($this->db->link, $data['apartment_code']);
             $project = mysqli_real_escape_string($this->db->link, $data['project']);
-            $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
-            $door_pass = mysqli_real_escape_string($this->db->link, $data['door_pass']);
-            $management_fee = mysqli_real_escape_string($this->db->link, $data['management_fee']);
 
             $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
+            $door_pass = mysqli_real_escape_string($this->db->link, $data['door_pass']);
 
+            $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
             $wifi_pass = mysqli_real_escape_string($this->db->link, $data['wifi_pass']);
-            $electric_code = mysqli_real_escape_string($this->db->link, $data['electric_code']);
-            $pn1 = mysqli_real_escape_string($this->db->link, $data['pn1']);
-            $pn2 = mysqli_real_escape_string($this->db->link, $data['pn2']);
-            $kho = mysqli_real_escape_string($this->db->link, $data['kho']);
-            $pn3 = mysqli_real_escape_string($this->db->link, $data['pn3']);
-            $lo_gia = mysqli_real_escape_string($this->db->link, $data['lo_gia']);
 
-            $pn4 = mysqli_real_escape_string($this->db->link, $data['pn4']);
-            $balcony = mysqli_real_escape_string($this->db->link, $data['balcony']);
+            $management_fee = mysqli_real_escape_string($this->db->link, $data['management_fee']);
+            $electric_code = mysqli_real_escape_string($this->db->link, $data['electric_code']);
+
             $internet_code = mysqli_real_escape_string($this->db->link, $data['internet_code']);
             $internet_note = mysqli_real_escape_string($this->db->link, $data['internet_note']);
-            $the_cu_dan = mysqli_real_escape_string($this->db->link, $data['the_cu_dan']);
-            $the_cu_dan_note = mysqli_real_escape_string($this->db->link, $data['the_cu_dan_note']);
 
-            $chia_khoa_co = mysqli_real_escape_string($this->db->link, $data['chia_khoa_co']);
-            $chia_khoa_co_note = mysqli_real_escape_string($this->db->link, $data['chia_khoa_co_note']);
-            $the_tu_lon = mysqli_real_escape_string($this->db->link, $data['the_tu_lon']);
+            $chia_khoa_co_office = mysqli_real_escape_string($this->db->link, $data['chia_khoa_co_office']);
+            $chia_khoa_co_customer = mysqli_real_escape_string($this->db->link, $data['chia_khoa_co_customer']);
 
-            $the_tu_lon_note = mysqli_real_escape_string($this->db->link, $data['the_tu_lon_note']);
-            $the_tu_nho = mysqli_real_escape_string($this->db->link, $data['the_tu_nho']);
-            $the_tu_nho_note = mysqli_real_escape_string($this->db->link, $data['the_tu_nho_note']);
-            $key_hom_thu = mysqli_real_escape_string($this->db->link, $data['key_hom_thu']);
-            $key_hom_thu_note = mysqli_real_escape_string($this->db->link, $data['key_hom_thu_note']);
+            $pn1_office = mysqli_real_escape_string($this->db->link, $data['pn1_office']);
+            $pn1_customer = mysqli_real_escape_string($this->db->link, $data['pn1_customer']);
+
+            $pn2_office = mysqli_real_escape_string($this->db->link, $data['pn2_office']);
+            $pn2_customer = mysqli_real_escape_string($this->db->link, $data['pn2_customer']);
+
+            $pn3_office = mysqli_real_escape_string($this->db->link, $data['pn3_office']);
+            $pn3_customer = mysqli_real_escape_string($this->db->link, $data['pn3_customer']);
+
+            $pn4_office = mysqli_real_escape_string($this->db->link, $data['pn4_office']);
+            $pn4_customer = mysqli_real_escape_string($this->db->link, $data['pn4_customer']);
+
+            $balcony_office = mysqli_real_escape_string($this->db->link, $data['balcony_office']);
+            $balcony_customer = mysqli_real_escape_string($this->db->link, $data['balcony_customer']);
+
+            $mail_box_office = mysqli_real_escape_string($this->db->link, $data['mail_box_office']);
+            $mail_box_customer = mysqli_real_escape_string($this->db->link, $data['mail_box_customer']);
+
+            $note_for_key = mysqli_real_escape_string($this->db->link, $data['note_for_key']);
+
+            $the_thang_may_office = mysqli_real_escape_string($this->db->link, $data['the_thang_may_office']);
+            $the_thang_may_customer = mysqli_real_escape_string($this->db->link, $data['the_thang_may_customer']);
+
+            $the_tu_lon_office = mysqli_real_escape_string($this->db->link, $data['the_tu_lon_office']);
+            $the_tu_lon_customer = mysqli_real_escape_string($this->db->link, $data['the_tu_lon_customer']);
+            
+            $the_tu_nho_office = mysqli_real_escape_string($this->db->link, $data['the_tu_nho_office']);
+            $the_tu_nho_customer = mysqli_real_escape_string($this->db->link, $data['the_tu_nho_customer']);
+
             $remote_dieu_hoa = mysqli_real_escape_string($this->db->link, $data['remote_dieu_hoa']);
-            $remote_dieu_hoa_note = mysqli_real_escape_string($this->db->link, $data['remote_dieu_hoa_note']);
-
             $other_note = mysqli_real_escape_string($this->db->link, $data['other_note']);
 
             $fee_management = 0;
@@ -61,15 +74,18 @@
                 $fee_management =  str_replace(",","",$management_fee);
             }
 
-            $query = "INSERT INTO tbl_apartment_key_detail(APARTMENT_CODE,PROJECT,BEDROOM,HOUSE_OWNER,DOOR_PASS,
-            WIFI_PASS,MANAGEMENT_FEE,ELECTRIC_CODE,INTERNET_CODE,PN1,PN2,PN3,PN4,KHO,LO_GIA,
-            BALCONY,THE_CU_DAN,CHIA_KHOA_CO,THE_TU_LON,THE_TU_NHO,KEY_HOM_THU,REMOTE_DIEU_HOA,INTERNET_NOTE,
-            THE_CU_DAN_NOTE,CHIA_KHOA_CO_NOTE,THE_TU_LON_NOTE,THE_TU_NHO_NOTE,KEY_HOM_THU_NOTE,REMOTE_DIEU_HOA_NOTE,OTHER_NOTE) 
-                  VALUES('$apartment_code','$project','$bedroom','$house_owner','$door_pass','$wifi_pass','$fee_management',
-                  '$electric_code','$internet_code','$pn1','$pn2','$pn3','$pn4',
-                  '$kho','$lo_gia','$balcony','$the_cu_dan','$chia_khoa_co','$the_tu_lon','$the_tu_nho',
-                  '$key_hom_thu','$remote_dieu_hoa','$internet_note','$the_cu_dan_note','$chia_khoa_co_note',
-                  '$the_tu_lon_note','$the_tu_nho_note','$key_hom_thu_note','$remote_dieu_hoa_note','$other_note')";
+            $query = "INSERT INTO tbl_apartment_key_detail(APARTMENT_CODE,PROJECT,HOUSE_OWNER,DOOR_PASS,BEDROOM,
+            WIFI_PASS,MANAGEMENT_FEE,ELECTRIC_CODE,INTERNET_CODE,INTERNET_NOTE,CHIA_KHOA_CO_OFFICE,
+            PN1_OFFICE,PN2_OFFICE,PN3_OFFICE,PN4_OFFICE,BALCONY_OFFICE,MAILBOX_OFFICE,
+            CHIA_KHOA_CO_CUSTOMER,PN1_CUSTOMER,PN2_CUSTOMER,PN3_CUSTOMER,PN4_CUSTOMER,BALCONY_CUSTOMER,MAILBOX_CUSTOMER,
+            NOTE_FOR_KEY,THE_THANG_MAY_OFFICE,THE_TU_LON_OFFICE,THE_TU_NHO_OFFICE,
+            THE_THANG_MAY_CUSTOMER,THE_TU_LON_CUSTOMER,THE_TU_NHO_CUSTOMER,REMOTE_DIEU_HOA,OTHER_NOTE) 
+                  VALUES('$apartment_code','$project','$house_owner','$door_pass','$bedroom','$wifi_pass','$fee_management',
+                  '$electric_code','$internet_code','$internet_note','$chia_khoa_co_office','$pn1_office','$pn2_office',
+                  '$pn3_office','$pn4_office','$balcony_office','$mail_box_office','$chia_khoa_co_customer','$pn1_customer',
+                  '$pn2_customer','$pn3_customer','$pn4_customer','$balcony_customer','$mail_box_customer','$note_for_key',
+                  '$the_thang_may_office','$the_tu_lon_office','$the_tu_nho_office','$the_thang_may_customer','$the_tu_lon_customer'
+                  ,'$the_tu_nho_customer','$remote_dieu_hoa','$other_note')";
             $result = $this->db->insert($query);
 
             if($result){
@@ -106,41 +122,53 @@
 
         //Edit infor apartment selling
         public function edit_apart_key($data, $apart_key_id){
-
             $project = mysqli_real_escape_string($this->db->link, $data['project']);
-            $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
-            $door_pass = mysqli_real_escape_string($this->db->link, $data['door_pass']);
-            $management_fee = mysqli_real_escape_string($this->db->link, $data['management_fee']);
-            
+
             $house_owner = mysqli_real_escape_string($this->db->link, $data['house_owner']);
+            $door_pass = mysqli_real_escape_string($this->db->link, $data['door_pass']);
 
+            $bedroom = mysqli_real_escape_string($this->db->link, $data['bedroom']);
             $wifi_pass = mysqli_real_escape_string($this->db->link, $data['wifi_pass']);
-            $electric_code = mysqli_real_escape_string($this->db->link, $data['electric_code']);
-            $pn1 = mysqli_real_escape_string($this->db->link, $data['pn1']);
-            $pn2 = mysqli_real_escape_string($this->db->link, $data['pn2']);
-            $kho = mysqli_real_escape_string($this->db->link, $data['kho']);
-            $pn3 = mysqli_real_escape_string($this->db->link, $data['pn3']);
-            $lo_gia = mysqli_real_escape_string($this->db->link, $data['lo_gia']);
 
-            $pn4 = mysqli_real_escape_string($this->db->link, $data['pn4']);
-            $balcony = mysqli_real_escape_string($this->db->link, $data['balcony']);
+            $management_fee = mysqli_real_escape_string($this->db->link, $data['management_fee']);
+            $electric_code = mysqli_real_escape_string($this->db->link, $data['electric_code']);
+
             $internet_code = mysqli_real_escape_string($this->db->link, $data['internet_code']);
             $internet_note = mysqli_real_escape_string($this->db->link, $data['internet_note']);
-            $the_cu_dan = mysqli_real_escape_string($this->db->link, $data['the_cu_dan']);
-            $the_cu_dan_note = mysqli_real_escape_string($this->db->link, $data['the_cu_dan_note']);
 
-            $chia_khoa_co = mysqli_real_escape_string($this->db->link, $data['chia_khoa_co']);
-            $chia_khoa_co_note = mysqli_real_escape_string($this->db->link, $data['chia_khoa_co_note']);
-            $the_tu_lon = mysqli_real_escape_string($this->db->link, $data['the_tu_lon']);
+            $chia_khoa_co_office = mysqli_real_escape_string($this->db->link, $data['chia_khoa_co_office']);
+            $chia_khoa_co_customer = mysqli_real_escape_string($this->db->link, $data['chia_khoa_co_customer']);
 
-            $the_tu_lon_note = mysqli_real_escape_string($this->db->link, $data['the_tu_lon_note']);
-            $the_tu_nho = mysqli_real_escape_string($this->db->link, $data['the_tu_nho']);
-            $the_tu_nho_note = mysqli_real_escape_string($this->db->link, $data['the_tu_nho_note']);
-            $key_hom_thu = mysqli_real_escape_string($this->db->link, $data['key_hom_thu']);
-            $key_hom_thu_note = mysqli_real_escape_string($this->db->link, $data['key_hom_thu_note']);
+            $pn1_office = mysqli_real_escape_string($this->db->link, $data['pn1_office']);
+            $pn1_customer = mysqli_real_escape_string($this->db->link, $data['pn1_customer']);
+
+            $pn2_office = mysqli_real_escape_string($this->db->link, $data['pn2_office']);
+            $pn2_customer = mysqli_real_escape_string($this->db->link, $data['pn2_customer']);
+
+            $pn3_office = mysqli_real_escape_string($this->db->link, $data['pn3_office']);
+            $pn3_customer = mysqli_real_escape_string($this->db->link, $data['pn3_customer']);
+
+            $pn4_office = mysqli_real_escape_string($this->db->link, $data['pn4_office']);
+            $pn4_customer = mysqli_real_escape_string($this->db->link, $data['pn4_customer']);
+
+            $balcony_office = mysqli_real_escape_string($this->db->link, $data['balcony_office']);
+            $balcony_customer = mysqli_real_escape_string($this->db->link, $data['balcony_customer']);
+
+            $mail_box_office = mysqli_real_escape_string($this->db->link, $data['mail_box_office']);
+            $mail_box_customer = mysqli_real_escape_string($this->db->link, $data['mail_box_customer']);
+
+            $note_for_key = mysqli_real_escape_string($this->db->link, $data['note_for_key']);
+
+            $the_thang_may_office = mysqli_real_escape_string($this->db->link, $data['the_thang_may_office']);
+            $the_thang_may_customer = mysqli_real_escape_string($this->db->link, $data['the_thang_may_customer']);
+
+            $the_tu_lon_office = mysqli_real_escape_string($this->db->link, $data['the_tu_lon_office']);
+            $the_tu_lon_customer = mysqli_real_escape_string($this->db->link, $data['the_tu_lon_customer']);
+            
+            $the_tu_nho_office = mysqli_real_escape_string($this->db->link, $data['the_tu_nho_office']);
+            $the_tu_nho_customer = mysqli_real_escape_string($this->db->link, $data['the_tu_nho_customer']);
+
             $remote_dieu_hoa = mysqli_real_escape_string($this->db->link, $data['remote_dieu_hoa']);
-            $remote_dieu_hoa_note = mysqli_real_escape_string($this->db->link, $data['remote_dieu_hoa_note']);
-
             $other_note = mysqli_real_escape_string($this->db->link, $data['other_note']);
 
             $fee_management = 0;
@@ -150,37 +178,43 @@
 
             $query = "UPDATE tbl_apartment_key_detail SET
                     PROJECT = '$project'
+                    ,HOUSE_OWNER = '$house_owner'
+                    ,DOOR_PASS='$door_pass'
                     ,BEDROOM = '$bedroom'
-                    ,HOUSE_OWNER='$house_owner'
-                    ,DOOR_PASS = '$door_pass'
                     ,WIFI_PASS = '$wifi_pass'
                     ,MANAGEMENT_FEE = '$fee_management'
                     ,ELECTRIC_CODE = '$electric_code'
                     ,INTERNET_CODE = '$internet_code'
-                    ,PN1 = '$pn1'
-                    ,PN2 = '$pn2'
-                    ,PN3 = '$pn3'
-                    ,PN4 = '$pn4'
-                    ,KHO = '$kho'
-                    ,LO_GIA = '$lo_gia'
-                    ,BALCONY = '$balcony'
-
-                    ,THE_CU_DAN = '$the_cu_dan'
-                    ,CHIA_KHOA_CO = '$chia_khoa_co'
-                    ,THE_TU_LON = '$the_tu_lon'
-                    ,THE_TU_NHO = '$the_tu_nho'
-
-                    ,KEY_HOM_THU = '$key_hom_thu'
-                    ,REMOTE_DIEU_HOA = '$remote_dieu_hoa'
-
                     ,INTERNET_NOTE = '$internet_note'
-                    ,THE_CU_DAN_NOTE = '$the_cu_dan_note'
-                    ,CHIA_KHOA_CO_NOTE = '$chia_khoa_co_note'
-                    ,THE_TU_LON_NOTE = '$the_tu_lon_note'
-                    ,THE_TU_NHO_NOTE = '$the_tu_nho_note'
-                    ,KEY_HOM_THU_NOTE = '$key_hom_thu_note'
-                    ,REMOTE_DIEU_HOA_NOTE = '$remote_dieu_hoa_note'
+                    ,CHIA_KHOA_CO_OFFICE = '$chia_khoa_co_office'
+                    ,PN1_OFFICE = '$pn1_office'
+                    ,PN2_OFFICE = '$pn2_office'
+                    ,PN3_OFFICE = '$pn3_office'
+                    ,PN4_OFFICE = '$pn4_office'
+                    ,BALCONY_OFFICE = '$balcony_office'
+                    ,MAILBOX_OFFICE = '$mail_box_office'
+
+                    ,CHIA_KHOA_CO_CUSTOMER = '$chia_khoa_co_customer'
+                    ,PN1_CUSTOMER = '$pn1_customer'
+                    ,PN2_CUSTOMER = '$pn2_customer'
+                    ,PN3_CUSTOMER = '$pn3_customer'
+                    ,PN4_CUSTOMER = '$pn4_customer'
+                    ,BALCONY_CUSTOMER = '$balcony_customer'
+                    ,MAILBOX_CUSTOMER = '$mail_box_customer'
+
+                    ,NOTE_FOR_KEY = '$note_for_key'
+
+                    ,THE_THANG_MAY_OFFICE = '$the_thang_may_office'
+                    ,THE_TU_LON_OFFICE = '$the_tu_lon_office'
+                    ,THE_TU_NHO_OFFICE = '$the_tu_nho_office'
+
+                    ,THE_THANG_MAY_CUSTOMER = '$the_thang_may_customer'
+                    ,THE_TU_LON_CUSTOMER = '$the_tu_lon_customer'
+                    ,THE_TU_NHO_CUSTOMER = '$the_tu_nho_customer'
+
+                    ,REMOTE_DIEU_HOA = '$remote_dieu_hoa'
                     ,OTHER_NOTE = '$other_note'
+
                     WHERE APARTMENT_CODE ='$apart_key_id'";
 
             $result = $this->db->update($query);

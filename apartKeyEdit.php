@@ -47,7 +47,28 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Project</span>
-                            <input type="text" name="project" value="<?php echo $apart_key_by_id['PROJECT'] ?>">
+                            <select name="project" class="select2_tag">
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Vinhomes Golden River") {echo "SELECTED";} ?> value="Vinhomes Golden River">Vinhomes Golden River</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Vinhomes Central Park") {echo "SELECTED";} ?> value="Vinhomes Central Park">Vinhomes Central Park</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Vinhomes Grand Park") {echo "SELECTED";} ?> value="Vinhomes Grand Park">Vinhomes Grand Park</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Estella Height") {echo "SELECTED";} ?> value="Estella Height">Estella Height</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "The Estella") {echo "SELECTED";} ?> value="The Estella">The Estella</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Celesta") {echo "SELECTED";} ?> value="Celesta">Celesta</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Thao Dien Green") {echo "SELECTED";} ?> value="Thao Dien Green">Thao Dien Green</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "The Vista An Phu") {echo "SELECTED";} ?> value="The Vista An Phu">The Vista An Phu</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Xi Riverview") {echo "SELECTED";} ?> value="Xi Riverview">Xi Riverview</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "The View Riviera Point") {echo "SELECTED";} ?> value="The View Riviera Point">The View Riviera Point</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "The Infiniti") {echo "SELECTED";} ?> value="The Infiniti">The Infiniti</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Zennity") {echo "SELECTED";} ?> value="Zennity">Zennity</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Celesta Rise") {echo "SELECTED";} ?> value="Celesta Rise">Celesta Rise</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Empire City") {echo "SELECTED";} ?> value="Empire City">Empire City</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Metropole") {echo "SELECTED";} ?> value="Metropole">Metropole</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Palm Heights") {echo "SELECTED";} ?> value="Palm Heights">Palm Heights</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Sunwah Pearl") {echo "SELECTED";} ?> value="Sunwah Pearl">Sunwah Pearl</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Sun Avenue") {echo "SELECTED";} ?> value="Sun Avenue">Sun Avenue</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Saigon Pearl") {echo "SELECTED";} ?> value="Saigon Pearl">Saigon Pearl</option>
+                                <option <?php if($apart_key_by_id['PROJECT'] == "Other") {echo "SELECTED";} ?> value="Other">Other</option>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
@@ -78,97 +99,126 @@
                             <input class="management_fee" type="text" name="management_fee" value="<?php echo $apart_key_by_id['MANAGEMENT_FEE'] ?>" >
                         </div>   
                         <div class="input-box">
-                            <span class="details">Key PN1</span>
-                            <input type="text" name="pn1" value="<?php echo $apart_key_by_id['PN1'] ?>">
-                        </div>
-                        <div class="input-box">
                             <span class="details">Electric Code</span>
                             <input type="text" name="electric_code" value="<?php echo $apart_key_by_id['ELECTRIC_CODE'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key PN2</span>
-                            <input type="text" name="pn2" value="<?php echo $apart_key_by_id['PN2'] ?>">
+                            <span class="details">Internet Code</span>
+                            <textarea name="internet_code"><?php echo $apart_key_by_id['INTERNET_CODE'] ?></textarea>
                         </div>
                         <div class="input-box">
-                            <span class="details">Key Kho</span>
-                            <input type="text" name="kho" value="<?php echo $apart_key_by_id['KHO'] ?>">
+                            <span class="details">Internet Note</span>
+                            <textarea name="internet_note"><?php echo $apart_key_by_id['INTERNET_NOTE'] ?></textarea>
                         </div>
+
                         <div class="input-box">
-                            <span class="details">Key PN3</span>
-                            <input type="text" name="pn3" value="<?php echo $apart_key_by_id['PN3'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Key Lo Gia</span>
-                            <input type="text" name="lo_gia" value="<?php echo $apart_key_by_id['LO_GIA'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Key PN4</span>
-                            <input type="text" name="pn4" value="<?php echo $apart_key_by_id['PN4'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Key Balcony</span>
-                            <input type="text" name="balcony" value="<?php echo $apart_key_by_id['BALCONY'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details"></span>
+                            <span style="color: red;" class="details">Key stored in Office:</span>
                             <input type="hidden">
                         </div>
                         <div class="input-box">
-                            <span class="details">The Cu Dan</span>
-                            <input type="text" name="the_cu_dan" value="<?php echo $apart_key_by_id['THE_CU_DAN'] ?>">
+                            <span style="color: red;" class="details">Key handover for customer: </span>
+                            <input type="hidden">
                         </div>
+
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="the_cu_dan_note"><?php echo $apart_key_by_id['THE_CU_DAN_NOTE'] ?></textarea>
+                            <span class="details">Chia Khoa Co</span>
+                            <input type="text" name="chia_khoa_co_office" value="<?php echo $apart_key_by_id['CHIA_KHOA_CO_OFFICE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Chia Khoa Co</span>
-                            <input type="text" name="chia_khoa_co" value="<?php echo $apart_key_by_id['CHIA_KHOA_CO'] ?>">
+                            <input type="text" name="chia_khoa_co_customer" value="<?php echo $apart_key_by_id['CHIA_KHOA_CO_CUSTOMER'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="chia_khoa_co_note"><?php echo $apart_key_by_id['CHIA_KHOA_CO_NOTE'] ?></textarea>
+                            <span class="details">Key PN1</span>
+                            <input type="text" name="pn1_office" value="<?php echo $apart_key_by_id['PN1_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN1</span>
+                            <input type="text" name="pn1_customer" value="<?php echo $apart_key_by_id['PN1_CUSTOMER'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN2</span>
+                            <input type="text" name="pn2_office" value="<?php echo $apart_key_by_id['PN2_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN2</span>
+                            <input type="text" name="pn2_customer" value="<?php echo $apart_key_by_id['PN2_CUSTOMER'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN3</span>
+                            <input type="text" name="pn3_office" value="<?php echo $apart_key_by_id['PN3_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN3</span>
+                            <input type="text" name="pn3_customer" value="<?php echo $apart_key_by_id['PN3_CUSTOMER'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN4</span>
+                            <input type="text" name="pn4_office" value="<?php echo $apart_key_by_id['PN4_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN4</span>
+                            <input type="text" name="pn4_customer" value="<?php echo $apart_key_by_id['PN4_CUSTOMER'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key Balcony</span>
+                            <input type="text" name="balcony_office" value="<?php echo $apart_key_by_id['BALCONY_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key Balcony</span>
+                            <input type="text" name="balcony_customer" value="<?php echo $apart_key_by_id['BALCONY_CUSTOMER'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">MailBox</span>
+                            <input type="text" name="mail_box_office" value="<?php echo $apart_key_by_id['MAILBOX_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">MailBox</span>
+                            <input type="text" name="mail_box_customer" value="<?php echo $apart_key_by_id['MAILBOX_CUSTOMER'] ?>">
+                        </div>
+
+                        <div class="note">
+                        <span class="details">Note for key</span>
+                        <textarea class="selling_note" name="note_for_key" cols="30" rows="10"><?php echo $apart_key_by_id['NOTE_FOR_KEY'] ?></textarea>
+                        </div>
+
+                        <div class="input-box">
+                            <span style="color: red;" class="details">Card stored in Office:</span>
+                            <input type="hidden">
+                        </div>
+                        <div class="input-box">
+                            <span style="color: red;" class="details">Card handover for customer: </span>
+                            <input type="hidden">
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details">The Thang May</span>
+                            <input type="text" name="the_thang_may_office" value="<?php echo $apart_key_by_id['THE_THANG_MAY_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">The Thang May</span>
+                            <input type="text" name="the_thang_may_customer" value="<?php echo $apart_key_by_id['THE_THANG_MAY_CUSTOMER'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Lon</span>
-                            <input type="text" name="the_tu_lon" value="<?php echo $apart_key_by_id['THE_TU_LON'] ?>">
+                            <input type="text" name="the_tu_lon_office" value="<?php echo $apart_key_by_id['THE_TU_LON_OFFICE'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="the_tu_lon_note"><?php echo $apart_key_by_id['THE_TU_LON_NOTE'] ?></textarea>
+                            <span class="details">The Tu Lon</span>
+                            <input type="text" name="the_tu_lon_customer" value="<?php echo $apart_key_by_id['THE_TU_LON_CUSTOMER'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Nho</span>
-                            <input type="text" name="the_tu_nho" value="<?php echo $apart_key_by_id['THE_TU_NHO'] ?>">
+                            <input type="text" name="the_tu_nho_office" value="<?php echo $apart_key_by_id['THE_TU_NHO_OFFICE'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="the_tu_nho_note"><?php echo $apart_key_by_id['THE_TU_NHO_NOTE'] ?></textarea>
+                            <span class="details">The Tu Nho</span>
+                            <input type="text" name="the_tu_nho_customer" value="<?php echo $apart_key_by_id['THE_TU_NHO_CUSTOMER'] ?>">
                         </div>
-                        <div class="input-box">
-                            <span class="details">Key Hom Thu</span>
-                            <input type="text" name="key_hom_thu" value="<?php echo $apart_key_by_id['KEY_HOM_THU'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="key_hom_thu_note"><?php echo $apart_key_by_id['KEY_HOM_THU_NOTE'] ?></textarea>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Remote Dieu Hoa</span>
-                            <input type="text" name="remote_dieu_hoa" value="<?php echo $apart_key_by_id['REMOTE_DIEU_HOA'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="remote_dieu_hoa_note"><?php echo $apart_key_by_id['REMOTE_DIEU_HOA_NOTE'] ?></textarea>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Internet Code</span>
-                            <input type="text" name="internet_code" value="<?php echo $apart_key_by_id['INTERNET_CODE'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea name="internet_note"><?php echo $apart_key_by_id['INTERNET_NOTE'] ?></textarea>
-                        </div>
+                    </div>
+                    <div class="note">
+                        <span class="details">Remote Dieu Hoa</span>
+                        <textarea class="selling_note" name="remote_dieu_hoa" cols="30" rows="10"><?php echo $apart_key_by_id['REMOTE_DIEU_HOA'] ?></textarea>
                     </div>
                     <div class="note">
                         <textarea class="selling_note" placeholder="Other note here" name="other_note" cols="30" rows="10"><?php echo $apart_key_by_id['OTHER_NOTE'] ?></textarea>

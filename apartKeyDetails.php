@@ -61,100 +61,129 @@
                             <input  class="management_fee" type="text" value="<?php echo $apart_key_by_id['MANAGEMENT_FEE'] ?>" >
                         </div>
                         <div class="input-box">
-                            <span class="details">Key PN1</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['PN1'] ?>">
-                        </div>
-                        <div class="input-box">
                             <span class="details">Electric Code</span>
                             <input  type="text" value="<?php echo $apart_key_by_id['ELECTRIC_CODE'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Key PN2</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['PN2'] ?>">
+                            <span class="details">Internet Code</span>
+                            <textarea name="internet_code"><?php echo $apart_key_by_id['INTERNET_CODE'] ?></textarea>
                         </div>
                         <div class="input-box">
-                            <span class="details">Key Kho</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['KHO'] ?>">
+                            <span class="details">Internet Note</span>
+                            <textarea><?php echo $apart_key_by_id['INTERNET_NOTE'] ?></textarea>
                         </div>
+                        
                         <div class="input-box">
-                            <span class="details">Key PN3</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['PN3'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Key Lo Gia</span>
-                            <input type="text" value="<?php echo $apart_key_by_id['LO_GIA'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Key PN4</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['PN4'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Key Balcony</span>
-                            <input type="text" value="<?php echo $apart_key_by_id['BALCONY'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details"></span>
+                            <span style="color: red;" class="details">Key stored in Office:</span>
                             <input type="hidden">
                         </div>
                         <div class="input-box">
-                            <span class="details">The Cu Dan</span>
-                            <input type="text" value="<?php echo $apart_key_by_id['THE_CU_DAN'] ?>">
+                            <span style="color: red;" class="details">Key handover for customer: </span>
+                            <input type="hidden">
                         </div>
+
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea  ><?php echo $apart_key_by_id['THE_CU_DAN_NOTE'] ?></textarea>
+                            <span class="details">Chia Khoa Co</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['CHIA_KHOA_CO_OFFICE'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Chia Khoa Co</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['CHIA_KHOA_CO'] ?>">
+                            <input type="text" value="<?php echo $apart_key_by_id['CHIA_KHOA_CO_CUSTOMER'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea  ><?php echo $apart_key_by_id['CHIA_KHOA_CO_NOTE'] ?></textarea>
+                            <span class="details">Key PN1</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['PN1_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN1</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['PN1_CUSTOMER'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN2</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['PN2_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN2</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['PN2_CUSTOMER'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN3</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['PN3_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN3</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['PN3_CUSTOMER'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN4</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['PN4_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN4</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['PN4_CUSTOMER'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key Balcony</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['BALCONY_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key Balcony</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['BALCONY_CUSTOMER'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">MailBox</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['MAILBOX_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">MailBox</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['MAILBOX_CUSTOMER'] ?>">
+                        </div>
+
+                        <div class="note">
+                        <span class="details">Note for key</span>
+                        <textarea class="selling_note" cols="30" rows="10"><?php echo $apart_key_by_id['NOTE_FOR_KEY'] ?></textarea>
+                        </div>
+
+                        <div class="input-box">
+                            <span style="color: red;" class="details">Card stored in Office:</span>
+                            <input type="hidden">
+                        </div>
+                        <div class="input-box">
+                            <span style="color: red;" class="details">Card handover for customer: </span>
+                            <input type="hidden">
+                        </div>
+
+                        <div class="input-box">
+                            <span class="details">The Thang May</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['THE_THANG_MAY_OFFICE'] ?>">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">The Thang May</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['THE_THANG_MAY_CUSTOMER'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Lon</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['THE_TU_LON'] ?>">
+                            <input type="text" value="<?php echo $apart_key_by_id['THE_TU_LON_OFFICE'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea  ><?php echo $apart_key_by_id['THE_TU_LON_NOTE'] ?></textarea>
+                            <span class="details">The Tu Lon</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['THE_TU_LON_CUSTOMER'] ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Nho</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['THE_TU_NHO'] ?>">
+                            <input type="text" value="<?php echo $apart_key_by_id['THE_TU_NHO_OFFICE'] ?>">
                         </div>
                         <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea  ><?php echo $apart_key_by_id['THE_TU_NHO_NOTE'] ?></textarea>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Key Hom Thu</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['KEY_HOM_THU'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea  ><?php echo $apart_key_by_id['KEY_HOM_THU_NOTE'] ?></textarea>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Remote Dieu Hoa</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['REMOTE_DIEU_HOA'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea  ><?php echo $apart_key_by_id['REMOTE_DIEU_HOA_NOTE'] ?></textarea>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Internet Code</span>
-                            <input  type="text" value="<?php echo $apart_key_by_id['INTERNET_CODE'] ?>">
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Note</span>
-                            <textarea  ><?php echo $apart_key_by_id['INTERNET_NOTE'] ?></textarea>
+                            <span class="details">The Tu Nho</span>
+                            <input type="text" value="<?php echo $apart_key_by_id['THE_TU_NHO_CUSTOMER'] ?>">
                         </div>
                     </div>
                     <div class="note">
-                        <textarea  class="selling_note" cols="30" rows="10"><?php echo $apart_key_by_id['OTHER_NOTE'] ?></textarea>
+                        <span class="details">Remote Dieu Hoa</span>
+                        <textarea class="selling_note" cols="30" rows="10"><?php echo $apart_key_by_id['REMOTE_DIEU_HOA'] ?></textarea>
+                    </div>
+                    <div class="note">
+                        <textarea class="selling_note" cols="30" rows="10"><?php echo $apart_key_by_id['OTHER_NOTE'] ?></textarea>
                     </div>
                     <div class="button">
                         <button class="btn btn-primary"><a href="apartKey.php">BACK TO APART KEY LIST</a></button>

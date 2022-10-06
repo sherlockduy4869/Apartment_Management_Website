@@ -38,7 +38,28 @@
                         </div>
                         <div class="input-box">
                             <span class="details">Project</span>
-                            <input type="text" name="project">
+                            <select name="project" class="select2_tag">
+                                <option value="Vinhomes Golden River">Vinhomes Golden River</option>
+                                <option value="Vinhomes Central Park">Vinhomes Central Park</option>
+                                <option value="Vinhomes Grand Park">Vinhomes Grand Park</option>
+                                <option value="Estella Height">Estella Height</option>
+                                <option value="Celesta Rise">Celesta Rise</option>
+                                <option value="The Estella">The Estella</option>
+                                <option value="Celesta">Celesta</option>
+                                <option value="Sunwah Pearl">Sunwah Pearl</option>
+                                <option value="Thao Dien Green">Thao Dien Green</option>
+                                <option value="The Vista An Phu">The Vista An Phu</option>
+                                <option value="Xi Riverview">Xi Riverview</option>
+                                <option value="The View Riviera Point">The View Riviera Point</option>
+                                <option value="The Infiniti">The Infiniti</option>
+                                <option value="Zennity">Zennity</option>
+                                <option value="Empire City">Empire City</option>
+                                <option value="Metropole">Metropole</option>
+                                <option value="Sun Avenue">Sun Avenue</option>
+                                <option value="Saigon Pearl">Saigon Pearl</option>
+                                <option value="Palm Heights">Palm Heights</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
@@ -92,56 +113,64 @@
 
                         <div class="input-box">
                             <span class="details">Chia Khoa Co</span>
-                            <input type="text" name="chia_khoa_co">
+                            <input type="text" name="chia_khoa_co_office">
                         </div>
                         <div class="input-box">
                             <span class="details">Chia Khoa Co</span>
-                            <input type="text" name="chia_khoa_co">
+                            <input type="text" name="chia_khoa_co_customer">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN1</span>
-                            <input type="text" name="pn1">
+                            <input type="text" name="pn1_office">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN1</span>
-                            <input type="text" name="pn1">
+                            <input type="text" name="pn1_customer">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN2</span>
-                            <input type="text" name="pn2">
+                            <input type="text" name="pn2_office">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN2</span>
-                            <input type="text" name="pn2">
+                            <input type="text" name="pn2_customer">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN3</span>
-                            <input type="text" name="pn3">
+                            <input type="text" name="pn3_office">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN3</span>
-                            <input type="text" name="pn3">
+                            <input type="text" name="pn3_customer">
                         </div>
                         <div class="input-box">
                             <span class="details">Key PN4</span>
-                            <input type="text" name="pn4">
+                            <input type="text" name="pn4_office">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key PN4</span>
+                            <input type="text" name="pn4_customer">
                         </div>
                         <div class="input-box">
                             <span class="details">Key Balcony</span>
-                            <input type="text" name="balcony">
+                            <input type="text" name="balcony_office">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Key Balcony</span>
+                            <input type="text" name="balcony_customer">
                         </div>
                         <div class="input-box">
                             <span class="details">MailBox</span>
-                            <input type="text" name="mail_box">
+                            <input type="text" name="mail_box_office">
                         </div>
                         <div class="input-box">
                             <span class="details">MailBox</span>
-                            <input type="text" name="mail_box">
+                            <input type="text" name="mail_box_customer">
                         </div>
 
                         <div class="note">
                         <span class="details">Note for key</span>
-                        <textarea class="selling_note" name="other_note" cols="30" rows="10"></textarea>
+                        <textarea class="selling_note" name="note_for_key" cols="30" rows="10"></textarea>
                         </div>
 
                         <div class="input-box">
@@ -155,32 +184,32 @@
 
                         <div class="input-box">
                             <span class="details">The Thang May</span>
-                            <input type="text" name="the_tu_lon">
+                            <input type="text" name="the_thang_may_office">
                         </div>
                         <div class="input-box">
                             <span class="details">The Thang May</span>
-                            <input type="text" name="the_tu_lon">
+                            <input type="text" name="the_thang_may_customer">
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Lon</span>
-                            <input type="text" name="the_tu_lon">
+                            <input type="text" name="the_tu_lon_office">
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Lon</span>
-                            <input type="text" name="the_tu_lon">
+                            <input type="text" name="the_tu_lon_customer">
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Nho</span>
-                            <input type="text" name="the_tu_nho">
+                            <input type="text" name="the_tu_nho_office">
                         </div>
                         <div class="input-box">
                             <span class="details">The Tu Nho</span>
-                            <input type="text" name="the_tu_nho">
+                            <input type="text" name="the_tu_nho_customer">
                         </div>
                     </div>
                     <div class="note">
                         <span class="details">Remote Dieu Hoa</span>
-                        <textarea class="selling_note" name="other_note" cols="30" rows="10"></textarea>
+                        <textarea class="selling_note" name="remote_dieu_hoa" cols="30" rows="10"></textarea>
                     </div>
                     <div class="note">
                         <span class="details">Other Note</span>

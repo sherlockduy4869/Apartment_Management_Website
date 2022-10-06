@@ -32,9 +32,13 @@
                     <tr>
                         <th>STT</th>
                         <th>Apartment</th>
+                        <th>House Owner</th>
                         <th>Project</th>
                         <th>Bedroom</th>
                         <th>Management Fee</th>
+                        <th>Electric Code</th>
+                        <th>Door Pass</th>
+                        <th>Wifi Pass</th>
                         <th>Note</th>
                         <th>Customize</th>
                     </tr>
@@ -55,6 +59,9 @@
                         <td class="role">
                             <p><?php echo $result['APARTMENT_CODE'];?></p>
                         </td>
+                        <td class="role">
+                            <p><?php echo $result['HOUSE_OWNER'];?></p>
+                        </td>
                         <td class="active">
                             <p><?php echo $result['PROJECT'];?></p>
                         </td>
@@ -63,6 +70,15 @@
                         </td>
                         <td class="active">
                             <p><?php echo number_format($result['MANAGEMENT_FEE']);?><sup>đ</sup></p>
+                        </td>
+                        <td class="role">
+                            <p><?php echo $result['ELECTRIC_CODE'];?></p>
+                        </td>
+                        <td class="role">
+                            <p><?php echo $result['DOOR_PASS'];?></p>
+                        </td>
+                        <td class="role">
+                            <p><?php echo $result['WIFI_PASS'];?></p>
                         </td>
                         <td class="role">
                             <p><?php echo $result['OTHER_NOTE'];?></p>
