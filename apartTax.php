@@ -66,6 +66,11 @@
                                     $ID++;
                                     $start_day_term = date("d-m-Y", strtotime($result['START_DAY_TERM']));
                                     $end_day_term = date("d-m-Y", strtotime($result['END_DAY_TERM']));
+
+                                    $total = ($result['TAX_FEE']+$result['TAX_MANAGEMENT']
+                                    + $result['REFUND_FOR_TENANT'] 
+                                    + $result['CLEANING_FEE'])*$result['PAYMENT_TERM']
+                                    + $result['TAX_DECLARE'];
                                     
                                     
                         ?>
@@ -88,7 +93,7 @@
                             <p><?php echo $end_day_term;?></p>
                         </td>
                         <td class="active">
-                            <p><?php echo number_format($result['TOTAL_AMOUNT']);?><sup>đ</sup></p>
+                            <p><?php echo number_format($total);?><sup>đ</sup></p>
                         </td>
                         <td class="role">
                             <p style="color: <?php if($result['STATUS_APART'] != 'Collected'){ echo 'red';}?>; font-weight: <?php if($result['STATUS_APART'] != 'Collected'){ echo 'bold';}?>;"><?php echo $result['STATUS_APART'];?></p>
