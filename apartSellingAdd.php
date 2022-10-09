@@ -87,7 +87,7 @@
                         </div>
                         <div class="input-box">
                             <span class="details">SQM</span>
-                            <input type="number" name="sqm" required>
+                            <input type="text" name="sqm" required>
                         </div>
                         <div class="input-box">
                             <span class="details">House owner</span>
@@ -95,19 +95,19 @@
                         </div>
                         <div class="input-box">
                             <span class="details">USD Price</span>
-                            <input class="usd_price" type="text" name="usd_price" required>
+                            <input class="usd_price" type="text" name="usd_price">
                         </div>  
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input type="text" name="phone_owner" required>
+                            <input type="text" name="phone_owner">
                         </div>   
                         <div class="input-box">
                             <span class="details">VND Price</span>
-                            <input class="vnd_price" type="text" name="vnd_price" required>
+                            <input class="vnd_price" type="text" name="vnd_price">
                         </div>  
                         <div class="input-box">
                             <span class="details">Email</span>
-                            <input type="email" name="email_owner" required>
+                            <input type="email" name="email_owner">
                         </div>  
                     </div>
                     <div class="note">

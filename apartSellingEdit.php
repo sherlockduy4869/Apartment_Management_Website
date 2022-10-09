@@ -104,19 +104,19 @@
                         </div>
                         <div class="input-box">
                             <span class="details">USD Price</span>
-                            <input class="usd_price" type="text" name="usd_price" value="<?php echo $apart_selling_by_id['USD_PRICE'];?>" required>
+                            <input class="usd_price" type="text" name="usd_price" value="<?php echo $apart_selling_by_id['USD_PRICE'];?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Phone</span>
-                            <input type="text" name="phone_owner" value="<?php echo $apart_selling_by_id['PHONE_OWNER'];?>" required>
+                            <input type="text" name="phone_owner" value="<?php echo $apart_selling_by_id['PHONE_OWNER'];?>">
                         </div>   
                         <div class="input-box">
                             <span class="details">VND Price</span>
-                            <input class="vnd_price" type="text" name="vnd_price" value="<?php echo $apart_selling_by_id['VND_PRICE'];?>" required>
+                            <input class="vnd_price" type="text" name="vnd_price" value="<?php echo $apart_selling_by_id['VND_PRICE'];?>">
                         </div>  
                         <div class="input-box">
                             <span class="details">Email</span>
-                            <input type="email" name="email_owner" value="<?php echo $apart_selling_by_id['EMAIL_OWNER'];?>" required>
+                            <input type="email" name="email_owner" value="<?php echo $apart_selling_by_id['EMAIL_OWNER'];?>">
                         </div>  
                     </div>
                     <div class="note">
