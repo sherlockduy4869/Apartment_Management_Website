@@ -32,13 +32,13 @@
                 <thead>
                     <tr>
                         <th class="text-center">STT</th>
-                        <th class="text-center">Apartment Info</th>
-                        <th class="text-center">Area</th>
                         <th class="text-center">House Owner</th>
+                        <th class="text-center">Area</th>
+                        <th class="text-center">Apartment Info</th>
                         <th class="text-center">Apart Details</th>
                         <th class="text-center">Price <p style="font-size: 8px;">(USD/VND)</p> </th>
                         <th class="text-center">Date</th>
-                        <th class="text-center">Note</th>
+                        <th class="text-center">APARTMENT Note</th>
                         <th class="text-center">Customize</th>
                     </tr>
                 </thead>
@@ -57,18 +57,18 @@
                         ?>
                     <tr>
                         <td><?php echo $ID ?></td>
-                        <td class="people-de">
-                            <h5><?php echo $result['APARTMENT_CODE'];?></h5>
-                            <p><?php echo $result['AGENCY_NAME'];?></p>
-                        </td>
-                        <td class="role">
-                            <p><?php echo $result['AREA_APART'];?></p>
-                        </td>
                         <td class="people">
                             <div class="people-de">
                                 <h5><?php echo $result['HOUSE_OWNER'];?></h5>
                                 <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
                             </div>
+                        </td>
+                        <td class="role">
+                            <p><?php echo $result['AREA_APART'];?></p>
+                        </td>
+                        <td class="people-de">
+                            <h5><?php echo $result['APARTMENT_CODE'];?></h5>
+                            <p><?php echo $result['AGENCY_NAME'];?></p>
                         </td>
                         <td class="active">
                             <p><?php echo $result['BEDROOM'];?>/<?php echo $result['SQM'];?>m<sup>2</sup></p>
