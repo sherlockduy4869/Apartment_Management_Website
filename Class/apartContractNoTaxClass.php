@@ -20,7 +20,7 @@
         public function show_apart_contract_no_tax_list(){
             $today = date("Y-m-d");
             //$today = "2022-11-21";
-            $query = "SELECT * FROM tbl_apartment_contract_no_tax WHERE DATE_REMIND <= '$today'";
+            $query = "SELECT * FROM tbl_apartment_contract_no_tax WHERE DATE_REMIND <= '$today' AND STATUS_APART <> 'New Contract'";
             $result = $this->db->select($query);
             return $result;
         }
@@ -30,6 +30,14 @@
             $query = "UPDATE tbl_apartment_contract_no_tax 
                     SET STATUS_APART = 'Waiting' 
                     WHERE APARTMENT_CODE = '$waitingID'";
+            $result = $this->db->update($query);
+            return $result;
+        }
+
+        public function new_contract_apart_contract_no_tax($newContractID){
+            $query = "UPDATE tbl_apartment_contract_no_tax 
+                    SET STATUS_APART = 'New Contract' 
+                    WHERE APARTMENT_CODE = '$newContractID'";
             $result = $this->db->update($query);
             return $result;
         }

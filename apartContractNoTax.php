@@ -11,6 +11,12 @@
         $waitingApartContractNoTax = $apartContractNoTax->waiting_apart_contract_no_tax($waitingID);
     }  
 
+    if(isset($_GET['newContractID']))
+    {
+        $newContractID = $_GET['newContractID'];
+        $newContractApartContractNoTax = $apartContractNoTax->new_contract_apart_contract_no_tax($newContractID);
+    }  
+
     if(isset($_GET['redoID']))
     {
         $redoID = $_GET['redoID'];
@@ -22,6 +28,9 @@
         $skipID = $_GET['skipID'];
         $skipApartContractNoTax = $apartContractNoTax->skip_apart_contract_no_tax($skipID);
     } 
+
+
+    
 ?>
 <section id="interface">
         <div class="navigation">
@@ -97,8 +106,8 @@
                             <p style="color: <?php if($result['STATUS_APART'] == 'NOT DONE'){ echo 'red';}?>; font-weight: <?php if($result['STATUS_APART'] == 'NOT DONE'){ echo 'bold';}?>;"><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a style="color: #41f1b6;" onclick="return confirm('Do you want to change to waiting ?')" href="?waitingID=<?php echo $result['APARTMENT_CODE'];?>">Waiting</a>|<a style="color: green;" onclick="return confirm('Do you want to push to new contract list ?')" href="?newContractID=<?php echo $result['APARTMENT_CODE'];?>">New-Contract</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a> <br>
-                            <a href="apartContractNoTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
+                            <a style="color: #41f1b6;" onclick="return confirm('Do you want to change to waiting ?')" href="?waitingID=<?php echo $result['APARTMENT_CODE'];?>">Waiting</a>|<a style="color: green;" onclick="return confirm('Do you want to push to new contract list ?')" href="?newContractID=<?php echo $result['APARTMENT_CODE'];?>">New</a>
+                            <a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a href="apartContractNoTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
                         </td>
                     </tr>
                         <?php
