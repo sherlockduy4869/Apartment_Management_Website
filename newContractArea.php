@@ -18,12 +18,12 @@
         <h3 class="i-name">Dashboard</h3>
         <div class="values">
             <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
+                <i class="fas fa-info"></i>
                 <a href="cartAdd.php">New Contract No Tax</a>
             </div>
             <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
-                <a href="apartSellingAdd.php">New Contract No Tax</a>
+                <i class="fas fa-info"></i>
+                <a href="apartSellingAdd.php">New Contract Tax</a>
             </div>
         </div>
 </section>
