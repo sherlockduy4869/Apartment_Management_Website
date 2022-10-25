@@ -20,7 +20,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-        $apartNewContractNoTaxEdit = $apartNewContractNoTax->edit_apart_new_contract_no_tax($_POST, $apart_new_contract_no_tax_by_id);
+        $apartNewContractNoTaxEdit = $apartNewContractNoTax->edit_apart_new_contract_no_tax($_POST, $apart_new_contract_no_tax_id);
     }
 ?>
 
@@ -47,43 +47,43 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input disabled type="text" value="<?php echo $apart_new_contract_no_tax_id['APARTMENT_CODE']?>">
+                            <input disabled type="text" value="<?php echo $apart_new_contract_no_tax_by_id['APARTMENT_CODE']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Agency Name</span>
-                            <input required name="agency_name" type="text" value="<?php echo $apart_new_contract_no_tax_id['AGENCY_NAME']?>">
+                            <input required name="agency_name" type="text" value="<?php echo $apart_new_contract_no_tax_by_id['AGENCY_NAME']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
-                            <input required name="renting_fee_per_month" class="renting_fee_per_month" type="text" value="<?php echo $apart_new_contract_no_tax_id['FEE_PER_MONTH']?>">
+                            <input required name="renting_fee_per_month" class="renting_fee_per_month" type="text" value="<?php echo $apart_new_contract_no_tax_by_id['FEE_PER_MONTH']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
-                            <input name="agency_phone" type="text" value="<?php echo $apart_new_contract_no_tax_id['AGENCY_PHONE']?>">
+                            <input name="agency_phone" type="text" value="<?php echo $apart_new_contract_no_tax_by_id['AGENCY_PHONE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Management Fee</span>
-                            <input name="management_Fee" class="management_fee" type="text" value="<?php echo $apart_new_contract_no_tax_id['MANAGEMENT_FEE']?>">
+                            <input name="management_Fee" class="management_fee" type="text" value="<?php echo $apart_new_contract_no_tax_by_id['MANAGEMENT_FEE']?>">
                         </div>   
                         <div class="input-box">
                             <span class="details">Agency Email</span>
-                            <input name="agency_email" type="email" value="<?php echo $apart_new_contract_no_tax_id['AGENCY_EMAIL']?>">
+                            <input name="agency_email" type="email" value="<?php echo $apart_new_contract_no_tax_by_id['AGENCY_EMAIL']?>">
                         </div>  
                         <div class="input-box">
                             <span class="details">Payment Term</span>
-                            <input required name="payment_term" type="number" min="1" value="<?php echo $apart_new_contract_no_tax_id['PAYMENT_TERM']?>">
+                            <input required name="payment_term" type="number" min="1" value="<?php echo $apart_new_contract_no_tax_by_id['PAYMENT_TERM']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Customer Name</span>
-                            <input required name="customer_name" type="text" value="<?php echo $apart_new_contract_no_tax_id['CUTOMER_NAME']?>">
+                            <input required name="customer_name" type="text" value="<?php echo $apart_new_contract_no_tax_by_id['CUTOMER_NAME']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Day Remind Negotiate</span>
-                            <input name="day_remind_negotiate" type="number" min="1" value="<?php echo $apart_new_contract_no_tax_id['DAY_REMIND']?>" required>
+                            <input name="day_remind_negotiate" type="number" min="1" value="<?php echo $apart_new_contract_no_tax_by_id['DAY_REMIND']?>" required>
                         </div> 
                         <div class="input-box">
                             <span class="details">Customer Phone</span>
-                            <input name="customer_phone" type="text" value="<?php echo $apart_new_contract_no_tax_id['CUTOMER_PHONE']?>">
+                            <input name="customer_phone" type="text" value="<?php echo $apart_new_contract_no_tax_by_id['CUTOMER_PHONE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">From</span>
@@ -91,7 +91,7 @@
                         </div> 
                         <div class="input-box">
                             <span class="details">Customer Email</span>
-                            <input name="customer_email" type="email" value="<?php echo $apart_new_contract_no_tax_id['CUTOMER_EMAIL']?>">
+                            <input name="customer_email" type="email" value="<?php echo $apart_new_contract_no_tax_by_id['CUTOMER_EMAIL']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">To</span>
@@ -99,7 +99,7 @@
                         </div>  
                     </div>
                     <div class="note">
-                        <textarea class="selling_note" name="note" cols="30" rows="10"><?php echo $apart_new_contract_no_tax_id['NOTE']?></textarea>
+                        <textarea class="selling_note" name="note" cols="30" rows="10"><?php echo $apart_new_contract_no_tax_by_id['NOTE']?></textarea>
                     </div>
                     <?php 
                     if(isset($apartNewContractNoTaxEdit))

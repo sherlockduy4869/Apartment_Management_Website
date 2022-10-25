@@ -72,7 +72,7 @@
                             </div>
                         </td>
                         <td class="edit">
-                            <a style="color: #41f1b6;" href="newContractEdit?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to push to rented no tax list ?')" href="?pushID=<?php echo $result['APARTMENT_CODE'];?>">Push</a>
+                            <a style="color: #41f1b6;" href="newContractEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to push to rented no tax list ?')" href="?pushID=<?php echo $result['APARTMENT_CODE'];?>">Push</a>
                         </td>
                         </td>
                     </tr>

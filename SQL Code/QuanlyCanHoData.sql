@@ -391,28 +391,28 @@ BEGIN
 	DECLARE term_pay INT;
 	DECLARE notee TEXT;
 
-	SELECT AGENCY_NAME INTO name_agen FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT AGENCY_PHONE INTO phone_agen FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT AGENCY_EMAIL INTO mail_agen FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+	SELECT AGENCY_NAME INTO name_agen FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_PHONE INTO phone_agen FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_EMAIL INTO mail_agen FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
 
-	SELECT CUTOMER_NAME INTO cus_name FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT CUTOMER_PHONE INTO cus_phone FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT CUTOMER_EMAIL INTO cus_email FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+	SELECT CUTOMER_NAME INTO cus_name FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT CUTOMER_PHONE INTO cus_phone FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT CUTOMER_EMAIL INTO cus_email FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
 	
-	SELECT FEE_PER_MONTH INTO fee_month FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT MANAGEMENT_FEE INTO fee_management FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT OWNER_RECIEVED INTO owner_recie FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+	SELECT FEE_PER_MONTH INTO fee_month FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT MANAGEMENT_FEE INTO fee_management FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT OWNER_RECIEVED INTO owner_recie FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
 	
-	SELECT START_DAY INTO day_start FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT END_DAY INTO day_end FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT DAY_REMIND INTO remind_day FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT PAYMENT_TERM INTO term_pay FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT NOTE INTO notee FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+	SELECT START_DAY INTO day_start FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT END_DAY INTO day_end FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT DAY_REMIND INTO remind_day FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT PAYMENT_TERM INTO term_pay FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT NOTE INTO notee FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
 
 
 	INSERT INTO tbl_apartment_rented_no_tax(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL
 	,FEE_PER_MONTH,MANAGEMENT_FEE,OWNER_RECIEVED,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM,NOTE) 
-	VALUES(NEW.APARTMENT_CODE,name_agen,phone_agen,mail_agen,cus_name,cus_phone,cus_email,fee_month,fee_management,owner_recie,day_start,day_end,remind_day,term_pay,notee);
+	VALUES(code_apa,name_agen,phone_agen,mail_agen,cus_name,cus_phone,cus_email,fee_month,fee_management,owner_recie,day_start,day_end,remind_day,term_pay,notee);
 END
 /*---------------------------------------END----------------------------------------*/
 
