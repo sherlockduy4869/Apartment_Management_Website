@@ -19,7 +19,7 @@
         <div class="values">
             <div class="val-box clickable">
                 <i class="fas fa-info"></i>
-                <a href="cartAdd.php">New Contract No Tax</a>
+                <a href="newContractNoTax.php">New Contract No Tax</a>
             </div>
             <div class="val-box clickable">
                 <i class="fas fa-info"></i>
