@@ -11,8 +11,8 @@
         $apart_new_contract_no_tax_id = $_GET['editID'];
         $apart_new_contract_no_tax_by_id = $apartNewContractNoTax->get_apart_new_contract_no_tax_by_id($apart_new_contract_no_tax_id);
 
-        $start_date = date("d-m-Y", strtotime($apart_new_contract_no_tax_id['START_DAY']));  
-        $end_date = date("d-m-Y", strtotime($apart_new_contract_no_tax_id['END_DAY'])); 
+        $start_date = date("d-m-Y", strtotime($apart_new_contract_no_tax_by_id['START_DAY']));  
+        $end_date = date("d-m-Y", strtotime($apart_new_contract_no_tax_by_id['END_DAY'])); 
     }
 ?>
 <?php

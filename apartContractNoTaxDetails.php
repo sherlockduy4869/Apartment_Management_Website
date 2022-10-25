@@ -64,7 +64,7 @@
                         <div class="input-box">
                             <span class="details">End Day</span>
                             <input  class="end_day" type="text"
-                            value="<?php echo $start_date; ?>">
+                            value="<?php echo $end_date; ?>">
                         </div>
                         <div class="input-box">
                             <span class="details">House Owner</span>
