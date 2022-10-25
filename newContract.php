@@ -6,11 +6,11 @@
 <?php
     $apartNewContractNoTax = new apartNewContractNoTax();
 
-    // if(isset($_GET['delID']))
-    // {
-    //     $delID = $_GET['delID'];
-    //     $delApartCart = $apartCart->delete_apart_cart($delID);
-    // }  
+    if(isset($_GET['redoID']))
+    {
+        $redoID = $_GET['redoID'];
+        $reDoNewContractNoTax = $apartNewContractNoTax->re_do_new_contract_no_tax($redoID);
+    }  
 ?>
 <section id="interface">
     
@@ -66,8 +66,8 @@
                             </div>
                         </td>
                         <td class="edit">
-                            <a href="cartDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #41f1b6;" href="cartEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a><br>
-                            <a style="color: #ff7782;" onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['APARTMENT_CODE'];?>">Delete</a>
+                            <a style="color: #41f1b6;" href="?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to push to rented no tax list ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Push</a>
+                        </td>
                         </td>
                     </tr>
                         <?php
