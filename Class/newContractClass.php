@@ -146,40 +146,76 @@
 
         //Edit apartment new contract tax information
         public function edit_apart_new_contract_tax($data, $apart_new_contract_tax_id){
-            $payment_term = mysqli_real_escape_string($this->db->link, $data['payment_term']);
-            $agency_name = mysqli_real_escape_string($this->db->link, $data['agency_name']);
-            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
-            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
+
+            $tax_department = mysqli_real_escape_string($this->db->link, $data['tax_department']);
             $customer_name = mysqli_real_escape_string($this->db->link, $data['customer_name']);
+            $tax_code = mysqli_real_escape_string($this->db->link, $data['tax_code']);
             $customer_phone = mysqli_real_escape_string($this->db->link, $data['customer_phone']);
+            $tax_declare_form = mysqli_real_escape_string($this->db->link, $data['tax_declare_form']);
             $customer_email = mysqli_real_escape_string($this->db->link, $data['customer_email']);
-            $renting_fee_per_month = mysqli_real_escape_string($this->db->link, $data['renting_fee_per_month']);
-            $management_Fee = mysqli_real_escape_string($this->db->link, $data['management_Fee']);
             $day_remind_negotiate = mysqli_real_escape_string($this->db->link, $data['day_remind_negotiate']);
-            $note = mysqli_real_escape_string($this->db->link, $data['note']);
+            
+            $renting_fee_per_month = mysqli_real_escape_string($this->db->link, $data['renting_fee_per_month']);
+            $tax_fee = mysqli_real_escape_string($this->db->link, $data['tax_fee']);
+            $agency_name = mysqli_real_escape_string($this->db->link, $data['agency_name']);
+            $tax_declare_fee = mysqli_real_escape_string($this->db->link, $data['tax_declare_fee']);
+
+            $agency_phone = mysqli_real_escape_string($this->db->link, $data['agency_phone']);
+            $management_fee = mysqli_real_escape_string($this->db->link, $data['management_fee']);
+            $agency_email = mysqli_real_escape_string($this->db->link, $data['agency_email']);
+            $cleaning_fee = mysqli_real_escape_string($this->db->link, $data['cleaning_fee']);
+
+            $payment_term = mysqli_real_escape_string($this->db->link, $data['payment_term']);
+            $refund_for_tenant = mysqli_real_escape_string($this->db->link, $data['refund_for_tenant']);
+
             $from = mysqli_real_escape_string($this->db->link, $data['from']);
             $to = mysqli_real_escape_string($this->db->link, $data['to']);
+            
+            $note = mysqli_real_escape_string($this->db->link, $data['note']);
 
+            //required
             $rent_fee_per_month =  str_replace(",","",$renting_fee_per_month);
-            $management_fee = 0;
-            if($management_Fee){
-                $management_fee =  str_replace(",","",$management_Fee);
+            //no required
+            $fee_tax = 0;
+            if($tax_fee){
+                $fee_tax = str_replace(",","",$tax_fee);
             }
-            $owner_recieved = $rent_fee_per_month - $management_fee;
+            //required
+            $declare_fee_tax = str_replace(",","",$tax_declare_fee);
+            //no required
+            $fee_management = 0;
+            if($management_fee){
+                $fee_management = str_replace(",","",$management_fee);
+            }
+            //no required
+            $fee_cleaning = 0;
+            if($cleaning_fee){
+                $fee_cleaning = str_replace(",","",$cleaning_fee);
+            }
+            //no required
+            $tenant_refund = 0;
+            if($refund_for_tenant){
+                $tenant_refund = str_replace(",","",$refund_for_tenant);
+            }
 
             $start_date = date("Y-m-d", strtotime($from));  
             $end_date = date("Y-m-d", strtotime($to)); 
 
-            $query = "UPDATE tbl_apartment_rented_no_tax_new_contract SET
+            $query = "UPDATE tbl_apartment_rented_new_contract SET
                     AGENCY_NAME = '$agency_name'
                     ,AGENCY_PHONE = '$agency_phone'
                     ,AGENCY_EMAIL = '$agency_email'
                     ,CUTOMER_NAME = '$customer_name'
                     ,CUTOMER_PHONE = '$customer_phone'
                     ,CUTOMER_EMAIL = '$customer_email'
+                    ,TAX_CODE = '$tax_code'
+                    ,TAX_DECLARATION_FORM = '$tax_declare_form'
+                    ,TAX_APARTMENT = '$tax_department'
                     ,FEE_PER_MONTH = '$rent_fee_per_month'
-                    ,MANAGEMENT_FEE = '$management_fee'
-                    ,OWNER_RECIEVED = '$owner_recieved'
+                    ,TAX_FEE = '$fee_tax'
+                    ,TAX_DECLARE = '$declare_fee_tax'
+                    ,REFUND_FOR_TENANT = '$tenant_refund'
+                    ,CLEANING_FEE = '$fee_cleaning'
                     ,START_DAY = '$start_date'
                     ,END_DAY = '$end_date'
                     ,DAY_REMIND = '$day_remind_negotiate'
@@ -189,11 +225,11 @@
             
             $result = $this->db->update($query);
             if($result){
-                $alert = "<span class = 'addSuccess'>Edit apartment new contract no tax succesfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Edit apartment new contract tax succesfully</span> <br>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Failed to edit apartment new contract no tax</span> <br>";
+                $alert = "<span class = 'addError'>Failed to edit apartment new contract tax</span> <br>";
                 return $alert;
             }
         }
