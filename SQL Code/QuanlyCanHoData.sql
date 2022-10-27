@@ -400,7 +400,7 @@ BEGIN
 	WHERE APARTMENT_CODE = code_apa;
 END
 
---PROC ADDING INFOMATION OF APARTMENT RENTED NO TAX + APARTMENT RENTED NO TAX CONTRACT
+--PROC PUSHING INFOMATION OF APARTMENT RENTED NO TAX
 CREATE PROCEDURE PUSHING_NEW_CONTRACT(IN code_apa VARCHAR(255))
 BEGIN
 
@@ -532,6 +532,76 @@ BEGIN
 	WHERE APARTMENT_CODE = code_apa;
 END
 
+--PROC PUSHING INFOMATION OF APARTMENT RENTED NO TAX
+CREATE PROCEDURE PUSHING_NEW_CONTRACT_TAX(IN code_apa VARCHAR(255))
+BEGIN
+
+	DECLARE name_agen VARCHAR(255);
+	DECLARE phone_agen VARCHAR(255);
+	DECLARE mail_agen VARCHAR(255);
+
+	DECLARE cus_name VARCHAR(255);
+	DECLARE cus_phone VARCHAR(255);
+	DECLARE cus_email VARCHAR(255);
+	
+	DECLARE code_tax VARCHAR(255);
+	DECLARE declare_form VARCHAR(255);
+	DECLARE apart_tax VARCHAR(255);
+
+	DECLARE fee_month FLOAT;
+	DECLARE fee_tax FLOAT;
+	DECLARE declare_tax FLOAT;
+	DECLARE management_tax FLOAT;
+	DECLARE tenant_refund FLOAT;
+	DECLARE fee_cleaning FLOAT;
+	
+	DECLARE owner_recie FLOAT;
+	DECLARE total_amount FLOAT;
+
+	DECLARE day_start DATE;
+	DECLARE day_end DATE;
+	DECLARE remind_day INT;
+	DECLARE term_pay INT;
+	DECLARE notee TEXT;
+
+	SELECT AGENCY_NAME INTO name_agen FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_PHONE INTO phone_agen FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT AGENCY_EMAIL INTO mail_agen FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+
+	SELECT CUTOMER_NAME INTO cus_name FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT CUTOMER_PHONE INTO cus_phone FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT CUTOMER_EMAIL INTO cus_email FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	
+	SELECT TAX_CODE INTO code_tax FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT TAX_DECLARATION_FORM INTO declare_form FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT TAX_APARTMENT INTO apart_tax FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	
+	SELECT FEE_PER_MONTH INTO fee_month FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT TAX_FEE INTO fee_tax FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT TAX_DECLARE INTO declare_tax FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT TAX_MANAGEMENT INTO management_tax FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT REFUND_FOR_TENANT INTO tenant_refund FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT CLEANING_FEE INTO fee_cleaning FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	
+	SELECT START_DAY INTO day_start FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT END_DAY INTO day_end FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT DAY_REMIND INTO remind_day FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT PAYMENT_TERM INTO term_pay FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+	SELECT NOTE INTO notee FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
+
+	SET total_amount = fee_tax + declare_tax + management_tax + fee_cleaning + tenant_refund;
+	SET owner_recie = fee_month - total_amount;
+
+	INSERT INTO tbl_apartment_rented
+            (APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,CUTOMER_NAME,CUTOMER_PHONE,
+            CUTOMER_EMAIL,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,
+            TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,TOTAL,
+            OWNER_RECIEVED,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM,NOTE)  
+	VALUES(code_apa,name_agen,phone_agen,mail_agen,cus_name,cus_phone,cus_email,code_tax
+	,declare_form,apart_tax,fee_month,fee_tax,declare_tax,management_tax,tenant_refund,
+	fee_cleaning,total_amount,owner_recie,day_start,day_end,remind_day,term_pay,notee);
+END
+GO
 
 /*---------------------------------------END----------------------------------------*/
 

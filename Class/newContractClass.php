@@ -214,6 +214,7 @@
                     ,FEE_PER_MONTH = '$rent_fee_per_month'
                     ,TAX_FEE = '$fee_tax'
                     ,TAX_DECLARE = '$declare_fee_tax'
+                    ,TAX_MANAGEMENT = '$fee_management'
                     ,REFUND_FOR_TENANT = '$tenant_refund'
                     ,CLEANING_FEE = '$fee_cleaning'
                     ,START_DAY = '$start_date'
@@ -232,6 +233,23 @@
                 $alert = "<span class = 'addError'>Failed to edit apartment new contract tax</span> <br>";
                 return $alert;
             }
+        }
+
+        //Push apartment new contract tax
+        public function push_apart_new_contract_tax($pushID){
+            $query_delete_old_data = "CALL DELETING_APARTMENT_RENTED_TAX('$pushID')";
+            $result_delete_old_data = $this->db->execute($query_delete_old_data);
+            
+            $query_pushing_new_contract_tax = "CALL PUSHING_NEW_CONTRACT_TAX('$pushID')";
+            $result_pushing_new_contract_tax =  $this->db->execute($query_pushing_new_contract_tax);
+
+            $query_tax = "CALL ADDING_INFO_TAX('$pushID')";
+            $result_tax = $this->db->execute($query_tax);
+
+            $query_delete_new_contract = "DELETE FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = '$pushID'";
+            $result_delete_new_contract = $this->db->delete($query_delete_new_contract);
+
+            header('Location:newContractTax.php');
         }
     }
 ?>

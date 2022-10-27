@@ -12,11 +12,11 @@
         $reDoNewContractTax = $apartNewContractTax->re_do_new_contract_tax($redoID);
     }  
 
-    // if(isset($_GET['pushID']))
-    // {
-    //     $pushID = $_GET['pushID'];
-    //     $pushNewContractNoTax = $apartNewContractNoTax->push_apart_new_contract_no_tax($pushID);
-    // }  
+    if(isset($_GET['pushID']))
+    {
+        $pushID = $_GET['pushID'];
+        $pushNewContractTax = $apartNewContractTax->push_apart_new_contract_tax($pushID);
+    }  
 ?>
 <section id="interface">
     
