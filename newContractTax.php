@@ -4,19 +4,19 @@
     include_once $_SERVER['DOCUMENT_ROOT'].'/Class/newContractClass.php';
 ?>
 <?php
-    $apartNewContractNoTax = new apartNewContract();
+    $apartNewContractTax = new apartNewContract();
     
-    if(isset($_GET['redoID']))
-    {
-        $redoID = $_GET['redoID'];
-        $reDoNewContractNoTax = $apartNewContractNoTax->re_do_new_contract_no_tax($redoID);
-    }  
+    // if(isset($_GET['redoID']))
+    // {
+    //     $redoID = $_GET['redoID'];
+    //     $reDoNewContractNoTax = $apartNewContractNoTax->re_do_new_contract_no_tax($redoID);
+    // }  
 
-    if(isset($_GET['pushID']))
-    {
-        $pushID = $_GET['pushID'];
-        $pushNewContractNoTax = $apartNewContractNoTax->push_apart_new_contract_no_tax($pushID);
-    }  
+    // if(isset($_GET['pushID']))
+    // {
+    //     $pushID = $_GET['pushID'];
+    //     $pushNewContractNoTax = $apartNewContractNoTax->push_apart_new_contract_no_tax($pushID);
+    // }  
 ?>
 <section id="interface">
     
@@ -46,12 +46,12 @@
                 </thead>
                 <tbody>
                         <?php
-                            $apartNewContractNoTaxList = $apartNewContractNoTax->show_apart_new_contract_no_tax__list();
+                            $apartNewContractTaxList = $apartNewContractTax->show_apart_new_contract_tax_list();
                             
-                            if($apartNewContractNoTaxList)
+                            if($apartNewContractTaxList)
                             {   
                                 $ID = 0;
-                                while($result = $apartNewContractNoTaxList->fetch_assoc())
+                                while($result = $apartNewContractTaxList->fetch_assoc())
                                 {
                                     $ID++;
                                     

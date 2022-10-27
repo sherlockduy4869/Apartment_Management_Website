@@ -114,5 +114,15 @@
 
             header('Location:newContract.php');
         }
+        /*END*/
+
+        /*NEW CONTRACT TAX AREA*/
+
+        //Showing apartment new contract no tax
+        public function show_apart_new_contract_tax_list(){
+            $query = "SELECT * FROM tbl_apartment_rented_new_contract";
+            $result = $this->db->select($query);
+            return $result;
+        }
     }
 ?>
