@@ -38,95 +38,87 @@
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Apartment code</span>
-                            <input  type="text" value="<?php echo $apart_new_contract_tax_by_id['APARTMENT_CODE']?>">
+                            <input disabled type="text" value="<?php echo $apart_new_contract_tax_by_id['APARTMENT_CODE']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Department</span>
-                            <input  type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_APARTMENT']?>">
+                            <input required name="tax_department" type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_APARTMENT']?>">
                         </div>  
                         <div class="input-box">
                             <span class="details">Customer Name</span>
-                            <input  type="text" value="<?php echo $apart_new_contract_tax_by_id['CUTOMER_NAME']?>">
+                            <input required name="customer_name" type="text" value="<?php echo $apart_new_contract_tax_by_id['CUTOMER_NAME']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Code</span>
-                            <input  type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_CODE']?>">
+                            <input name="tax_code" required type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_CODE']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Customer Phone</span>
-                            <input  type="text" value="<?php echo $apart_new_contract_tax_by_id['CUTOMER_PHONE']?>">
+                            <input name="customer_phone" type="text" value="<?php echo $apart_new_contract_tax_by_id['CUTOMER_PHONE']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Declaration Form</span>
-                            <input  type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_DECLARATION_FORM']?>">
+                            <input name="tax_declare_form" required type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_DECLARATION_FORM']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Customer Email</span>
-                            <input  type="email" value="<?php echo $apart_new_contract_tax_by_id['CUTOMER_EMAIL']?>">
+                            <input name="customer_email" type="email" value="<?php echo $apart_new_contract_tax_by_id['CUTOMER_EMAIL']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Day Remind Negotiate</span>
-                            <input  type="number" min="1" name="day_remind_negotiate" 
+                            <input name="day_remind_negotiate" required type="number" min="1"
                             value="<?php echo $apart_new_contract_tax_by_id['DAY_REMIND']?>">
                         </div>  
                         <div class="input-box">
                             <span class="details">From</span>
-                            <input  class="from" type="text"
+                            <input name="from" required class="from" type="text"
                             value="<?php echo $start_date; ?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Renting Fee/Month</span>
-                            <input class="renting_fee_per_month" type="text" value="<?php echo $apart_new_contract_tax_by_id['FEE_PER_MONTH']?>">
+                            <input name="renting_fee_per_month" required class="renting_fee_per_month" type="text" value="<?php echo $apart_new_contract_tax_by_id['FEE_PER_MONTH']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">To</span>
-                            <input  class="to" type="text"
+                            <input name="to" required class="to" type="text"
                             value="<?php echo $end_date; ?>">
                         </div>  
                         <div class="input-box">
                             <span class="details">Tax Fee</span>
-                            <input  class="tax_fee" type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_FEE']?>">
+                            <input name="tax_fee" class="tax_fee" type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_FEE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Agency Name</span>
-                            <input  type="text" value="<?php echo $apart_new_contract_tax_by_id['AGENCY_NAME']?>">
+                            <input name="agency_name" required type="text" value="<?php echo $apart_new_contract_tax_by_id['AGENCY_NAME']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Tax Declare Fee</span>
-                            <input  class="tax_declare_fee" type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_DECLARE']?>">
+                            <input name="tax_declare_fee" required class="tax_declare_fee" type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_DECLARE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Agency Phone</span>
-                            <input  type="text" value="<?php echo $apart_new_contract_tax_by_id['AGENCY_PHONE']?>">
+                            <input name="agency_phone" type="text" value="<?php echo $apart_new_contract_tax_by_id['AGENCY_PHONE']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Management Fee</span>
-                            <input  class="management_fee" type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_MANAGEMENT']?>">
+                            <input name="management_fee" class="management_fee" type="text" value="<?php echo $apart_new_contract_tax_by_id['TAX_MANAGEMENT']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Agency Email</span>
-                            <input  type="text" value="<?php echo $apart_new_contract_tax_by_id['AGENCY_EMAIL']?>">
+                            <input name="agency_email" type="text" value="<?php echo $apart_new_contract_tax_by_id['AGENCY_EMAIL']?>">
                         </div>
                         <div class="input-box">
                             <span class="details">Cleaning Fee</span>
-                            <input  class="cleaning_fee" type="text" value="<?php echo $apart_new_contract_tax_by_id['CLEANING_FEE']?>">
+                            <input name="cleaning_fee" class="cleaning_fee" type="text" value="<?php echo $apart_new_contract_tax_by_id['CLEANING_FEE']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Payment Term</span>
-                            <input  type="number" min="1" value="<?php echo $apart_new_contract_tax_by_id['PAYMENT_TERM']?>">
+                            <input name="payment_term" required type="number" min="1" value="<?php echo $apart_new_contract_tax_by_id['PAYMENT_TERM']?>">
                         </div> 
                         <div class="input-box">
                             <span class="details">Refund For Tenant</span>
-                            <input  class="refund_for_tenant" type="text" value="<?php echo $apart_new_contract_tax_by_id['REFUND_FOR_TENANT']?>">
-                        </div>      
-                        <div class="input-box">
-                            <span class="details"></span>
-                            <input type="hidden" >
-                        </div>  
-                        <div class="input-box">
-                            <span class="details">Owner Recieved</span>
-                            <input  class="owner_recieved" type="text" value="<?php echo $apart_new_contract_tax_by_id['OWNER_RECIEVED']?>">
-                        </div>           
+                            <input name="refund_for_tenant" class="refund_for_tenant" type="text" value="<?php echo $apart_new_contract_tax_by_id['REFUND_FOR_TENANT']?>">
+                        </div>             
                     </div>
                     <div class="note">
                         <textarea  class="selling_note" name="note" cols="30" rows="10"><?php echo $apart_new_contract_tax_by_id['NOTE']?></textarea>
