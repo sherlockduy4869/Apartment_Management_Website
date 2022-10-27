@@ -136,5 +136,12 @@
             $result_update = $this->db->update($query_update);
             header('Location:newContractTax.php');
         }
+
+        //Get apartment new contract tax information 
+        public function get_apart_new_contract_tax_by_id($apart_new_contract_tax_id){
+            $query = "SELECT * FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = '$apart_new_contract_tax_id'";
+            $result = $this->db->select($query)->fetch_assoc();
+            return $result;
+        }
     }
 ?>
