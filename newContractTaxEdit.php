@@ -15,6 +15,12 @@
         $end_date = date("d-m-Y", strtotime($apart_new_contract_tax_by_id['END_DAY'])); 
     }
 ?>
+<?php
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+
+        $apartNewContractTaxEdit = $apartNewContractTax->edit_apart_new_contract_tax($_POST, $apart_new_contract_tax_id);
+    }
 ?>
 <section id="interface">
     <div class="navigation">
@@ -123,6 +129,12 @@
                     <div class="note">
                         <textarea  class="selling_note" name="note" cols="30" rows="10"><?php echo $apart_new_contract_tax_by_id['NOTE']?></textarea>
                     </div>
+                    <?php 
+                    if(isset($apartNewContractTaxEdit))
+                    {
+                        echo $apartNewContractTaxEdit;
+                    }
+                    ?>
                     <div class="button">
                         <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
                     </div>
