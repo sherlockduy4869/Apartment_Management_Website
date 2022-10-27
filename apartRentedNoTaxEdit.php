@@ -111,7 +111,7 @@
                         <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary"><a href="apartRentedNoTax.php">BACK TO RENTED NO TAX LIST</a></button>
+                        <button class="btn btn-success"><a href="apartRentedNoTax.php">BACK TO RENTED NO TAX LIST</a></button>
                     </div>
                 </form>
             </div>

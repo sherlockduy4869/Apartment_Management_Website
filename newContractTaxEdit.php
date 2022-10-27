@@ -139,7 +139,7 @@
                         <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary"><a href="newContractTax.php">BACK TO NEW CONTRACT TAX LIST</a></button>
+                        <button class="btn btn-success"><a href="newContractTax.php">BACK TO NEW CONTRACT TAX LIST</a></button>
                     </div>
                 </form>
 

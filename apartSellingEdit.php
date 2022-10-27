@@ -132,7 +132,7 @@
                         <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary"><a href="apartSelling.php">BACK TO SELLING LIST</a></button>
+                        <button class="btn btn-success"><a href="apartSelling.php">BACK TO SELLING LIST</a></button>
                     </div>
                 </form>
 

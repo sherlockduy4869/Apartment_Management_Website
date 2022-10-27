@@ -127,7 +127,7 @@
                         <input class="btn btn-primary" name="submit" type="submit" value="EDITING">
                     </div>
                     <div class="button">
-                        <button class="btn btn-primary"><a href="apartNotRented.php">BACK TO UNDER CONSTRUCTION LIST</a></button>
+                        <button class="btn btn-success"><a href="apartNotRented.php">BACK TO UNDER CONSTRUCTION LIST</a></button>
                     </div>
                 </form>
 
