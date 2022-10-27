@@ -5,10 +5,10 @@
 ?>
 <?php
     $apartContract = new apartcontract();
-    if(isset($_GET['markdoneID']))
+    if(isset($_GET['waitingID']))
     {
-        $markdoneID = $_GET['markdoneID'];
-        $markdoneApartContract = $apartContract->markdone_apart_contract($markdoneID);
+        $waitingID = $_GET['waitingID'];
+        $waitingApartContract = $apartContract->waiting_apart_contract($waitingID);
     }  
 
     if(isset($_GET['redoID']))
@@ -87,10 +87,10 @@
                             <p><?php echo number_format($result['FEE_PER_MONTH']);?><sup>đ</sup></p>
                         </td>
                         <td class="role">
-                            <p style="color: <?php if($result['STATUS_APART'] != 'DONE'){ echo 'red';}?>; font-weight: <?php if($result['STATUS_APART'] != 'DONE'){ echo 'bold';}?>;"><?php echo $result['STATUS_APART'];?></p>
+                            <p style="color: <?php if($result['STATUS_APART'] == 'NOT DONE'){ echo 'red';}?>; font-weight: <?php if($result['STATUS_APART'] == 'NOT DONE'){ echo 'bold';}?>;"><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a style="color: #41f1b6;" onclick="return confirm('Do you want to markdone ?')" href="?markdoneID=<?php echo $result['APARTMENT_CODE'];?>">Markdone</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a> <br>
+                            <a style="color: #41f1b6;" onclick="return confirm('Do you want to change to waiting ?')" href="?waitingID=<?php echo $result['APARTMENT_CODE'];?>">Waiting</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a> <br>
                             <a href="apartContractDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
                         </td>
                     </tr>

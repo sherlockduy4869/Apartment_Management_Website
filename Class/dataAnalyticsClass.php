@@ -75,7 +75,7 @@
             $today = date("Y-m-d");
 
             $query_rented_tax_contract = "SELECT COUNT(tbl_apartment_contract.APARTMENT_CODE) AS QUAN_APART_RENTED_TAX_CONTRACT 
-                                            FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
+                                            FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today'";
             $result_rented_tax_contract= $this->db->select($query_rented_tax_contract)->fetch_assoc();
             $num_rented_tax_contract = $result_rented_tax_contract['QUAN_APART_RENTED_TAX_CONTRACT'];
 
@@ -84,7 +84,7 @@
             }
 
             $query_rented_tax_contract_not_done = "SELECT COUNT(tbl_apartment_contract.APARTMENT_CODE) AS QUAN_APART_RENTED_TAX_CONTRACT_NOT_DONE
-                                                FROM tbl_apartment_contract WHERE (DATE_REMIND <= '$today' AND '$today' <= END_DAY) AND (STATUS_APART='NOT DONE') ";
+                                                FROM tbl_apartment_contract WHERE (DATE_REMIND <= '$today') AND (STATUS_APART='NOT DONE') ";
 
             $result_rented_tax_contract_not_done= $this->db->select($query_rented_tax_contract_not_done)->fetch_assoc();
             $num_rented_tax_contract_not_done = $result_rented_tax_contract_not_done['QUAN_APART_RENTED_TAX_CONTRACT_NOT_DONE'];

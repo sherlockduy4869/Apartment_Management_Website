@@ -19,17 +19,17 @@
         //Showing apartment contract
         public function show_apart_contract_list(){
             $today = date("Y-m-d");
-            //$today = "2022-11-21";
-            $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
+            // $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
+            $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today'";
             $result = $this->db->select($query);
             return $result;
         }
 
         //Markdone apartment contract
-        public function markdone_apart_contract($markdoneID){
+        public function waiting_apart_contract($waitingID){
             $query = "UPDATE tbl_apartment_contract 
-                    SET STATUS_APART = 'DONE' 
-                    WHERE APARTMENT_CODE = '$markdoneID'";
+                    SET STATUS_APART = 'WAITING' 
+                    WHERE APARTMENT_CODE = '$waitingID'";
             $result = $this->db->update($query);
             return $result;
         }
