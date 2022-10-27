@@ -39,8 +39,8 @@
                     <tr>
                         <th class="text-center">STT</th>
                         <th class="text-center">Apartment Info</th>
-                        <th class="text-center">Area</th>
-                        <th class="text-center">House Owner</th>
+                        <th class="text-center">Customer</th>
+                        <th class="text-center">Fee/Month</th>
                         <th class="text-center">Customize</th>
                     </tr>
                 </thead>
@@ -62,14 +62,14 @@
                             <h5><?php echo $result['APARTMENT_CODE'];?></h5>
                             <p><?php echo $result['AGENCY_NAME'];?></p>
                         </td>
-                        <td class="role">
-                            <p><?php echo $result['AREA_APART'];?></p>
-                        </td>
                         <td class="people">
                             <div class="people-de">
-                                <h5><?php echo $result['HOUSE_OWNER'];?></h5>
-                                <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
+                                <h5><?php echo $result['CUTOMER_NAME'];?></h5>
+                                <p><?php echo $result['CUTOMER_PHONE'];?>-<?php echo $result['CUTOMER_EMAIL'];?></p>
                             </div>
+                        </td>
+                        <td class="role">
+                            <p><?php echo number_format($result['FEE_PER_MONTH']);?></p>
                         </td>
                         <td class="edit">
                             <a style="color: #41f1b6;" href="newContractEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to push to rented no tax list ?')" href="?pushID=<?php echo $result['APARTMENT_CODE'];?>">Push</a>
