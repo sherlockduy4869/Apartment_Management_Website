@@ -125,7 +125,7 @@
             array_push($result_array, $num_rented_no_tax_contract_not_done, $percentage);
 
             return $result_array;
-        }
+        } 
 
         //Get number apart rented need to collect tax fee and its percentage
         public function get_apart_rented_money_percentage(){
