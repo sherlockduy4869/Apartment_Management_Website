@@ -4,7 +4,7 @@
     include_once $_SERVER['DOCUMENT_ROOT'].'/Class/newContractClass.php';
 ?>
 <?php
-    $apartNewContractNoTax = new apartNewContractNoTax();
+    $apartNewContractNoTax = new apartNewContract();
 
     if(isset($_GET['editID']))
     {
@@ -16,7 +16,7 @@
     }
 ?>
 <?php
-    $apartNewContractNoTax = new apartNewContractNoTax();
+    $apartNewContractNoTax = new apartNewContract();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 

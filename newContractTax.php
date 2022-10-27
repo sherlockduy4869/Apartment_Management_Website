@@ -25,7 +25,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT NEW CONTRAC NO TAX</span>
+                <span>APARTMENT NEW CONTRAC TAX</span>
             </div>
             <div class="profile">
                 <img src="./Resource/img/profile-1.jpg">

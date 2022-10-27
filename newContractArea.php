@@ -23,7 +23,7 @@
             </div>
             <div class="val-box clickable">
                 <i class="fas fa-info"></i>
-                <a href="apartSellingAdd.php">New Contract Tax</a>
+                <a href="newContractTax.php">New Contract Tax</a>
             </div>
         </div>
 </section>

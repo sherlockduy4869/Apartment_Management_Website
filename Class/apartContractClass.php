@@ -25,7 +25,7 @@
             return $result;
         }
 
-        //Markdone apartment contract
+        //Waiting apartment contract
         public function waiting_apart_contract($waitingID){
             $query = "UPDATE tbl_apartment_contract 
                     SET STATUS_APART = 'WAITING' 
@@ -34,7 +34,7 @@
             return $result;
         }
 
-        //Markdone apartment contract
+        //New contract apartment contract
         public function new_contract_apart_contract_tax($newContractID){
             $query = "UPDATE tbl_apartment_contract 
                     SET STATUS_APART = 'NEW_CONTRACT' 

@@ -5,7 +5,7 @@
 
 <?php
 
-    class apartNewContractNoTax
+    class apartNewContract
     {
         private $db ;
         private $fm ;
