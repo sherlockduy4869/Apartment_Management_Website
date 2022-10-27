@@ -20,7 +20,7 @@
         public function show_apart_contract_list(){
             $today = date("Y-m-d");
             // $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
-            $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today'";
+            $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND STATUS_APART <> 'NEW_CONTRACT'";
             $result = $this->db->select($query);
             return $result;
         }
@@ -30,6 +30,15 @@
             $query = "UPDATE tbl_apartment_contract 
                     SET STATUS_APART = 'WAITING' 
                     WHERE APARTMENT_CODE = '$waitingID'";
+            $result = $this->db->update($query);
+            return $result;
+        }
+
+        //Markdone apartment contract
+        public function new_contract_apart_contract_tax($newContractID){
+            $query = "UPDATE tbl_apartment_contract 
+                    SET STATUS_APART = 'NEW_CONTRACT' 
+                    WHERE APARTMENT_CODE = '$newContractID'";
             $result = $this->db->update($query);
             return $result;
         }
