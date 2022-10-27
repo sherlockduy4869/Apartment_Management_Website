@@ -6,11 +6,11 @@
 <?php
     $apartNewContractTax = new apartNewContract();
     
-    // if(isset($_GET['redoID']))
-    // {
-    //     $redoID = $_GET['redoID'];
-    //     $reDoNewContractNoTax = $apartNewContractNoTax->re_do_new_contract_no_tax($redoID);
-    // }  
+    if(isset($_GET['redoID']))
+    {
+        $redoID = $_GET['redoID'];
+        $reDoNewContractTax = $apartNewContractTax->re_do_new_contract_tax($redoID);
+    }  
 
     // if(isset($_GET['pushID']))
     // {

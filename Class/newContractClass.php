@@ -118,11 +118,23 @@
 
         /*NEW CONTRACT TAX AREA*/
 
-        //Showing apartment new contract no tax
+        //Showing apartment new contract tax
         public function show_apart_new_contract_tax_list(){
             $query = "SELECT * FROM tbl_apartment_rented_new_contract";
             $result = $this->db->select($query);
             return $result;
+        }
+
+        //Redo apartment new contract tax
+        public function re_do_new_contract_tax($redoID){
+            $query_delete = "DELETE FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = '$redoID'";
+            $result_delete = $this->db->delete($query_delete);
+
+            $query_update = "UPDATE tbl_apartment_contract 
+                    SET STATUS_APART = 'NOT DONE' 
+                    WHERE APARTMENT_CODE = '$redoID'";
+            $result_update = $this->db->update($query_update);
+            header('Location:newContractTax.php');
         }
     }
 ?>
