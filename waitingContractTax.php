@@ -1,22 +1,22 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/newContractClass.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartContractClass.php';
 ?>
 <?php
-    $apartNewContractTax = new apartNewContract();
+    $apartContract = new apartcontract();
     
     if(isset($_GET['redoID']))
     {
         $redoID = $_GET['redoID'];
-        $reDoNewContractTax = $apartNewContractTax->re_do_new_contract_tax($redoID);
+        $reDoWaitingContract = $apartContract->redo_apart_contract($redoID);
     }  
 
-    if(isset($_GET['pushID']))
+    if(isset($_GET['skipID']))
     {
-        $pushID = $_GET['pushID'];
-        $pushNewContractTax = $apartNewContractTax->push_apart_new_contract_tax($pushID);
-    }  
+        $skipID = $_GET['skipID'];
+        $skipApartContract = $apartContract->skip_apart_contract($skipID);
+    } 
 ?>
 <section id="interface">
     
@@ -25,7 +25,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT NEW CONTRAC TAX</span>
+                <span>APARTMENT WAITING CONTRACT TAX</span>
             </div>
             <div class="profile">
                 <img src="./Resource/img/profile-1.jpg">
@@ -46,12 +46,12 @@
                 </thead>
                 <tbody>
                         <?php
-                            $apartNewContractTaxList = $apartNewContractTax->show_apart_new_contract_tax_list();
+                            $apartWaitingList = $apartContract->show_apart_Waiting_contract_tax();
                             
-                            if($apartNewContractTaxList)
+                            if($apartWaitingList)
                             {   
                                 $ID = 0;
-                                while($result = $apartNewContractTaxList->fetch_assoc())
+                                while($result = $apartWaitingList->fetch_assoc())
                                 {
                                     $ID++;
                                     
@@ -72,7 +72,7 @@
                             <p><?php echo number_format($result['FEE_PER_MONTH']);?></p>
                         </td>
                         <td class="edit">
-                            <a style="color: #41f1b6;" href="newContractTaxEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to push to rented no tax list ?')" href="?pushID=<?php echo $result['APARTMENT_CODE'];?>">Push</a>
+                            <a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
                         </td>
                         </td>
                     </tr>

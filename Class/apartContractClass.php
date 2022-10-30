@@ -25,11 +25,29 @@
             return $result;
         }
 
+        //Showing apartment contract waiting list
+        public function show_apart_Waiting_contract_tax(){
+            $today = date("Y-m-d");
+            // $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
+            $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND STATUS_APART = 'WAITING'";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
         //Waiting apartment contract
         public function waiting_apart_contract($waitingID){
             $query = "UPDATE tbl_apartment_contract 
                     SET STATUS_APART = 'WAITING' 
                     WHERE APARTMENT_CODE = '$waitingID'";
+            $result = $this->db->update($query);
+            return $result;
+        }
+
+        //Redo apartment contract
+        public function redo_apart_contract($redoID){
+            $query = "UPDATE tbl_apartment_contract 
+                    SET STATUS_APART = 'NOT DONE' 
+                    WHERE APARTMENT_CODE = '$redoID'";
             $result = $this->db->update($query);
             return $result;
         }

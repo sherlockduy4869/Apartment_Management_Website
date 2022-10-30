@@ -1,22 +1,22 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/newContractClass.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartContractClass.php';
 ?>
 <?php
-    $apartNewContractNoTax = new apartNewContract();
+    $apartContract = new apartcontract();
     
     if(isset($_GET['redoID']))
     {
         $redoID = $_GET['redoID'];
-        $reDoNewContractNoTax = $apartNewContractNoTax->re_do_new_contract_no_tax($redoID);
+        $reDoWaitingContractTax = $apartContract->re_do_waiting_contract_no_tax($redoID);
     }  
 
-    if(isset($_GET['pushID']))
+    if(isset($_GET['skipID']))
     {
-        $pushID = $_GET['pushID'];
-        $pushNewContractNoTax = $apartNewContractNoTax->push_apart_new_contract_no_tax($pushID);
-    }  
+        $skipID = $_GET['skipID'];
+        $skipApartContract = $apartContract->skip_apart_contract($skipID);
+    } 
 ?>
 <section id="interface">
     
@@ -72,7 +72,7 @@
                             <p><?php echo number_format($result['FEE_PER_MONTH']);?></p>
                         </td>
                         <td class="edit">
-                            <a style="color: #41f1b6;" href="newContractEdit.php?editID=<?php echo $result['APARTMENT_CODE'];?>">Edit</a>|<a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to push to rented no tax list ?')" href="?pushID=<?php echo $result['APARTMENT_CODE'];?>">Push</a>
+                            <a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
                         </td>
                         </td>
                     </tr>
