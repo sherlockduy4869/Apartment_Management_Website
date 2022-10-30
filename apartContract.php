@@ -11,18 +11,6 @@
         $waitingApartContract = $apartContract->waiting_apart_contract($waitingID);
     }  
 
-    if(isset($_GET['newContractID']))
-    {
-        $newContractID = $_GET['newContractID'];
-        $newContractApartContractNoTax = $apartContract->new_contract_apart_contract_tax($newContractID);
-    }  
-
-    if(isset($_GET['redoID']))
-    {
-        $redoID = $_GET['redoID'];
-        $redoApartContract = $apartContract->redo_apart_contract($redoID);
-    } 
-
     if(isset($_GET['skipID']))
     {
         $skipID = $_GET['skipID'];
@@ -96,8 +84,7 @@
                             <p style="color: <?php if($result['STATUS_APART'] == 'NOT DONE'){ echo 'red';}?>; font-weight: <?php if($result['STATUS_APART'] == 'NOT DONE'){ echo 'bold';}?>;"><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
-                            <a style="color: #41f1b6;" onclick="return confirm('Do you want to change to waiting ?')" href="?waitingID=<?php echo $result['APARTMENT_CODE'];?>">Waiting</a>|<a style="color: green;" onclick="return confirm('Do you want to push to new contract list ?')" href="?newContractID=<?php echo $result['APARTMENT_CODE'];?>">New</a><br>
-                            <a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a href="apartContractDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
+                            <a style="color: #41f1b6;" onclick="return confirm('Do you want to change to waiting ?')" href="?waitingID=<?php echo $result['APARTMENT_CODE'];?>">Waiting</a>|<a href="apartContractDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
                         </td>
                     </tr>
                         <?php

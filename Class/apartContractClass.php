@@ -20,7 +20,7 @@
         public function show_apart_contract_list(){
             $today = date("Y-m-d");
             // $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
-            $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND STATUS_APART <> 'NEW_CONTRACT'";
+            $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND STATUS_APART <> 'WAITING'";
             $result = $this->db->select($query);
             return $result;
         }
@@ -30,24 +30,6 @@
             $query = "UPDATE tbl_apartment_contract 
                     SET STATUS_APART = 'WAITING' 
                     WHERE APARTMENT_CODE = '$waitingID'";
-            $result = $this->db->update($query);
-            return $result;
-        }
-
-        //New contract apartment contract
-        public function new_contract_apart_contract_tax($newContractID){
-            $query = "UPDATE tbl_apartment_contract 
-                    SET STATUS_APART = 'NEW_CONTRACT' 
-                    WHERE APARTMENT_CODE = '$newContractID'";
-            $result = $this->db->update($query);
-            return $result;
-        }
-
-        //Redo apartment contract
-        public function redo_apart_contract($redoID){
-            $query = "UPDATE tbl_apartment_contract 
-                    SET STATUS_APART = 'NOT DONE' 
-                    WHERE APARTMENT_CODE = '$redoID'";
             $result = $this->db->update($query);
             return $result;
         }
