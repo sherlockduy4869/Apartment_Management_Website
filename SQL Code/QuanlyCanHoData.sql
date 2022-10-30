@@ -88,31 +88,6 @@ CREATE TABLE tbl_apartment_contract_no_tax
 )
 GO
 
---TABLE INCLUDES APARTMENT RENTED NEW CONTRACT NO TAX INFORMATION
-CREATE TABLE tbl_apartment_rented_no_tax_new_contract
-(
-	APARTMENT_CODE VARCHAR(255) PRIMARY KEY,
-	HOUSE_OWNER VARCHAR(255),
-	PHONE_OWNER VARCHAR(255),
-	EMAIL_OWNER VARCHAR(255),
-	AGENCY_NAME VARCHAR(255),
-	AGENCY_PHONE VARCHAR(255),
-	AGENCY_EMAIL VARCHAR(255),
-	AREA_APART VARCHAR(255),
-	CUTOMER_NAME VARCHAR(255),
-	CUTOMER_PHONE VARCHAR(255),
-	CUTOMER_EMAIL VARCHAR(255),
-	FEE_PER_MONTH FLOAT,
-	MANAGEMENT_FEE FLOAT,
-	OWNER_RECIEVED FLOAT,
-	START_DAY DATE,
-	END_DAY DATE,
-	DAY_REMIND INT,
-	PAYMENT_TERM INT,
-	NOTE TEXT
-)
-GO
-
 /*------------------------------------------END-------------------------------------------*/
 
 
@@ -230,36 +205,6 @@ CREATE TABLE tbl_apartment_finance
 )
 GO
 
---TABLE INCLUDES APARTMENT RENTED NEW CONTRACT TAX INFORMATION
-CREATE TABLE tbl_apartment_rented_new_contract
-(
-	APARTMENT_CODE VARCHAR(255) PRIMARY KEY,
-
-	AGENCY_NAME VARCHAR(255),
-	AGENCY_PHONE VARCHAR(255),
-	AGENCY_EMAIL VARCHAR(255),
-
-	CUTOMER_NAME VARCHAR(255),
-	CUTOMER_PHONE VARCHAR(255),
-	CUTOMER_EMAIL VARCHAR(255),
-
-	TAX_CODE VARCHAR(255),
-	TAX_DECLARATION_FORM VARCHAR(255),
-	TAX_APARTMENT VARCHAR(255),
-	FEE_PER_MONTH FLOAT,
-	TAX_FEE FLOAT,
-	TAX_DECLARE FLOAT,
-	TAX_MANAGEMENT FLOAT,
-	REFUND_FOR_TENANT FLOAT,
-	CLEANING_FEE FLOAT,
-	
-	START_DAY DATE,
-	END_DAY DATE,
-	DAY_REMIND INT,
-	PAYMENT_TERM INT,
-	NOTE TEXT
-)
-GO
 /*---------------------------------------END----------------------------------------*/
 
 --TABLE INCLUDES INFORMATION OF APARTMENT FOR SELL
@@ -399,55 +344,9 @@ BEGIN
         PHONE_OWNER = phone
 	WHERE APARTMENT_CODE = code_apa;
 END
-
---PROC PUSHING INFOMATION OF APARTMENT RENTED NO TAX
-CREATE PROCEDURE PUSHING_NEW_CONTRACT(IN code_apa VARCHAR(255))
-BEGIN
-
-	DECLARE name_agen VARCHAR(255);
-	DECLARE phone_agen VARCHAR(255);
-	DECLARE mail_agen VARCHAR(255);
-
-	DECLARE cus_name VARCHAR(255);
-	DECLARE cus_phone VARCHAR(255);
-	DECLARE cus_email VARCHAR(255);
-
-	DECLARE fee_month FLOAT;
-	DECLARE fee_management FLOAT;
-	DECLARE owner_recie FLOAT;
-	DECLARE day_start DATE;
-	DECLARE day_end DATE;
-	DECLARE remind_day INT;
-	DECLARE term_pay INT;
-	DECLARE notee TEXT;
-
-	SELECT AGENCY_NAME INTO name_agen FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_PHONE INTO phone_agen FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_EMAIL INTO mail_agen FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-
-	SELECT CUTOMER_NAME INTO cus_name FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT CUTOMER_PHONE INTO cus_phone FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT CUTOMER_EMAIL INTO cus_email FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	
-	SELECT FEE_PER_MONTH INTO fee_month FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT MANAGEMENT_FEE INTO fee_management FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT OWNER_RECIEVED INTO owner_recie FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	
-	SELECT START_DAY INTO day_start FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT END_DAY INTO day_end FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT DAY_REMIND INTO remind_day FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT PAYMENT_TERM INTO term_pay FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT NOTE INTO notee FROM tbl_apartment_rented_no_tax_new_contract WHERE APARTMENT_CODE = code_apa;
-
-
-	INSERT INTO tbl_apartment_rented_no_tax(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL
-	,FEE_PER_MONTH,MANAGEMENT_FEE,OWNER_RECIEVED,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM,NOTE) 
-	VALUES(code_apa,name_agen,phone_agen,mail_agen,cus_name,cus_phone,cus_email,fee_month,fee_management,owner_recie,day_start,day_end,remind_day,term_pay,notee);
-END
-/*---------------------------------------END----------------------------------------*/
-
-
 GO
+
+/*---------------------------------------END----------------------------------------*/
 
 /*---------------------------------RENTED TAX PROC AREA---------------------------------*/
 
@@ -532,76 +431,6 @@ BEGIN
 	WHERE APARTMENT_CODE = code_apa;
 END
 
---PROC PUSHING INFOMATION OF APARTMENT RENTED NO TAX
-CREATE PROCEDURE PUSHING_NEW_CONTRACT_TAX(IN code_apa VARCHAR(255))
-BEGIN
-
-	DECLARE name_agen VARCHAR(255);
-	DECLARE phone_agen VARCHAR(255);
-	DECLARE mail_agen VARCHAR(255);
-
-	DECLARE cus_name VARCHAR(255);
-	DECLARE cus_phone VARCHAR(255);
-	DECLARE cus_email VARCHAR(255);
-	
-	DECLARE code_tax VARCHAR(255);
-	DECLARE declare_form VARCHAR(255);
-	DECLARE apart_tax VARCHAR(255);
-
-	DECLARE fee_month FLOAT;
-	DECLARE fee_tax FLOAT;
-	DECLARE declare_tax FLOAT;
-	DECLARE management_tax FLOAT;
-	DECLARE tenant_refund FLOAT;
-	DECLARE fee_cleaning FLOAT;
-	
-	DECLARE owner_recie FLOAT;
-	DECLARE total_amount FLOAT;
-
-	DECLARE day_start DATE;
-	DECLARE day_end DATE;
-	DECLARE remind_day INT;
-	DECLARE term_pay INT;
-	DECLARE notee TEXT;
-
-	SELECT AGENCY_NAME INTO name_agen FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_PHONE INTO phone_agen FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT AGENCY_EMAIL INTO mail_agen FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-
-	SELECT CUTOMER_NAME INTO cus_name FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT CUTOMER_PHONE INTO cus_phone FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT CUTOMER_EMAIL INTO cus_email FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	
-	SELECT TAX_CODE INTO code_tax FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT TAX_DECLARATION_FORM INTO declare_form FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT TAX_APARTMENT INTO apart_tax FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	
-	SELECT FEE_PER_MONTH INTO fee_month FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT TAX_FEE INTO fee_tax FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT TAX_DECLARE INTO declare_tax FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT TAX_MANAGEMENT INTO management_tax FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT REFUND_FOR_TENANT INTO tenant_refund FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT CLEANING_FEE INTO fee_cleaning FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	
-	SELECT START_DAY INTO day_start FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT END_DAY INTO day_end FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT DAY_REMIND INTO remind_day FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT PAYMENT_TERM INTO term_pay FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-	SELECT NOTE INTO notee FROM tbl_apartment_rented_new_contract WHERE APARTMENT_CODE = code_apa;
-
-	SET total_amount = fee_tax + declare_tax + management_tax + fee_cleaning + tenant_refund;
-	SET owner_recie = fee_month - total_amount;
-
-	INSERT INTO tbl_apartment_rented
-            (APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,CUTOMER_NAME,CUTOMER_PHONE,
-            CUTOMER_EMAIL,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,
-            TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,TOTAL,
-            OWNER_RECIEVED,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM,NOTE)  
-	VALUES(code_apa,name_agen,phone_agen,mail_agen,cus_name,cus_phone,cus_email,code_tax
-	,declare_form,apart_tax,fee_month,fee_tax,declare_tax,management_tax,tenant_refund,
-	fee_cleaning,total_amount,owner_recie,day_start,day_end,remind_day,term_pay,notee);
-END
-GO
 
 /*---------------------------------------END----------------------------------------*/
 
@@ -741,59 +570,6 @@ BEGIN
 END
 GO
 
---TRIGGER FOR INSERT NEW CONTRACT NO TAX APARTMENT
-CREATE TRIGGER INSERT_NEW_CONTRACT_NO_TAX_APARTMENT
-ON tbl_apartment_contract_no_tax
-FOR UPDATE
-AS
-BEGIN
-
-	DECLARE name_agen VARCHAR(255);
-	DECLARE phone_agen VARCHAR(255);
-	DECLARE mail_agen VARCHAR(255);
-
-	DECLARE cus_name VARCHAR(255);
-	DECLARE cus_phone VARCHAR(255);
-	DECLARE cus_email VARCHAR(255);
-
-	DECLARE fee_month FLOAT;
-	DECLARE fee_management FLOAT;
-	DECLARE owner_recie FLOAT;
-	DECLARE day_start DATE;
-	DECLARE day_end DATE;
-	DECLARE remind_day INT;
-	DECLARE term_pay INT;
-	DECLARE notee TEXT;
-
-	IF(NEW.STATUS_APART = 'NEW_CONTRACT') THEN
-	
-	SELECT AGENCY_NAME INTO name_agen FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT AGENCY_PHONE INTO phone_agen FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT AGENCY_EMAIL INTO mail_agen FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-
-	SELECT CUTOMER_NAME INTO cus_name FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT CUTOMER_PHONE INTO cus_phone FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT CUTOMER_EMAIL INTO cus_email FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	
-	SELECT FEE_PER_MONTH INTO fee_month FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT MANAGEMENT_FEE INTO fee_management FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT OWNER_RECIEVED INTO owner_recie FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	
-	SELECT START_DAY INTO day_start FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT END_DAY INTO day_end FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT DAY_REMIND INTO remind_day FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT PAYMENT_TERM INTO term_pay FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT NOTE INTO notee FROM tbl_apartment_rented_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-
-
-	INSERT INTO tbl_apartment_rented_no_tax_new_contract(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,
-	CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL,FEE_PER_MONTH,MANAGEMENT_FEE,OWNER_RECIEVED,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM,NOTE) 
-	VALUES(NEW.APARTMENT_CODE,name_agen,phone_agen,mail_agen,cus_name,cus_phone,cus_email,
-	fee_month,fee_management,owner_recie,day_start,day_end,remind_day,term_pay,notee);
-
-	END IF;
-END
-GO
 /*---------------------------------------END----------------------------------------*/
 
 
@@ -961,74 +737,6 @@ BEGIN
 	SET STATUS_APART = 'AVAILABLE'
 	WHERE APARTMENT_CODE = OLD.APARTMENT_CODE;
 
-END
-GO
-
---TRIGGER FOR INSERT NEW CONTRACT TAX APARTMENT
-CREATE TRIGGER INSERT_NEW_CONTRACT_TAX_APARTMENT
-ON tbl_apartment_contract
-FOR UPDATE
-AS
-BEGIN
-
-	DECLARE name_agen VARCHAR(255);
-	DECLARE phone_agen VARCHAR(255);
-	DECLARE mail_agen VARCHAR(255);
-
-	DECLARE code_tax VARCHAR(255);
-	DECLARE declare_tax_form VARCHAR(255);
-	DECLARE apart_tax VARCHAR(255);
-	
-	DECLARE cus_name VARCHAR(255);
-	DECLARE cus_phone VARCHAR(255);
-	DECLARE cus_email VARCHAR(255);
-
-	DECLARE fee_month FLOAT;
-	DECLARE fee_tax FLOAT;
-	DECLARE declare_tax FLOAT;
-	DECLARE management_tax FLOAT;
-	DECLARE tenant_refund FLOAT;
-	DECLARE fee_cleaning FLOAT;
-
-	DECLARE day_start DATE;
-	DECLARE day_end DATE;
-	DECLARE remind_day INT;
-	DECLARE term_pay INT;
-	DECLARE notee TEXT;
-
-	IF(NEW.STATUS_APART = 'NEW_CONTRACT') THEN
-	
-	SELECT AGENCY_NAME INTO name_agen FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT AGENCY_PHONE INTO phone_agen FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT AGENCY_EMAIL INTO mail_agen FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-
-	SELECT CUTOMER_NAME INTO cus_name FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT CUTOMER_PHONE INTO cus_phone FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT CUTOMER_EMAIL INTO cus_email FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-
-	SELECT TAX_CODE INTO code_tax FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT TAX_DECLARATION_FORM INTO declare_tax_form FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT TAX_APARTMENT INTO apart_tax FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-
-	SELECT FEE_PER_MONTH INTO fee_month FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT TAX_FEE INTO fee_tax FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT TAX_DECLARE INTO declare_tax FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT TAX_MANAGEMENT INTO management_tax FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT REFUND_FOR_TENANT INTO tenant_refund FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT CLEANING_FEE INTO fee_cleaning FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	
-	SELECT START_DAY INTO day_start FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT END_DAY INTO day_end FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT DAY_REMIND INTO remind_day FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT PAYMENT_TERM INTO term_pay FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-	SELECT NOTE INTO notee FROM tbl_apartment_rented WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
-
-	INSERT INTO tbl_apartment_rented_new_contract(APARTMENT_CODE,AGENCY_NAME,AGENCY_PHONE,AGENCY_EMAIL,CUTOMER_NAME,CUTOMER_PHONE,CUTOMER_EMAIL
-	,TAX_CODE,TAX_DECLARATION_FORM,TAX_APARTMENT,FEE_PER_MONTH,TAX_FEE,TAX_DECLARE,TAX_MANAGEMENT,REFUND_FOR_TENANT,CLEANING_FEE,START_DAY,END_DAY,DAY_REMIND,PAYMENT_TERM,NOTE) 
-	VALUES(NEW.APARTMENT_CODE,name_agen,phone_agen,mail_agen,cus_name,cus_phone,cus_email,code_tax
-	,declare_tax_form,apart_tax,fee_month,fee_tax,declare_tax,management_tax,tenant_refund,fee_cleaning
-	,day_start,day_end,remind_day,term_pay,notee);
-	END IF;
 END
 GO
 
