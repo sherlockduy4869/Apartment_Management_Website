@@ -20,24 +20,25 @@
         public function show_apart_contract_no_tax_list(){
             $today = date("Y-m-d");
             //$today = "2022-11-21";
-            $query = "SELECT * FROM tbl_apartment_contract_no_tax WHERE DATE_REMIND <= '$today' AND STATUS_APART <> 'NEW_CONTRACT'";
+            $query = "SELECT * FROM tbl_apartment_contract_no_tax WHERE DATE_REMIND <= '$today' AND STATUS_APART <> 'WAITING'";
             $result = $this->db->select($query);
             return $result;
         }
 
-        //Markdone apartment contract no tax
+        //Showing apartment waiting contract no tax
+        public function show_apart_waiting_contract_no_tax_list(){
+            $today = date("Y-m-d");
+            //$today = "2022-11-21";
+            $query = "SELECT * FROM tbl_apartment_contract_no_tax WHERE DATE_REMIND <= '$today' AND STATUS_APART = 'WAITING'";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
+        //Set Waiting apartment contract no tax
         public function waiting_apart_contract_no_tax($waitingID){
             $query = "UPDATE tbl_apartment_contract_no_tax 
                     SET STATUS_APART = 'WAITING' 
                     WHERE APARTMENT_CODE = '$waitingID'";
-            $result = $this->db->update($query);
-            return $result;
-        }
-
-        public function new_contract_apart_contract_no_tax($newContractID){
-            $query = "UPDATE tbl_apartment_contract_no_tax 
-                    SET STATUS_APART = 'NEW_CONTRACT' 
-                    WHERE APARTMENT_CODE = '$newContractID'";
             $result = $this->db->update($query);
             return $result;
         }

@@ -1,21 +1,21 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartContractClass.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartContractNoTaxClass.php';
 ?>
 <?php
-    $apartContract = new apartcontract();
+    $apartContractNoTax = new apartcontractnotax();
     
     if(isset($_GET['redoID']))
     {
         $redoID = $_GET['redoID'];
-        $reDoWaitingContractTax = $apartContract->re_do_waiting_contract_no_tax($redoID);
+        $reDoWaitingContractNoTax = $apartContractNoTax->redo_apart_contract_no_tax($redoID);
     }  
 
     if(isset($_GET['skipID']))
     {
         $skipID = $_GET['skipID'];
-        $skipApartContract = $apartContract->skip_apart_contract($skipID);
+        $skipApartContract = $apartContractNoTax->skip_apart_contract_no_tax($skipID);
     } 
 ?>
 <section id="interface">
@@ -25,7 +25,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT NEW CONTRAC NO TAX</span>
+                <span>APARTMENT WAITING CONTRACT NO TAX</span>
             </div>
             <div class="profile">
                 <img src="./Resource/img/profile-1.jpg">
@@ -46,12 +46,12 @@
                 </thead>
                 <tbody>
                         <?php
-                            $apartNewContractNoTaxList = $apartNewContractNoTax->show_apart_new_contract_no_tax__list();
+                            $apartWaitingContractNoTaxList = $apartContractNoTax->show_apart_waiting_contract_no_tax_list();
                             
-                            if($apartNewContractNoTaxList)
+                            if($apartWaitingContractNoTaxList)
                             {   
                                 $ID = 0;
-                                while($result = $apartNewContractNoTaxList->fetch_assoc())
+                                while($result = $apartWaitingContractNoTaxList->fetch_assoc())
                                 {
                                     $ID++;
                                     
