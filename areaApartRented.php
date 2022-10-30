@@ -31,6 +31,10 @@
                 <a href="apartContract.php">Contract Rented Tax</a>
             </div>
             <div class="val-box clickable">
+                <i class="fas fa-handshake-slash"></i>
+                <a href="waitingContractTax.php">Waiting Contract Tax</a>
+            </div>
+            <div class="val-box clickable">
                 <i class="fas fa-dollar-sign"></i>
                 <a href="apartTax.php">Finance Rented Tax</a>
             </div>

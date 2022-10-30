@@ -88,7 +88,7 @@
                             <p><?php echo number_format($result['FEE_PER_MONTH']);?><sup>đ</sup></p>
                         </td>
                         <td class="role">
-                            <p style="color: <?php if($result['STATUS_APART'] == 'NOT DONE'){ echo 'red';}?>; font-weight: <?php if($result['STATUS_APART'] == 'NOT DONE'){ echo 'bold';}?>;"><?php echo $result['STATUS_APART'];?></p>
+                            <p style="color: red; font-weight: bold;"><?php echo $result['STATUS_APART'];?></p>
                         </td>
                         <td class="edit">
                             <a style="color: #41f1b6;" onclick="return confirm('Do you want to change to waiting ?')" href="?waitingID=<?php echo $result['APARTMENT_CODE'];?>">Waiting</a>|<a href="apartContractNoTaxDetails.php?detailsID=<?php echo $result['APARTMENT_CODE'];?>">Details</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
