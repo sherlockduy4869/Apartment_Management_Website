@@ -9,7 +9,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT RENTED TAX AREA</span>
+                <span>APARTMENT WAITING CONTRACT AREA</span>
             </div>
             <div class="profile">
                 <img src="./Resource/img/profile-1.jpg">
@@ -19,20 +19,12 @@
         <h3 class="i-name">Dashboard</h3>
         <div class="values">
             <div class="val-box clickable">
-                <i class="fa-solid fa-plus"></i>
-                <a href="apartRentedAdd.php">Add Apart Rented Tax</a>
+                <i class="fas fa-handshake-slash"></i>
+                <a href="waitingContractNoTax.php">Waiting Contract No Tax</a>
             </div>
             <div class="val-box clickable">
-                <i class="fas fa-info"></i>
-                <a href="apartRented.php">Apart Rented Tax</a>
-            </div>
-            <div class="val-box clickable">
-                <i class="fas fa-comments"></i>
-                <a href="apartContract.php">Contract Rented Tax</a>
-            </div>
-            <div class="val-box clickable">
-                <i class="fas fa-dollar-sign"></i>
-                <a href="apartTax.php">Finance Rented Tax</a>
+                <i class="fas fa-handshake-slash"></i>
+                <a href="waitingContractTax.php">Waiting Contract Tax</a>
             </div>
         </div>
 </section>

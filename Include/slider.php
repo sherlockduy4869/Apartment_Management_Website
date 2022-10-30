@@ -10,6 +10,7 @@
             <div class="clickable"><i class="fas fa-cart-plus"></i><a href="cartList.php">Apart For Rent</a></div>
             <div class="clickable"><i class="fas fa-hand-holding-usd"></i><a href="areaApartRented.php">Rented Tax</a></div>
             <div class="clickable"><i class="fas fa-home-lg"></i><a href="areaApartRentedNoTax.php">Rented No Tax</a></div>
+            <div class="clickable"><i class="fas fa-handshake-slash"></i><a href="waitingContractArea.php">Waiting Contract</a></div>
             <div class="clickable"><i class="fas fa-key"></i><a href="apartKey.php">Quan ly can ho</a></div>
             <div class="clickable"><i class="fab fa-sellcast"></i><a href="apartSelling.php">Apart For Sell</a></div>
             <div class="clickable"><i class="fas fa-chart-bar"></i><a href="apartNotRented.php">Apart UC</a></div>
