@@ -25,7 +25,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>APARTMENT WAITING CONTRACT NO TAX</span>
+                <span>CĂN HỘ SẮP TRẢ NO TAX</span>
             </div>
             <div class="profile">
                 <img src="./Resource/img/profile-1.jpg">
@@ -38,9 +38,12 @@
                 <thead>
                     <tr>
                         <th class="text-center">STT</th>
-                        <th class="text-center">Apartment Info</th>
-                        <th class="text-center">Customer</th>
-                        <th class="text-center">Fee/Month</th>
+                        <th class="text-center">Owner Name</th>
+                        <th class="text-center">Apartment Code</th>
+                        <th class="text-center">Bedroom</th>
+                        <th class="text-center">SQM</th>
+                        <th class="text-center">Available From</th>
+                        <th class="text-center">Price</th>
                         <th class="text-center">Customize</th>
                     </tr>
                 </thead>
@@ -54,22 +57,31 @@
                                 while($result = $apartWaitingContractNoTaxList->fetch_assoc())
                                 {
                                     $ID++;
+                                    $end_day= date("d-m-Y", strtotime($result['END_DAY']));
                                     
                         ?>
                     <tr class="text-center">
                         <td><?php echo $ID ?></td>
-                        <td class="people-de">
-                            <h5><?php echo $result['APARTMENT_CODE'];?></h5>
-                            <p><?php echo $result['AGENCY_NAME'];?></p>
-                        </td>
                         <td class="people">
                             <div class="people-de">
-                                <h5><?php echo $result['CUTOMER_NAME'];?></h5>
-                                <p><?php echo $result['CUTOMER_PHONE'];?>-<?php echo $result['CUTOMER_EMAIL'];?></p>
+                                <h5><?php echo $result['HOUSE_OWNER'];?></h5>
+                                <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
                             </div>
                         </td>
-                        <td class="role">
-                            <p><?php echo number_format($result['FEE_PER_MONTH']);?></p>
+                        <td class="people-de">
+                            <h5><?php echo $result['APARTMENT_CODE'];?></h5>
+                        </td>
+                        <td class="active">
+                            <p><?php echo $result['BEDROOM'];?></p>
+                        </td>
+                        <td class="active">
+                            <p><?php echo $result['SQM'];?>m<sup>2</sup></p>
+                        </td>
+                        <td class="active">
+                            <p><?php echo $end_day;?></p>
+                        </td>
+                        <td class="active">
+                            <p><?php echo number_format($result['FEE_PER_MONTH']);?><sup>đ</sup></p>
                         </td>
                         <td class="edit">
                             <a style="color: #ffbb55;" onclick="return confirm('Do you want to redo ?')" href="?redoID=<?php echo $result['APARTMENT_CODE'];?>">Redo</a>|<a style="color: #ff7782;" onclick="return confirm('Do you want to skip ?')" href="?skipID=<?php echo $result['APARTMENT_CODE'];?>">Skip</a>
