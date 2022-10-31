@@ -29,7 +29,10 @@
         public function show_apart_Waiting_contract_tax(){
             $today = date("Y-m-d");
             // $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND '$today' <= END_DAY";
-            $query = "SELECT * FROM tbl_apartment_contract WHERE DATE_REMIND <= '$today' AND STATUS_APART = 'WAITING'";
+            $query = "SELECT tbl_apartment_contract.*, tbl_apartment_cart.*
+            FROM tbl_apartment_contract INNER JOIN tbl_apartment_cart
+            ON tbl_apartment_contract.APARTMENT_CODE = tbl_apartment_cart.APARTMENT_CODE
+            WHERE tbl_apartment_contract.DATE_REMIND <= '$today' AND tbl_apartment_contract.STATUS_APART = 'WAITING'";
             $result = $this->db->select($query);
             return $result;
         }
