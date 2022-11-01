@@ -46,22 +46,6 @@
             return $result;
         }
 
-        //Redo apartment contract
-        public function redo_apart_contract($redoID){
-            $query = "UPDATE tbl_apartment_contract 
-                    SET STATUS_APART = 'NOT DONE' 
-                    WHERE APARTMENT_CODE = '$redoID'";
-            $result = $this->db->update($query);
-            return $result;
-        }
-
-        //Skip apartment contract
-        public function skip_apart_contract($skipID){
-            $query = "CALL DELETING_APARTMENT_RENTED_TAX('$skipID')";
-            $result = $this->db->delete($query);
-            return $result;
-        }
-
         //Get apartment contract by id
         public function get_apart_contract_by_id($apart_contract_id){
             $query = "SELECT * FROM tbl_apartment_contract WHERE APARTMENT_CODE = '$apart_contract_id'";

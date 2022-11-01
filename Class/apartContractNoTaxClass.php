@@ -46,22 +46,6 @@
             return $result;
         }
 
-        //Redo apartment contract no tax
-        public function redo_apart_contract_no_tax($redoID){
-            $query = "UPDATE tbl_apartment_contract_no_tax 
-                    SET STATUS_APART = 'NOT DONE' 
-                    WHERE APARTMENT_CODE = '$redoID'";
-            $result = $this->db->update($query);
-            return $result;
-        }
-
-        //Skip apartment contract no tax
-        public function skip_apart_contract_no_tax($skipID){
-            $query = "CALL DELETING_APARTMENT_RENTED_NO_TAX('$skipID')";
-            $result = $this->db->execute($query);
-            return $result;
-        }
-
         //Get apartment contract no tax by id
         public function get_apart_contract_no_tax_by_id($apart_contract_id){
             $query = "SELECT * FROM tbl_apartment_contract_no_tax WHERE APARTMENT_CODE = '$apart_contract_id'";
