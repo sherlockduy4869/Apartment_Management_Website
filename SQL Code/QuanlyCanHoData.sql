@@ -295,6 +295,17 @@ CREATE TABLE tbl_apartment_key_detail
 )
 GO
 
+--TABLE INCLUDES INFORMATION OF APARTMENT WAITING TO END CONTRACT
+CREATE TABLE tbl_apartment_waiting
+(
+	APARTMENT_CODE VARCHAR(255) PRIMARY KEY,
+	HOUSE_OWNER VARCHAR(255),
+	BEDROOM VARCHAR(255),
+	SQM FLOAT,
+	END_DAY DATE,
+	FEE_PER_MONTH FLOAT
+)
+GO
 /*--------------------------------------PROC AREA--------------------------------------*/
 
 -- PROC FOR LOGIN
@@ -570,6 +581,34 @@ BEGIN
 END
 GO
 
+--TRIGGER FOR INSERT NEW APARTMENT WAITING FOR NO TAX
+CREATE TRIGGER INSERT_APARTMENT_WAITING_NO_TAX
+ON tbl_apartment_contract_no_tax
+FOR UPDATE
+AS
+BEGIN
+
+	DECLARE owner_house VARCHAR(255);
+	DECLARE bedroom_kind VARCHAR(255);
+
+	DECLARE sqm_apart VARCHAR(255);
+	DECLARE available_day VARCHAR(255);
+	DECLARE monthly_fee VARCHAR(255);
+
+	IF(NEW.STATUS_APART = 'WAITING') THEN
+
+	SELECT HOUSE_OWNER INTO owner_house FROM tbl_apartment_contract_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+	SELECT BEDROOM INTO bedroom_kind FROM tbl_apartment_cart WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+
+	SELECT SQM INTO sqm_apart FROM tbl_apartment_cart WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+	SELECT END_DAY INTO available_day FROM tbl_apartment_contract_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+	SELECT FEE_PER_MONTH INTO monthly_fee FROM tbl_apartment_contract_no_tax WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+
+	INSERT INTO tbl_apartment_waiting(APARTMENT_CODE,HOUSE_OWNER,BEDROOM,SQM,END_DAY,FEE_PER_MONTH) 
+	VALUES(NEW.APARTMENT_CODE,owner_house,bedroom_kind,sqm_apart,available_day,monthly_fee);
+	END IF;
+END
+GO
 /*---------------------------------------END----------------------------------------*/
 
 
@@ -740,12 +779,39 @@ BEGIN
 END
 GO
 
+--TRIGGER FOR INSERT NEW APARTMENT WAITING FOR TAX
+CREATE TRIGGER INSERT_APARTMENT_WAITING_TAX
+ON tbl_apartment_contract
+FOR UPDATE
+AS
+BEGIN
+
+	DECLARE owner_house VARCHAR(255);
+	DECLARE bedroom_kind VARCHAR(255);
+
+	DECLARE sqm_apart VARCHAR(255);
+	DECLARE available_day VARCHAR(255);
+	DECLARE monthly_fee VARCHAR(255);
+
+	IF(NEW.STATUS_APART = 'WAITING') THEN
+
+	SELECT HOUSE_OWNER INTO owner_house FROM tbl_apartment_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+	SELECT BEDROOM INTO bedroom_kind FROM tbl_apartment_cart WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+
+	SELECT SQM INTO sqm_apart FROM tbl_apartment_cart WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+	SELECT END_DAY INTO available_day FROM tbl_apartment_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+	SELECT FEE_PER_MONTH INTO monthly_fee FROM tbl_apartment_contract WHERE APARTMENT_CODE = NEW.APARTMENT_CODE;
+
+	INSERT INTO tbl_apartment_waiting(APARTMENT_CODE,HOUSE_OWNER,BEDROOM,SQM,END_DAY,FEE_PER_MONTH) 
+	VALUES(NEW.APARTMENT_CODE,owner_house,bedroom_kind,sqm_apart,available_day,monthly_fee);
+	END IF;
+END
+GO
+
 /*---------------------------------------END----------------------------------------*/
 
 /*---------------------------------------DEFAULT AREA----------------------------------------*/
 --CREATE DEFAULT ACCOUNT FOR PROGRAM
 INSERT INTO ACCOUNT(USERNAME,PASSWORD) VALUES('admin1','2251022057731868917119086224872421513662')
 GO
-APARTMENT_CODE VARCHAR(255) PRIMARY KEY,
 
-APARTMENT_CODE VARCHAR(255) PRIMARY KEY,

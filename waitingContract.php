@@ -1,21 +1,21 @@
 <?php
     include_once "Include/header.php";
     include_once "Include/slider.php";
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/apartContractNoTaxClass.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/waitingContractClass.php';
 ?>
 <?php
-    $apartContractNoTax = new apartcontractnotax();
+    $waitingContractApart = new waitingContractApart();
     
     if(isset($_GET['redoID']))
     {
         $redoID = $_GET['redoID'];
-        $reDoWaitingContractNoTax = $apartContractNoTax->redo_apart_contract_no_tax($redoID);
+        $reDoWaitingContract = $waitingContractApart->redo_apart_contract_waiting($redoID);
     }  
 
     if(isset($_GET['skipID']))
     {
         $skipID = $_GET['skipID'];
-        $skipApartContract = $apartContractNoTax->skip_apart_contract_no_tax($skipID);
+        $skipApartContract = $waitingContractApart->skip_apart_contract_waiting($skipID);
     } 
 ?>
 <section id="interface">
@@ -25,7 +25,7 @@
                 <div>
                     <i id="menu-btn" class="fas fa-bars"></i>
                 </div>
-                <span>CĂN HỘ SẮP TRẢ NO TAX</span>
+                <span>CĂN HỘ SẮP TRẢ</span>
             </div>
             <div class="profile">
                 <img src="./Resource/img/profile-1.jpg">
@@ -49,12 +49,12 @@
                 </thead>
                 <tbody>
                         <?php
-                            $apartWaitingContractNoTaxList = $apartContractNoTax->show_apart_waiting_contract_no_tax_list();
+                            $apartWaitingList = $waitingContractApart->show_apart_waiting_list();
                             
-                            if($apartWaitingContractNoTaxList)
+                            if($apartWaitingList)
                             {   
                                 $ID = 0;
-                                while($result = $apartWaitingContractNoTaxList->fetch_assoc())
+                                while($result = $apartWaitingList->fetch_assoc())
                                 {
                                     $ID++;
                                     $end_day= date("d-m-Y", strtotime($result['END_DAY']));
@@ -65,7 +65,6 @@
                         <td class="people">
                             <div class="people-de">
                                 <h5><?php echo $result['HOUSE_OWNER'];?></h5>
-                                <p><?php echo $result['PHONE_OWNER'];?>-<?php echo $result['EMAIL_OWNER'];?></p>
                             </div>
                         </td>
                         <td class="people-de">
