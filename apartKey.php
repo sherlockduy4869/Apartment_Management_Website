@@ -38,6 +38,7 @@
                         <th>Management Fee</th>
                         <th>Electric Code</th>
                         <th>Door Pass</th>
+                        <th>Internet Code</th>
                         <th>Wifi Pass</th>
                         <th>Note</th>
                         <th>Customize</th>
@@ -76,6 +77,9 @@
                         </td>
                         <td class="role">
                             <p><?php echo $result['DOOR_PASS'];?></p>
+                        </td>
+                        <td class="role">
+                            <p><?php echo $result['INTERNET_CODE'];?></p>
                         </td>
                         <td class="role">
                             <p><?php echo $result['WIFI_PASS'];?></p>
